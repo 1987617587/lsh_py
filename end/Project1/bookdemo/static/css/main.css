@@ -1,0 +1,13 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+img{
+    width:100%;
+}
+.container{
+    width:600px;
+    margin:0 auto;
+    background:lightblue;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑英雄</title>
+</head>
+<body>
+<div class="container">
+
+    <form action="#" method="post">
+
+        人物姓名：<input type="text" name="heroname" value={{hero.name}}>
+        <br>
+        人物描述：<input type="text" name="content" value={{hero.content}}>
+        <br>
+
+        {% if hero.gender == "male" %}
+        人物性别：<input type="radio" name="sex" value="female">女<input type="radio" name="sex" value="male" checked>男
+        {% else %}
+        人物性别：<input type="radio" name="sex" value="female" checked>女<input type="radio" name="sex" value="male">男
+        {% endif%}
+        <br>
+
+        <input type="submit" value="提交">
+
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+<div class="container">
+    <div class="center">
+        <img src="static/img/2.png" alt="">
+    </div>
+    <h1>书籍列表</h1>
+
+    {% for b in books%}
+    <li>
+        <a href="{% url 'booktest:detail' b.id %}">{{b.id}}--{{b.title}}--{{b.price}}--{{b.pub_date}}</a>
+        <button><a href="{% url 'booktest:delbook' b.id%}">删除该书籍</a></button>
+        <button><a href="{% url 'booktest:editbook' b.id%}">修改</a></button>
+
+
+    </li>
+    {% endfor %}
+    <button><a href="{% url 'booktest:addbook' %}">添加书籍</a></button>
+
+
+</div>
+
+
+</body>
+</html>

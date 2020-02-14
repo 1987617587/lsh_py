@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情页面</title>
+        <link rel="stylesheet" href="/static/css/main.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>这里是详情页</h1>
+        <div>
+            <h2>书名：{{book.title}}</h2>
+            <h2>价格：{{book.price}}元/本</h2>
+            <h2>出版日期：{{book.pub_date}}</h2>
+            <ul>
+                <h3>书中人物</h3>
+                {% for hero in book.hero_set.all%}
+                <li>
+                    {{hero.name}}--{{hero.gender}}
+                    <button><a href="{%url 'booktest:delhero' hero.id %}">删除英雄</a></button>
+                    <button><a href="{%url 'booktest:edithero' hero.id %}">编辑英雄</a></button>
+
+                </li>
+                {% endfor %}
+                <button><a href="{%url 'booktest:addhero' book.id %}">添加英雄</a></button>
+
+            </ul>
+
+        </div>
+
+        <div>
+            <button><a href="{% url 'booktest:index' %}">返回列表页</a></button>
+
+        </div>
+    </div>
+</body>
+</html>
