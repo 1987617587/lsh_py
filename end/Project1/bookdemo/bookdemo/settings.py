@@ -23,9 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'kug_by3#daq%3n_0m)(a15+=i*_$!!w9dm4i^v@i5)9#+^)m5j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# 调试模式
+# DEBUG = True
+# 关闭调试模式，可以看到404
+DEBUG = False
+# 如果关闭调试模式 ALLOWED_HOSTS 代表哪些域名ip或电脑可以访问服务
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -123,3 +127,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+
+# 媒体资源配置项
+MEDIA_URL ='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIAFILES_DIRS = [os.path.join(BASE_DIR,'media')]
