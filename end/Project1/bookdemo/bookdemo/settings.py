@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 加入应用
     'booktest',
+    'polls',
+    'vote',
 ]
 
 MIDDLEWARE = [

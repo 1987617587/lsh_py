@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票详情</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+
+</head>
+<body>
+<div class="container">
+        <h1>这里是投票详情页</h1>
+
+        <h3>问题：{{problem}}</h3>
+        <form action="#" method="post">
+
+            <p>投票选项</p>
+
+            <br>
+            {% for option in problem.problems.all %}
+
+            <input type="radio" name="p" value="1" checked>{{option.option1}}
+            <input type="radio" name="p" value="2">{{option.option2}}
+            {# 研究半天不知道代码怎么错，原来是格式不规范#}
+            {% if problem.option3_votes %}
+            <input type="radio" name="p" value="3">{{option.option3}}
+            {% endif%}
+
+
+            {% if problem.option4_votes %}
+            <input type="radio" name="p" value="4">{{option.option4}}
+
+            {% endif%}
+
+
+            {% endfor %}
+
+
+            <input type="submit" value="投票">
+        </form>
+
+    <button><a href="{% url 'polls:index' %}">返回</a></button>
+</div>
+</body>
+</html>

@@ -20,4 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('booktest/', include('booktest.urls')),
     path('', include('booktest.urls',namespace='booktest')),
+    path('polls/', include('polls.urls',namespace='polls')),
+    path('vote/', include('vote.urls',namespace='vote')),
 ]

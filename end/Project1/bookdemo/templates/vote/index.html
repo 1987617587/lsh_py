@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<div class="container">
+    <h3>首页</h3>
+
+    {% for problem in problems %}
+    <a href="{% url 'vote:detail' problem.id %}">{{forloop.counter}}.{{problem }}</a>
+    {% endfor %}
+</div>
+
+</body>
+</html>

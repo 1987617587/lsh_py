@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票首页</title>
+        <link rel="stylesheet" href="/static/css/main.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>这是投票首页</h1>
+        <h2>投票信息汇总</h2>
+        {% for problem in problems%}
+        <p>投票{{problem.id}}：<a href="{% url 'polls:detail' problem.id %}">{{problem}}</a></p>
+        {% endfor  %}
+
+
+    </div>
+
+</body>
+</html>
