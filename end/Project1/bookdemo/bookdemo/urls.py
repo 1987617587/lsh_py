@@ -22,6 +22,7 @@ urlpatterns = [
     path('', include('booktest.urls', namespace='booktest')),
     path('polls/', include('polls.urls', namespace='polls')),
     path('vote/', include('vote.urls', namespace='vote')),
+    path('download/', include('download.urls', namespace='download')),
 
     #     媒体资源
     # path('<path:path>',serve,{'document_root':MEDIA_POOT})

@@ -24,9 +24,9 @@ SECRET_KEY = 'kug_by3#daq%3n_0m)(a15+=i*_$!!w9dm4i^v@i5)9#+^)m5j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # 调试模式
-# DEBUG = True
+DEBUG = True
 # 关闭调试模式，可以看到404
-DEBUG = False
+# DEBUG = False
 # 如果关闭调试模式 ALLOWED_HOSTS 代表哪些域名ip或电脑可以访问服务
 
 ALLOWED_HOSTS = ["*"]
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'booktest',
     'polls',
     'vote',
+    'download',
 ]
 
 MIDDLEWARE = [
