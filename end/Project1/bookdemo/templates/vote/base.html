@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block Title %}
+    <title>Title</title>
+    {% endblock %}
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+
+<body>
+<div class="container">
+    {% block header %}
+    {# 这里是头部 #}
+    {% endblock %}
+
+    {% block body %}
+    <br>
+    这里是身体
+    {% endblock %}
+
+    {% block footer %}
+    <br>
+    {# 这里是底部 #}
+    <button><a href="{% url 'booktest:index' %}">返回主页面</a></button>
+    {% endblock %}
+</div>
+</body>
+</html>

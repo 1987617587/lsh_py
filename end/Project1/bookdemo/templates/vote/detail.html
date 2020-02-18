@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends 'vote/base.html' %}
+{% block Title %}
     <title>投票详情</title>
-</head>
-<body>
-<div class="container">
-    <h1>投票问题：{{problem}}</h1>
+
+{% endblock %}
+{% block body %}
+     <h1>投票问题：{{problem}}</h1>
     <h2>选项:</h2>
-    <form action="#" method="post">
+    <form action="#" method="post">{
+        {# 阻止跨站请求 #}
+        {% csrf_token %}
         {% for option in problem.problems.all %}
         {% if forloop.counter == 1 %}
         <input type="radio" name="option" value="{{forloop.counter}}" checked>{{option}}
@@ -21,7 +21,5 @@
 
     </form>
 
+{% endblock %}
 
-</div>
-</body>
-</html>

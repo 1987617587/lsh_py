@@ -52,7 +52,8 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    # 想要打开 需要在post请求时加入{% csrf_token %}
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -62,7 +63,9 @@ ROOT_URLCONF = 'bookdemo.urls'
 
 TEMPLATES = [
     {
+        # 指明使用的翻译引擎 将django模板转换为最终的html
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # 在dirs配置自己的模板目录
         'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -128,6 +131,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+
+
+# 使用django自带的用户类 配置信息
+
+AUTH_USER_MODEL = 'vote.User'
 
 # 媒体资源配置项
 MEDIA_URL ='/media/'
