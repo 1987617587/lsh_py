@@ -13,11 +13,11 @@ urlpatterns = [
     url(r'^login/$', views.login, name='login'),
     url(r'^regist/$', views.regist, name='regist'),
     url(r'^loginout/$', views.loginout, name='loginout'),
-    url(r'^detail/(\d+)/$', views.DetailView.as_view(), name='detail'),
+    # url(r'^detail/(\d+)/$', views.DetailView.as_view(), name='detail'),
+    #
+    # url(r'^result/(\d+)/$', views.Result.as_view(), name='result'),
 
-    url(r'^result/(\d+)/$', views.Result.as_view(), name='result'),
-
-    # url(r'^detail/(\d+)/$', views.detail, name='detail'),
-    # url(r'^result/(\d+)/$', views.result, name='result'),
+    url(r'^detail/(\d+)/$', views.detail, name='detail'),
+    url(r'^result/(\d+)/$', views.result, name='result'),
     url(r'^look/$', views.IndexView.as_view(), name='look'),
 ]

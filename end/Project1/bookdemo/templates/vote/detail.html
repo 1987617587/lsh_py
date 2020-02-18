@@ -6,14 +6,14 @@
 {% block body %}
      <h1>投票问题：{{problem}}</h1>
     <h2>选项:</h2>
-    <form action="#" method="post">{
+    <form action="#" method="post">
         {# 阻止跨站请求 #}
         {% csrf_token %}
         {% for option in problem.problems.all %}
         {% if forloop.counter == 1 %}
-        <input type="radio" name="option" value="{{forloop.counter}}" checked>{{option}}
+        <input type="radio" name="option" value="{{option.id}}" checked>{{option}}
         {% else %}
-        <input type="radio" name="option" value="{{forloop.counter}}">{{option}}
+        <input type="radio" name="option" value="{{option.id}}">{{option}}
         {% endif %}
         {% endfor %}
         <input type="submit" value="投票">
