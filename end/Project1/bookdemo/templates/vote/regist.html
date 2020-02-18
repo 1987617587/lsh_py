@@ -1,0 +1,12 @@
+{% extends 'vote/base.html' %}
+
+{% block body %}
+<br>
+<form action="#" method="post">
+    {% csrf_token %}
+    用户名：<input type="text" name="username">
+    密码：<input type="password" name="password">
+    重复密码：<input type="password" name="repassword">
+    <input type="submit" value="注册">
+</form>
+{% endblock %}

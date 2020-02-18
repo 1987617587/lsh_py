@@ -1,13 +1,16 @@
 {% extends 'vote/base.html' %}
 {% block Title %}
-    <title>投票首页</title>
+<title>投票首页</title>
 
 {% endblock %}
 {% block body %}
-    <h3>首页</h3>
+<h3>首页</h3>
 
-    {% for problem in problems %}
-    <a href="{% url 'vote:detail' problem.id %}">{{forloop.counter}}.{{problem }}</a>
-    {% endfor %}
+{% for problem in problems %}
+<a href="{% url 'vote:detail' problem.id %}">{{forloop.counter}}.{{problem }}</a>
+<br>
+
+{% endfor %}
+
 
 {% endblock %}

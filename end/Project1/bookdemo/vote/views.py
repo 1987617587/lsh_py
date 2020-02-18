@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.template import loader
 from django.http import HttpResponse
 
-from .models import Problem, Option
+from .models import Problem, Option, User
 
 from django.views.generic import View, TemplateView, ListView, CreateView, DetailView as DV, DeleteView, UpdateView
 
@@ -37,7 +37,22 @@ def login(request):
 
 
 def regist(request):
-    return HttpResponse("注册")
+    if request.method == "GET":
+        return render(request,'vote/regist.html')
+    elif request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        repassword = request.POST.get("repassword")
+        if User.objects.filter(username = username).count() > 0:
+            return HttpResponse("用户名已存在")
+        else:
+            if password !=repassword:
+                return HttpResponse("密码不一致")
+            else:
+                User.objects.create_user(username=username,password=password)
+                url = reverse("vote:login")
+                return redirect(to=url)
+    # return HttpResponse("注册")
 
 
 def loginout(request):
