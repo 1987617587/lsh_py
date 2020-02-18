@@ -10,6 +10,9 @@ urlpatterns = [
     # url(r'^result/(\d+)/$', views.result, name='result'),
     # 二、视图类CBV
     url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^login/$', views.login, name='login'),
+    url(r'^regist/$', views.regist, name='regist'),
+    url(r'^loginout/$', views.loginout, name='loginout'),
     url(r'^detail/(\d+)/$', views.DetailView.as_view(), name='detail'),
 
     url(r'^result/(\d+)/$', views.Result.as_view(), name='result'),

@@ -12,6 +12,18 @@
 <div class="container">
     {% block header %}
     {# 这里是头部 #}
+    <div class="">
+        {% if request.user and request.user.username != ''%}
+        当前用户：{{request.user}}
+        <button><a href="{% url 'vote:loginout' %}">退出</a></button>
+
+        {% else %}
+        <button><a href="{% url 'vote:login' %}">登录</a></button>
+        <button><a href="#">注册</a></button>
+        {% endif %}
+
+
+    </div>
     {% endblock %}
 
     {% block body %}

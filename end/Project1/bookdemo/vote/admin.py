@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Problem,Option
+from .models import Problem,Option,User
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 
@@ -19,3 +19,4 @@ class ProblemAdmin(ModelAdmin):
 
 admin.site.register(Problem, ProblemAdmin)
 admin.site.register(Option, OptionAdmin)
+admin.site.register(User)
