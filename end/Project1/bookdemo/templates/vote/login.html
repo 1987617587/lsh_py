@@ -1,14 +1,41 @@
 {% extends 'vote/base.html' %}
+{% block Title %}
+<title>登录</title>
 
+{% endblock %}
 {% block body %}
+{% comment %}
 <br>
 <form action="#" method="post">
     {% csrf_token %}
-    用户名：<input type="text" name="username">
+    用户名：<input type="text" name="username" required>
     <br>
-    密码：<input type="password" name="password">
+    密码：<input type="password" name="password" required>
     <br>
 
     <input type="submit" value="登录">
+    {{username}}
+    {% if username %}
+    666
+
+    {% endif %}
+    {{errors}}
+
+</form>
+{% endcomment %}
+
+<form action="#" method="post">
+    {% csrf_token %}
+    {# {{lf}} #}
+    {{lf.username.label}}:{{lf.username}}
+    <br>
+    {{lf.username.help_text}}
+    <br>
+    {{lf.password.label}}:{{lf.password}}
+    <br>
+    {{lf.password.help_text}}
+    <br>
+    <input type="submit" value="登录">
+    {{errors}}
 </form>
 {% endblock %}

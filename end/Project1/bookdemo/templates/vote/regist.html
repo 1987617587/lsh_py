@@ -1,15 +1,31 @@
 {% extends 'vote/base.html' %}
+{% block Title %}
+<title>注册</title>
 
+{% endblock %}
 {% block body %}
 <br>
 <form action="#" method="post">
     {% csrf_token %}
-    用户名：<input type="text" name="username">
+    {% comment %}
+    用户名：<input type="text" name="username" required>
     <br>
-    密码：<input type="password" name="password">
+    密码：<input type="password" name="password" required>
     <br>
-    重复密码：<input type="password" name="repassword">
+    重复密码：<input type="password" name="repassword" required>
+    <br>
+    {% endcomment %}
+    {{rf.username.label}}:{{rf.username}}
+    <br>
+
+    {{rf.password.label}}:{{rf.password}}
+    <br>
+    {{rf.repassword.label}}:{{rf.repassword}}
+
     <br>
     <input type="submit" value="注册">
+
+
+    <p>{{errors}}</p>
 </form>
 {% endblock %}
