@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load myfun %}
 {% block Title %}
 <title>继承base</title>
 {% endblock %}
@@ -10,80 +11,50 @@
     <div class="widget widget-recent-posts">
         <h3 class="widget-title">最新文章</h3>
         <ul>
-            <li>
-                <a href="#">Django 博客开发入门教程：前言</a>
-            </li>
-            <li>
-                <a href="#">Django 博客使用 Markdown 自动生成文章目录</a>
-            </li>
-            <li>
-                <a href="#">部署 Django 博客</a>
-            </li>
-        </ul>
-    </div>
-    <div class="widget widget-archives">
-        <h3 class="widget-title">归档</h3>
-        <ul>
-            <li>
-                <a href="#">2017 年 5 月</a>
-            </li>
-            <li>
-                <a href="#">2017 年 4 月</a>
-            </li>
-            <li>
-                <a href="#">2017 年 3 月</a>
-            </li>
-        </ul>
-    </div>
 
+            {% get_latest_articles as latest_articles %}
+            {% for article in latest_articles%}
+            <li>
+                <a href="{% url 'blogapp:detail' article.id %}">{{article.title}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
     <div class="widget widget-category">
         <h3 class="widget-title">分类</h3>
         <ul>
+            {% get_categories as categories %}
+            {% for category in categories%}
             <li>
-                <a href="#">Django 博客教程 <span class="post-count">(13)</span></a>
+                <a href="/?type=category&category_id={{category.id}}">{{category.name}}<span class="post-count">({{category.article_set.count}})</span></a>
             </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+
+    <div class="widget widget-archives">
+        <h3 class="widget-title">归档</h3>
+        <ul>
+            {% get_latest_dates as latest_dates %}
+            {% for date in latest_dates %}
             <li>
-                <a href="#">Python 教程 <span class="post-count">(11)</span></a>
+                <a href="/?type=date&year={{date.year}}&month={{date.month}}">{{date.year}} 年 {{date.month}} 月</a>
             </li>
-            <li>
-                <a href="#">Django 用户认证 <span class="post-count">(8)</span></a>
-            </li>
+            {% endfor %}
         </ul>
     </div>
 
     <div class="widget widget-tag-cloud">
         <h3 class="widget-title">标签云</h3>
         <ul>
+            {% get_tags as tags %}
+            {% for tag in tags %}
             <li>
-                <a href="#">Django</a>
+                <a href="/?type=tag&tag_id={{tag.id}}">{{tag.name}}</a>
             </li>
-            <li>
-                <a href="#">Python</a>
-            </li>
-            <li>
-                <a href="#">Java</a>
-            </li>
-            <li>
-                <a href="#">笔记</a>
-            </li>
-            <li>
-                <a href="#">文档</a>
-            </li>
-            <li>
-                <a href="#">AngularJS</a>
-            </li>
-            <li>
-                <a href="#">CSS</a>
-            </li>
-            <li>
-                <a href="#">JavaScript</a>
-            </li>
-            <li>
-                <a href="#">Snippet</a>
-            </li>
-            <li>
-                <a href="#">jQuery</a>
-            </li>
+            {% endfor %}
+
         </ul>
     </div>
     <div class="rss">

@@ -1,4 +1,5 @@
 {% extends 'base2.html' %}
+{% load myfun %}
 
 {% block Title %}
 <title>博客首页</title>
@@ -63,16 +64,16 @@
             <div class="entry-meta">
                 <span class="post-category"><a href="#">{{a.category.name}}</a></span>
                 <span class="post-date"><a href="#"><time class="entry-date"
-                                                          datetime="2012-11-09T23:15:57+00:00">{{a.create_time}}</time></a></span>
-                <span class="post-author"><a href="#">{{a.auther}}</a></span>
+                                                          datetime="2012-11-09T23:15:57+00:00">{{a.create_time|date:'Y-m-d H:i:s'}}</time></a></span>
+                <span class="post-author"><a href="#">{{a.author|author_format:"作者"}}</a></span>
                 <span class="comments-link"><a href="#">{{a.comment_set.count}} 评论</a></span>
                 <span class="views-count"><a href="#">{{a.views}} 阅读</a></span>
             </div>
         </header>
         <div class="entry-content clearfix">
-            <p>{{a.body|safe}}</p>
+            <p>{{a.body|safe|truncatechars_html:20}}</p>
             <div class="read-more cl-effect-14">
-                <a href="#" class="more-link">继续阅读 <span class="meta-nav">→</span></a>
+                <a href="{% url 'blogapp:detail' a.id %}" class="more-link">继续阅读 <span class="meta-nav">→</span></a>
             </div>
         </div>
     </article>
@@ -88,17 +89,17 @@
     <div class="pagination col-md-11">
         <ul>
             {% if page.has_previous %}
-            <li class="col-md-2"><a href="?pagenum={{page.pervious_page_number}}">上一页</a></li>
+            <li class="col-md-2"><a href="/?pagenum={{page.pervious_page_number}}&type={{type_page}}&year={{date.year}}&month={{date.month}}&tag_id={{tag.id}}&category_id={{category.id}}">上一页</a></li>
             {% endif %}
             {% for pn in page.paginator.page_range %}
             {% if pn == page.number %}
-            <li class="current col-md-1"><a href="?pagenum={{pn}}">{{pn}}</a></li>
+            <li class="current col-md-1"><a href="/?pagenum={{pn}}&type={{type_page}}&year={{date.year}}&month={{date.month}}&tag_id={{tag.id}}&category_id={{category.id}}">{{pn}}</a></li>
             {% else %}
-            <li class=" col-md-1"><a href="?pagenum={{pn}}">{{pn}}</a></li>
+            <li class=" col-md-1"><a href="/?pagenum={{pn}}&type={{type_page}}&year={{date.year}}&month={{date.month}}&tag_id={{tag.id}}&category_id={{category.id}}">{{pn}}</a></li>
             {% endif %}
             {% endfor %}
             {% if page.has_next %}
-            <li class="col-md-2"><a href="?pagenum={{page.next_page_number}}">下一页</a></li>
+            <li class="col-md-2"><a href="/?pagenum={{page.next_page_number}}&type={{type_page}}&year={{date.year}}&month={{date.month}}&tag_id={{tag.id}}&category_id={{category.id}}">下一页</a></li>
             {% endif %}
         </ul>
     </div>
