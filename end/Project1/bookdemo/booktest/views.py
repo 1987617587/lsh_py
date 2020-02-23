@@ -10,6 +10,7 @@ def index(request):
 
 def detail(request,b_id):
     book = Book.objects.get(id = b_id)
+    book.pub_date = book.pub_date.strftime("%Y-%m-%d")
     return render(request,'detail.html',{'book':book})
 
 def delbook(request,bookid):

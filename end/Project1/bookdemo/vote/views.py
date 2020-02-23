@@ -34,9 +34,13 @@ def login(request):
             # username = request.POST.get("username")
             # password = request.POST.get("password")
             # 验证登录可以使用django自带的用户认证系统 认证成功返回用户 失败返回 None
-            user = authenticate(username = username,password = password)
+            # user = authenticate(username = username,password = password)
+            user = User.objects.get(username=username)
             print(user)
-            if user:
+            print(user.password)
+            # 因为使用表单类用户的密码是未加密状态，不能使用django登录认证系统
+            if user.password == password:
+            # if user:
                 # 认证成功 生成cookie
                 lin(request, user)
 

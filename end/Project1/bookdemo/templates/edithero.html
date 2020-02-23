@@ -8,7 +8,7 @@
 <div class="container">
 
     <form action="#" method="post">
-
+{% csrf_token %}
         人物姓名：<input type="text" name="heroname" value={{hero.name}}>
         <br>
         人物描述：<input type="text" name="content" value={{hero.content}}>

@@ -23,7 +23,7 @@
 
     {% for b in books%}
     <li>
-        <a href="{% url 'booktest:detail' b.id %}">{{b.id}}--{{b.title}}--{{b.price}}--{{b.pub_date}}</a>
+        <a href="{% url 'booktest:detail' b.id %}">{{b.id}}--{{b.title}}--{{b.price}}元--{{b.pub_date|date:'Y-m-d'}}</a>
         <button><a href="{% url 'booktest:delbook' b.id%}">删除该书籍</a></button>
         <button><a href="{% url 'booktest:editbook' b.id%}">修改</a></button>
 
