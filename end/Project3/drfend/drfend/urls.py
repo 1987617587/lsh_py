@@ -14,9 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
+from shop.views import *
+# 引入DRF自带的路由类
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+# 可以通过router默认路由注册资源
+router.register('category', CategoryViewSets)
+router.register('good', GoodViewsSets)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('shop.urls')),
+    path('api/v1/', include(router.urls)),
+
+    # 为了在DRF路由调试页面 需要引入以下路由
+    # path('', include('rest_framework.urls')),
 ]
