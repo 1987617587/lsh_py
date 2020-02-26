@@ -12,7 +12,8 @@ class Category(models.Model):
 class Good(models.Model):
     name = models.CharField(max_length=20, verbose_name="商品名称")
     desc = models.CharField(max_length=100, null=True, blank=True, verbose_name="商品描述")
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="分类")
+    # 在序列化管理模型时 一定要声明related_name
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="分类", related_name='goods')
 
     def __str__(self):
         return self.name
