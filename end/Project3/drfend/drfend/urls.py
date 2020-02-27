@@ -18,6 +18,8 @@ from django.urls import path, include
 from shop.views import *
 # 引入DRF自带的路由类
 from rest_framework import routers
+# 引入API文档路由
+from rest_framework.documentation import include_docs_urls
 
 router = routers.DefaultRouter()
 # 可以通过router默认路由注册资源
@@ -28,7 +30,8 @@ router.register('good', GoodViewsSets)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(router.urls)),
-
+    # API文档地址
+    path('api/v1/docs',include_docs_urls(title='RestFulAPI',description='RestFulAPI v1')),
     # 为了在DRF路由调试页面 需要引入以下路由
-    # path('', include('rest_framework.urls')),
+    path('', include('rest_framework.urls')),
 ]
