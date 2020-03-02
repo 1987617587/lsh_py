@@ -13,31 +13,32 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import url
 from django.views.static import serve
 
 from drfend.settings import MEDIA_ROOT
 from shop.views import *
 # 引入DRF自带的路由类
 from rest_framework import routers
-# 引入API文档路由
-from rest_framework.documentation import include_docs_urls
 
 router = routers.DefaultRouter()
 # 可以通过router默认路由注册资源
-router.register('categorys', CategoryViewSets)
+router.register('categories', CategoryViewSets)
 router.register('goods', GoodViewsSets)
-router.register('imgs', GoodImgsViewsSets)
+router.register('images', GoodImgsViewsSets)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/', include(router.urls)),
-    # url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
-    url('media/(?P<path>.*)', serve, {'document_root': MEDIA_ROOT}),
-    # API文档地址
-    path('api/v1/docs', include_docs_urls(title='RestFulAPI', description='RestFulAPI v1')),
+    # path('api/v1/', include(router.urls)),
+    path('', include(router.urls)),
+
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
+    # url(r'^category_list/$', category_list, name="category_list"),
+    # url(r'^category_detail/(\d+)/$', category_detail, name="category_detail"),
+    # url(r'^category_list/$', CategoryListView.as_view(), name="category_list"),
+    # url(r'^category_detail/(?P<pk>\d+)/$', CategoryDetailView.as_view(), name="category_detail"),
     # 为了在DRF路由调试页面 需要引入以下路由
-    path('', include('rest_framework.urls')),
+    # path('', include('rest_framework.urls')),
 ]

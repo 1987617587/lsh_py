@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-u(jalqm6w%2pifl))7qxkbp6=m#f-9d5860djdo_1-)y_fh2c'
+SECRET_KEY = '&cziudygbm+g!7jcj)-trok%u(+lqh&qg_w&(4&w2cjdb4_=*+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -115,21 +115,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIAFILES_DIRS = [os.path.join(BASE_DIR, 'media')]
 
-
-# 在此次对djangoRestFrameWork重新配置
-
-REST_FRAMEWORK = {
-    # 'DEFAULT_RENDERER_CLASSES': [
-    #     'rest_framework.renderers.JSONRenderer',
-    #     'rest_framework.renderers.TemplateHTMLRenderer',
-    # ],
-    # 'DEFAULT_PARSER_CLASSES': [
-    #     'rest_framework.parsers.JSONParser',
-    #     'rest_framework.parsers.FormParser',
-    #     'rest_framework.parsers.MultiPartParser',
-    # ],
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.AutoSchema',
-}
+AUTH_USER_MODEL = "shop.User"
