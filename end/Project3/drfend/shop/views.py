@@ -48,3 +48,16 @@ class GoodViewsSets(viewsets.ModelViewSet):
 class GoodImgsViewsSets(viewsets.ModelViewSet):
     queryset = GoodImgs.objects.all()
     serializer_class = GoodImgsSerializer
+
+
+class UserViewsSets(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+    # 添加自定义注册路由
+    @action(methods=['POST'], detail=False)
+    def register(self, request):
+        seria = UserRegisterSerializer(data=request.data)
+        seria.is_valid(raise_exception=True)
+        seria.save()
+        return Response("创建成功")

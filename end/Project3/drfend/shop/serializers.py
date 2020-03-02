@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import *
 
+
 class GoodSerializer2(serializers.ModelSerializer):
     # 可以在序列化时指定字段  在多方 使用source = 模型名.字段名
     # read_only = True 表示不能更改(GET显示 POST不显示)
@@ -177,3 +178,61 @@ class GoodSerializer(serializers.Serializer):
         instance.category = validated_data.get("category", instance.category)
         instance.save()
         return instance
+
+
+class UserSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(max_length=20, min_length=2, error_messages={
+        "max_length": "最长不能超过20个字",
+        "min_length": "最短不能小于2个字",
+    }, help_text="请输入用户名", label="用户名")
+    password = serializers.CharField(max_length=20, min_length=2, error_messages={
+        "max_length": "最长不能超过20个字",
+        "min_length": "最短不能小于2个字",
+    }, help_text="请输入密码", label="密码")
+    email = serializers.CharField(max_length=20, min_length=2, error_messages={
+        "max_length": "最长不能超过20个字",
+        "min_length": "最短不能小于9个字",
+    }, help_text="请输入邮箱", label="邮箱")
+
+    class Meta:
+        model = User
+        # fields = ('','','')
+        fields = ('username', 'password', 'email')
+
+
+class UserRegisterSerializer(serializers.Serializer):
+    username = serializers.CharField(max_length=20, min_length=2, error_messages={
+        "max_length": "最长不能超过20个字",
+        "min_length": "最短不能小于2个字",
+    }, help_text="请输入用户名", label="用户名")
+    password = serializers.CharField(max_length=20, min_length=2, error_messages={
+        "max_length": "最长不能超过20个字",
+        "min_length": "最短不能小于2个字",
+    }, help_text="请输入密码", label="用户名")
+    password2 = serializers.CharField(max_length=20, min_length=2, error_messages={
+        "max_length": "最长不能超过20个字",
+        "min_length": "最短不能小于2个字",
+    }, help_text="请重复输入密码", label="重复密码")
+
+    # 校检函数 此时data = password2
+    # def validate_password2(self, data):
+    #     # 此时self内存储的数据还不可以使用  所以此处无法验证重复密码
+    #     print(data,self.data.get('password'),"++++")
+    #     if data == self.data.get('password'):
+    #         raise serializers.ValidationError('密码不一致')
+    #     else:
+    #         print("s密码一致")
+    #         return data
+    def validate(self, attrs):
+        print("等待校检的数据", attrs)
+        if attrs["password"] != attrs["password2"]:
+            raise serializers.ValidationError('密码不一致')
+        else:
+            del attrs["password2"]
+            return attrs
+
+    def create(self, validated_data):
+        print("准备注册的数据", validated_data)
+        return User.objects.create_user(username=validated_data.get("username"),
+                                        email=validated_data.get("email"),
+                                        password=validated_data.get("password"))
