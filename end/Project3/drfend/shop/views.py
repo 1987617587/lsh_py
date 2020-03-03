@@ -1,7 +1,7 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response
-
+from rest_framework import mixins
 from .models import *
 from .serializers import *
 
@@ -38,6 +38,17 @@ class CategoryViewSets(viewsets.ModelViewSet):
     def get_serializer_class(self):
         return CategorySerializer
 
+    # 用户未登录 不显示分类列表 优先级高于全局配置
+    # permission_classes = [permissions.IsAdminUser]
+
+    # 超级管理员才能创建分类 普通用户只能查看
+    def get_permissions(self):
+        if self.action == "create" or self.action == "update" or self.action == "partial_update" or \
+                self.action == "destory":
+            return [permissions.IsAdminUser()]
+        else:
+            return []
+
 
 class GoodViewsSets(viewsets.ModelViewSet):
     queryset = Good.objects.all()
@@ -50,7 +61,12 @@ class GoodImgsViewsSets(viewsets.ModelViewSet):
     serializer_class = GoodImgsSerializer
 
 
-class UserViewsSets(viewsets.ModelViewSet):
+# class UserViewsSets(viewsets.ModelViewSet):
+class UserViewsSets1(viewsets.GenericViewSet, mixins.RetrieveModelMixin, mixins.UpdateModelMixin,
+                     mixins.DestroyModelMixin):
+    """
+    声明用户操作 获取 更新 删除
+    """
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -60,4 +76,20 @@ class UserViewsSets(viewsets.ModelViewSet):
         seria = UserRegisterSerializer(data=request.data)
         seria.is_valid(raise_exception=True)
         seria.save()
-        return Response("创建成功")
+        # return Response("创建成功")
+        return Response(seria.data, status=status.HTTP_201_CREATED)
+
+
+class UserViewsSets(viewsets.GenericViewSet, mixins.RetrieveModelMixin, mixins.UpdateModelMixin,
+                    mixins.DestroyModelMixin):
+    """
+    声明用户操作 获取 更新 删除
+    此处更新的用户密码是没有加密的
+    """
+    queryset = User.objects.all()
+
+    def get_serializer_class(self):
+        print("", self.action)
+        if self.action == "create" :
+            return UserRegisterSerializer
+        return UserSerializer

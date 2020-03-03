@@ -118,4 +118,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIAFILES_DIRS = [os.path.join(BASE_DIR, 'media')]
 
+# 此处可以对DRF重写配置
+# 全局配置
+# REST_FRAMEWORK = {
+#     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.AutoSchema',
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.schemas.AllowAny',
+#     ],
+# }
+
 AUTH_USER_MODEL = "shop.User"
