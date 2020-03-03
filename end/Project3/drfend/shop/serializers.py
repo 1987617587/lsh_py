@@ -256,3 +256,9 @@ class UserRegisterSerializer(serializers.Serializer):
         return User.objects.create_user(username=validated_data.get("username"),
                                         email=validated_data.get("email"),
                                         password=validated_data.get("password"))
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = "__all__"

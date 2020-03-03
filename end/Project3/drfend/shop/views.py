@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import mixins
 from .models import *
 from .serializers import *
+from . import permissions as mypermissions
 
 
 class CategoryViewSets(viewsets.ModelViewSet):
@@ -45,7 +46,9 @@ class CategoryViewSets(viewsets.ModelViewSet):
     def get_permissions(self):
         if self.action == "create" or self.action == "update" or self.action == "partial_update" or \
                 self.action == "destory":
-            return [permissions.IsAdminUser()]
+            return [permissions.IsAdminUser()]  # 必须是超级管理员
+            # return [permissions.IsAuthenticatedOrReadOnly()]  # 未登录只读，登陆后可修改
+            # return [mypermissions.CategoryPermission()]  # 使用自定义权限类
         else:
             return []
 
@@ -90,6 +93,25 @@ class UserViewsSets(viewsets.GenericViewSet, mixins.RetrieveModelMixin, mixins.U
 
     def get_serializer_class(self):
         print("", self.action)
-        if self.action == "create" :
+        if self.action == "create":
             return UserRegisterSerializer
         return UserSerializer
+
+
+class OrderViewsSets(viewsets.ModelViewSet):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+
+    # permission_classes = [permissions.OrdersPermission]
+
+    def get_permissions(self):
+        print("当前http方法为", self.action)
+        if self.action == "create":
+            return [permissions.IsAuthenticated()]
+        elif self.action == "update" or self.action == "partial_update" or \
+                self.action == 'retrieve' or self.action == "destroy":
+            return [mypermissions.OrdersPermission()]
+        else:
+            return [permissions.IsAdminUser()]
+
+
