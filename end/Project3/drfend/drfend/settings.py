@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop',
     'rest_framework',
+    'rest_framework_jwt',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,21 @@ MEDIAFILES_DIRS = [os.path.join(BASE_DIR, 'media')]
 REST_FRAMEWORK = {
     # Schema
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.AutoSchema',
+    # 全局配置 优先级高于视图类的配置
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 使用JWT认证 json web token 不属于在数据库中存放 通过特殊的加密算法进行加密
+        # 配置
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+
+        'rest_framework.authentication.SessionAuthentication',
+        # Basic认证
+        # 将请求中携带的 类似于basic特殊编码的字符串 进行解码得到相应的用户
+        'rest_framework.authentication.BasicAuthentication'
+    ],
+
 }
 
 AUTH_USER_MODEL = "shop.User"

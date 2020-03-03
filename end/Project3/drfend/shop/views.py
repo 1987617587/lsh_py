@@ -50,7 +50,7 @@ class CategoryViewSets(viewsets.ModelViewSet):
             # return [permissions.IsAuthenticatedOrReadOnly()]  # 未登录只读，登陆后可修改
             # return [mypermissions.CategoryPermission()]  # 使用自定义权限类
         else:
-            return []
+            return [permissions.IsAuthenticated()]
 
 
 class GoodViewsSets(viewsets.ModelViewSet):

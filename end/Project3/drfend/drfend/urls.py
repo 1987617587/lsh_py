@@ -20,6 +20,10 @@ from django.views.static import serve
 
 from drfend.settings import MEDIA_ROOT
 from shop.views import *
+
+# 添加JWT路由
+# from rest_framework_jwt import
+
 # 引入DRF自带的路由类
 from rest_framework import routers
 
@@ -42,5 +46,7 @@ urlpatterns = [
     # url(r'^category_list/$', CategoryListView.as_view(), name="category_list"),
     # url(r'^category_detail/(?P<pk>\d+)/$', CategoryDetailView.as_view(), name="category_detail"),
     # 为了在DRF路由调试页面 需要引入以下路由
-    # path('', include('rest_framework.urls')),
+    path('', include('rest_framework.urls')),
+
+    # url()
 ]
