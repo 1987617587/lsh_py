@@ -1,3 +1,13 @@
 #  .gitignore忽略列表文件 凡是能够匹配到以下规则的文件 git仓库不进行管理
 end/project1/.idea
 end/project1/venv
+end/project2/.idea
+end/project2/venv
+end/project2/blog/extra_apps
+end/project3/.idea
+end/project3/venv
+end/project4/.idea
+end/project4/venv
+end/project5/.idea
+end/project5/venv
+front/vue-demo/node_modules
