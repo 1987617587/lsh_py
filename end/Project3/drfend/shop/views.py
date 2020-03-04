@@ -2,9 +2,13 @@ from rest_framework import viewsets, status, permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import mixins
+
+from shop.pagination import MyPagination
 from .models import *
 from .serializers import *
+from .throttling import *
 from . import permissions as mypermissions
+from rest_framework.throttling import AnonRateThrottle, UserRateThrottle
 
 
 class CategoryViewSets(viewsets.ModelViewSet):
@@ -15,6 +19,11 @@ class CategoryViewSets(viewsets.ModelViewSet):
     """
 
     queryset = Category.objects.all()
+    # 局部配置 限制访问频次
+    # throttle_classes = [AnonRateThrottle, UserRateThrottle]
+    throttle_classes = [MyAnon, MyUser]
+    pagination_class = MyPagination
+
 
     # 添加指定路由
     @action(methods=['GET'], detail=False)
@@ -50,7 +59,10 @@ class CategoryViewSets(viewsets.ModelViewSet):
             # return [permissions.IsAuthenticatedOrReadOnly()]  # 未登录只读，登陆后可修改
             # return [mypermissions.CategoryPermission()]  # 使用自定义权限类
         else:
-            return [permissions.IsAuthenticated()]
+            # 安全操作也必须是登录之后
+            # return [permissions.IsAuthenticated()]
+            # 允许未登录安全操作
+            return []
 
 
 class GoodViewsSets(viewsets.ModelViewSet):
@@ -68,7 +80,7 @@ class GoodImgsViewsSets(viewsets.ModelViewSet):
 class UserViewsSets1(viewsets.GenericViewSet, mixins.RetrieveModelMixin, mixins.UpdateModelMixin,
                      mixins.DestroyModelMixin):
     """
-    声明用户操作 获取 更新 删除
+    声明用户操作  获取 添加 更新 删除
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer

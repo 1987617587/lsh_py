@@ -129,6 +129,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+
         # 使用JWT认证 json web token 不属于在数据库中存放 通过特殊的加密算法进行加密
         # 配置
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
@@ -139,6 +141,29 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication'
     ],
 
+    # 配置全局频次限制类
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+    ],
+    # Throttling
+    'DEFAULT_THROTTLE_RATES': {
+        'user': '5/minutes',
+        'anon': '1/minutes',
+    },
+    # Generic view behavior
+    # http://127.0.0.1:8000/categories/?limit=2&offset=1
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    # http://127.0.0.1:8000/categories/?page=30
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # Pagination
+    'PAGE_SIZE': 2,
+
 }
 
 AUTH_USER_MODEL = "shop.User"
+AUTHENTICATION_BACKENDS = ['shop.authbackend.MyLoginBackend']
+
+# from django.core.paginator import Paginator, Page
+# django分页 Paginator(分页器)  Page（每一个页）
+# DRF 提供的pageination 建立在django基础上进行深层封装
