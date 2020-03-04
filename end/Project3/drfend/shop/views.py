@@ -1,7 +1,7 @@
 from rest_framework import viewsets, status, permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response
-# 过滤类
+# 引入过滤类
 from django_filters.rest_framework.backends import DjangoFilterBackend
 
 from rest_framework import mixins, filters

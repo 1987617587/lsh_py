@@ -39,9 +39,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_jwt',
     'django_filters',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -171,3 +174,7 @@ AUTHENTICATION_BACKENDS = ['shop.authbackend.MyLoginBackend']
 # from django.core.paginator import Paginator, Page
 # django分页 Paginator(分页器)  Page（每一个页）
 # DRF 提供的pageination 建立在django基础上进行深层封装
+
+
+# 允许跨域
+CORS_ORIGIN_ALLOW_ALL = True
