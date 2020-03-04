@@ -178,3 +178,5 @@ AUTHENTICATION_BACKENDS = ['shop.authbackend.MyLoginBackend']
 
 # 允许跨域
 CORS_ORIGIN_ALLOW_ALL = True
+
+
