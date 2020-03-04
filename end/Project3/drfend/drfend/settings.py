@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'shop',
     'rest_framework',
     'rest_framework_jwt',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -148,8 +149,8 @@ REST_FRAMEWORK = {
     ],
     # Throttling
     'DEFAULT_THROTTLE_RATES': {
-        'user': '5/minutes',
-        'anon': '1/minutes',
+        'user': '500/minutes',
+        'anon': '100/minutes',
     },
     # Generic view behavior
     # http://127.0.0.1:8000/categories/?limit=2&offset=1
@@ -158,6 +159,9 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     # Pagination
     'PAGE_SIZE': 2,
+
+    # 全局过滤
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.backends.DjangoFilterBackend'],
 
 }
 

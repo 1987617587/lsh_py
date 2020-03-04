@@ -1,7 +1,10 @@
 from rest_framework import viewsets, status, permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework import mixins
+# 过滤类
+from django_filters.rest_framework.backends import DjangoFilterBackend
+
+from rest_framework import mixins, filters
 
 from shop.pagination import MyPagination
 from .models import *
@@ -19,11 +22,20 @@ class CategoryViewSets(viewsets.ModelViewSet):
     """
 
     queryset = Category.objects.all()
+
     # 局部配置 限制访问频次
     # throttle_classes = [AnonRateThrottle, UserRateThrottle]
     throttle_classes = [MyAnon, MyUser]
+
     pagination_class = MyPagination
 
+    # 局部过滤配置
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
+    filterset_fields = ['name']
+    # 局部搜索配置
+    search_fields = ["name"]
+    # 局部排序配置
+    ordering_fields = ["id"]
 
     # 添加指定路由
     @action(methods=['GET'], detail=False)
@@ -125,5 +137,3 @@ class OrderViewsSets(viewsets.ModelViewSet):
             return [mypermissions.OrdersPermission()]
         else:
             return [permissions.IsAdminUser()]
-
-
