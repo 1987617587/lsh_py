@@ -1,9 +1,11 @@
 <template>
 	<div class="home">
-		<img alt="Vue logo" src="../assets/logo.png">
+		<!-- <img alt="Vue logo" src="../assets/logo.png"> -->
 		<!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 		<div>
-			<button @click="getCategories()">发起请求</button>
+			<van-nav-bar title="首页" right-text="我的" @click-right="onClickRight" />
+
+			<!-- 			<button @click="getCategories()">发起请求</button>
 			<br>
 			<label for="">分类名</label><input type="text" v-model="categoryname">
 			<br>
@@ -19,10 +21,18 @@
 			<br>
 			<label for="">密码</label><input type="text" v-model="password">
 			<br>
-			<button @click="getToken()">请求Token</button>
+			<button @click="getToken()">请求Token</button> -->
 		</div>
 		<div class="categories">
-
+			<van-cell v-for="(item,index) in categories" :title='item.name' is-link :to="'/categories/'+item.id +'/'" />
+			
+			<br>
+		</div>
+		<div class="updateCategory">
+			<label for="">分类名</label><input type="text" v-model="categoryname">
+			<br>
+			<button @click="createCategory()">发起创建分类请求</button>
+			<br>
 		</div>
 	</div>
 </template>
@@ -35,21 +45,31 @@
 		name: 'Home',
 		data() {
 			return {
-				username: "",
-				password: "",
+				// username: "",
+				// password: "",
 				categoryname: "",
-				newcategoryname:"",
-				oldcategoryid:"",
+				// newcategoryname: "",
+				// oldcategoryid: "",
+				categories: [],
 
 			}
 		},
 		components: {
 			// HelloWorld
 		},
+		created() {
+			this.getCategories()
+		},
 		methods: {
+			onClickRight() {
+				this.$router.push("/login")
+			},
 			getCategories() {
 				this.$api.getCategorylist().then(res => {
 					console.log("得到分类列表", res);
+					if (res.status = 200) {
+						this.categories = res.data
+					}
 				}).catch(err => {
 					console.log("发生错误", err);
 				})
@@ -69,8 +89,8 @@
 					password: this.password
 				}).then(res => {
 					console.log("得到Token", res);
-					this.$jsCookie.set("refresh",res.data.refresh)
-					this.$jsCookie.set("access",res.data.access)
+					this.$jsCookie.set("refresh", res.data.refresh)
+					this.$jsCookie.set("access", res.data.access)
 				}).catch(err => {
 					console.log("发生错误", err);
 				})
@@ -95,6 +115,7 @@
 						name: this.categoryname
 					}).then(res => {
 						console.log("添加分类成功", res);
+						this.categories.push(res.data)
 					}).catch(err => {
 						console.log("发生错误", err);
 					})
@@ -117,18 +138,17 @@
 					console.log("分类名不能为空");
 				}
 			},
-			updateCategory(){
-				if(this.oldcategoryid!="" & this.newcategoryname!=""){
+			updateCategory() {
+				if (this.oldcategoryid != "" & this.newcategoryname != "") {
 					this.$api.modifyCategory({
 						name: this.newcategoryname,
-						id:this.oldcategoryid
+						id: this.oldcategoryid
 					}).then(res => {
 						console.log("修改分类成功", res);
 					}).catch(err => {
 						console.log("发生错误", err);
 					})
-				}
-				else{
+				} else {
 					console.log("不允许为空")
 				}
 			}

@@ -25,6 +25,99 @@ class CustomSerializer(serializers.RelatedField):
     def to_representation(self, value):
         return str(value.id) + '++' + value.name + "--" + value.desc
 
+class GoodImgsSerializer(serializers.Serializer):
+    img = serializers.ImageField()
+    good = serializers.CharField(source='good.name')
+
+    #
+    # def validate_good(self, good):
+    #     try:
+    #         # Good.objects.get(name=good["name"])
+    #         print('当前商品',good)
+    #         Good.objects.get(name=good)
+    #         good = Good.objects.get(name=good)
+    #         print('转换之后',good)
+    #
+    #     except:
+    #         raise serializers.ValidationError("输入的分类名不存在，请先联系管理员添加分类")
+    #     return good
+
+    def validate(self, attrs):
+        print("收到的数据", attrs)
+        try:
+            # 为了拿到分类名，我们需要以下操作
+            g = Good.objects.get(name=attrs["good"]["name"])
+        except:
+            # 如果分类不存在 创建分类
+            g = Good.objects.create(name=attrs["good"]["name"])
+
+        attrs["good"] = g
+        return attrs
+
+    def create(self, validated_data):
+        instance = GoodImgs.objects.create(**validated_data)
+        return instance
+
+    def update(self, instance, validated_data):
+        print("-----")
+        print(instance)
+        print(validated_data)
+
+        instance.name = validated_data.get("name", instance.name)
+        # 取到新的category分类实例就赋值，取不到赋给原来的分类实例
+        instance.category = validated_data.get("category", instance.category)
+        instance.save()
+        return instance
+
+
+class GoodSerializer(serializers.Serializer):
+    name = serializers.CharField(max_length=20, min_length=2, error_messages={
+        "max_length": "最长不能超过20个字",
+        "min_length": "最短不能小于2个字",
+    }, help_text="请输入商品名", label="商品名称")
+    # category = CategorySerializer(label="所属分类")
+    imgs = GoodImgsSerializer(label="包含图片", read_only=True, many=True)
+
+    def validate_category(self, category):
+        """
+        处理category 分类名不存在，停止操作
+        :param category: 处理的原始值
+        :return: 返回新值
+        """
+        try:
+            Category.objects.get(name=category["name"])
+        except:
+            raise serializers.ValidationError("输入的分类名不存在，请先联系管理员添加分类")
+        return category
+
+    def validate(self, attrs):
+        print("收到的数据", attrs)
+        try:
+            # 为了拿到分类名，我们需要以下操作
+            c = Category.objects.get(name=attrs["category"]["name"])
+        except:
+            # 如果分类不存在 创建分类
+            c = Category.objects.create(name=attrs["category"]["name"])
+
+        attrs["category"] = c
+        return attrs
+
+    def create(self, validated_data):
+        instance = Good.objects.create(**validated_data)
+        return instance
+
+    def update(self, instance, validated_data):
+        print("-----")
+        print(instance)
+        print(validated_data)
+        # -----
+        # mibook
+        # {'name': 'mibook12', 'category': <Category: 笔记本电脑>}
+        instance.name = validated_data.get("name", instance.name)
+        # 取到新的category分类实例就赋值，取不到赋给原来的分类实例
+        instance.category = validated_data.get("category", instance.category)
+        instance.save()
+        return instance
 
 class CategorySerializer(serializers.Serializer):
     """
@@ -35,6 +128,7 @@ class CategorySerializer(serializers.Serializer):
         "max_length": '最多10个字',
         "min_length": '最少2个字',
     }, label="分类名称", help_text="请输入分类名")
+    goods = GoodSerializer(many=True,read_only=True)
 
     def create(self, validated_data):
         """
@@ -86,99 +180,6 @@ class CategorySerializer1(serializers.ModelSerializer):
         fields = ('id', 'name', 'goods')
 
 
-class GoodImgsSerializer(serializers.Serializer):
-    img = serializers.ImageField()
-    good = serializers.CharField(source='good.name')
-
-    #
-    # def validate_good(self, good):
-    #     try:
-    #         # Good.objects.get(name=good["name"])
-    #         print('当前商品',good)
-    #         Good.objects.get(name=good)
-    #         good = Good.objects.get(name=good)
-    #         print('转换之后',good)
-    #
-    #     except:
-    #         raise serializers.ValidationError("输入的分类名不存在，请先联系管理员添加分类")
-    #     return good
-
-    def validate(self, attrs):
-        print("收到的数据", attrs)
-        try:
-            # 为了拿到分类名，我们需要以下操作
-            g = Good.objects.get(name=attrs["good"]["name"])
-        except:
-            # 如果分类不存在 创建分类
-            g = Good.objects.create(name=attrs["good"]["name"])
-
-        attrs["good"] = g
-        return attrs
-
-    def create(self, validated_data):
-        instance = GoodImgs.objects.create(**validated_data)
-        return instance
-
-    def update(self, instance, validated_data):
-        print("-----")
-        print(instance)
-        print(validated_data)
-
-        instance.name = validated_data.get("name", instance.name)
-        # 取到新的category分类实例就赋值，取不到赋给原来的分类实例
-        instance.category = validated_data.get("category", instance.category)
-        instance.save()
-        return instance
-
-
-class GoodSerializer(serializers.Serializer):
-    name = serializers.CharField(max_length=20, min_length=2, error_messages={
-        "max_length": "最长不能超过20个字",
-        "min_length": "最短不能小于2个字",
-    }, help_text="请输入商品名", label="商品名称")
-    category = CategorySerializer(label="所属分类")
-    imgs = GoodImgsSerializer(label="包含图片", read_only=True, many=True)
-
-    def validate_category(self, category):
-        """
-        处理category 分类名不存在，停止操作
-        :param category: 处理的原始值
-        :return: 返回新值
-        """
-        try:
-            Category.objects.get(name=category["name"])
-        except:
-            raise serializers.ValidationError("输入的分类名不存在，请先联系管理员添加分类")
-        return category
-
-    def validate(self, attrs):
-        print("收到的数据", attrs)
-        try:
-            # 为了拿到分类名，我们需要以下操作
-            c = Category.objects.get(name=attrs["category"]["name"])
-        except:
-            # 如果分类不存在 创建分类
-            c = Category.objects.create(name=attrs["category"]["name"])
-
-        attrs["category"] = c
-        return attrs
-
-    def create(self, validated_data):
-        instance = Good.objects.create(**validated_data)
-        return instance
-
-    def update(self, instance, validated_data):
-        print("-----")
-        print(instance)
-        print(validated_data)
-        # -----
-        # mibook
-        # {'name': 'mibook12', 'category': <Category: 笔记本电脑>}
-        instance.name = validated_data.get("name", instance.name)
-        # 取到新的category分类实例就赋值，取不到赋给原来的分类实例
-        instance.category = validated_data.get("category", instance.category)
-        instance.save()
-        return instance
 
 
 class UserSerializer(serializers.ModelSerializer):

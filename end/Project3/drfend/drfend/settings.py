@@ -22,9 +22,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&cziudygbm+g!7jcj)-trok%u(+lqh&qg_w&(4&w2cjdb4_=*+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+#
+# ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = []
+# 允许所有访问
+DEBUG = False
+
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -155,6 +160,7 @@ REST_FRAMEWORK = {
         'user': '500/minutes',
         'anon': '100/minutes',
     },
+
     # Generic view behavior
     # http://127.0.0.1:8000/categories/?limit=2&offset=1
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
