@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from django.views.static import serve
+from rest_framework.documentation import include_docs_urls
 from rest_framework_simplejwt.views import token_obtain_pair, token_refresh
 from drfend.settings import MEDIA_ROOT
 from shop.views import *
@@ -50,6 +51,7 @@ urlpatterns = [
     # url(r'^category_detail/(?P<pk>\d+)/$', CategoryDetailView.as_view(), name="category_detail"),
     # 为了在DRF路由调试页面 需要引入以下路由
     path('', include('rest_framework.urls')),
-
+    # API文档地址
+    path('docs/', include_docs_urls(title="RestFulAPI", description="RestFulAPI v1")),
     # url()
 ]

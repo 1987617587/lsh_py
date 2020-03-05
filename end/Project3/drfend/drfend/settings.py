@@ -159,9 +159,9 @@ REST_FRAMEWORK = {
     # http://127.0.0.1:8000/categories/?limit=2&offset=1
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     # http://127.0.0.1:8000/categories/?page=30
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    # Pagination
-    'PAGE_SIZE': 2,
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # # Pagination
+    # 'PAGE_SIZE': 2,
 
     # 全局过滤
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.backends.DjangoFilterBackend'],

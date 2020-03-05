@@ -27,7 +27,7 @@ class CategoryViewSets(viewsets.ModelViewSet):
     # throttle_classes = [AnonRateThrottle, UserRateThrottle]
     throttle_classes = [MyAnon, MyUser]
 
-    pagination_class = MyPagination
+    # pagination_class = MyPagination
 
     # 局部过滤配置
     filter_backends = [DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
