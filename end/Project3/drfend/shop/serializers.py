@@ -188,12 +188,12 @@ class UserSerializer(serializers.ModelSerializer):
     #     "min_length": "最短不能小于2个字",
     #     "required": "用户名不能为空"
     # }, help_text="请输入用户名", label="用户名")
-    # password = serializers.CharField(max_length=20, min_length=2, error_messages={
-    #     "max_length": "最长不能超过20个字",
-    #     "min_length": "最短不能小于2个字",
-    #     "required": "密码不能为空"
-    #
-    # }, help_text="请输入密码", label="密码")
+    password = serializers.CharField(write_only=True,max_length=20, min_length=2, error_messages={
+        "max_length": "最长不能超过20个字",
+        "min_length": "最短不能小于2个字",
+        "required": "密码不能为空"
+
+    }, help_text="请输入密码", label="密码")
     # email = serializers.CharField(max_length=20, min_length=2, required=False, error_messages={
     #     "max_length": "最长不能超过20个字",
     #     "min_length": "最短不能小于9个字",
@@ -208,12 +208,15 @@ class UserSerializer(serializers.ModelSerializer):
         # fields = ('username', 'password', 'email')
         # fields = '__all__'
         # 在exclude写入不需要显示的字段
-        exclude = ["user_permissions","groups","password"]
+        # exclude = ["user_permissions","groups","password"]
+        exclude = ["user_permissions","groups"]
 
     def validate(self, attrs):
         if attrs.get("password"):
             attrs["password"] = hashers.make_password(attrs["password"])
         return attrs
+
+
 
 
 class UserRegisterSerializer(serializers.Serializer):
