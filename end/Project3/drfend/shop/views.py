@@ -137,3 +137,23 @@ class OrderViewsSets(viewsets.ModelViewSet):
             return [mypermissions.OrdersPermission()]
         else:
             return [permissions.IsAdminUser()]
+
+
+
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+
+@api_view(['GET'])
+def getuserinfo(request):
+
+    print("hello")
+    print(request)
+    print(request.headers["Authorization"])
+    user = JWTAuthentication().authenticate(request)
+    print("用户",user[0])
+    seria = UserSerializer(instance=user[0])
+    # seria.is_valid(raise_exception=True)
+    # print(seria.data)
+    return Response(seria.data,status=status.HTTP_200_OK)

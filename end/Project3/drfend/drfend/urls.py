@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.http import HttpResponse
 from django.urls import path, include
 from django.views.static import serve
 from rest_framework.documentation import include_docs_urls
@@ -36,10 +37,14 @@ router.register('images', GoodImgsViewsSets)
 router.register('users', UserViewsSets)
 router.register('orders', OrderViewsSets)
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('api/v1/', include(router.urls)),
     path('', include(router.urls)),
+
+    url(r'^userinfo/$', getuserinfo, name='userinfo'),
 
     url(r'^token_login/$', token_obtain_pair, name='login'),
     url(r'^refresh/$', token_refresh, name='refresh'),

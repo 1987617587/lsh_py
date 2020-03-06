@@ -183,31 +183,32 @@ class CategorySerializer1(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    username = serializers.CharField(max_length=20, min_length=2, error_messages={
-        "max_length": "最长不能超过20个字",
-        "min_length": "最短不能小于2个字",
-        "required": "用户名不能为空"
-    }, help_text="请输入用户名", label="用户名")
-    password = serializers.CharField(max_length=20, min_length=2, error_messages={
-        "max_length": "最长不能超过20个字",
-        "min_length": "最短不能小于2个字",
-        "required": "密码不能为空"
-
-    }, help_text="请输入密码", label="密码")
-    email = serializers.CharField(max_length=20, min_length=2, required=False, error_messages={
-        "max_length": "最长不能超过20个字",
-        "min_length": "最短不能小于9个字",
-        "required": "邮箱可以不填"
-
-    }, help_text="请输入邮箱", label="邮箱")
+    # username = serializers.CharField(max_length=20, min_length=2, error_messages={
+    #     "max_length": "最长不能超过20个字",
+    #     "min_length": "最短不能小于2个字",
+    #     "required": "用户名不能为空"
+    # }, help_text="请输入用户名", label="用户名")
+    # password = serializers.CharField(max_length=20, min_length=2, error_messages={
+    #     "max_length": "最长不能超过20个字",
+    #     "min_length": "最短不能小于2个字",
+    #     "required": "密码不能为空"
+    #
+    # }, help_text="请输入密码", label="密码")
+    # email = serializers.CharField(max_length=20, min_length=2, required=False, error_messages={
+    #     "max_length": "最长不能超过20个字",
+    #     "min_length": "最短不能小于9个字",
+    #     "required": "邮箱可以不填"
+    #
+    # }, help_text="请输入邮箱", label="邮箱")
 
     class Meta:
         model = User
         # fields = ('','','')
         # 在fields写入想要显示的字段
-        fields = ('username', 'password', 'email')
+        # fields = ('username', 'password', 'email')
+        # fields = '__all__'
         # 在exclude写入不需要显示的字段
-        # exclude =['','']
+        exclude = ["user_permissions","groups","password"]
 
     def validate(self, attrs):
         if attrs.get("password"):
