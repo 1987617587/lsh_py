@@ -107,7 +107,7 @@ class UserViewsSets1(viewsets.GenericViewSet, mixins.RetrieveModelMixin, mixins.
         return Response(seria.data, status=status.HTTP_201_CREATED)
 
 
-class UserViewsSets(viewsets.GenericViewSet, mixins.RetrieveModelMixin, mixins.UpdateModelMixin,
+class UserViewsSets(viewsets.GenericViewSet,mixins.CreateModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin,
                     mixins.DestroyModelMixin):
     """
     声明用户操作 获取 更新 删除
