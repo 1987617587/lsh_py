@@ -2,7 +2,7 @@
 	
 	<div>
 		<van-nav-bar
-		  title="标题"
+		  title="登录"
 		  left-text="返回"
 		  left-arrow
 		  @click-left="onClickLeft"
@@ -35,6 +35,7 @@
 					console.log("得到Token", res);
 					this.$jsCookie.set("refresh", res.data.refresh)
 					this.$jsCookie.set("access", res.data.access)
+					this.$jsCookie.set("username",this.username);
 					this.$router.push("/")
 				}).catch(err => {
 					console.log("发生错误", err);

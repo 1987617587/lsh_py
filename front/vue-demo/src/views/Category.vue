@@ -10,8 +10,28 @@
 			<!-- <apan v-text="category.name"></apan> -->
 			<br>
 			<ul>
-				<li v-for="(item,index) in category.goods">{{item.name}}</li>
+				<!-- <li v-for="(item,index) in goods">{{item|categorygoods}}</li> -->
+				<!-- <li v-for="(item,index) in goods" v-if="item.category.id == category.id" >{{item.name}}</li> -->
 			</ul>
+			<div class="good" >
+				<van-card
+				v-for="(item,index) in goods" v-if="item.category.id == category.id" 
+				  num="2"
+				  price="2.00"
+				  :desc="item.desc"
+				  :title="item.name"
+				  :thumb="item.images[0].img"
+				>
+				  <div slot="tags">
+				    <van-tag plain type="danger">{{item.category.name}}</van-tag>
+				  </div>
+				  <div slot="footer">
+				    <van-button size="mini">按钮</van-button>
+				    <van-button size="mini">按钮</van-button>
+				  </div>
+				</van-card>
+			</div>
+			
 
 		</div>
 
@@ -23,6 +43,8 @@
 		data() {
 			return {
 				category: null,
+				goods:null,
+				
 
 			}
 		},
@@ -32,9 +54,20 @@
 			}).then(res => {
 				console.log("分类详情", res);
 				this.category = res.data
+				
 			}).catch(err => {
 				console.log("发生错误", err);
 			})
+			this.$api.getgoods({
+				
+			}).then(res => {
+				console.log("商品列表", res);
+				this.goods = res.data
+				
+			}).catch(err => {
+				console.log("发生错误", err);
+			})
+
 		},
 		methods: {
 			onClickLeft() {
@@ -42,6 +75,15 @@
 			},
 			onClickRight() {
 				this.$toast('按钮');
+			}
+		},
+		filters:{
+			categorygoods(goods){
+				if(goods.category.id == this.category.id){
+					console.log(goods);
+				}
+				
+				// return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
 			}
 		}
 	}

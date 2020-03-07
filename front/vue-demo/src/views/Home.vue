@@ -62,7 +62,11 @@
 		},
 		methods: {
 			onClickRight() {
-				this.$router.push("/login")
+				if(this.$jsCookie.get("access")){
+					this.$router.push("/usercenter")
+				}else{
+					this.$router.push("/login")
+				}
 			},
 			getCategories() {
 				this.$api.getCategorylist().then(res => {
