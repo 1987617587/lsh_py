@@ -60,14 +60,14 @@ class Carimgs(models.Model):
 
 
 # 用户类
-# class User(AbstractUser):
-#     tel = models.CharField(max_length=11, verbose_name="手机号")
-#
-#
-# # 订单类
-# class Order(models.Model):
-#     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="用户")
-#     cars = models.ManyToManyField(Car, related_name="所租车辆")
-#
-#     def __str__(self):
-#         return self.user.username + "的订单"
+class User(AbstractUser):
+    tel = models.CharField(max_length=11, verbose_name="手机号")
+
+
+# 订单类
+class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="用户")
+    cars = models.ManyToManyField(Car, related_name="所租车辆")
+
+    def __str__(self):
+        return self.user.username + "的订单"

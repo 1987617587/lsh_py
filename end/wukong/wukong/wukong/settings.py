@@ -123,3 +123,61 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIAFILES_DIRS = [os.path.join(BASE_DIR, 'media')]
+
+
+# 全局配置
+# 此处可以对DjangoRestFrameWork重新配置
+REST_FRAMEWORK = {
+    # Schema
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.AutoSchema',
+    # # 全局配置 优先级高于视图类的配置
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.AllowAny',
+    # ],
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    #
+    #     # 使用JWT认证 json web token 不属于在数据库中存放 通过特殊的加密算法进行加密
+    #     # 配置
+    #     'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    #
+    #     'rest_framework.authentication.SessionAuthentication',
+    #     # Basic认证
+    #     # 将请求中携带的 类似于basic特殊编码的字符串 进行解码得到相应的用户
+    #     'rest_framework.authentication.BasicAuthentication'
+    # ],
+    #
+    # # 配置全局频次限制类
+    # 'DEFAULT_THROTTLE_CLASSES': [
+    #     'rest_framework.throttling.AnonRateThrottle',
+    #     'rest_framework.throttling.UserRateThrottle',
+    # ],
+    # # Throttling
+    # 'DEFAULT_THROTTLE_RATES': {
+    #     'user': '500/minutes',
+    #     'anon': '100/minutes',
+    # },
+    #
+    # # Generic view behavior
+    # # http://127.0.0.1:8000/categories/?limit=2&offset=1
+    # # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    # # http://127.0.0.1:8000/categories/?page=30
+    # # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # # # Pagination
+    # # 'PAGE_SIZE': 2,
+    #
+    # # 全局过滤
+    # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.backends.DjangoFilterBackend'],
+
+}
+
+AUTH_USER_MODEL = "rentcar.User"
+# AUTHENTICATION_BACKENDS = ['shop.authbackend.MyLoginBackend']
+#
+# # from django.core.paginator import Paginator, Page
+# # django分页 Paginator(分页器)  Page（每一个页）
+# # DRF 提供的pageination 建立在django基础上进行深层封装
+#
+#
+# # 允许跨域
+# CORS_ORIGIN_ALLOW_ALL = True

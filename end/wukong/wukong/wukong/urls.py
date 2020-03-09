@@ -13,11 +13,30 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
+from django.views.static import serve
+from rest_framework import routers
+from rest_framework.documentation import include_docs_urls
+
+from rentcar.views import *
+from wukong.settings import MEDIA_ROOT
+
+router = routers.DefaultRouter()
+router.register('shops', ShopViewSet)
+router.register('cars', CarViewSet)
+router.register('carimgs', CarImagesViewSet)
+router.register('users', UserViewsSets)
+router.register('orders', OrderViewsSets)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('rest_framework.urls')),
+    url('', include(router.urls)),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
+    # API文档地址
+    path('docs/', include_docs_urls(title="RestFulAPI", description="RestFulAPI v1")),
 
 ]
