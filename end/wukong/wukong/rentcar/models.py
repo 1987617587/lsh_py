@@ -13,7 +13,8 @@ class Location(models.Model):
 class City(models.Model):
     name = models.CharField(max_length=6, verbose_name="城市")
     coordinate = models.OneToOneField(Location, on_delete=models.CASCADE, verbose_name='坐标', related_name='location')
-
+    def __str__(self):
+        return self.name
 
 class Shop(models.Model):
     name = models.CharField(max_length=20, verbose_name="门店名称")
@@ -23,6 +24,9 @@ class Shop(models.Model):
     from_time = models.TimeField(verbose_name="上班时间")
     to_time = models.TimeField(verbose_name="下班时间")
     city = models.ForeignKey(City, models.CASCADE, verbose_name="所在城市", related_name="city")
+
+    def __str__(self):
+        return self.name
 
 
 # 类型 MVP SUV ..
@@ -42,6 +46,9 @@ class Prices(models.Model):
     avg = models.PositiveIntegerField(verbose_name="元/日均")
     minimum = models.PositiveIntegerField(verbose_name="最短起租时间")
 
+    def __str__(self):
+        return str(self.avg) + "元/日均"
+
 
 # 车辆
 class Car(models.Model):
@@ -50,13 +57,20 @@ class Car(models.Model):
     displacement = models.CharField(max_length=10, verbose_name="排放量")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="分类", related_name='cars')
     transmission_name = models.CharField(max_length=10, verbose_name="驾驶方式")
-    price = models.ManyToManyField(Prices, verbose_name="价格")
+    price = models.ForeignKey(Prices, on_delete=models.CASCADE, verbose_name="价格", related_name='cars')
+    shop = models.ForeignKey(Shop, on_delete=models.CASCADE, verbose_name="所属门店", related_name='cars')
+
+    def __str__(self):
+        return self.name
 
 
 # 车辆图片
 class Carimgs(models.Model):
     img = models.ImageField(upload_to="carimgs")
     car = models.ForeignKey(Car, on_delete=models.CASCADE, verbose_name='所属车辆', related_name="imgs")
+
+    def __str__(self):
+        return self.car.name+"的图片"
 
 
 # 用户类
