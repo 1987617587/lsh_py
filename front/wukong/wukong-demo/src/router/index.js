@@ -5,6 +5,7 @@ import Indent from '../views/Indent.vue'
 import Mine from '../views/Mine.vue'
 import Service from '../views/Service.vue'
 import Login from '../views/Login.vue'
+import Regist from '../views/Regist.vue'
 import More from '../views/More.vue'
 import Call from '../views/Call.vue'
 import Agreement from '../views/Agreement.vue'
@@ -42,6 +43,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/regist',
+    name: 'regist',
+    component: Regist
   },
   {
     path: '/coupon',

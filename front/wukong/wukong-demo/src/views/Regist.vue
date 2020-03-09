@@ -5,7 +5,7 @@
 			<van-nav-bar size="large" title="验证手机号">
 				<img @click="onClickLeft" style="width: 50%;position: relative;top: 10px; left: -8px; " slot="left" src="img/ico_back.png"
 				 alt="">
-				 <img @click="onClickRight" style="width: 80%;position: relative;top: 10px; left: -8px; " slot="right" src="img/regist.ico"
+				 <img @click="onClickRight" style="width: 60%;position: relative;top: 10px; left: -8px; " slot="right" src="img/gotologin.ico"
 				  alt="">
 			</van-nav-bar>
 		</div>
@@ -16,6 +16,9 @@
 			</van-cell-group>
 			<van-cell-group>
 				<van-field center type="password" placeholder="密码" left-icon="img/login-user.png" v-model="password" />
+			</van-cell-group>
+			<van-cell-group>
+				<van-field center type="password" placeholder="重复密码" left-icon="img/login-user.png" v-model="password2" />
 			</van-cell-group>
 
 			<van-cell-group>
@@ -38,7 +41,7 @@
 		<div class="next" style="width: 94%;   position: relative; left: 3%; ">
 			<br>
 			<br>
-			<van-button @click="gotologin"  size="large" type="danger">下一步</van-button>
+			<van-button @click="gotoregist"  size="large" type="danger">注册</van-button>
 		</div>
 		<div class="msg">
 			<div class="events-agree-content" style=" padding: 10px; position: relative; left: 6%; width: 86%; color: rgb(178,178,178); font-size:14px  ; text-align: left;">
@@ -74,6 +77,7 @@
 				login: null,
 				username:"",
 				password:"",
+				password2:"",
 
 			};
 		},
@@ -82,18 +86,15 @@
 			// gotoOrder(){
 			// 	this.$router.push('/order')
 			// },
-			gotologin(){
-				this.$api.getToken({
+			gotoregist(){
+				this.$api.regist({
 					username:this.username,
-					password:this.password
+					password:this.password,
+					password2:this.password2,
+					
 				}).then(res=>{
-				console.log("得到Token信息",res)
-				// 使用cookie在浏览器进行存储
-				this.$jsCookie.set("refresh", res.data.refresh)
-				this.$jsCookie.set("access", res.data.access)
-				this.$jsCookie.set("username",this.username);
-				this.$store.commit("setlog",true)
-				this.$router.push("/")
+				
+				this.$router.push("/login")
 				
 			}).catch(err=>{
 				console.log("出错了",err)
@@ -107,8 +108,7 @@
 				this.$router.go(-1)
 			},
 			onClickRight(){
-				this.$toast('前往注册');
-				this.$router.push('/regist')
+				this.$toast('前往登录');
 				
 			},
 			weixinLogin() {

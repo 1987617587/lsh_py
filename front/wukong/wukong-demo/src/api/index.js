@@ -71,6 +71,13 @@ export const getcars = (param) => {
 
 	return axios.get("/cars/")
 }
+
+// 获取汽车平均价格
+export const getcarprices = (param) => {
+	console.log("getcarprices执行了")
+
+	return axios.get("/prices/")
+}
 // 
 // export const crerteCategory = (param) => {
 // 	console.log("crerteCategory执行了", "参数", param)
@@ -92,22 +99,18 @@ export const getcars = (param) => {
 // 	})
 // }
 // 
+// 登录
+export const getToken = (param) => {
+	console.log("getToken执行了", "参数", param)
+
+	return axios.post('/login/', param)
+
+}
 // 
-// export const getToken = (param) => {
-// 	console.log("getToken执行了", "参数", param)
-// 	// return axios({
-// 	// 	method: 'post',
-// 	// 	url: '/token_login/',
-// 	// 	data: param,
-// 	// })
-// 	return axios.post('/token_login/', param)
-// 
-// }
-// 
-// 
-// export const regist = (param)=>{
-// 	return axios.post("/users/",param,)
-// }
+// 注册
+export const regist = (param)=>{
+	return axios.post("/users/",param,)
+}
 // 
 // 
 // export const getUserinfo = (param)=>{

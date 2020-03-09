@@ -12,6 +12,7 @@ class CitySerializers(serializers.ModelSerializer):
 
 
 class CategorySerializers(serializers.ModelSerializer):
+
     class Meta():
         model = Category
         # fields = ["title","pub_time","url"]
@@ -19,6 +20,7 @@ class CategorySerializers(serializers.ModelSerializer):
 
 
 class ShopSerializers(serializers.ModelSerializer):
+
     class Meta():
         model = Shop
         # fields = ["title","pub_time","url"]
@@ -39,7 +41,7 @@ class CarImagesSerializers(serializers.ModelSerializer):
 
 
 class CarSerializers(serializers.ModelSerializer):
-    imgs = CarImagesSerializers(many=True, read_only=True)
+    imgs = CarImagesSerializers(many=True, read_only=True,)
 
     class Meta():
         model = Car

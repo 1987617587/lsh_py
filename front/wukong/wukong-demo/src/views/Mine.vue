@@ -1,7 +1,14 @@
 <template>
 	<div class="mine">
-		<div class="login" style="height: 150px;align-content: center; ">
+		<div v-if="!islog" class="login" style="height: 150px;align-content: center; ">
 			<van-button @click="gotologin" round plain type="primary" style=" position: relative;top: 40%; width: 120px;font-size: 20px; height: 30%;"> 登 录 </van-button>
+			
+		</div>
+		<div  v-else class="login" style="height: 150px;align-content: center; ">
+			<br>
+			<br>
+			<h2>用户：{{$jsCookie.get("username")}}</h2>
+			<van-button @click="gotologout" round plain type="primary" style=" position: relative;top: 40%; width: 120px;font-size: 20px; height: 30%;"> 注 销 </van-button>
 			
 		</div>
 		<br>
@@ -47,9 +54,26 @@
 <script>
 	
 	export default{
+		data(){
+			return{
+				
+			}
+		},
+		computed:{
+			islog(){
+				return this.$store.getters.getlog
+			}
+		},
 		methods:{
 			gotologin(){
 				this.$router.push("/login")
+			},
+			gotologout(){
+				this.$jsCookie.remove("username")
+				this.$jsCookie.remove("refresh")
+				this.$jsCookie.remove("access")
+				this.$store.commit("setlog",false)
+				this.$router.go(0)
 			},
 			gotomore(){
 				this.$router.push("/more")

@@ -6,11 +6,17 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 	// 相当于vue data
   state: {
+	  islog:false,
+	  
 	  goodList:[]
   },
     // 相当于vue 计算属性compute
   getters:{
 	  // data永远等于state 不需要关注
+	  getlog(state){
+		  return state.islog
+	  },
+	  
 	  getGoodList(data){
 		  return data.goodList
 	  }
@@ -18,6 +24,10 @@ export default new Vuex.Store({
   // 相当于vue methods
   mutations: {
 	  // data永远等于state
+	  setlog(state,b){
+		state.islog = b  
+	  },
+	  
 	  addGood(data,good){
 		  // data.goodList.push(good);
 		  // 重复商品合并加入

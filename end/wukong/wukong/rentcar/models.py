@@ -1,3 +1,4 @@
+
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
@@ -12,7 +13,7 @@ class Location(models.Model):
 # 城市
 class City(models.Model):
     name = models.CharField(max_length=6, verbose_name="城市")
-    coordinate = models.OneToOneField(Location, on_delete=models.CASCADE, verbose_name='坐标', related_name='location')
+    coordinate = models.OneToOneField(Location, on_delete=models.CASCADE, verbose_name='坐标', related_name='city')
     def __str__(self):
         return self.name
 
@@ -23,7 +24,7 @@ class Shop(models.Model):
     site_phone = models.CharField(max_length=20, verbose_name="移动电话")
     from_time = models.TimeField(verbose_name="上班时间")
     to_time = models.TimeField(verbose_name="下班时间")
-    city = models.ForeignKey(City, models.CASCADE, verbose_name="所在城市", related_name="city")
+    city = models.ForeignKey(City, models.CASCADE, verbose_name="所在城市", related_name="shop")
 
     def __str__(self):
         return self.name
@@ -82,6 +83,9 @@ class User(AbstractUser):
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="用户")
     cars = models.ManyToManyField(Car, related_name="所租车辆")
+    # 租用时间
+    days = models.PositiveIntegerField(default=0)
+
 
     def __str__(self):
         return self.user.username + "的订单"

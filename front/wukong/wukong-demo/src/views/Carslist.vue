@@ -168,6 +168,7 @@
 				goodnums: 1,
 				date: '',
 				cars:null,
+				prices:null,
 				minDate: new Date(2020, 0, 1),
 				maxDate: new Date(2025, 10, 1),
 				currentDate: new Date(),
@@ -175,44 +176,27 @@
 			}
 		},
 		created() {
-			// console.log(this.date)
-			// console.log(beijing)
-			// console.log(carslist)
-			// this.datas = beijing.recommends
-			// console.log(this.datas)
-			
-			this.$http({
-				method:'get',
-				url:'http://127.0.0.1:8000/shops/'
+
+			this.$api.getshops({
+				
 			}).then(res=>{
-				console.log("得到门店信息",res)
+				console.log("得到门店列表",res)
 				this.datas = res.data
 			}).catch(err=>{
 				console.log("出错了",err)
 			})
-			this.$http({
-				method:'get',
-				url:'http://127.0.0.1:8000/cars/'
-			}).then(res=>{
-				console.log("得到车辆信息",res)
+			this.$api.getcars().then(res=>{
+				console.log("得到汽车列表",res)
 				this.cars = res.data
 			}).catch(err=>{
 				console.log("出错了",err)
 			})
-			// this.$api.getshops({
-				
-			// }).then(res=>{
-			// 	console.log("得到汽车列表",res)
-			// 	this.cars = res.data
-			// }).catch(err=>{
-			// 	console.log("出错了",err)
-			// })
-			// this.$api.getcars().then(res=>{
-			// 	console.log("得到汽车列表",res)
-			// 	this.cars = res.data
-			// }).catch(err=>{
-			// 	console.log("出错了",err)
-			// })
+			this.$api.getcarprices().then(res=>{
+				console.log("得到汽车价格",res)
+				this.prices = res.data
+			}).catch(err=>{
+				console.log("出错了",err)
+			})
 
 
 		},
