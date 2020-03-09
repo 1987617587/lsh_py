@@ -137,22 +137,22 @@ REST_FRAMEWORK = {
         # # 配置
         # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         #
-        # 'rest_framework.authentication.SessionAuthentication',
-        # # Basic认证
-        # # 将请求中携带的 类似于basic特殊编码的字符串 进行解码得到相应的用户
-        # 'rest_framework.authentication.BasicAuthentication'
+        'rest_framework.authentication.SessionAuthentication',
+        # Basic认证
+        # 将请求中携带的 类似于basic特殊编码的字符串 进行解码得到相应的用户
+        'rest_framework.authentication.BasicAuthentication'
     ],
     #
-    # # 配置全局频次限制类
-    # 'DEFAULT_THROTTLE_CLASSES': [
-    #     'rest_framework.throttling.AnonRateThrottle',
-    #     'rest_framework.throttling.UserRateThrottle',
-    # ],
-    # # Throttling
-    # 'DEFAULT_THROTTLE_RATES': {
-    #     'user': '500/minutes',
-    #     'anon': '100/minutes',
-    # },
+    # 配置全局频次限制类
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+    ],
+    # Throttling
+    'DEFAULT_THROTTLE_RATES': {
+        'user': '500/minutes',
+        'anon': '10/minutes',
+    },
     #
     # # Generic view behavior
     # # http://127.0.0.1:8000/categories/?limit=2&offset=1
@@ -166,9 +166,10 @@ REST_FRAMEWORK = {
     # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.backends.DjangoFilterBackend'],
 
 }
-
+# 注册用户类
 AUTH_USER_MODEL = "rentcar.User"
-# AUTHENTICATION_BACKENDS = ['shop.authbackend.MyLoginBackend']
+# 配置自定义认证
+AUTHENTICATION_BACKENDS = ['rentcar.authbackend.MyLoginBackend']
 #
 # # from django.core.paginator import Paginator, Page
 # # django分页 Paginator(分页器)  Page（每一个页）
