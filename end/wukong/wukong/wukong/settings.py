@@ -37,12 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rentcar',
-    # 'rest_framework_jwt',
     'rest_framework_simplejwt',
+    'corsheaders',
 
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -176,5 +178,5 @@ AUTHENTICATION_BACKENDS = ['rentcar.authbackend.MyLoginBackend']
 # # DRF 提供的pageination 建立在django基础上进行深层封装
 #
 #
-# # 允许跨域
-# CORS_ORIGIN_ALLOW_ALL = True
+# 允许跨域
+CORS_ORIGIN_ALLOW_ALL = True
