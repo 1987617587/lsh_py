@@ -1,7 +1,10 @@
 <template>
-	<div v-if="$route.params.days!='null'" class="order">
+
+
+	<div class="order">
+		<!-- <h1>订单</h1> -->
 		<div class="order-top">
-			<van-nav-bar title="订车" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
+			<van-nav-bar title="订单" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
 				<img style="width: 25px;height: 10px;" src="img/more.png" @click="show = true" slot="right" alt="">
 				<van-overlay :show="show" @click="show = false">
 					<div class="wrapper">
@@ -11,7 +14,6 @@
 			</van-nav-bar>
 
 			<van-overlay :show="show" @click="show = false">
-				<!-- <div class="wrapper"> -->
 
 
 				<div class="block">
@@ -49,7 +51,7 @@
 						</van-col>
 					</van-row>
 				</div>
-				<!-- </div> -->
+
 
 			</van-overlay>
 
@@ -58,43 +60,31 @@
 				<div class="car-box">
 					<br>
 					<!-- <div class="car-msg" v-for="(item,index) in datas[$route.params.index].car_types" v-if="item.id==$route.params.id"> -->
-					<div class="car-msg" style="display: flex; margin:10%;font-size:14px ;" v-for="(item,index) in datas[$route.params.index].car_types"
-					 v-if="item.id==$route.params.id">
-						<!-- {{item.id}} -->
-						<img style="width: 30%;" :src="item.pics.pic1" alt="">
-						<van-row>
+					<div class="car-msg" style="display: flex; margin:10%;font-size:14px ;" v-for="(item,index) in userorders" v-if="item.user == userinfo.id">
+						{{item.user}}
+						<!-- <img v-for="" style="width: 30%;" :src="item.cars[0]" alt=""> -->
+						<!-- <van-row>
 							<br>
 							<van-col span="24">{{item.car_type_name}}</van-col>
 							<van-col span="4" offset="5">{{item.basics.displacement}}|</van-col>
 							<van-col span="4">{{item.basics.transmission_name}}|</van-col>
 							<van-col span="6">准乘{{item.basics.capacity}}人</van-col>
-						</van-row>
+						</van-row> -->
+
 					</div>
-					<div class="days">
+					<!-- <div class="days">
 						你的订单时长为{{$route.params.days}}天
-					</div>
+					</div> -->
 					<br>
 				</div>
-				<div class="money" v-for="(item,index) in datas[$route.params.index].car_types" v-if="item.id==$route.params.id">
+				<!-- <div class="money" v-for="(item,index) in datas[$route.params.index].car_types" v-if="item.id==$route.params.id">
 					<van-submit-bar :price="summoney()*item.prices.day" button-text="提交订单" />
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
-	<div v-else>
-		<div class="order-top">
-			<van-nav-bar title="订车" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
-				<img style="width: 25px;height: 10px;" src="img/more.png" @click="show = true" slot="right" alt="">
-				<van-overlay :show="show" @click="show = false">
-					<div class="wrapper">
-						<div class="block" />
-					</div>
-				</van-overlay>
-			</van-nav-bar>
-		</div>
-		<h3>请先选择用车时间</h3>
 
-	</div>
+
 </template>
 
 <script>
@@ -113,17 +103,36 @@
 				minDate: new Date(2020, 0, 1),
 				maxDate: new Date(2025, 10, 1),
 				currentDate: new Date(),
+				userorders: null,
+				userinfo: null,
+			}
+		},
+		computed: {
+			islog() {
+				return this.$store.getters.getlog
 			}
 		},
 		created() {
-			// console.log(this.date)
-			console.log(beijing)
-			this.datas = beijing.recommends
-			console.log(this.datas)
-			console.log(carslist.recommends[0].id)
-			console.log(carslist.recommends[0].name)
-			console.log(carslist.recommends[0].adress)
-			console.log(carslist.recommends[0].car_types)
+			if (!this.islog) {
+				this.$router.push("/login")
+			} else {
+				this.$api.getUserinfo().then(res => {
+					console.log("个人信息", res)
+					this.userinfo = res.data;
+					this.$jsCookie.set("userinfo", res.data)
+					// 获取用户信息之后获取订单
+					this.$api.getOrders().then(res => {
+						console.log("获取所有用户订单信息", res)
+						this.userorders = res.data
+					}).catch(err => {
+						console.log("出错了", res);
+					})
+				}).catch(err => {
+					console.log("出错了");
+				})
+			}
+
+
 
 		},
 		methods: {

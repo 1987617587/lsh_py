@@ -105,6 +105,16 @@ export const crerteOrder = (param) => {
 	// 	}
 	// })
 }
+// 查看订单
+export const getOrder = (param) => {
+	console.log("getOrder执行了", "参数", param)
+	return axios.get(`/orders/${param.id}`)
+}
+// 查看用户所有订单
+export const getOrders = (param) => {
+	console.log("getOrders执行了", "参数", param)
+	return axios.get("/orders/")
+}
 // export const modifyCategory = (param) => {
 // 	console.log("modifyCategory执行了", "参数", param)
 // 	return axios.put(`/categories/${param.id}/`, param, {

@@ -237,7 +237,7 @@
 						console.log("订单信息", res);
 						
 						// 跳转订单页面
-						// this.$router.push("/order/" + shop_id + "/" + car_id + "/" + days)
+						this.$router.push("/order")
 
 					}).catch(err => {
 						console.log("发生错误", err);

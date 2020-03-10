@@ -10,7 +10,7 @@
 				<van-tabbar-item  router-link to="/service">
 				<img v-if="active==1" src="img/myservice.png" slot="icon" alt="">
 				<img v-else src="img/service-o.png" slot="icon" alt="">客服</van-tabbar-item>
-				<van-tabbar-item  router-link to="/indent">
+				<van-tabbar-item  router-link to="/order">
 					<img v-if="active==2" src="img/myident.png" slot="icon" alt="">
 					<img v-else src="img/indent-o.png" slot="icon" alt="">订单</van-tabbar-item>
 				

@@ -7,7 +7,7 @@
 		<div class="car">
 
 			<!-- <div class="car-msg" v-for="(item,index) in datas[$route.params.index].car_types" v-if="item.id==$route.params.id"> -->
-			<div class="car-msg"  v-if="shop&&car">
+			<div class="car-msg" v-if="shop&&car">
 				<div class="car-top">
 					<van-nav-bar :title="car.name" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
 						<img style="width: 25px;height: 10px;" src="img/more.png" @click="gotomore" slot="right" alt="">
@@ -59,7 +59,7 @@
 				</div>
 				<div style="width: 100%;height: 80px; background-color: rgb(240,240,240);">
 					<div class="togo" style="  width: 90%;   position: absolute; left: 5%; bottom: 0;">
-						<van-button @click="gotuOrder($route.params.index,item.id,$route.params.days)" size="large" type="danger">立即预定</van-button>
+						<van-button @click="gotuOrder(userinfo.id,car.id,days)" size="large" type="danger">立即预定</van-button>
 					</div>
 				</div>
 
@@ -89,21 +89,24 @@
 				minDate: new Date(2020, 0, 1),
 				maxDate: new Date(2025, 10, 1),
 				currentDate: new Date(),
-				prices:null,
-				userinfo:null,
-				
+				prices: null,
+				userinfo: null,
+				days: null,
 			}
 		},
 		created() {
-			this.$api.getUserinfo().then(res=>{
-				console.log("个人信息",res)
-				this.userinfo=res.data;
-			}).catch(err=>{
+			this.days = this.$route.params.days
+			console.log("天数", this.days)
+
+			this.$api.getUserinfo().then(res => {
+				console.log("个人信息", res)
+				this.userinfo = res.data;
+			}).catch(err => {
 				console.log("出错了");
 			})
 			// console.log(this.$route.params.shop_id)
 			this.$api.getShopDetail({
-			id:this.$route.params.shop_id
+				id: this.$route.params.shop_id
 			}).then(res => {
 				console.log("得到门店", res)
 				this.shop = res.data
@@ -111,7 +114,7 @@
 				console.log("出错了", err)
 			})
 			this.$api.getCarDetail({
-				id:this.$route.params.car_id
+				id: this.$route.params.car_id
 			}).then(res => {
 				console.log("得到汽车", res)
 				this.car = res.data
@@ -130,18 +133,19 @@
 			gotomore() {
 				this.$router.push("/more")
 			},
-			gotuOrder(index, id, days) {
-				console.log(index, id)
-				this.$router.push("/order/" + index + "/" + id + "/" + days)
-				// 存下订单
-				this.$store.commit("addGood", {
-					id: id,
-					index: index,
-					days: days,
-					num: 0
-
-				})
-			},
+			// 			gotuOrder(index, id, days) {
+			// 				console.log(index, id)
+			// 				this.$router.push("/order/" + index + "/" + id + "/" + days)
+			// 				// 存下订单
+			// 				this.$store.commit("addGood", {
+			// 					id: id,
+			// 					index: index,
+			// 					days: days,
+			// 					num: 0
+			// 
+			// 				})
+			// 			},
+			
 			formatDate(date) {
 				return `${date.getMonth() + 1}/${date.getDate()}`;
 			},
@@ -197,10 +201,33 @@
 
 				})
 			},
-			callphone(){
+			callphone() {
 				this.$toast(this.shop.phone)
-			}
-			
+			},
+			gotuOrder(user_id, car_id, days) {
+				console.log(user_id, typeof(user_id), car_id, typeof(car_id), days, typeof(days))
+				if (this.days) {
+					// 创建订单
+					this.$api.crerteOrder({
+						user: user_id,
+						cars: [car_id],
+						days: days
+					}).then(res => {
+						console.log("订单信息", res);
+
+						// 跳转订单页面
+						this.$router.push("/order")
+
+					}).catch(err => {
+						console.log("发生错误", err);
+					})
+
+				} else {
+					this.$toast('请先选择用车时间');
+					// this.$router.push("/carslist")
+				}
+			},
+
 
 		}
 

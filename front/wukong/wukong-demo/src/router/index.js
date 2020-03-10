@@ -67,7 +67,7 @@ const routes = [
     component: Detail
   },
   {
-    path: '/order/:index/:id/:days',
+    path: '/order',
     name: 'order',
     component: Order
   },
