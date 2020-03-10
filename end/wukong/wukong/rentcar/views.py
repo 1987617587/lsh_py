@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework_simplejwt.authentication import JWTAuthentication
+from . import permissions as mypermissions
 
 from .models import *
 from rest_framework import viewsets, mixins, permissions, status
@@ -37,6 +38,7 @@ class PricesViewSet(viewsets.ModelViewSet):
     """
     queryset = Prices.objects.all()
     serializer_class = PriceSerializers
+
     def get_permissions(self):
         print("当前http方法为", self.action)
         # 登录可看
@@ -69,17 +71,25 @@ class OrderViewsSets(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
+    def get_permissions(self):
+        print("当前http方法为", self.action)
+        if self.action == "create" or self.action == "list":
+            return [permissions.IsAuthenticated()]
+        elif self.action == "update" or self.action == "partial_update" or \
+                self.action == 'retrieve' or self.action == "destroy":
+            return [mypermissions.OrdersPermission()]
+        else:
+            return [permissions.IsAdminUser()]
 
 
 @api_view(['GET'])
 def getuserinfo(request):
-
     print("hello")
     print(request)
     print(request.headers["Authorization"])
     user = JWTAuthentication().authenticate(request)
-    print("用户",user[0])
+    print("用户", user[0])
     seria = UserSerializer(instance=user[0])
     # seria.is_valid(raise_exception=True)
     # print(seria.data)
-    return Response(seria.data,status=status.HTTP_200_OK)
+    return Response(seria.data, status=status.HTTP_200_OK)
