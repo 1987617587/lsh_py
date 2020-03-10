@@ -180,3 +180,6 @@ AUTHENTICATION_BACKENDS = ['rentcar.authbackend.MyLoginBackend']
 #
 # 允许跨域
 CORS_ORIGIN_ALLOW_ALL = True
+
+# 此问题是路由后方没有加/
+# APPEND_SLASH = False

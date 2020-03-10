@@ -6,42 +6,41 @@ axios.defaults.baseURL = 'http://127.0.0.1:8000'
 // axios.defaults.baseURL = 'http://192.168.1.104:8000'
 
 // 拦截请求
-// axios.interceptors.request.use(function(config) {
-// 	// 在发起请求之前可以对请求进行处理  其中config就是请求中的config参数
-// 	// config.headers.Authorization="Basic YWRtaW46MTIzNDU2"
-// 	// config.headers.Authorization = `Bearer ${jsCookie.get('access')}`;
-// 	if(jsCookie.get('access'))
-// 	{
-// 		config.headers.Authorization=`Bearer ${jsCookie.get('access')}`;
-// 	}
-// 	return config
-// }, function(error) {
-// 	return Promise.reject(error)
-// })
-// // 拦截相应
-// axios.interceptors.response.use(function(response) {
-// 	return response
-// }, function(error) {
-// 	if (error.response.status == 401) {
-// 		console.log('认证失败,请先登录')
-// 		// 跳转到登录页面
-// 		window.location.href = "#/login/"
-// 		// 删除之前的cookie信息
-// 		jsCookie.remove("access")
-// 		jsCookie.remove("refresh")
-// 		jsCookie.remove("username")
-// 	}
-// 	if (error.response.status == 403) {
-// 		console.log('权限不足，无法修改')
-// 		// 跳转到登录页面
-// 		window.location.href = "#/login/"
-// 		// 删除之前的cookie信息
-// 		jsCookie.remove("access")
-// 		jsCookie.remove("refresh")
-// 		jsCookie.remove("username")
-// 	}
-// 	return Promise.reject(error)
-// })
+axios.interceptors.request.use(function(config) {
+	// 在发起请求之前可以对请求进行处理  其中config就是请求中的config参数
+	// config.headers.Authorization="Basic YWRtaW46MTIzNDU2"
+	// config.headers.Authorization = `Bearer ${jsCookie.get('access')}`;
+	if (jsCookie.get('access')) {
+		config.headers.Authorization = `Bearer ${jsCookie.get('access')}`;
+	}
+	return config
+}, function(error) {
+	return Promise.reject(error)
+})
+// 拦截相应
+axios.interceptors.response.use(function(response) {
+	return response
+}, function(error) {
+	if (error.response.status == 401) {
+		console.log('认证失败,请先登录')
+		// 跳转到登录页面
+		window.location.href = "/#/login"
+		// 删除之前的cookie信息
+		jsCookie.remove("access")
+		jsCookie.remove("refresh")
+		jsCookie.remove("username")
+	}
+	if (error.response.status == 403) {
+		console.log('权限不足，无法修改')
+		// 跳转到登录页面
+		window.location.href = "/#/login"
+		// 删除之前的cookie信息
+		jsCookie.remove("access")
+		jsCookie.remove("refresh")
+		jsCookie.remove("username")
+	}
+	return Promise.reject(error)
+})
 
 export const getCategorylist = () => {
 	console.log("getCategorylist执行了")
@@ -108,8 +107,8 @@ export const getToken = (param) => {
 }
 // 
 // 注册
-export const regist = (param)=>{
-	return axios.post("/users/",param,)
+export const regist = (param) => {
+	return axios.post("/users/", param, )
 }
 // 
 // 
@@ -117,10 +116,25 @@ export const regist = (param)=>{
 // 	return axios.get("/userinfo/",param,)
 // }
 // 
-// export const modifyUserInfo = (param)=>{
-// 	// console.log("提交更改数据",param);
-// 	let id = param.userinfo.id
-// 	console.log(id,"===",param);
-// 	return axios.patch(`users/${id}/`,param.userinfo,)
-// }
+// getDateDiff(startDate, endDate) {
+// 		var startTime = new Date(Date.parse(startDate.replace(/-/g, "/"))).getTime();
+// 		var endTime = new Date(Date.parse(endDate.replace(/-/g, "/"))).getTime();
+// 		var dates = Math.abs((startTime - endTime)) / (1000 * 60 * 60 * 24);
+// 		return dates;
+// 	},
+// 	timeTransform(str) {
+// 		// var str = "2010-08-01";
+// 
+// 		// 转换日期格式
+// 
+// 		str = str.replace(/-/g, '/'); // "2010/08/01";
+// 		// 创建日期对象
+// 
+// 		var datetime = new Date(str);
+// 
+// 		// 加一天
+// 
+// 		// date.setDate(date.getDate() + 1);
+// 		return datetime
+// 	},
 // 

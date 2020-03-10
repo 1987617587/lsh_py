@@ -24,27 +24,25 @@
 					</van-row>
 					<br>
 					<van-row>
-						<van-col span="8">
+						<van-col span="10">
 							<p style="font-size: 20px;font-weight: 700;">{{dateto}}</p>
 						</van-col>
-						<van-col span="8"></van-col>
-						<van-col span="8">
+						<van-col span="4"></van-col>
+						<van-col span="10">
 							<p style="font-size: 20px;font-weight: 700;">{{dateend}}</p>
 						</van-col>
 					</van-row>
 					<br>
 					<van-row>
 						<!-- <van-col  span="8">周一 10:00</van-col> -->
-						<van-col span="8">
+						<van-col span="10">
 							<van-cell title="出发" :value="dateto" @click="showto = true" />
-							
 							<van-calendar v-model="showto" @confirm="onConfirmto" />
 						</van-col>
-						<van-col span="8"><img style=" position: relative; top:-20px; height: 20px;width: 60px; " src="img/goto.png" alt=""></van-col>
+						<van-col span="4"><img style=" position: relative; top:-20px; height: 20px;width: 60px; " src="img/goto.png" alt=""></van-col>
 						<!-- <van-col span="8">周四 10:00</van-col> -->
-						<van-col span="8">
+						<van-col span="10">
 							<van-cell title="结束" :value="dateend" @click="showend= true" />
-							
 							<van-calendar v-model="showend" @confirm="onConfirmend" />
 						</van-col>
 					</van-row>
@@ -237,25 +235,54 @@
 				]
 			}
 		},
-		// created() {
-		// 	var s2 = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
-		// 	this.nowtime = s2
-		// },
+		created() {
+			// var s2 = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
+			// this.nowtime = s2
+			console.log(this.getDateDiff('2019-05-30','2019-05-20'))
+			console.log(this.timeTransform('2019-05-30'))
+		},
 		methods: {
+			getDateDiff(startDate, endDate) {
+			    var startTime = new Date(Date.parse(startDate.replace(/-/g,   "/"))).getTime();
+			    var endTime = new Date(Date.parse(endDate.replace(/-/g,   "/"))).getTime();
+			    var dates = Math.abs((startTime - endTime)) / (1000 * 60 * 60 * 24);
+			    return  dates;
+			},
+			 timeTransform(str) {
+			    // var str = "2010-08-01";
+			    
+			    // 转换日期格式
+			    
+			    str = str.replace(/-/g, '/'); // "2010/08/01";
+			    // 创建日期对象
+			    
+			    var datetime = new Date(str);
+			    
+			    // 加一天
+			    
+			    // date.setDate(date.getDate() + 1);
+				return datetime
+			},
 			formatDateto(dateto) {
-			      return `${dateto.getMonth() + 1}月${dateto.getDate()}日`;
+				console.log(this.dateto)
+			      // return `${dateto.getMonth() + 1}月${dateto.getDate()}日`;
+			      return `${dateto.getFullYear()}-${dateto.getMonth() + 1}-${dateto.getDate()}`;
 			    },
 			    onConfirmto(dateto) {
 			      this.showto = false;
+				  console.log(this.dateto)
+				  // this.dateto = dateto
 			      this.dateto = this.formatDateto(dateto);
 			  },
 			  formatDateend(dateend) {
-			        return `${dateend.getMonth() + 1}月${dateend.getDate()}日`;
+			        // return `${dateend.getMonth() + 1}月${dateend.getDate()}日`;
+					return `${dateend.getFullYear()}-${dateend.getMonth() + 1}-${dateend.getDate()}`;
 			      },
 			      onConfirmend(dateend) {
 			        this.showend = false;
 					// this.date = dateend.getDate() - dateto.getDate()
-					// console.log(this.date)
+					console.log(this.dateend)
+					// this.dateend = dateend
 			        this.dateend = this.formatDateend(dateend);
 			    },
 			zuobiao(){

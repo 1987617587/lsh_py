@@ -112,15 +112,15 @@
 				
 			},
 			weixinLogin() {
-				// this.$toast('跳转微信');
-				if (this.$store.getters.getGoodList.length > 0) {
-					this.$router.push("/order/" + this.$store.getters.getGoodList[this.$store.getters.getGoodList.length - 1].index +
-						"/" + this.$store.getters.getGoodList[this.$store.getters.getGoodList.length - 1].id + "/" + this.$store.getters
-						.getGoodList[this.$store.getters.getGoodList.length - 1].days)
-				} else {
-					this.$router.push("/carslist/0/0")
-				}
-				console.log(this.$store.getters.getGoodList)
+				this.$toast('跳转微信');
+				// if (this.$store.getters.getGoodList.length > 0) {
+				// 	this.$router.push("/order/" + this.$store.getters.getGoodList[this.$store.getters.getGoodList.length - 1].index +
+				// 		"/" + this.$store.getters.getGoodList[this.$store.getters.getGoodList.length - 1].id + "/" + this.$store.getters
+				// 		.getGoodList[this.$store.getters.getGoodList.length - 1].days)
+				// } else {
+				// 	this.$router.push("/carslist/0/0")
+				// }
+				// console.log(this.$store.getters.getGoodList)
 				// this.$store.getters.getGoodList
 
 			}

@@ -65,7 +65,7 @@
 					<!-- <van-datetime-picker v-model="currentDate" type="datetime" :min-date="minDate" :max-date="maxDate" /> -->
 				</div>
 				<div @click="gotomap" class="address" style="width: 30%;display: flex; justify-content: space-between;">
-					<p  style="margin: 0;padding: 0;">选择地址</p>
+					<p style="margin: 0;padding: 0;">选择地址</p>
 					<van-icon name="arrow" />
 				</div>
 			</div>
@@ -101,7 +101,7 @@
 				</div>
 				<!-- {{index}} -->
 				<div @click="gotocar(index,item.id,days)" class="choose-car" v-for="(item,index1) in cars " style="background-color: white;">
-					<div   v-if="item.shop == items.id"  class="car">
+					<div v-if="item.shop == items.id" class="car">
 						<van-row type="flex">
 							<van-col span="8">
 								<img style="width: 100%;" v-if="item.imgs" :src="item.imgs[0].img" alt="">
@@ -118,7 +118,7 @@
 									<van-col span="12">
 										<br>
 										<br>
-										<strong style=" font-size: 20px;color: red;">{{item.price}}</strong>元/日均价
+										<strong v-for="(price,index2) in prices" v-if="item.price==price.id" style=" font-size: 20px;color: red;">{{price.avg}}</strong>元/日均价
 										<!-- {{item.id}} -->
 									</van-col>
 									<van-col span="6">
@@ -132,7 +132,7 @@
 							</van-col>
 						</van-row>
 					</div>
-<!-- 					<div v-else>
+					<!-- 					<div v-else>
 						{{items.id}}
 						<br>
 						{{item.shop}}
@@ -166,9 +166,9 @@
 				show: false,
 				showtime: false,
 				goodnums: 1,
-				date: '',
-				cars:null,
-				prices:null,
+				date: null,
+				cars: null,
+				prices: null,
 				minDate: new Date(2020, 0, 1),
 				maxDate: new Date(2025, 10, 1),
 				currentDate: new Date(),
@@ -176,32 +176,43 @@
 			}
 		},
 		created() {
+			this.onconfirm()
 
 			this.$api.getshops({
-				
-			}).then(res=>{
-				console.log("得到门店列表",res)
+
+			}).then(res => {
+				console.log("得到门店列表", res)
 				this.datas = res.data
-			}).catch(err=>{
-				console.log("出错了",err)
+			}).catch(err => {
+				console.log("出错了", err)
 			})
-			this.$api.getcars().then(res=>{
-				console.log("得到汽车列表",res)
+			this.$api.getcars().then(res => {
+				console.log("得到汽车列表", res)
 				this.cars = res.data
-			}).catch(err=>{
-				console.log("出错了",err)
+			}).catch(err => {
+				console.log("出错了", err)
 			})
-			this.$api.getcarprices().then(res=>{
-				console.log("得到汽车价格",res)
+			this.$api.getcarprices().then(res => {
+				console.log("得到汽车价格", res)
 				this.prices = res.data
-			}).catch(err=>{
-				console.log("出错了",err)
+			}).catch(err => {
+				console.log("出错了", err)
 			})
 
 
 		},
 		methods: {
-			gotomap(){
+			timeTransform(str) {
+				// var str = "2010-08-01";
+				// 转换日期格式
+				str = str.replace(/-/g, '/'); // "2010/08/01";
+				// 创建日期对象
+				var datetime = new Date(str);
+				// 加一天
+				// date.setDate(date.getDate() + 1);
+				return datetime
+			},
+			gotomap() {
 				this.$router.push("/map")
 			},
 			gotomore() {
@@ -223,13 +234,33 @@
 			formatDate(date) {
 				return `${date.getMonth() + 1}/${date.getDate()}`;
 			},
+			onconfirm(date) {
+				console.log(this.$route.params.dateto)
+				console.log(this.$route.params.dateend)
+
+				this.date = [this.timeTransform(this.$route.params.dateto), this.timeTransform(this.$route.params.dateend)]
+				console.log(this.date)
+
+				const [start, end] = this.date;
+				console.log("之前拿到的时间", start)
+				this.showtime = false;
+				this.date = `${this.formatDate(start)} - ${this.formatDate(end)}`;
+				console.log(this.date)
+				console.log((end - start) / (3600 * 24 * 1000))
+			}
+
+			,
 			onConfirm(date) {
+
 				const [start, end] = date;
-				this.show = false;
+				console.log('之后拿到的时间', start)
+				this.showtime = false;
 				this.date = `${this.formatDate(start)} - ${this.formatDate(end)}`;
 				console.log(this.date)
 				console.log((end - start) / (3600 * 24 * 1000))
 				this.days = (end - start) / (3600 * 24 * 1000)
+
+
 			},
 			onClickLeft() {
 				// this.$toast('返回');
@@ -278,6 +309,14 @@
 				})
 			}
 
+		},
+		filters: {
+			gatavgprice(date) {
+				console.log("过滤", date.avg)
+				// data = new data.avg
+				// return data
+				// avgprice = date.avg 
+			}
 		}
 
 
