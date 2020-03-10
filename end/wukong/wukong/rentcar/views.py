@@ -1,6 +1,10 @@
 from django.shortcuts import render
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework_simplejwt.authentication import JWTAuthentication
+
 from .models import *
-from rest_framework import viewsets, mixins, permissions
+from rest_framework import viewsets, mixins, permissions, status
 from .serializers import *
 
 
@@ -64,3 +68,18 @@ class UserViewsSets(viewsets.GenericViewSet, mixins.CreateModelMixin, mixins.Ret
 class OrderViewsSets(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
+
+
+
+@api_view(['GET'])
+def getuserinfo(request):
+
+    print("hello")
+    print(request)
+    print(request.headers["Authorization"])
+    user = JWTAuthentication().authenticate(request)
+    print("用户",user[0])
+    seria = UserSerializer(instance=user[0])
+    # seria.is_valid(raise_exception=True)
+    # print(seria.data)
+    return Response(seria.data,status=status.HTTP_200_OK)

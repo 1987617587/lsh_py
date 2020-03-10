@@ -57,37 +57,54 @@ export const getCategorylist = () => {
 // 	return axios.get(`/categories/${param.id}`)
 // }
 
-// 获取门店信息
+// 获取所有门店信息
 export const getshops = (param) => {
 	console.log("getshops执行了")
 
 	return axios.get("/shops/")
 }
+// 获取单个门店信息
+export const getShopDetail = (param) => {
+	console.log("getShopDetail执行了")
 
-// 获取商品列表
+	return axios.get(`/shops/${param.id}`)
+}
+
+// 获取所有商品列表
 export const getcars = (param) => {
 	console.log("getcars执行了")
 
 	return axios.get("/cars/")
 }
+// 获取单个商品信息
+export const getCarDetail = (param) => {
+	console.log("getCarDetail执行了")
 
-// 获取汽车平均价格
+	return axios.get(`/cars/${param.id}`)
+}
+// 获取所有汽车平均价格
 export const getcarprices = (param) => {
 	console.log("getcarprices执行了")
 
 	return axios.get("/prices/")
 }
-// 
-// export const crerteCategory = (param) => {
-// 	console.log("crerteCategory执行了", "参数", param)
-// 	return axios.post("/categories/", param)
-// 	// return axios.post("/categories/", param, {
-// 	// 	headers: {
-// 	// 		Authorization: 'Basic YWRtaW46MTIzNDU2'
-// 	// 		// Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTgzMzcyNzU5LCJqdGkiOiJlYjM3ZjE2NjVjMmE0NWEzODg2N2NkODBhMWVlMmQ4MCIsInVzZXJfaWQiOjF9.WqaY6ZIQPn5TkQ3c8Qe3cKVlKtgMrIT9GPvm7ql5mxQ'
-// 	// 	}
-// 	// })
-// }
+// 获取单个汽车价格信息
+export const getPriceDetail = (param) => {
+	console.log("getPriceDetail执行了")
+
+	return axios.get(`/prices/${param.id}`)
+}
+// 创建订单
+export const crerteOrder = (param) => {
+	console.log("crerteOrder执行了", "参数", param)
+	return axios.post("/orders/", param,)
+	// return axios.post("/categories/", param, {
+	// 	headers: {
+	// 		Authorization: 'Basic YWRtaW46MTIzNDU2'
+	// 		// Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTgzMzcyNzU5LCJqdGkiOiJlYjM3ZjE2NjVjMmE0NWEzODg2N2NkODBhMWVlMmQ4MCIsInVzZXJfaWQiOjF9.WqaY6ZIQPn5TkQ3c8Qe3cKVlKtgMrIT9GPvm7ql5mxQ'
+	// 	}
+	// })
+}
 // export const modifyCategory = (param) => {
 // 	console.log("modifyCategory执行了", "参数", param)
 // 	return axios.put(`/categories/${param.id}/`, param, {
@@ -110,6 +127,20 @@ export const getToken = (param) => {
 export const regist = (param) => {
 	return axios.post("/users/", param, )
 }
+
+//获取用户信息
+export const getUserinfo = (param)=>{
+	return axios.get("/userinfo/",param,)
+}
+// 用户修改个人信息
+export const modifyUserInfo = (param)=>{
+	// console.log("提交更改数据",param);
+	let id = param.userinfo.id
+	console.log(id,"===",param);
+	return axios.patch(`users/${id}/`,param.userinfo,)
+}
+
+
 // 
 // 
 // export const getUserinfo = (param)=>{
@@ -137,4 +168,4 @@ export const regist = (param) => {
 // 		// date.setDate(date.getDate() + 1);
 // 		return datetime
 // 	},
-// 
+//

@@ -100,7 +100,7 @@
 
 				</div>
 				<!-- {{index}} -->
-				<div @click="gotocar(index,item.id,days)" class="choose-car" v-for="(item,index1) in cars " style="background-color: white;">
+				<div @click="gotocar(items.id,item.id,days)" class="choose-car" v-for="(item,index1) in cars " style="background-color: white;">
 					<div v-if="item.shop == items.id" class="car">
 						<van-row type="flex">
 							<van-col span="8">
@@ -125,7 +125,7 @@
 										<!-- {{item.prices.avg}}元/日均价 -->
 									</van-col>
 									<van-col span="4">
-										<van-button @click="gotuOrder(index,item.id,days)" round type="info">订</van-button>
+										<van-button @click="gotuOrder(userinfo.id,item.id,days)" round type="info">订</van-button>
 									</van-col>
 
 								</van-row>
@@ -172,10 +172,17 @@
 				minDate: new Date(2020, 0, 1),
 				maxDate: new Date(2025, 10, 1),
 				currentDate: new Date(),
-				days: null
+				days: null,
+				userinfo:null,
 			}
 		},
 		created() {
+			this.$api.getUserinfo().then(res=>{
+				console.log("个人信息",res)
+				this.userinfo=res.data;
+			}).catch(err=>{
+				console.log("出错了");
+			})
 			this.onconfirm()
 
 			this.$api.getshops({
@@ -218,18 +225,37 @@
 			gotomore() {
 				this.$router.push("/more")
 			},
-			gotuOrder(index, id, days) {
-				console.log(index, id, days)
+			gotuOrder(user_id, car_id, days) {
+				console.log(user_id,typeof(user_id), car_id,typeof(car_id), days,typeof(days))
 				if (this.days) {
-					this.$router.push("/order/" + index + "/" + id + "/" + days)
+					// 创建订单
+					this.$api.crerteOrder({
+						user: user_id,
+						cars: [car_id],
+						days: days
+					}).then(res => {
+						console.log("订单信息", res);
+						
+						// 跳转订单页面
+						// this.$router.push("/order/" + shop_id + "/" + car_id + "/" + days)
+
+					}).catch(err => {
+						console.log("发生错误", err);
+					})
+
 				} else {
 					this.$toast('请先选择用车时间');
 					// this.$router.push("/carslist")
 				}
 			},
-			gotocar(index, id, days) {
-				console.log(index, id, days)
-				this.$router.push("/detail/" + index + "/" + id + "/" + days)
+			gotocar(shop_id, car_id, days) {
+				console.log(shop_id, car_id, days)
+				if (this.days) {
+					this.$router.push("/detail/" + shop_id + "/" + car_id + "/" + days)
+				} else {
+					this.$toast('请先选择用车时间');
+					// this.$router.push("/carslist")
+				}
 			},
 			formatDate(date) {
 				return `${date.getMonth() + 1}/${date.getDate()}`;
@@ -247,6 +273,7 @@
 				this.date = `${this.formatDate(start)} - ${this.formatDate(end)}`;
 				console.log(this.date)
 				console.log((end - start) / (3600 * 24 * 1000))
+				this.days = (end - start) / (3600 * 24 * 1000)
 			}
 
 			,

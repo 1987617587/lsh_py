@@ -7,7 +7,7 @@
 		<div  v-else class="login" style="height: 150px;align-content: center; ">
 			<br>
 			<br>
-			<h2>用户：{{$jsCookie.get("username")}}</h2>
+			<h2 @click="gotousercenter">id:{{userinfo.id}}用户：{{$jsCookie.get("username")}}</h2>
 			<van-button @click="gotologout" round plain type="primary" style=" position: relative;top: 40%; width: 120px;font-size: 20px; height: 30%;"> 注 销 </van-button>
 			
 		</div>
@@ -56,6 +56,7 @@
 	export default{
 		data(){
 			return{
+				userinfo:null,
 				
 			}
 		},
@@ -63,6 +64,15 @@
 			islog(){
 				return this.$store.getters.getlog
 			}
+		},
+		created() {
+			this.$api.getUserinfo().then(res=>{
+				console.log("个人信息",res)
+				this.userinfo=res.data;
+				this.$jsCookie.set("userinfo",res.data)
+			}).catch(err=>{
+				console.log("出错了");
+			})
 		},
 		methods:{
 			gotologin(){
@@ -77,6 +87,9 @@
 			},
 			gotomore(){
 				this.$router.push("/more")
+			},
+			gotousercenter(){
+				this.$router.push("/usercenter")
 			}
 			
 		}

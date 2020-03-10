@@ -6,6 +6,7 @@ import Mine from '../views/Mine.vue'
 import Service from '../views/Service.vue'
 import Login from '../views/Login.vue'
 import Regist from '../views/Regist.vue'
+import UserCenter from '../views/UserCenter.vue'
 import More from '../views/More.vue'
 import Call from '../views/Call.vue'
 import Agreement from '../views/Agreement.vue'
@@ -16,6 +17,7 @@ import Feedback from '../views/Feedback.vue'
 import Detail from '../views/Detail.vue'
 import Carslist from '../views/Carslist.vue'
 import Order from '../views/Order.vue'
+
 import Map from '../views/Map.vue'
 
 
@@ -50,12 +52,17 @@ const routes = [
     component: Regist
   },
   {
+    path: '/usercenter',
+    name: 'usercenter',
+    component: UserCenter
+  },
+  {
     path: '/coupon',
     name: 'coupon',
     component: Coupon
   },
   {
-    path: '/detail/:index/:id/:days',
+    path: '/detail/:shop_id/:car_id/:days',
     name: 'detail',
     component: Detail
   },

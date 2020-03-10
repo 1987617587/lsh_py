@@ -12,7 +12,6 @@ class CitySerializers(serializers.ModelSerializer):
 
 
 class CategorySerializers(serializers.ModelSerializer):
-
     class Meta():
         model = Category
         # fields = ["title","pub_time","url"]
@@ -20,7 +19,6 @@ class CategorySerializers(serializers.ModelSerializer):
 
 
 class ShopSerializers(serializers.ModelSerializer):
-
     class Meta():
         model = Shop
         # fields = ["title","pub_time","url"]
@@ -41,7 +39,7 @@ class CarImagesSerializers(serializers.ModelSerializer):
 
 
 class CarSerializers(serializers.ModelSerializer):
-    imgs = CarImagesSerializers(many=True, read_only=True,)
+    imgs = CarImagesSerializers(many=True, read_only=True, )
 
     class Meta():
         model = Car
@@ -49,6 +47,13 @@ class CarSerializers(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True, max_length=20, min_length=2, error_messages={
+        "max_length": "最长不能超过20个字",
+        "min_length": "最短不能小于2个字",
+        "required": "密码不能为空"
+
+    }, help_text="请输入密码", label="密码")
+
     class Meta:
         model = User
         # fields = ('','','')

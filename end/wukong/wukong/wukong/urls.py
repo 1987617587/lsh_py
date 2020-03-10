@@ -43,6 +43,9 @@ urlpatterns = [
     # 使用simplejwt认证
     url(r'^login/$', token_obtain_pair, name='login'),
     url(r'^refresh/$', token_refresh, name='refresh'),
+    # 支持使用token获取用户信息
+    url(r'^userinfo/$', getuserinfo, name='userinfo'),
+
     # API文档地址
     path('docs/', include_docs_urls(title="RestFulAPI", description="RestFulAPI v1")),
 
