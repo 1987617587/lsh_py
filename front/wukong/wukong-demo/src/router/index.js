@@ -17,6 +17,7 @@ import Feedback from '../views/Feedback.vue'
 import Detail from '../views/Detail.vue'
 import Carslist from '../views/Carslist.vue'
 import Order from '../views/Order.vue'
+import Screen from '../views/Screen.vue'
 
 import Map from '../views/Map.vue'
 
@@ -107,6 +108,11 @@ const routes = [
     path: '/problem',
     name: 'problem',
     component: Problem
+  },
+  {
+    path: '/screen',
+    name: 'screen',
+    component: Screen
   },
   {
     path: '/map',

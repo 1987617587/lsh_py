@@ -126,7 +126,11 @@ export const delOrder = (param) => {
 	console.log("delOrder执行了", "参数", param)
 	return axios.delete(`/orders/${param.id}/`)
 }
-
+// 查询当前用户订单总金额
+export const getuserordersmoney = (param) => {
+	console.log("getuserordersmoney执行了", "参数", param)
+	return axios.get("/userordersmoney/")
+}
 
 // 查看用户所有订单
 export const getOrders = (param) => {

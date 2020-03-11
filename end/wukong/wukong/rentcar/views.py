@@ -127,3 +127,26 @@ def getuserorders(request):
     # seria2 = CarSerializers(instance=Car.objects.filter(id=Order.objects.filter(user=user[0]).get("cars")[0]), many=True)
     # print(seria2.data)
     return Response(seria.data, status=status.HTTP_200_OK)
+
+
+# 用户订单总金额
+@api_view(['GET'])
+def getuserordersmoney(request):
+    print("hello")
+    print(request)
+    print(request.headers["Authorization"])
+    user = JWTAuthentication().authenticate(request)[0]
+    print("用户", user,type(user))
+    # car = CarSerializers(instance=Car.objects.filter(id=Order.objects.filter(user=user).get("cars")[0]), many=True)
+    print(Order.objects.filter(user=user))
+    orders = Order.objects.filter(user=user)
+    price = 0
+    for order in orders:
+        # 订单对应车辆的价格
+        print(order.cars.all()[0].price.day)
+        # 订单对应车辆的时间
+        print(order.days)
+        price += order.cars.all()[0].price.day*order.days
+    print(price)
+
+    return Response(price, status=status.HTTP_200_OK)

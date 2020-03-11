@@ -8,9 +8,9 @@
 					 style="width: 100%;" alt=""></van-swipe-item>
 			</van-swipe>
 		</div>
-		
-		
-		
+
+
+
 		<div class="bc" style="height: 300px;width: 374px; background-color: rgb(240,240,240); ">
 			<div class="hone-search" style="border-radius: 3% ; position: relative; top: -170px;left : 5%;height:360px;width: 90%; background-color: white;">
 				<br>
@@ -49,15 +49,18 @@
 					<van-divider />
 					<van-row>
 						<van-col span="6" offset="1">取还城市</van-col>
-						<van-col span="14" offset="1">取还地址</van-col>
+						<!-- <van-col span="14" offset="1">取还地址</van-col> -->
+						<van-col span="14" offset="1">先去筛选</van-col>
 					</van-row>
 					<div class="address" style="font-size:12px;font-weight: 700;">
 						<van-row>
 							<van-col span="8">
 								<van-cell title="北京" is-link arrow-direction="down" />
 							</van-col>
-							<van-col @click="zuobiao" span="13" offset="1">
-								<van-cell title="王府井" is-link arrow-direction="down" />
+							<van-col @click="gotoscreen" span="13" offset="1">
+							<!-- <van-col @click="zuobiao" span="13" offset="1"> -->
+								<!-- <van-cell title="王府井" is-link arrow-direction="down" /> -->
+								<van-cell title="去看看" is-link arrow-direction="down" />
 							</van-col>
 						</van-row>
 					</div>
@@ -220,13 +223,13 @@
 		data() {
 			return {
 				// nowtime:null,
-				date:null,
+				date: null,
 				show1: false,
 				dateto: '',
 				dateend: '',
-				      showto: false,
-				      showend: false,
-				      show: false,
+				showto: false,
+				showend: false,
+				show: false,
 				images: [
 					'img/car.png',
 					'img/go.png',
@@ -238,63 +241,66 @@
 		created() {
 			// var s2 = day2.getFullYear() + "-" + (day2.getMonth() + 1) + "-" + day2.getDate();
 			// this.nowtime = s2
-			console.log(this.getDateDiff('2019-05-30','2019-05-20'))
+			console.log(this.getDateDiff('2019-05-30', '2019-05-20'))
 			console.log(this.timeTransform('2019-05-30'))
 		},
 		methods: {
-			getDateDiff(startDate, endDate) {
-			    var startTime = new Date(Date.parse(startDate.replace(/-/g,   "/"))).getTime();
-			    var endTime = new Date(Date.parse(endDate.replace(/-/g,   "/"))).getTime();
-			    var dates = Math.abs((startTime - endTime)) / (1000 * 60 * 60 * 24);
-			    return  dates;
+			gotoscreen(){
+				this.$router.push("/screen")
 			},
-			 timeTransform(str) {
-			    // var str = "2010-08-01";
-			    
-			    // 转换日期格式
-			    
-			    str = str.replace(/-/g, '/'); // "2010/08/01";
-			    // 创建日期对象
-			    
-			    var datetime = new Date(str);
-			    
-			    // 加一天
-			    
-			    // date.setDate(date.getDate() + 1);
+			getDateDiff(startDate, endDate) {
+				var startTime = new Date(Date.parse(startDate.replace(/-/g, "/"))).getTime();
+				var endTime = new Date(Date.parse(endDate.replace(/-/g, "/"))).getTime();
+				var dates = Math.abs((startTime - endTime)) / (1000 * 60 * 60 * 24);
+				return dates;
+			},
+			timeTransform(str) {
+				// var str = "2010-08-01";
+
+				// 转换日期格式
+
+				str = str.replace(/-/g, '/'); // "2010/08/01";
+				// 创建日期对象
+
+				var datetime = new Date(str);
+
+				// 加一天
+
+				// date.setDate(date.getDate() + 1);
 				return datetime
 			},
 			formatDateto(dateto) {
 				console.log(this.dateto)
-			      // return `${dateto.getMonth() + 1}月${dateto.getDate()}日`;
-			      return `${dateto.getFullYear()}-${dateto.getMonth() + 1}-${dateto.getDate()}`;
-			    },
-			    onConfirmto(dateto) {
-			      this.showto = false;
-				  console.log(this.dateto)
-				  // this.dateto = dateto
-			      this.dateto = this.formatDateto(dateto);
-			  },
-			  formatDateend(dateend) {
-			        // return `${dateend.getMonth() + 1}月${dateend.getDate()}日`;
-					return `${dateend.getFullYear()}-${dateend.getMonth() + 1}-${dateend.getDate()}`;
-			      },
-			      onConfirmend(dateend) {
-			        this.showend = false;
-					// this.date = dateend.getDate() - dateto.getDate()
-					console.log(this.dateend)
-					// this.dateend = dateend
-			        this.dateend = this.formatDateend(dateend);
-			    },
-			zuobiao(){
+				// return `${dateto.getMonth() + 1}月${dateto.getDate()}日`;
+				return `${dateto.getFullYear()}-${dateto.getMonth() + 1}-${dateto.getDate()}`;
+			},
+			onConfirmto(dateto) {
+				this.showto = false;
+				console.log(this.dateto)
+				// this.dateto = dateto
+				this.dateto = this.formatDateto(dateto);
+			},
+			formatDateend(dateend) {
+				// return `${dateend.getMonth() + 1}月${dateend.getDate()}日`;
+				return `${dateend.getFullYear()}-${dateend.getMonth() + 1}-${dateend.getDate()}`;
+			},
+			onConfirmend(dateend) {
+				this.showend = false;
+				// this.date = dateend.getDate() - dateto.getDate()
+				console.log(this.dateend)
+				// this.dateend = dateend
+				this.dateend = this.formatDateend(dateend);
+			},
+			zuobiao() {
 				this.$toast('选择坐标');
 				this.$router.push("/map")
 			},
-			gotoCarslist(dateto,dateend) {
+			gotoCarslist(dateto, dateend) {
 				// this.$router.push("/carslist")
-				if(dateto&&dateend){
-					
-					this.$router.push("/carslist/"+dateto+"/"+dateend)
-				}else{
+				if (dateto && dateend) {
+
+					this.$router.push("/carslist/" + dateto + "/" + dateend)
+				} else {
 					this.$router.push("/carslist/0/0")
 				}
 			},

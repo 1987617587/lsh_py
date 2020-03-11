@@ -98,6 +98,7 @@
 							</div>
 						</van-card>
 						<!-- 111 -->
+						
 					</div>
 					</div>
 					<br>
@@ -107,7 +108,7 @@
 					<van-submit-bar :price="summoney()*car.price" button-text="提交订单" />
 				</div> -->
 				<div class="money">
-					<van-submit-bar button-text="提交订单" />
+					<van-submit-bar :price="money*100" button-text="提交订单" />
 				</div>
 			</div>
 		</div>
@@ -137,7 +138,7 @@
 				cars: null,
 				prices: null,
 				categories:null,
-				
+				money:null,
 
 			}
 		},
@@ -181,7 +182,17 @@
 				}).catch(err => {
 					console.log("出错了");
 				})
+				// 获取汽车分类信息
 				this.getcategories()
+				// 查询当前用户订单总金额
+				this.$api.getuserordersmoney({
+					
+				}).then(res=>{
+					console.log("等到当前用户订单总金额",res)
+					this.money = res.data
+				}).catch(err=>{
+					console.log("出错了",err)
+				})
 			}
 
 
@@ -323,6 +334,17 @@
 						console.log("出错了", res);
 					})
 				
+				})
+				// 获取汽车分类信息
+				this.getcategories()
+				// 查询当前用户订单总金额
+				this.$api.getuserordersmoney({
+					
+				}).then(res=>{
+					console.log("等到当前用户订单总金额",res)
+					this.money = res.data
+				}).catch(err=>{
+					console.log("出错了",err)
 				})
 			},
 
