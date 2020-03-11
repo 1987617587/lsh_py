@@ -86,13 +86,15 @@
 						 :desc="car.name" 
 						 :title="car.group_id" 
 						 :thumb="car.imgs[0].img">
-							<div slot="tags">
-								<van-tag plain type="danger">{{car.category}}</van-tag>
+							<div v-for="(category,index3) in categories" v-if="category.id ==car.category " slot="tags">
+								<van-tag plain type="danger">{{category.name}}</van-tag>
+								<van-tag plain type="danger">{{car.transmission_name}}</van-tag>
+								<van-tag plain type="danger">{{car.displacement}}</van-tag>
 							</div>
 							<div slot="footer">
-								<van-button type="danger" size="small">删除此订单</van-button>
-								<van-button type="primary" size="mini">减少天数</van-button>
-								<van-button type="primary" size="mini">增加天数</van-button>
+								<van-button @click="delorder(item.id)" type="danger" size="small">删除此订单</van-button>
+								<van-button @click="reduceorderdays(item.id,item.days)" type="primary" size="mini">减少天数</van-button>
+								<van-button @click="addorderdays(item.id,item.days)" type="primary" size="mini">增加天数</van-button>
 							</div>
 						</van-card>
 						<!-- 111 -->
@@ -134,6 +136,8 @@
 				userinfo: null,
 				cars: null,
 				prices: null,
+				categories:null,
+				
 
 			}
 		},
@@ -177,6 +181,7 @@
 				}).catch(err => {
 					console.log("出错了");
 				})
+				this.getcategories()
 			}
 
 
@@ -191,6 +196,56 @@
 			gotuOrder(index, id) {
 				console.log(index, id)
 				this.$router.push("/order/" + index + "/" + id)
+			},
+			reduceorderdays(order_id,days){
+				console.log("减少订单",order_id,"天数",days,"-1")
+				this.$api.updateOrder({
+					id:order_id,
+					days:days-1
+				}).then(res=>{
+					console.log("修改成功")
+					this.reget()
+					// this.$router.push("/order")
+					// this.$router.push("/")
+					// this.$router.push("/order")
+					// this.$router.go(0)
+					
+				}).catch(err=>{
+					console.log("修改失败",err)
+				})
+			},
+			addorderdays(order_id,days){
+				console.log("增加订单",order_id,"天数",days,"+1")
+				this.$api.updateOrder({
+					id:order_id,
+					days:days+1
+				}).then(res=>{
+					console.log("修改成功")
+					this.reget()
+				}).catch(err=>{
+					console.log("修改失败",err)
+				})
+			},
+			delorder(order_id){
+				console.log("删除订单",order_id)
+				this.$api.delOrder({
+					id:order_id
+				}).then(res=>{
+					console.log("删除订单成功")
+					this.reget()
+
+				}).catch(err=>{
+					console.log("修改失败",err)
+				})
+			},
+			getcategories(){
+				this.$api.getCategories({
+				}).then(res=>{
+					console.log("获取分类成功",res)
+					this.categories = res.data
+				}).catch(err=>{
+					console.log("出错了",err)
+				})
 			},
 			formatDate(date) {
 				return `${date.getMonth() + 1}/${date.getDate()}`;
@@ -245,6 +300,29 @@
 					price: this.datas.goods_info[0].market_price,
 					num: this.goodnums,
 
+				})
+			},
+			reget(){
+				// 订单信息修改之后不好刷新，使用再次获取数据，进行刷新数据展示
+				this.$api.getOrder().then(res => {
+					console.log("获取用户订单信息", res)
+					this.userorders = res.data
+					this.$api.getcars().then(res => {
+						console.log("获取车辆信息", res)
+						this.cars = res.data
+						// 获取价格
+						this.$api.getcarprices({
+						}).then(res => {
+							console.log("得到价格", res)
+							this.prices = res.data
+						}).catch(err=>{
+							console.log("出错了", err);
+						})
+				
+					}).catch(err => {
+						console.log("出错了", res);
+					})
+				
 				})
 			},
 

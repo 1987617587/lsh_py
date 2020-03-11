@@ -69,6 +69,12 @@ export const getShopDetail = (param) => {
 
 	return axios.get(`/shops/${param.id}`)
 }
+// 获取商品对应的分类信息
+export const getCategories = (param) => {
+	console.log("getCategories执行了")
+
+	return axios.get("/categories/")
+}
 
 // 获取所有商品列表
 export const getcars = (param) => {
@@ -110,6 +116,18 @@ export const getOrder = (param) => {
 	console.log("getOrder执行了", "参数", param)
 	return axios.get("/userorders/")
 }
+// 用户修改自己的订单
+export const updateOrder = (param) => {
+	console.log("updateOrder执行了", "参数", param)
+	return axios.patch(`/orders/${param.id}/`,param)
+}
+// 删除自己的订单
+export const delOrder = (param) => {
+	console.log("delOrder执行了", "参数", param)
+	return axios.delete(`/orders/${param.id}/`)
+}
+
+
 // 查看用户所有订单
 export const getOrders = (param) => {
 	console.log("getOrders执行了", "参数", param)
