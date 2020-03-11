@@ -60,26 +60,53 @@
 				<div class="car-box">
 					<br>
 					<!-- <div class="car-msg" v-for="(item,index) in datas[$route.params.index].car_types" v-if="item.id==$route.params.id"> -->
-					<div class="car-msg" style="display: flex; margin:10%;font-size:14px ;" v-for="(item,index) in userorders" v-if="item.user == userinfo.id">
-						{{item.user}}
-						<!-- <img v-for="" style="width: 30%;" :src="item.cars[0]" alt=""> -->
-						<!-- <van-row>
-							<br>
-							<van-col span="24">{{item.car_type_name}}</van-col>
-							<van-col span="4" offset="5">{{item.basics.displacement}}|</van-col>
-							<van-col span="4">{{item.basics.transmission_name}}|</van-col>
-							<van-col span="6">准乘{{item.basics.capacity}}人</van-col>
-						</van-row> -->
+					<!-- <div class="car-msg" style="display: flex; margin:10%;font-size:14px ;" v-for="(item,index) in userorders" v-if="item.user == userinfo.id">
+						<img v-for="(car,index1) in cars" v-if="car.id == item.cars[0]" style="width: 30%;" :src="car.imgs[0].img" alt="">
+						<van-row v-for="(car,index1) in cars" v-if="car.id == item.cars[0]">
+							<van-col span="24">{{car.group_id}}</van-col>
+							<van-col span="24">{{car.name}}</van-col>
+							<van-col span="4" offset="5">{{car.displacement}}|</van-col>
+							<van-col span="4">{{car.transmission_name}}|</van-col>
+							<van-col span="6">准乘5人</van-col>
+							<van-col span="24">{{item.days}}天</van-col>
+						</van-row>
+						<br>
+						<div class="days">
+							{{item.days}}天
+						</div>
 
-					</div>
-					<!-- <div class="days">
-						你的订单时长为{{$route.params.days}}天
 					</div> -->
+					<div v-for="(item,index) in userorders" v-if="item.user == userinfo.id"  class="vant">
+					<!-- <div v-for="(price,index2) in prices" v-if="price.id == item.price" class="vant"> -->
+					<div v-for="(car,index1) in cars" v-if="car.id == item.cars[0]" class="vant">
+						<van-card v-for="(price,index2) in prices" v-if="price.id == car.price" 
+						:num='item.days' 
+					
+						:price="price.day"
+						 :desc="car.name" 
+						 :title="car.group_id" 
+						 :thumb="car.imgs[0].img">
+							<div slot="tags">
+								<van-tag plain type="danger">{{car.category}}</van-tag>
+							</div>
+							<div slot="footer">
+								<van-button type="danger" size="small">删除此订单</van-button>
+								<van-button type="primary" size="mini">减少天数</van-button>
+								<van-button type="primary" size="mini">增加天数</van-button>
+							</div>
+						</van-card>
+						<!-- 111 -->
+					</div>
+					</div>
 					<br>
 				</div>
-				<!-- <div class="money" v-for="(item,index) in datas[$route.params.index].car_types" v-if="item.id==$route.params.id">
-					<van-submit-bar :price="summoney()*item.prices.day" button-text="提交订单" />
+				<br>
+				<!-- 		<div class="money" v-for="(car,index1) in cars" v-if="car.id == item.cars[0]" >
+					<van-submit-bar :price="summoney()*car.price" button-text="提交订单" />
 				</div> -->
+				<div class="money">
+					<van-submit-bar button-text="提交订单" />
+				</div>
 			</div>
 		</div>
 	</div>
@@ -105,12 +132,16 @@
 				currentDate: new Date(),
 				userorders: null,
 				userinfo: null,
+				cars: null,
+				prices: null,
+
 			}
 		},
 		computed: {
 			islog() {
 				return this.$store.getters.getlog
-			}
+			},
+
 		},
 		created() {
 			if (!this.islog) {
@@ -121,9 +152,25 @@
 					this.userinfo = res.data;
 					this.$jsCookie.set("userinfo", res.data)
 					// 获取用户信息之后获取订单
-					this.$api.getOrders().then(res => {
-						console.log("获取所有用户订单信息", res)
+					this.$api.getOrder().then(res => {
+						console.log("获取用户订单信息", res)
 						this.userorders = res.data
+						this.$api.getcars().then(res => {
+							console.log("获取车辆信息", res)
+							this.cars = res.data
+							// 获取价格
+							this.$api.getcarprices({
+							}).then(res => {
+								console.log("得到价格", res)
+								this.prices = res.data
+							}).catch(err=>{
+								console.log("出错了", err);
+							})
+
+						}).catch(err => {
+							console.log("出错了", res);
+						})
+
 					}).catch(err => {
 						console.log("出错了", res);
 					})
@@ -131,6 +178,7 @@
 					console.log("出错了");
 				})
 			}
+
 
 
 
@@ -198,7 +246,8 @@
 					num: this.goodnums,
 
 				})
-			}
+			},
+
 
 		}
 

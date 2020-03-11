@@ -105,10 +105,10 @@ export const crerteOrder = (param) => {
 	// 	}
 	// })
 }
-// 查看订单
+// 查看用户自己的订单
 export const getOrder = (param) => {
 	console.log("getOrder执行了", "参数", param)
-	return axios.get(`/orders/${param.id}`)
+	return axios.get("/userorders/")
 }
 // 查看用户所有订单
 export const getOrders = (param) => {

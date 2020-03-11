@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from . import permissions as mypermissions
@@ -71,6 +71,24 @@ class OrderViewsSets(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
+    # 添加指定路由
+    # @action(methods=['GET'], detail=False)
+    # def get_category(self, request):
+    #     # seria = CategorySerializer(instance=Category.objects.all()[:3],many=True)
+    #     # 指定查询数量
+    #     seria = CategorySerializer(instance=Category.objects.all()[:int(request.query_params.get("num"))], many=True)
+    #
+    #     return Response(data=seria.data, status=status.HTTP_200_OK)
+
+    # @action(methods=['GET'], detail=False)
+    # def get_ordersbyuser(self, request):
+    # seria = CategorySerializer(instance=Category.objects.all()[:3],many=True)
+    # 指定指定用户的订单
+    # seria = OrderSerializer(
+    #     instance=Order.objects.filter(user=request)[0].cars.all(), many=True)
+    # print(seria)
+    # return Response(data=seria.data, status=status.HTTP_200_OK)
+
     def get_permissions(self):
         print("当前http方法为", self.action)
         if self.action == "create" or self.action == "list":
@@ -92,4 +110,20 @@ def getuserinfo(request):
     seria = UserSerializer(instance=user[0])
     # seria.is_valid(raise_exception=True)
     # print(seria.data)
+    return Response(seria.data, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def getuserorders(request):
+    print("hello")
+    print(request)
+    print(request.headers["Authorization"])
+    user = JWTAuthentication().authenticate(request)
+    print("用户", user[0])
+    # seria = OrderSerializer(instance=user[0])
+    seria = OrderSerializer(instance=Order.objects.filter(user=user[0]), many=True)
+    # seria.is_valid(raise_exception=True)
+    print(seria.data)
+    # seria2 = CarSerializers(instance=Car.objects.filter(id=Order.objects.filter(user=user[0]).get("cars")[0]), many=True)
+    # print(seria2.data)
     return Response(seria.data, status=status.HTTP_200_OK)

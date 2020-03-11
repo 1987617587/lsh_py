@@ -45,6 +45,7 @@ urlpatterns = [
     url(r'^refresh/$', token_refresh, name='refresh'),
     # 支持使用token获取用户信息
     url(r'^userinfo/$', getuserinfo, name='userinfo'),
+    url(r'^userorders/$', getuserorders, name='getuserorders'),
 
     # API文档地址
     path('docs/', include_docs_urls(title="RestFulAPI", description="RestFulAPI v1")),
