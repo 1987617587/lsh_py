@@ -71,12 +71,18 @@
 			>
 			  <view slot="action" bind:tap="onClick">搜索</view>
 			</van-search>
+			<!-- 全文检索测试代码 -->
+				 <!-- 此处必须为get方法  且查询name必须为q -->
+				<form method='get' action="/search/" target="_blank">
+				<input type="text" name="q">
+				<input type="submit" value="查询">
+
 			
 			<!-- 分类标签展示 -->
 			<van-row >
 				
 			  <van-col v-for="(category,index) in categories" span="4">
-				  <van-button size="small" color="linear-gradient(to right, #4bb0ff, #6149f6)">{{category.name}}</van-button>
+				  <van-button size="mini" :color="colors[parseInt(Math.random()*colors.length)]">{{category.name}}</van-button>
 			</van-col>
 		
 			</van-row>
@@ -111,6 +117,14 @@
 				userinfo: null,
 				value: '',
 				categories:null,
+				colors:[
+					"#7232dd",
+					"#728221",
+					"#2282dd",
+					"#72d32d",
+					"linear-gradient(to right, #4bb0ff, #6149f6)",
+					"linear-gradient(to right, #2bb0ff, #849f6)"
+				]
 			}
 		},
 		created() {

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rentcar',
     'rest_framework_simplejwt',
     'corsheaders',
+    'django_filters',
 
 ]
 
@@ -164,8 +165,8 @@ REST_FRAMEWORK = {
     # # # Pagination
     # # 'PAGE_SIZE': 2,
     #
-    # # 全局过滤
-    # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.backends.DjangoFilterBackend'],
+    # 全局过滤
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.backends.DjangoFilterBackend'],
 
 }
 # 注册用户类

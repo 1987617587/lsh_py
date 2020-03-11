@@ -1,11 +1,12 @@
 from django.shortcuts import render
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from . import permissions as mypermissions
 
 from .models import *
-from rest_framework import viewsets, mixins, permissions, status
+from rest_framework import viewsets, mixins, permissions, status, filters
 from .serializers import *
 
 
@@ -15,21 +16,51 @@ from .serializers import *
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializers
+    # 局部过滤配置
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
+    filterset_fields = ['name']
+    # 局部搜索配置
+    search_fields = ["name"]
+    # 局部排序配置
+    ordering_fields = ["id"]
+
+
 
 
 class CityViewSet(viewsets.ModelViewSet):
     queryset = City.objects.all()
     serializer_class = CitySerializers
+    # 局部过滤配置
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
+    filterset_fields = ['name']
+    # 局部搜索配置
+    search_fields = ["name"]
+    # 局部排序配置
+    ordering_fields = ["id"]
 
 
 class ShopViewSet(viewsets.ModelViewSet):
     queryset = Shop.objects.all()
     serializer_class = ShopSerializers
+    # 局部过滤配置
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
+    filterset_fields = ['name']
+    # 局部搜索配置
+    search_fields = ["name"]
+    # 局部排序配置
+    ordering_fields = ["id"]
 
 
 class CarViewSet(viewsets.ModelViewSet):
     queryset = Car.objects.all()
     serializer_class = CarSerializers
+    # 局部过滤配置
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
+    filterset_fields = ['name']
+    # 局部搜索配置
+    search_fields = ["name"]
+    # 局部排序配置
+    ordering_fields = ["id"]
 
 
 class PricesViewSet(viewsets.ModelViewSet):
