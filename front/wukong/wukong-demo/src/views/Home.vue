@@ -55,7 +55,10 @@
 					<div class="address" style="font-size:12px;font-weight: 700;">
 						<van-row>
 							<van-col span="8">
-								<van-cell title="北京" is-link arrow-direction="down" />
+								<van-dropdown-menu>
+								  <van-dropdown-item :value="value1" :options="option1" />
+								</van-dropdown-menu>
+								<!-- <van-cell title="北京" is-link arrow-direction="down" /> -->
 							</van-col>
 							<van-col @click="gotoscreen" span="13" offset="1">
 							<!-- <van-col @click="zuobiao" span="13" offset="1"> -->
@@ -223,6 +226,12 @@
 		data() {
 			return {
 				// nowtime:null,
+				 option1: [
+				      { text: '全部商品', value: 0 },
+				      { text: '新款商品', value: 1 },
+				      { text: '活动商品', value: 2 }
+				    ],
+					value1: 0,
 				date: null,
 				show1: false,
 				dateto: '',
@@ -230,6 +239,7 @@
 				showto: false,
 				showend: false,
 				show: false,
+				showaddres: true,
 				images: [
 					'img/car.png',
 					'img/go.png',
@@ -245,6 +255,7 @@
 			console.log(this.timeTransform('2019-05-30'))
 		},
 		methods: {
+			
 			gotoscreen(){
 				this.$router.push("/screen")
 			},

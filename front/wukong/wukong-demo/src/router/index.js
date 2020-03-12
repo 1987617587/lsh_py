@@ -18,6 +18,7 @@ import Detail from '../views/Detail.vue'
 import Carslist from '../views/Carslist.vue'
 import Order from '../views/Order.vue'
 import Screen from '../views/Screen.vue'
+import Searchlist from '../views/Searchlist.vue'
 
 import Map from '../views/Map.vue'
 
@@ -76,6 +77,11 @@ const routes = [
     path: '/carslist/:dateto/:dateend',
     name: 'carslist',
     component: Carslist
+  },
+  {
+    path: '/searchlist/:class/:search',
+    name: 'searchlist',
+    component: Searchlist
   },
   
   {

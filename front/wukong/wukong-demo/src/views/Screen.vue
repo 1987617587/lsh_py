@@ -60,29 +60,39 @@
 
 
 		</div>
+		<van-search v-model="value" 
+		placeholder="请输入搜索关键词"
+		 show-action
+		 use-left-icon-slot
+		   ><van-icon @click="gotosearch" slot="left-icon" name="search" />
+			   </van-search>
 		
 		
-			<van-search
-			  :value="value"
+		
+			<!-- <van-search
+			label="品牌"
+			  value="value"
 			  placeholder="请输入搜索关键词"
-			  use-action-slot
-			  bind:change="onChange"
-			  bind:search="onSearch"
+			  @click="gotosearch"
 			>
-			  <view slot="action" bind:tap="onClick">搜索</view>
-			</van-search>
-			<!-- 全文检索测试代码 -->
-				 <!-- 此处必须为get方法  且查询name必须为q -->
-				<form method='get' action="/search/" target="_blank">
-				<input type="text" name="q">
-				<input type="submit" value="查询">
-
+			</van-search> -->
 			
+			<!-- 历史搜索 -->
+			<van-row >
+				
+			  <van-col v-for="(category,index) in categories" span="3">
+				  <van-tag round type="primary">标签</van-tag>
+			</van-col>
+		
+			</van-row>
+					
+			<br>	
+			<br>	
 			<!-- 分类标签展示 -->
 			<van-row >
 				
 			  <van-col v-for="(category,index) in categories" span="4">
-				  <van-button size="mini" :color="colors[parseInt(Math.random()*colors.length)]">{{category.name}}</van-button>
+				  <van-button @click="gotosearchcategory(category.name)" size="mini" :color="colors[parseInt(Math.random()*colors.length)]">{{category.name}}</van-button>
 			</van-col>
 		
 			</van-row>
@@ -102,6 +112,11 @@
 	
 		data() {
 			return {
+				border:true,
+				 show: {
+				        primary: true,
+				        success: true
+				      },
 				carslist,
 				datas: null,
 				show: false,
@@ -123,7 +138,6 @@
 					"#2282dd",
 					"#72d32d",
 					"linear-gradient(to right, #4bb0ff, #6149f6)",
-					"linear-gradient(to right, #2bb0ff, #849f6)"
 				]
 			}
 		},
@@ -160,14 +174,19 @@
 
 		},
 		methods: {
-  onChange(e) {
+			close(type) {
+			      this.show[type] = false;
+				  },
+		onChange(e) {
 		    this.setData({
 		      value: e.detail
 		    });
+			console.log("搜索",this.value)
 		  },
 		
 		  onSearch() {
-		    Toast('搜索' + this.data.value);
+		    this.toast('搜索' + this.data.value);
+			console.log("搜索",this.value)
 		  },
 		
 		  onClick() {
@@ -202,14 +221,16 @@
 					// this.$router.push("/carslist")
 				}
 			},
-			gotocar(shop_id, car_id, days) {
-				console.log(shop_id, car_id, days)
-				if (this.days) {
-					this.$router.push("/detail/" + shop_id + "/" + car_id + "/" + days)
-				} else {
-					this.$toast('请先选择用车时间');
-					// this.$router.push("/carslist")
-				}
+			// 搜索分类
+			gotosearchcategory(category){
+				console.log("搜索",category)
+				this.$router.push("/searchlist/categories/"+category+"/")
+			},
+			// 搜索汽车品牌
+			gotosearch(){
+				console.log("搜索",this.value)
+				this.$router.push("/searchlist/cars/"+this.value+"/")
+				
 			},
 			getcategories(){
 				this.$api.getCategories({

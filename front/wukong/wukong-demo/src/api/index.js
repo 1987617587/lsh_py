@@ -172,7 +172,11 @@ export const modifyUserInfo = (param)=>{
 	return axios.patch(`users/${id}/`,param.userinfo,)
 }
 
-
+// 搜索
+export const search = (param)=>{
+	console.log("search执行了",param);
+	return axios.get(`${param.class}/?search=${param.search}`)
+}
 // 
 // 
 // export const getUserinfo = (param)=>{
