@@ -89,13 +89,13 @@
 				<div class="first" style="width: 96%; margin: 2%; background-color: rgb(253,238,227);">
 					<br>
 					<van-row>
-						<van-col span="16">{{items.name}}</van-col>
+						<van-col span="18">{{items.name}}</van-col>
 						<van-col span="4" offset="2">1.0km</van-col>
 					</van-row>
 					<br>
 					<!-- 评星展示 -->
 					<van-row type="flex">
-						<van-col span="12" offset="3">
+						<van-col span="10" offset="3">
 							<div class="start" style="text-align: left;">
 								<img style="width: 10%; margin-left:12px ;" src="img/start.png" alt="">
 								<img style="width: 10%;" src="img/start.png" alt="">
@@ -107,7 +107,7 @@
 						</van-col>
 
 					</van-row>
-					<p style="text-align: left; padding-left:46px ;">{{items.address}}</p>
+					<p style="text-align: left; padding-left:16px ;">{{items.address}}</p>
 					<!-- {{datas[index].address}} -->
 					<br>
 
@@ -124,22 +124,24 @@
 							</van-col>
 							<van-col span="16">
 								<van-row type="flex" justify>
-									<van-col span="18">
-										{{item.name}}
+									<van-col span="14">
+										<br>
+										<!-- <strong>{{item.name}}</strong> -->
 									</van-col>
 
 								</van-row>
 								<van-row type="flex">
-									<van-col span="12">
-										<br>
+									<van-col span="14">
+										<!-- <br> -->
+										<strong>{{item.name}}</strong>
 										<br>
 										<strong v-for="(price,index2) in prices" v-if="item.price==price.id" style=" font-size: 20px;color: red;">{{price.avg}}</strong>元/日均价
 										<!-- {{item.id}} -->
 									</van-col>
-									<van-col span="6">
-										<!-- {{item.prices.avg}}元/日均价 -->
+									<van-col span="2">
+										<!-- <br> -->
 									</van-col>
-									<van-col span="4">
+									<van-col span="8">
 										<van-button @click="gotuOrder(userinfo.id,item.id,days)" round type="info">订</van-button>
 									</van-col>
 

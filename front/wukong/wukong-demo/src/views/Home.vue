@@ -63,7 +63,9 @@
 							<van-col @click="gotoscreen" span="13" offset="1">
 							<!-- <van-col @click="zuobiao" span="13" offset="1"> -->
 								<!-- <van-cell title="王府井" is-link arrow-direction="down" /> -->
-								<van-cell title="去看看" is-link arrow-direction="down" />
+								<!-- <van-cell title="去看看" is-link arrow-direction="down" /> -->
+								<br>
+								<van-icon name="search"  size="26px" />
 							</van-col>
 						</van-row>
 					</div>
