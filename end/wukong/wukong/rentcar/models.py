@@ -89,3 +89,19 @@ class Order(models.Model):
 
     def __str__(self):
         return self.user.username + "的订单"
+
+
+class Comment(models.Model):
+    # 对本产品的评价
+    name = models.CharField(max_length=20, verbose_name="评论人昵称")
+    url = models.URLField(default="http://www.zzy.com", verbose_name="个人主页")
+    email = models.EmailField(default="1862655@qq.com", verbose_name="个人邮箱")
+    body = models.TextField(verbose_name="评论内容")
+    create_time = models.DateTimeField(auto_now_add=True, verbose_name="评论时间")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="所属用户")
+
+    def __str__(self):
+        return self.name
+
+    class Mate:
+        verbose_name = "评论表"

@@ -81,6 +81,19 @@ class CarImagesViewSet(viewsets.ModelViewSet):
     serializer_class = CarImagesSerializers
 
 
+class CommentViewSet(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+    # 局部过滤配置
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
+    filterset_fields = ['name']
+    # 局部搜索配置
+    search_fields = ["name"]
+    # 局部排序配置s
+    ordering_fields = ["-id"]
+
+
+
 class UserViewsSets(viewsets.GenericViewSet, mixins.CreateModelMixin, mixins.RetrieveModelMixin,
                     mixins.UpdateModelMixin,
                     mixins.DestroyModelMixin):

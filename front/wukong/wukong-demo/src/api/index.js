@@ -177,6 +177,30 @@ export const search = (param)=>{
 	console.log("search执行了",param);
 	return axios.get(`${param.class}/?search=${param.search}`)
 }
+// 获取所有城市地址
+export const getCities = (param)=>{
+	console.log("getCities执行了",param);
+	return axios.get("cities/")
+}
+// 获取指定城市地址
+export const getCity = (param)=>{
+	console.log("getCity执行了",param);
+	return axios.get(`cities/${param.id}/`)
+}
+
+// 获取产品评论信息
+export const getComments = (param)=>{
+	console.log("getComments执行了",param);
+	return axios.get("comments/")
+}
+
+
+
+// 发表产品评论信息
+export const comment = (param)=>{
+	console.log("comment执行了",param);
+	return axios.post("/comments/",param)
+}
 // 
 // 
 // export const getUserinfo = (param)=>{

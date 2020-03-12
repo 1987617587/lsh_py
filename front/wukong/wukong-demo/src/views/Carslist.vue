@@ -55,22 +55,37 @@
 
 
 
-			<div class="time-address" style="display: flex; justify-content: space-between;">
+<!-- 			<div class="time-address" style="display: flex; justify-content: space-between;">
 				<div class="time" style="width: 60%; display: flex;">
 					<van-cell title="取还时间" :value="date" @click="showtime = true" />
 
 					<van-calendar v-model="showtime" type="range" @confirm="onConfirm" />
 					<van-icon name="arrow" />
 
-					<!-- <van-datetime-picker v-model="currentDate" type="datetime" :min-date="minDate" :max-date="maxDate" /> -->
 				</div>
 				<div @click="gotomap" class="address" style="width: 30%;display: flex; justify-content: space-between;">
 					<p style="margin: 0;padding: 0;">选择地址</p>
 					<van-icon name="arrow" />
 				</div>
-			</div>
+			</div> -->
+			<van-row>
+			  <van-col span="12">
+				  <van-cell title="取还时间" :value="date" @click="showtime = true" />
+				  			
+				  <van-calendar v-model="showtime" type="range" @confirm="onConfirm" />
+			  </van-col>
+			  <van-col span="12">
+				  
+				  <van-dropdown-menu>
+					  <!-- 出现bug 此处选择地址有问题 先禁止选择 -->
+				    <van-dropdown-item v-if="addres" :title="addres.name" :value="value1" :options="option1" disabled  />
+				  </van-dropdown-menu>
+			  </van-col>
+			</van-row>
+
+		
 			<br>
-			<div class="carslit-msg" v-for="(items,index) in datas" style="width: 100%;background-color: white;">
+			<div class="carslit-msg" v-for="(items,index) in datas" v-if="items.city == addres.id" style="width: 100%;background-color: white;">
 				<div class="first" style="width: 96%; margin: 2%; background-color: rgb(253,238,227);">
 					<br>
 					<van-row>
@@ -161,6 +176,12 @@
 	export default {
 		data() {
 			return {
+				option1: [
+				     { text: '北京', value: 0 },
+				     { text: '郑州', value: 1 },
+				     { text: '上海', value: 2 }
+				   ],
+				value1: null,
 				carslist,
 				datas: null,
 				show: false,
@@ -174,9 +195,37 @@
 				currentDate: new Date(),
 				days: null,
 				userinfo:null,
+				addres:null,
+				alladdres:null,
 			}
 		},
 		created() {
+			console.log(this.$route.params.addres)
+			this.value1 = this.$route.params.addres
+			// 根据地址获取信息
+			// if(this.value1){
+			// 	this.$api.getCity({
+			// 		id:parseInt(this.value1)+1
+			// 	}).then(res=>{
+			// 		console.log("地址信息",res)
+			// 		this.addres=res.data;
+			// 	}).catch(err=>{
+			// 		console.log("出错了");
+			// 	})
+			// }
+			
+			// 获取所有城市信息
+			if(this.value1){
+				this.$api.getCities().then(res=>{
+						console.log("地址信息",res)
+						this.alladdres=res.data;
+						this.addres = this.alladdres[this.value1]
+					}).catch(err=>{
+						console.log("出错了");
+					})
+				
+				
+			}
 			this.$api.getUserinfo().then(res=>{
 				console.log("个人信息",res)
 				this.userinfo=res.data;
@@ -209,6 +258,10 @@
 
 		},
 		methods: {
+			changeaddres(){
+				console.log("地址改变",this.value1)
+				this.addres = this.alladdres[this.value1]
+			},
 			timeTransform(str) {
 				// var str = "2010-08-01";
 				// 转换日期格式
@@ -355,6 +408,8 @@
 		margin: 0;
 		padding: 0;
 	}
+	
+	
 
 	/* .block {
 		top: 48px;

@@ -56,7 +56,7 @@
 						<van-row>
 							<van-col span="8">
 								<van-dropdown-menu>
-								  <van-dropdown-item :value="value1" :options="option1" />
+								  <van-dropdown-item  v-model="value1" :options="option1" />
 								</van-dropdown-menu>
 								<!-- <van-cell title="北京" is-link arrow-direction="down" /> -->
 							</van-col>
@@ -227,11 +227,11 @@
 			return {
 				// nowtime:null,
 				 option1: [
-				      { text: '全部商品', value: 0 },
-				      { text: '新款商品', value: 1 },
-				      { text: '活动商品', value: 2 }
+				      { text: '北京', value: 0 },
+				      { text: '郑州', value: 1 },
+				      { text: '上海', value: 2 }
 				    ],
-					value1: 0,
+					value1: 1,
 				date: null,
 				show1: false,
 				dateto: '',
@@ -240,6 +240,7 @@
 				showend: false,
 				show: false,
 				showaddres: true,
+				addres:null,
 				images: [
 					'img/car.png',
 					'img/go.png',
@@ -253,7 +254,12 @@
 			// this.nowtime = s2
 			console.log(this.getDateDiff('2019-05-30', '2019-05-20'))
 			console.log(this.timeTransform('2019-05-30'))
+			console.log(this.value1,this.option1[this.value1])
+			
+				
+			
 		},
+		
 		methods: {
 			
 			gotoscreen(){
@@ -308,12 +314,20 @@
 			},
 			gotoCarslist(dateto, dateend) {
 				// this.$router.push("/carslist")
-				if (dateto && dateend) {
-
-					this.$router.push("/carslist/" + dateto + "/" + dateend)
+				console.log("地址",this.option1[this.value1].value)
+				this.addres = this.option1[this.value1].value
+				if (dateto && dateend && this.addres) {
+				
+					this.$router.push("/carslist/" + dateto + "/" + dateend + "/" + this.addres)
 				} else {
-					this.$router.push("/carslist/0/0")
+					this.$router.push("/carslist/0/0/" + this.addres)
 				}
+// 				if (dateto && dateend) {
+// 
+// 					this.$router.push("/carslist/" + dateto + "/" + dateend)
+// 				} else {
+// 					this.$router.push("/carslist/0/0")
+// 				}
 			},
 			gotocoupon() {
 				this.$router.push("/coupon")
@@ -324,7 +338,9 @@
 			guide() {
 				// this.$toast('显示指南轮播');
 				this.show1 = !this.show1
-			}
+			},
+			
+			
 
 		}
 	}

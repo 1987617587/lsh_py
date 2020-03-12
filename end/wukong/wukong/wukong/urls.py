@@ -33,6 +33,7 @@ router.register('cities', CityViewSet)
 router.register('prices', PricesViewSet)
 router.register('users', UserViewsSets)
 router.register('orders', OrderViewsSets)
+router.register('comments', CommentViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

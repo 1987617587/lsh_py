@@ -115,3 +115,10 @@ class OrderSerializer(serializers.ModelSerializer):
         model = Order
         # fields = ('','','')
         fields = "__all__"
+
+
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        # fields = ('','','')
+        fields = "__all__"

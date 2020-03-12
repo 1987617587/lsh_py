@@ -31,6 +31,17 @@
 
 
 		</div>
+		<div class="comment">
+			<van-divider contentPosition="center" customStyle="color: #1989fa;border-color: #1989fa;font-size: 18px;">用户评论</van-divider>
+		
+			<div v-for="(comment,index) in comments">
+				<van-notice-bar
+			  :text="comment.create_time +'用户昵称：'+comment.name+'发表了言论--'+comment.body"
+			  left-icon="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
+			/>
+			</div>	
+		
+		</div>
 	</div>
 </template>
 
@@ -39,9 +50,25 @@
 		data() {
 			return {
 				show: false,
-				message: ""
-
+				message: "",
+				comments:null,
+				userinfo:null,
 			}
+		},
+		created() {
+			this.$api.getUserinfo().then(res=>{
+				console.log("个人信息",res)
+				this.userinfo=res.data;
+				this.$jsCookie.set("userinfo",res.data)
+			}).catch(err=>{
+				console.log("出错了");
+			})
+			this.$api.getComments().then(res=>{
+				console.log("获得评论信息",res)
+				this.comments = res.data
+			}).catch(err=>{
+				console.log("出错了")
+			})
 		},
 		methods: {
 			onClickLeft() {
@@ -71,8 +98,20 @@
 			},
 			submission() {
 				if (this.message) {
-					this.$toast('提交成功');
+					this.$api.comment({
+						name:this.userinfo.username,
+						body:this.message,
+						user:this.userinfo.id
+					}).then(res=>{
+						this.$toast('提交成功');
 					this.message = ""
+					this.$router.go(0)
+					
+					}).catch(err=>{
+						this.$toast('提交失败')
+					})
+					
+					
 				} else {
 					this.$toast('请先输入');
 				}
