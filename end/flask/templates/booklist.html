@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>书籍列表展示</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css"/>
+
+</head>
+<body>
+    <div class="container">
+
+        <h2>当前用户：{{username}}</h2>
+        {% if booklist %}
+            <p>图书列表</p>
+            <ul>
+                {% for book in booklist %}
+                <li> {{book}}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>没有图书列表</p>
+        {% endif %}
+        <img src="/static/img/falalipaoche.png" alt="">
+    </div>
+
+</body>
+</html>
