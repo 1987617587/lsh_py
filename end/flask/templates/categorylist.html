@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分类列表</title>
+</head>
+<body>
+ <div class="container">
+
+        <h2>当前用户：{{user[0].name}}</h2>
+        {% if categories %}
+            <p>分类列表</p>
+            <ul>
+                {% for category in categories %}
+                <li>{{category.id}}---{{category.name}}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>没有分类列表</p>
+        {% endif %}
+        <img src="/static/img/falalipaoche.png" alt="">
+    </div>
+
+</body>
+</html>
