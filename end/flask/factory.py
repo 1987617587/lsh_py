@@ -13,6 +13,7 @@ from flask import Flask
 # from views.book import books_bp
 # from views.other import get404_bp
 # from views.user import user_bp
+from models import db
 from views import *
 
 
@@ -91,5 +92,12 @@ def creat_app():
     #
     #     return "这是第一次请求"
 
+    # 配置数据库
+    app.config['SQLALCHEMY_ECHO'] = True
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///flask_demo.db'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    db.init_app(app)
+    db.app = app
 
     return app

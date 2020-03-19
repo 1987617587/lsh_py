@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block Title %}
+ <title>分类</title>
+{% endblock %}
+
+
+{% block main %}
+    <div class="col-md-8 col-md-offset-2">
+        <h3 class="center">书籍列表</h3>
+        <table class="table">
+      <tr>
+          <th>书籍编号</th>
+          <th>书籍名</th>
+      </tr>
+        {% for b in bs %}
+
+            <tr>
+                     <td>{{b.id}}</td>
+                     <td>{{b.name}}</td>
+
+            </tr>
+
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}

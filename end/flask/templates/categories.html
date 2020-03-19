@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block Title %}
+ <title>首页</title>
+{% endblock %}
+{% block main %}
+<h1>书籍分类列表</h1>
+<table class="table">
+    <tr>
+        <th>分类号</th>
+        <th>分类名</th>
+    </tr>
+    {% for c in cs %}
+    <tr>
+        <th>{{c.id}}</th>
+        <th><a href="/categories/{{c.id}}">{{c.name}}</a></th>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
