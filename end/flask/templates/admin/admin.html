@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>后台管理</title>
+{% endblock  %}
+{% block main %}
+<div class="col-md-8 col-md-offset-2">
+    <h3 class="center">后台管理</h3>
+    <ul>
+        <li>
+            <p>分类</p>
+            <ul>
+                {% for c in cs%}
+                <li>{{c.name}}<a href="/admin/category/del/{{c.id}}">删除</a></li>
+                {% endfor %}
+                <li><a href="/admin/category/add">添加分类</a></li>
+            </ul>
+        </li>
+        <li>
+            <p>书籍</p>
+            <ul>
+                {% for b in bs%}
+                <li>{{b.name}}<a href="/admin/book/del/{{b.id}}">删除</a></li>
+                {% endfor %}
+                <li><a href="/admin/book/add">添加书籍</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+{% endblock %}

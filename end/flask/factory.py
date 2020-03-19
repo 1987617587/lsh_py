@@ -71,6 +71,7 @@ def creat_app():
     app.register_blueprint(user_bp)
     app.register_blueprint(books_bp)
     app.register_blueprint(get404_bp)
+    app.register_blueprint(admin_bp)
 
     # @app.before_first_request
     # def first_request_do_something():

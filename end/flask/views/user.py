@@ -1,7 +1,8 @@
+import datetime
 import sqlite3
 from itsdangerous import TimedJSONWebSignatureSerializer, SignatureExpired, BadSignature
 
-from flask import Blueprint, request, current_app
+from flask import Blueprint, request, current_app, make_response, session
 from flask import render_template, request, flash
 from flask_mail import Message
 from werkzeug.utils import redirect
@@ -115,8 +116,20 @@ def login():
                                 "password": password,
                             })
                             return redirect('/login')
-
-                        return redirect('/')
+                        # 允许登录，生成cookie,检验是否含有目标路由
+                        next = request.args.get("next")
+                        if next:
+                            res = make_response(redirect(next))
+                            # res.set_cookie("user", username,
+                            #                expires=datetime.datetime.now() + datetime.timedelta(days=7))
+                            session["user"] = username
+                            return res
+                        # res = request.cookie.set('user')
+                        res = make_response(redirect("/"))
+                        # res.set_cookie("user", username, expires=datetime.datetime.now() + datetime.timedelta(days=7))
+                        session["user"] = username
+                        return res
+                        # return redirect('/')
 
                 error = "用户名或密码错误"
         # 需要在本次请求中将信息写入session （前提必须配置secret_key）
@@ -155,3 +168,11 @@ def activeuser(serstr):
         print(e, "过期了")
     except BadSignature as e:
         print(e, "密钥错误")
+
+
+@user_bp.route("/loginout", methods=["GET", "POST"])
+def loginout():
+    res = make_response(redirect("/"))
+    # res.delete_cookie("user")
+    session.pop("user")
+    return res
