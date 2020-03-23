@@ -1,9 +1,10 @@
 from factory import creat_app
 from models import *
 
+app = creat_app()
 if __name__ == "__main__":
     # http: // 127.0.0.1: 5000 / 是默认的IP和端口
-    app = creat_app()
+
     #     数据库
     # db.drop_all()
     # db.create_all()

@@ -64,13 +64,13 @@ def hello_world():
 
 if __name__ == '__main__':
     # 操作数据库不需要运行项目
-    # app.run()
+    app.run()
     # 生成数据库表 初始化 第一次运行
     # create_table()
     # 增加数据
     # add_user()
     # 查询数据
-    query()
+    # query()
     # 修改数据
     # update()
     # 删除数据

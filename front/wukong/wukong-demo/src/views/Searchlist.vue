@@ -78,6 +78,7 @@
 				<div v-if="item.shop == items.id" class="car">
 					<van-row type="flex">
 						<van-col span="8">
+							<!-- <img style="width: 100%;" v-if="item.imgs" :src="item.imgs[0].img" alt=""> -->
 							<img style="width: 100%;" v-if="item.imgs" :src="item.imgs[0].img" alt="">
 			
 						</van-col>

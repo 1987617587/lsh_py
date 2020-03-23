@@ -85,10 +85,23 @@ WSGI_APPLICATION = 'bookdemo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# 数据库的配置参数
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysqsl',
+        # 在数据库里手动创建一个blog
+        'NAME':'blog',
+        'USER':'root',
+        'PASSWORD':'123456',
+        # 使用默认ip和端口号，可以不写
+        # 'HOST':'localhost',
+        # 'PORT':'3306',
+
+
     }
 }
 

@@ -5,6 +5,9 @@ axios.defaults.baseURL = 'http://127.0.0.1:8000'
 
 // axios.defaults.baseURL = 'http://192.168.1.104:8000'
 
+// 虚拟机访问
+
+// axios.defaults.baseURL = 'http://192.168.1.108:9090'
 // 拦截请求
 axios.interceptors.request.use(function(config) {
 	// 在发起请求之前可以对请求进行处理  其中config就是请求中的config参数
