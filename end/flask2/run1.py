@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
@@ -15,7 +15,8 @@ def userinfo():
     print(request.method)
     if request.method == "GET":
         # return "<h1>这里是个人信息页面</h1>"
-        return "<h1>请在本页面填入你的个人信息，本系统自动对你的安全性评估</h1>"
+        # return "<h1>请在本页面填入你的个人信息，本系统自动对你的安全性评估</h1>"
+        return render_template("userinfo.html")
     elif request.method == "POST":
         return "正在获取你的信息"
 
