@@ -1,4 +1,4 @@
-#  .gitignore忽略列表文件 凡是能够匹配到以下规则的文件 git仓库不进行管理
+﻿#  .gitignore忽略列表文件 凡是能够匹配到以下规则的文件 git仓库不进行管理
 end/project1/.idea
 end/project1/venv
 end/project2/.idea
@@ -19,3 +19,6 @@ end/flask2/.idea
 end/flask2/venv
 pachong/PCdemo/.idea
 pachong/PCdemo/venv
+pachong/PCdemo/myenv2
+basics/venv
+basics/.idea
