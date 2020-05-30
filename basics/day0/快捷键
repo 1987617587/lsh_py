@@ -1,0 +1,34 @@
+Pycharm
+快捷键大全
+常用开发快捷键
+Ctrl + E 　　　　可打开最近访问过的文件
+Ctrl + Shift + E　打开最近编辑过的文件
+shift连按两下       万能搜索
+Ctrl + Shift + V    历史粘贴版
+Alt + Enter         智能提示　
+Ctrl + alt + space      补全提示
+Shfit + Enter       任意位置换行
+Ctrl + D        向下复制当前行
+Ctrl + Y 　　删除当前行
+Ctrl + / 　　快速在本行行首插入“  # ”，对单行行或选中多行进行注释
+Ctrl + alt + L　　格式化代码
+PEP8
+Shift + F6　　重命名变量名 / 文件名
+会自动更新关联
+Ctrl + Shift + F10　　初次run当前程序
+Shift + F10　　run当前程序(非初次)
+Shift + Tab　　对单行或选中多行撤销回退一个tab
+Ctrl + Enter　　任意位置换行(快速在当前行下创建一个空行)
+Shift + Alt + ↑ / ↓　　向上 / 向下移动任意行
+
+鼠标中键按下：关闭当前标签页
+Ctrl + 鼠标左键：转到定义
+Ctrl + G: 快速定位行
+Ctrl + 鼠标滚轮控制字体大小：需要开启
+
+更多快捷键可以这样查看：
+文件菜单下点击设置：
+点击设置列表中的快捷键：
+可以查看并可以自由设定键位
+一般不建议自己设定
+
