@@ -1,6 +1,6 @@
 # python 
-## liushihao
-*666*
+## 原创作者：刘士豪
+*感谢您的浏览，本人CSDN社交网址https://blog.csdn.net/weixin_42439244*
 # 目录说明
 ### airtext 为手机端测试脚本
 ### basics python基础及高阶练习集
