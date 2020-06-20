@@ -1,0 +1,2312 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://www.weather.com.cn/weather1d/101180101.shtml -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/auto_dup"></script><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/wa.js.下载"></script>
+<link rel="dns-prefetch" href="http://i.tq121.com.cn/">
+
+
+<title>郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网</title>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta name="keywords" content="郑州天气预报,zztq,郑州今日天气,郑州周末天气,郑州一周天气预报,郑州15日天气预报,郑州40日天气预报">
+<meta name="description" content="郑州天气预报，及时准确发布中央气象台天气信息，便捷查询北京今日天气，郑州周末天气，郑州一周天气预报，郑州15日天气预报，郑州40日天气预报，郑州天气预报还提供郑州各区县的生活指数、健康指数、交通指数、旅游指数，及时发布郑州气象预警信号、各类气象资讯。">
+<!-- 城市对比上线  -->
+<link type="text/css" rel="stylesheet" href="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/cityListCmp.css">
+<link type="text/css" rel="stylesheet" href="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/weathers.css"> 
+<style>
+     .xyn-zan {
+            width: 30px;
+            height: 51px;
+            background: url(http://i.tq121.com.cn/i/weather2015/city/zan-bj.png) no-repeat;
+            margin-bottom: 7px;
+            text-align: center
+        }
+
+        .xyn-zan img {
+            padding-top: 5px;
+            cursor: pointer;
+        }
+
+        .xyn-zan p {
+            line-height: 15px;
+            color: #a4a4a4;
+        }
+
+        .xyn-weather-box {
+            width: 354px;
+            height: 261px;
+            border: 1px solid #c2e5ff;
+            background: #fff;
+            position: absolute;
+            top: -67px;
+            left: 250px;
+            z-index: 999999;
+            display: none;
+        }
+
+        .xyn-weather-box h2 {
+            border-bottom: 1px solid #e5ebef;
+            height: 34px;
+            line-height: 34px;
+            font-weight: normal;
+            font-size: 14px;
+            padding-left: 13px;
+            color: #7e7e7e;
+            position: relative;
+        }
+
+        .xyn-weather-box h2 span {
+            color: #7e7e7e;
+            font-size: 16px;
+        }
+
+        .xyn-weather-box h2 span img {
+            vertical-align: middle;
+            padding-right: 8px;
+        }
+
+        .xyn-weather-box h2 .xyn-delete {
+            float: right;
+            margin-top: 13px;
+            margin-right: 13px;
+            cursor: pointer;
+        }
+
+        .xyn-wb-text {
+            color: #7b7b7b;
+            padding-top: 12px;
+            padding-left: 10px;
+        }
+
+        .xyn-wb-text span {
+            color: #377cb9;
+            font-size: 18px;
+            padding-left: 3px;
+        }
+
+        .xyn-wb-btn {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .xyn-wb-btn input {
+            width: 180px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            color: #fff;
+            background: #77c2eb;
+            cursor: pointer;
+        }
+
+        .main-box-div {
+            width: 50px;
+            float: left;
+            margin-left: 6px;
+            margin-right: 6px;
+            margin-top: 13px;
+            cursor: pointer;
+        }
+
+        .xyn-icon-bj {
+            width: 26px;
+            height: 24px;
+            border: 1px solid #fff;
+            margin: auto;
+            cursor: pointer;
+        }
+
+        .xyn-icon-bj.cur {
+            background: #f0faff;
+            border: 1px solid #a5d9ff;
+        }
+
+        .xyn-icon-bj span {
+            background: url(http://i.tq121.com.cn/i/weather2015/city/icon-img.png) no-repeat;
+            width: 21px;
+            height: 20px;
+            display: block;
+            margin-top: 2px;
+            margin-left: 2px;
+        }
+
+        .xyn-icon-bj span.icon1 {
+            background-position: 0 0;
+        }
+
+        .xyn-icon-bj span.icon2 {
+            background-position: -58px 0px;
+        }
+
+        .xyn-icon-bj span.icon3 {
+            background-position: -130px 0;
+        }
+
+        .xyn-icon-bj span.icon4 {
+            background-position: -205px 0;
+        }
+
+        .xyn-icon-bj span.icon5 {
+            background-position: -280px 0;
+        }
+
+        .xyn-icon-bj span.icon6 {
+            background-position: 0 -50px;
+        }
+
+        .xyn-icon-bj span.icon7 {
+            background-position: -58px -48px;
+        }
+
+        .xyn-icon-bj span.icon8 {
+            background-position: -130px -45px;
+        }
+
+        .xyn-icon-bj span.icon9 {
+            background-position: -206px -45px;
+        }
+
+        .xyn-icon-bj span.icon10 {
+            background-position: -277px -46px;
+        }
+
+        .xyn-icon-text {
+            text-align: center;
+        }
+
+        .xyn-cont-box {
+            width: 310px;
+            margin: auto;
+        }
+
+        #select {
+            font-size: 12px;
+            width: 57px;
+            margin: auto;
+            border: 1px solid #dfe6eb;
+            position: absolute;
+            top: 7px;
+            left: 140px;
+        }
+
+        #select ul {
+            margin: 0px;
+            padding: 0px;
+            background: #fff;
+            float: none;
+            height: auto;
+            width: 57px;
+            position: static;
+            z-index: 9999;
+            height: 160px;
+            overflow-y: scroll;
+            display: none;
+        }
+
+        #select ul li {
+            border: none;
+            float: none;
+            font-size: 12px;
+            height: 20px;
+            margin-left: 0;
+            position: static;
+            text-align: left;
+        }
+
+        #select ul li,
+        #select span {
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+            display: block;
+            text-indent: 4px;
+            font-size: 12px;
+        }
+
+        #select span {
+            background: url(http://i.tq121.com.cn/i/weather2015/city/xiala.png) 42px center no-repeat;
+        }
+
+        #select ul li:hover,
+        #select span:hover {
+            color: #377cb9;
+            cursor: pointer;
+        }
+
+        .yq-weather {
+            position: absolute;
+            right: 30px;
+            top: 75px;
+            cursor: pointer;
+            color: #7f7f7f;
+        }
+
+        .yq-weather img {
+            vertical-align: middle;
+            padding-right: 5px;
+        }
+
+        .sk01 .succ {
+            display: none;
+            width: 222px;
+            height: 124px;
+            background: #fff;
+            border: 1px solid #77c2ec;
+            box-shadow: 1px 4px 4px #aaa;
+            margin-left: 70px;
+            margin-top: -62px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 3;
+            color: #252525;
+            border-radius: 2px
+        }
+
+        .sk01 .succ h1 {
+            font-size: 20px;
+            margin-left: 40px;
+            margin-top: 39px
+        }
+
+        .sk01 .succ p {
+            font-size: 12px;
+            margin-left: 40px;
+            margin-top: 0
+        }
+
+        .sk01 .img {
+            background-position: -78px -904px;
+            width: 70px;
+            height: 35px;
+            position: absolute;
+            left: 116px;
+            top: 30px
+        }
+    </style>
+
+   
+   
+<style type="text/css">qihoobannerslider{display:block;} qihoobannerslider .img{background-size:cover;background-repeat:no-repeat;}</style><style type="text/css">.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 info-div{
+   display: block;
+}.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 
+.gouwu-bottom{
+   width: 680px;
+   float: left;
+   margin-bottom: 18px;
+}.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 
+.blockItem{
+   float: left;
+   margin: 4px;
+   /*margin-top: 4px;
+   margin-left: 4px;*/
+   width: 75px;
+   height: 75px;
+   border: 1px solid #f6f6f6;
+   overflow: hidden;
+   position: relative;
+   cursor: pointer;
+   background: #ccc;
+}.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 
+.blockItem .img:hover {
+   transform: scale(1.05);
+   transition: transform .2s ease-out;
+}.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 
+
+.blockItem .img{
+   position: absolute;
+   top: 0;
+   left: 0;
+   transition: transform .2s ease-out;
+   height: 75px;
+   width: 75px;
+}.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 
+
+.blockItem .blockItem-text{
+   text-align: center;
+   background: rgba(0, 0, 0, 0.4);
+   height: 18px;
+   position: absolute;
+   bottom: 0;
+   text-shadow: 0px 0px 5px #000000, 2px 2px 10px #000000;
+   width: 75px;
+   padding: 5px 0;
+   color: #ffffff;
+   transition: bottom 0.5s ease;
+   -webkit-transition: bottom 0.5s ease;
+   -moz-transition: bottom 0.5s ease;
+   -o-transition: bottom 0.5s ease;
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6000000', endColorstr='#e6000000',GradientType=0 );
+   background-image: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0.6), 70%, rgba(255, 255, 255, 0));
+   background-image: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0.6), 70%, rgba(255, 255, 255, 0));
+   background-image: -o-linear-gradient(0deg, rgba(0, 0, 0, 0.6), 70%, rgba(255, 255, 255, 0));
+   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), 70%, rgba(255, 255, 255, 0));
+   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), 70%, rgba(255, 255, 255, 0));
+}.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 
+
+.blockItem.hover .blockItem-text{
+   color: #ffff00;
+}
+/*.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 .blockItem:hover .blockItem-text {
+   bottom: 0;
+   background: url(https://p3.ssl.qhimg.com/t01f4e523f75d0d0ce8.gif) center center, rgba(0, 0, 0, 0.6);
+   *background: #000000 url(https://p3.ssl.qhimg.com/t01f4e523f75d0d0ce8.gif) center center;
+   color: yellow!important;
+}*/
+
+/*.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 .old-ie .item:hover .item-text:before {
+   position: absolute;
+   top: 0;
+   left: -15px;
+   right: 0;
+   bottom: 0;
+   content: url(https://p3.ssl.qhimg.com/t01f4e523f75d0d0ce8.gif); !* heart arise *!
+}*/.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 
+.blockItem .blockItem-title {
+   text-overflow: ellipsis;
+   font-size: 13px;
+   /*color: #FFFFFF;*/
+   line-height: 18px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-align: center;
+   padding: 0 5px;
+}.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 
+.blockItem .blockItem-action {
+   text-align: center;
+   font-size: 14px;
+   color: #1db69a;
+   line-height: 18px;
+   border: 1px solid #1db69a;
+   /* width: 90%; */
+   /* margin: auto; */
+   margin-top: 5px;
+   display: inline-block;
+   padding: 0 10px;
+}.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 
+
+
+
+
+
+.slide-column-pageup{
+   width: 26px;
+   height: 46px;
+   margin-top: -35px;
+   left: 0;
+   position: absolute;
+   top: 50%;
+   z-index: 5;
+   cursor: pointer;
+   display: none;
+}.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 
+.slide-column-pageup .arrowLeft{
+   /* background-position: 0 0; */
+   width: 26px;
+   height: 46px;
+   left: 0;
+   top: 0;
+   position: absolute;
+   background-image: url(https://p2.ssl.qhimg.com/t01522ece2ff580414e.png);
+   background-repeat: no-repeat;
+   /* line-height: 200px; */
+   overflow: hidden;
+   z-index: 1;
+}.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 
+.slide-column-pagedown .arrowRight{
+   /* background-position: -40px 0; */
+   width: 26px;
+   height: 46px;
+   left: 0;
+   top: 0;
+   position: absolute;
+   background-image: url(https://p5.ssl.qhimg.com/t019fff14884580db69.png);
+   background-repeat: no-repeat;
+   /* line-height: 200px; */
+   overflow: hidden;
+   z-index: 1;
+}
+/*.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9  .slide-column-pageup .bg,.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9  .slide-column-pagedown .bg{
+   width: 40px;
+   height: 40px;
+   opacity: .3;
+   left: 0;
+   top: 0;
+   position: absolute;
+   background-color: #000;
+   filter: alpha(opacity=30);
+} */.QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 
+.slide-column-pagedown{
+   width: 26px;
+   height: 46px;
+   margin-top: -35px;
+   right: 0;
+   position: absolute;
+   top: 50%;
+   z-index: 5;
+   cursor: pointer;
+   display: none;
+}</style><link rel="stylesheet" type="text/css" href="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/emoji.css"></head>
+<body>
+<input id="colorid" type="hidden" value="预报">
+<input id="colorids" value="http://www.weather.com.cn/forecast/" type="hidden">
+<input id="town" type="hidden" value="weather1dn">
+<link href="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/headStyle_1.css" rel="stylesheet">
+
+<!-- 体验新版 tong -->
+	<div class="newPort" style="display: none;">
+		<div class="newPortBox"></div>
+		<div class="closeNewPort"></div>
+	</div>
+<div class="weather_li">
+  <div class="nav_li_box">
+    <div class="weather_li_left">
+      <a href="http://www.weather.com.cn/">首页</a>
+      <a href="http://www.weather.com.cn/forecast/">预报</a>
+      <a href="http://www.weather.com.cn/radar/">雷达</a>
+      <a href="http://www.weather.com.cn/satellite/">云图</a>
+      <a href="http://www.weather.com.cn/live/">临近预报</a>
+      <a href="http://products.weather.com.cn/">专业产品</a>
+      <a href="http://news.weather.com.cn/">资讯</a>
+      <a href="http://www.weather.com.cn/life/">生活</a>
+      <a href="http://www.weather.com.cn/traffic/">交通</a>
+      <a href="http://www.weatherdt.com/" target="_blank">产创平台</a>
+      <a href="http://henan.weather.com.cn/" class="shengjz">河南站</a>
+      <div href="javascript:void(0)" class="more_li">更多
+        <div class="weather_li_open" style="width:555px;">
+          <p>
+            <a href="http://www.weather.com.cn/alarm/">预警</a>
+            <a href="http://typhoon.weather.com.cn/" target="_blank">台风路径</a>
+            <a href="http://www.weather.com.cn/space/">空间天气</a>
+            <a href="http://p.weather.com.cn/">图片</a>
+            <a href="http://video.weather.com.cn/">视频</a>
+            <a href="http://www.weather.com.cn/zt/">专题</a>
+            <a href="http://www.weather.com.cn/air/">环境</a>
+            <a href="http://www.weather.com.cn/trip/">旅游</a>
+            <a href="http://www.sportsweather.cn/golf/">高尔夫</a>
+            <a href="http://www.weather.com.cn/forecast/skiweather.shtml">滑雪</a>
+            <a href="http://www.weather.com.cn/aviation/">航空</a>
+            <a href="http://www.weather.com.cn/beltroad/">一带一路</a>
+          </p>
+          <p style="border:none;" class="erp">
+            <a href="http://www.weather.com.cn/tqbx/">保险</a>
+            <a href="http://www.weather.com.cn/slpd/index.shtml">水利</a>
+            <a href="http://www.weather.com.cn/agriculture/pest/">农业·病虫害</a>           
+            <a href="http://www.weather.com.cn/science/">科普</a>
+            <a href="http://www.weather.com.cn/fzjz/">减灾</a>
+            <a href="http://www.weather.com.cn/climate/">生态</a>
+            <!-- <a href="http://marketing.weather.com.cn/">商业合作</a> -->
+            <a href="https://cj.weather.com.cn/">天气插件</a>
+            <a href="http://www.weather.com.cn/province/">省级站</a>
+           <!-- <a href="http://club.weather.com.cn/">社区</a> -->
+          </p>
+        </div>
+      </div>                                                  
+    </div>
+    <div class="weather_li_right">
+      <div id="w_weather" class="w_weather"><a href="http://www.weather.com.cn/weather1d/101181001.shtml#dingzhi_first" target="_blank" title="小雨"><span class="city_name"><em>商丘</em></span> <big class="icon d7 fl"></big> <big class="icon n7 fl"></big> <em class="fl s">11℃/5℃</em> </a><a class="fl w_yj" href="http://www.weather.com.cn/alarm/newalarmlist.shtml?areaId=101181001" target="_blank"></a><a class="add fl " href="http://www.weather.com.cn/profile/city.shtml" target="_blank">+</a><ul class="more" style="display: none;"><li class="add"> <a href="http://www.weather.com.cn/profile/city.shtml" target="_blank">+</a> </li></ul></div>
+      <!--登陆后的情况-->
+      <span class="top_list head-right" style="display:none;" id="logined">
+        <li class="li_wd">
+          <a class="top_list_title"><img class="head-imgs" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/my-head.png" id="userimg"></a>
+          <ul class="top-list-hidden">
+            <a href="http://u2.weather.com.cn/web/dashboard/index.do"><li>个人中心</li></a>
+            <a href="http://u2.weather.com.cn/weathercenter/userself.html"><li>账号设置</li></a>
+            <a href="javascript:void(0);" onclick="logout(window.location.href)"><li>退出</li></a>
+          </ul>
+          <div class="clear"></div>
+        </li>
+        <a class="w_email" href="http://u2.weather.com.cn/web/dashboard/message/get.do"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/email.png" class="email-img">  </a>
+      </span>
+      <!--登陆后的情况-->
+      <!--未登录的情况-->
+      <span class="weather-login" style="" id="unlogined">
+        <a class="login-icon" onclick="login(window.location.href)">登录</a><a class="login-zhuce" onclick="regist(window.location.href)">注册</a>
+      </span>
+      <!--未登录的情况-->
+    </div>
+    <div class="clear:both"></div>
+  </div>
+</div>
+<div class="weather_li_head">
+  <div class="weather_li_box">
+    <div class="w_li_logo fl">
+      <a href="http://www.weather.com.cn/" target="_blank"></a>
+      <span><a href="http://www.weather.com.cn/forecast/" target="_blank">预报</a></span>
+    </div>
+    <div class="search-box fr">
+      <div class="search clearfix">
+        <div class="select_li">
+          <p>天气<i></i></p>
+          <ul class="select_box">
+            <li class="tianqi cur">天气</li>
+            <li class="zixun">资讯</li>
+          </ul>
+        </div>
+        <input type="text" value="输入城市、乡镇、街道、景点名称 查天气" id="txtZip" class="textinput text">
+        <div id="zhong_search">
+          <iframe src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/chinaso-weather1.html" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>
+        <span class="input-btn"><input type="button" value="" id="btnZip" class="btn ss"></span>
+        <div class="clear"></div>
+      </div>
+      <div class="inforesult"></div>
+      <div id="show">
+        <ul></ul>
+      </div>
+      <div class="city-box">
+        <div class="city-tt">
+          <a href="javascript:void(0)" class="cur">正在热搜</a>
+          <a href="javascript:void(0)">本地周边</a>
+          <b></b>
+        </div>
+        <div class="w_city city_guonei" style="display:block; padding-bottom:0">
+          <dl>
+            <dt>国内</dt>
+            <dd>  
+              <!--<a href="http://www.weather.com.cn/weather1d/101271906.shtml#search" style="position: relative; left: -12px; padding: 0px 1px; color:#7d7d7d; background:#ffe7d4;">九寨沟<em style="fonts-size: 10px; color: #f68d3b;padding-left:1px;position:relative;top:3px;"><img src="http://i.tq121.com.cn/i/weather2017/tag.png" style="vertical-align: top;border:none;" target="_blank"></em></a>-->
+              <a href="http://www.weather.com.cn/weather1d/101010100.shtml#search" target="_blank">北京</a>
+              <a href="http://www.weather.com.cn/weather1d/101020100.shtml#search" target="_blank">上海</a>
+              <a href="http://www.weather.com.cn/weather1d/101210101.shtml#search" target="_blank">杭州</a>
+              <a href="http://www.weather.com.cn/weather1d/101280101.shtml#search" target="_blank">广州</a>
+              <a href="http://www.weather.com.cn/weather1d/101200101.shtml#search" target="_blank">武汉</a>
+              <a href="http://www.weather.com.cn/weather1d/101190101.shtml#search" target="_blank">南京</a>
+              <a href="http://www.weather.com.cn/weather1d/101280601.shtml#search" target="_blank">深圳</a>
+              <a href="http://www.weather.com.cn/weather1d/101190401.shtml#search" target="_blank">苏州</a>
+              <a href="http://www.weather.com.cn/weather1d/101230201.shtml#search" target="_blank">厦门</a>
+              <a href="http://www.weather.com.cn/weather1d/101220101.shtml#search" target="_blank">合肥</a>
+            </dd>
+          </dl>
+          <dl>
+            <dt>国际</dt>
+            <dd>
+              <a href="http://www.weather.com.cn/weather1d/102010100.shtml#search" target="_blank">首尔</a>
+              <a href="http://www.weather.com.cn/weather1d/104010100.shtml#search" target="_blank">新加坡</a>
+              <a href="http://www.weather.com.cn/weather1d/106010100.shtml#search" target="_blank">曼谷</a>
+              <a href="http://www.weather.com.cn/weather1d/401110101.shtml#search" target="_blank">纽约</a>
+              <a href="http://www.weather.com.cn/weather1d/124020100.shtml#search" target="_blank">迪拜</a>
+              <a href="http://www.weather.com.cn/weather1d/103163100.shtml#search" target="_blank">大阪</a>
+              <a href="http://www.weather.com.cn/weather1d/601020101.shtml#search" target="_blank">悉尼</a>
+              <a href="http://www.weather.com.cn/weather1d/601060101.shtml#search" target="_blank">墨尔本</a>
+              <a href="http://www.weather.com.cn/weather1d/401040101.shtml#search" target="_blank">洛杉矶</a>
+              <a href="http://www.weather.com.cn/weather1d/105010100.shtml#search" target="_blank">吉隆坡</a>
+            </dd>
+          </dl>
+          <dl>
+            <dt>景点</dt>
+            <dd>
+              <a href="http://www.weather.com.cn/weather1d/10101010018A.shtml#search" target="_blank">故宫</a>
+              <a href="http://www.weather.com.cn/weather1d/10130051008A.shtml#search" target="_blank">阳朔漓江</a>
+              <a href="http://www.weather.com.cn/weather1d/10118090107A.shtml#search" target="_blank">龙门石窟</a>
+              <a href="http://www.weather.com.cn/weather1d/10109022201A.shtml#search" target="_blank">野三坡</a>
+              <a href="http://www.weather.com.cn/weather1d/10101020015A.shtml#search" target="_blank">颐和园</a>
+              <a href="http://www.weather.com.cn/weather1d/10127190601A.shtml#search" target="_blank">九寨沟</a>
+              <a href="http://www.weather.com.cn/weather1d/10102010007A.shtml#search" target="_blank">东方明珠</a>
+              <a href="http://www.weather.com.cn/weather1d/10125150503A.shtml#search" target="_blank">凤凰古城</a>
+              <a href="http://www.weather.com.cn/weather1d/10111010119A.shtml#search" target="_blank">秦始皇陵</a>
+              <a href="http://www.weather.com.cn/weather1d/10125060301A.shtml#search" target="_blank">桃花源</a>
+            </dd>
+          </dl>
+          <dl style="margin-bottom:5px;border:none;">
+            <dt>高球</dt>
+            <dd> 
+              <a href="http://www.sportsweather.cn/weather/10102090003F.shtml#search" target="_blank">佘山</a> 
+              <a href="http://www.sportsweather.cn/weather/10129010601F.shtml#search" target="_blank">春城湖畔</a>
+              <a href="http://www.sportsweather.cn/weather/10101070004F.shtml#search" target="_blank">华彬庄园</a>
+              <a href="http://www.sportsweather.cn/weather/10128060113F.shtml#search" target="_blank">观澜湖</a> 
+              <a href="http://www.sportsweather.cn/weather/10131010107F.shtml#search" target="_blank">依必朗</a>
+              <a href="http://www.sportsweather.cn/weather/10102080001F.shtml#search" target="_blank">旭宝</a>
+              <a href="http://www.sportsweather.cn/weather/10131021101F.shtml#search" target="_blank">博鳌</a> 
+              <a href="http://www.sportsweather.cn/weather/10129140501F.shtml#search" target="_blank">玉龙雪山</a> 
+              <a href="http://www.sportsweather.cn/weather/10128010103F.shtml#search" target="_blank">番禺南沙</a>
+              <a href="http://www.sportsweather.cn/weather/10101040001F.shtml#search" target="_blank">东方明珠</a> 
+            </dd>
+          </dl>
+        </div>
+        <div class="w_city city_guonei gn">
+          <dl>
+            <dt>地区</dt>
+            <dd class="diq"><a href="http://www.weather.com.cn/weather1d/101100601.shtml#around1" title="晋城" target="_blank">晋城</a><a href="http://www.weather.com.cn/weather1d/101180303.shtml#around1" title="原阳" target="_blank">原阳</a><a href="http://www.weather.com.cn/weather1d/101181801.shtml#around1" title="济源" target="_blank">济源</a><a href="http://www.weather.com.cn/weather1d/101180201.shtml#around1" title="安阳" target="_blank">安阳</a><a href="http://www.weather.com.cn/weather1d/101180401.shtml#around1" title="许昌" target="_blank">许昌</a><a href="http://www.weather.com.cn/weather1d/101180501.shtml#around1" title="平顶山" target="_blank">平顶山</a><a href="http://www.weather.com.cn/weather1d/101180301.shtml#around1" title="新乡" target="_blank">新乡</a><a href="http://www.weather.com.cn/weather1d/101121001.shtml#around1" title="菏泽" target="_blank">菏泽</a><a href="http://www.weather.com.cn/weather1d/101180306.shtml#around1" title="延津" target="_blank">延津</a><a href="http://www.weather.com.cn/weather1d/101181107.shtml#around1" title="温县" target="_blank">温县</a><a href="http://www.weather.com.cn/weather1d/101180103.shtml#around1" title="荥阳" target="_blank">荥阳</a><a href="http://www.weather.com.cn/weather1d/101180107.shtml#around1" title="中牟" target="_blank">中牟</a><a href="http://www.weather.com.cn/weather1d/101181201.shtml#around1" title="鹤壁" target="_blank">鹤壁</a><a href="http://www.weather.com.cn/weather1d/101100501.shtml#around1" title="长治" target="_blank">长治</a><a href="http://www.weather.com.cn/weather1d/101181301.shtml#around1" title="濮阳" target="_blank">濮阳</a><a href="http://www.weather.com.cn/weather1d/101181101.shtml#around1" title="焦作" target="_blank">焦作</a><a href="http://www.weather.com.cn/weather1d/101181401.shtml#around1" title="周口" target="_blank">周口</a><a href="http://www.weather.com.cn/weather1d/101180801.shtml#around1" title="开封" target="_blank">开封</a><a href="http://www.weather.com.cn/weather1d/101180901.shtml#around1" title="洛阳" target="_blank">洛阳</a><a href="http://www.weather.com.cn/weather1d/101181001.shtml#around1" title="商丘" target="_blank">商丘</a><a href="http://www.weather.com.cn/weather1d/101181501.shtml#around1" title="漯河" target="_blank">漯河</a></dd>
+          </dl>
+          <dl>
+            <dt>景点</dt>
+            <dd class="jind"><a href="http://www.weather.com.cn/weather1d/10118050703A.shtml" title="尧山" target="_blank">尧山</a><a href="http://www.weather.com.cn/weather1d/10118110201A.shtml" title="云台山" target="_blank">云台山</a><a href="http://www.weather.com.cn/weather1d/10118090905A.shtml" title="鸡冠洞" target="_blank">鸡冠洞</a><a href="http://www.weather.com.cn/weather1d/10118050704A.shtml" title="中原大佛" target="_blank">中原大佛</a><a href="http://www.weather.com.cn/weather1d/10118090202A.shtml" title="龙潭大峡谷" target="_blank">龙潭大峡谷</a><a href="http://www.weather.com.cn/weather1d/10118010602A.shtml" title="黄帝故里" target="_blank">黄帝故里</a><a href="http://www.weather.com.cn/weather1d/10118090906A.shtml" title="老君山" target="_blank">老君山</a><a href="http://www.weather.com.cn/weather1d/10118130102A.shtml" title="戚城文物景区" target="_blank">戚城文物景区</a><a href="http://www.weather.com.cn/weather1d/10118110402A.shtml" title="神农坛" target="_blank">神农坛</a><a href="http://www.weather.com.cn/weather1d/10118160902A.shtml" title="确山竹沟革命纪念馆" target="_blank">确山竹沟革命纪念馆</a><a href="http://www.weather.com.cn/weather1d/10118020201A.shtml" title="羑里城" target="_blank">羑里城</a><a href="http://www.weather.com.cn/weather1d/10118030501A.shtml" title="比干庙" target="_blank">比干庙</a></dd>
+          </dl>
+          <dl style="border:none;margin-bottom:5px;">
+            <dt>乡镇</dt>
+            <dd class="jind"><a href="http://forecast.weather.com.cn/town/weather1dn/101180101001.shtml#around1" title="大学路街道" target="_blank">大学路街道</a><a href="http://forecast.weather.com.cn/town/weather1dn/101180101002.shtml#around1" title="德化街街道" target="_blank">德化街街道</a><a href="http://forecast.weather.com.cn/town/weather1dn/101180101003.shtml#around1" title="福华街街道" target="_blank">福华街街道</a><a href="http://forecast.weather.com.cn/town/weather1dn/101180101004.shtml#around1" title="侯寨乡" target="_blank">侯寨乡</a><a href="http://forecast.weather.com.cn/town/weather1dn/101180101005.shtml#around1" title="淮河路街道" target="_blank">淮河路街道</a><a href="http://forecast.weather.com.cn/town/weather1dn/101180101006.shtml#around1" title="建中街街道" target="_blank">建中街街道</a><a href="http://forecast.weather.com.cn/town/weather1dn/101180101007.shtml#around1" title="京广路街道" target="_blank">京广路街道</a><a href="http://forecast.weather.com.cn/town/weather1dn/101180101008.shtml#around1" title="马寨镇" target="_blank">马寨镇</a><a href="http://forecast.weather.com.cn/town/weather1dn/101180101009.shtml#around1" title="蜜蜂张街道" target="_blank">蜜蜂张街道</a><a href="http://forecast.weather.com.cn/town/weather1dn/101180101010.shtml#around1" title="铭功路街道" target="_blank">铭功路街道</a><a href="http://forecast.weather.com.cn/town/weather1dn/101180101011.shtml#around1" title="嵩山路街道" target="_blank">嵩山路街道</a><a href="http://forecast.weather.com.cn/town/weather1dn/101180101012.shtml#around1" title="五里堡街道" target="_blank">五里堡街道</a></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<script type="text/javascript" async="" charset="utf-8" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/core.php"></script><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/hm.js.下载"></script><script type="text/javascript" async="" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/pr.js.下载" id="remoteOldScript"></script><script type="text/javascript" async="" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/hdfjpfk.js.下载"></script><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/core.js.下载"></script><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/version.js.下载"></script>
+
+
+<div class="topad_bg">
+<div class="box" style="padding:0;">   
+				<!--顶通两个begin-->
+				<div class="ad clearfix post_st">
+					
+						<!-- 天气网顶通 -->
+<div style="width:1000px;margin:0 auto;">
+<div id="_92z88hxug5d" style=""><iframe width="1000" frameborder="0" height="90" scrolling="no" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/s.html"></iframe></div><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/g_lsy_gri.js.下载"></script>
+<script>
+(function() {
+ var s = "_" + Math.random().toString(36).slice(2);
+ document.write('<div id="+ s + '"></div>');
+ (window.slotbydup=window.slotbydup || []).push({
+ id: '7006652',
+ container: s,
+ size: '20,6',
+ display: 'inlay-fix'
+ });
+})();
+</script>
+<script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/om.js.下载"></script>
+<script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/ybxq.js.下载"></script><div style="display:none;"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/z_stat.php"></script><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/core(1).php" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1278586242" target="_blank" title="站长统计">站长统计</a></div>
+
+				</div>
+
+
+				</div>
+
+			<!--顶通两个end-->
+		</div>
+		</div>
+
+<link href="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/common.css" rel="stylesheet" type="text/css">
+<link href="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/c_1d.css" rel="stylesheet" type="text/css">
+
+ <link rel="stylesheet" type="text/css" href="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/weather1d.css">
+<input id="whichDay" type="hidden" value="today">
+
+<div class="con today clearfix">
+
+	 
+	<div class="left fl">
+	<div class="left-div">
+		<div class="ctop clearfix">
+			<div class="crumbs fl">
+				<a href="http://www.weather.com.cn/forecast/" target="_blank">全国</a><span>&gt;</span>
+				<a href="http://henan.weather.com.cn/" target="_blank">河南</a>
+				<span>&gt;</span>
+				<a href="http://www.weather.com.cn/weather/101180101.shtml" target="_blank">郑州</a><span>&gt;</span>  <span>城区</span>
+			</div>
+			<div class="time fr">11:30更新 <span style="color:#d7d7d7">|</span> 数据来源 中央气象台</div>
+		</div>
+		<ul id="someDayNav" class="clearfix cnav">
+			<li class="on">
+				<a href="http://www.weather.com.cn/weather1d/101180101.shtml">今天</a>
+			</li>
+			<li class="hover">
+				<a href="http://www.weather.com.cn/weather/101180101.shtml">7天</a>
+			</li>
+			<li>
+				<a href="http://www.weather.com.cn/weather15d/101180101.shtml">8-15天</a>
+			</li>
+						<li>
+				<a href="http://www.weather.com.cn/weather40d/101180101.shtml">40天</a><span></span>
+			</li>
+			<li>
+				<a href="http://www.weather.com.cn/radar/index.shtml?cityId=101180101" target="_blank">雷达图</a>
+			</li>
+		</ul>
+		<div class="today clearfix" id="today">
+		<!--一起观天气-->
+		<div style="height: 296px; position: absolute; z-index: 2;">
+			<div class="sk01" style="border: 1px solid #d4d4d4;float: left;height: 296px;position: relative;width: 359px;">
+				<div class="yq-weather" style="display: none;"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/yq-weather.png">一起观天气</div>
+				<div class="xyn-weather-box">
+					<h2>
+				    	<img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/delete.png" class="xyn-delete">当前城市：<span> 郑州 <img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/dian.png"></span>
+				        <div id="select">
+				            <span>城区</span>
+				            <ul style="display: none;">
+				                <li tip="101180101">郑州</li><li tip="101180102">巩义</li><li tip="101180103">荥阳</li><li tip="101180104">登封</li><li tip="101180105">新密</li><li tip="101180106">新郑</li><li tip="101180107">中牟</li><li tip="101180108">上街</li><li tip="101180109">中原</li><li tip="101180110">二七</li><li tip="101180111">管城</li><li tip="101180112">金水</li><li tip="101180113">惠济</li>
+				            </ul>
+				    	</div>
+				    </h2>
+				    <div class="xyn-wb-main">
+				    	<p class="xyn-wb-text">大多数网友报告的天气状况是<span>雨</span>，你看到的天空是：</p>
+				        <div class="xyn-cont-box">
+				        	<div class="main-box-div">
+				            	<div class="xyn-icon-bj cur"><span class="icon1" title="晴"></span></div>
+				                <p class="xyn-icon-text">晴</p>
+				            </div>
+				            <div class="main-box-div">
+				            	<div class="xyn-icon-bj"><span class="icon2" title="多云"></span></div>
+				                <p class="xyn-icon-text">多云</p>
+				            </div>
+				            <div class="main-box-div">
+				            	<div class="xyn-icon-bj"><span class="icon3" title="阴"></span></div>
+				                <p class="xyn-icon-text">阴</p>
+				            </div>
+				            <div class="main-box-div">
+				            	<div class="xyn-icon-bj"><span class="icon4" title="雨"></span></div>
+				                <p class="xyn-icon-text">雨</p>
+				            </div>
+				            <div class="main-box-div">
+				            	<div class="xyn-icon-bj"><span class="icon5" title="冰雹"></span></div>
+				                <p class="xyn-icon-text">冰雹</p>
+				            </div>
+				            <div class="main-box-div">
+				            	<div class="xyn-icon-bj"><span class="icon6" title="雪夹雪"></span></div>
+				                <p class="xyn-icon-text">雨夹雪</p>
+				            </div>
+				            <div class="main-box-div">
+				            	<div class="xyn-icon-bj"><span class="icon7" title="雪"></span></div>
+				                <p class="xyn-icon-text">雪</p>
+				            </div>
+				            <div class="main-box-div">
+				            	<div class="xyn-icon-bj"><span class="icon8" title="雾"></span></div>
+				                <p class="xyn-icon-text">雾</p>
+				            </div>
+				            <div class="main-box-div">
+				            	<div class="xyn-icon-bj"><span class="icon9" title="霾"></span></div>
+				                <p class="xyn-icon-text">霾</p>
+				            </div>
+				            <div class="main-box-div">
+				            	<div class="xyn-icon-bj"><span class="icon10" title="沙尘"></span></div>
+				                <p class="xyn-icon-text">沙尘</p>
+				            </div>
+				            <div class="clear"></div>
+				        </div>
+				        
+				        <div class="xyn-wb-btn"><input type="button" value="提交"></div>
+				    </div>
+				    
+				</div>
+				<div class="succ"><h1>收到啦~</h1><i class="img"></i></div>
+
+				
+			</div>
+		</div>
+		<!--一起观天气-->
+		<script>W.use(['j/weather2015/gtq1.js','j/weather2015/bluesky/c_1d.js']);</script>
+					<!--$forecastList-->
+<!--$forecast_15d_24h_internal-->
+<input type="hidden" id="hidden_title" value="04月10日08时 周五  小雨  6/3°C">
+<input type="hidden" id="update_time" value="11:30">
+<input type="hidden" id="fc_24h_internal_update_time" value="2020-04-10 11:30">
+<div class="t">
+<div class="sk">
+<p class="time"><span>17:05 实况</span></p><div class="zs h"><i></i><span>相对湿度</span><em>99%</em></div><div class="zs w"><i></i><span>东北风</span><em>2级</em></div><div class="tem"><span>1</span><em>℃</em></div><p></p><div class="therm"><p><i class="t"></i><i class="c" style="height:40.800000000000004px"></i></p></div><div class="zs pol"><i></i><span><a style="color:#44cf12" href="http://www.weather.com.cn/air/?city=101180101" target="_blank">17优</a></span></div><div class="sk_alarm"><a class="yellow" href="http://www.weather.com.cn/alarm/newalarmcontent.shtml?file=1011801-20200410163000-0902.html" target="_blank" title="河南省郑州市气象台发布雷电黄色预警" style="display: none;">雷电预警</a><a class="yellow" href="http://www.weather.com.cn/alarm/newalarmcontent.shtml?file=10118-20200410111000-0902.html" target="_blank" title="河南省气象台发布雷电黄色预警" style="display: none;">雷电预警</a><a class="blue" href="http://www.weather.com.cn/alarm/newalarmcontent.shtml?file=10118-20200410061000-0501.html" target="_blank" title="河南省气象台发布大风蓝色预警" style="display: none;">大风预警</a><a class="blue" href="http://www.weather.com.cn/alarm/newalarmcontent.shtml?file=1011801-20200409181000-0501.html" target="_blank" title="河南省郑州市气象台发布大风蓝色预警" style="display: none;">大风预警</a><a class="blue" href="http://www.weather.com.cn/alarm/newalarmcontent.shtml?file=10118-20200410114500-1101.html" target="_blank" title="河南省气象台发布霜冻蓝色预警" style="display: block;">霜冻预警</a></div></div>
+<ul class="clearfix">
+<li>
+<h1>10日白天</h1>
+<big class="jpg80 d07"></big>
+<p class="wea" title="小雨">小雨</p>
+<div class="sky">
+<span class="txt lv3">天空阴沉</span>
+<i class="icon"></i>
+<div class="skypop">
+<h3>蓝天预报综合天气现象、能见度、空气质量等因子，预测未来一周的天空状况。</h3>
+<ul>
+<li class="lv1">
+<em></em><span>天空蔚蓝</span>
+<b>可见透彻蓝天，或有蓝天白云美景。</b>
+</li>
+<li class="lv2">
+<em></em><span>天空淡蓝</span>
+<b>天空不够清澈，以浅蓝色为主。</b>
+</li>
+<li class="lv3">
+<em></em><span>天空阴沉</span>
+<b>阴天或有雨雪，天空灰暗。</b>
+</li>
+<li class="lv4">
+<em></em><span>天空灰霾</span>
+<b>出现霾或沙尘，天空灰蒙浑浊。</b>
+</li>
+</ul>
+<i class="s"></i>
+</div>
+</div>
+<p class="tem">
+<span>7</span><em>°C</em>
+</p>
+<p class="win">
+<i class="NE"></i>
+<span class="" title="东北风">4-5级</span>
+</p>
+<p class="sun sunUp"><i></i>
+<span>日出 06:01</span>
+</p>
+<div class="slid"></div>
+</li>
+<li>
+<h1>10日夜间</h1>
+<big class="jpg80 n07"></big>
+<p class="wea" title="小雨">小雨</p>
+<div class="sky">
+</div>
+<p class="tem">
+<span>3</span><em>°C</em>
+</p>
+<p class="win"><i class="NW"></i><span class="" title="西北风">3-4级</span></p>
+<p class="sun sunDown"><i></i>
+<span>日落 18:52</span>
+</p>
+</li>
+</ul>
+</div>
+							<input type="hidden" id="fc_3h_internal_update_time" value="2020-04-10 11:30">
+<div><div style=""><iframe width="680" frameborder="0" height="90" scrolling="no" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/s(1).html"></iframe><div id="xssvllydod" style="display:none;padding-left:0px;"></div></div><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/o.js.下载"></script><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/z_stat(1).php"></script></div><div class="curve_livezs" id="curve">
+<div class="time">
+<em style="width:85px;left:0px">08时</em><em style="width:85px;left:85px">11时</em><em style="width:85px;left:170px">14时</em><em style="width:85px;left:255px">17时</em><em style="width:85px;left:340px">20时</em><em style="width:85px;left:425px">23时</em><em style="width:85px;left:510px">02时</em><em style="width:85px;left:595px">05时</em></div>
+<div class="wpic">
+<div style="width:85px;left:0px;top:30px"><big title="阴" class="png40 d02 lv3"></big></div><div style="width:85px;left:85px;top:30px"><big title="阴" class="png40 d02 lv3"></big></div><div style="width:85px;left:170px;top:30px"><big title="小雨" class="png40 d07 lv3"></big></div><div style="width:85px;left:255px;top:30px"><big title="中雨" class="png40 d08 lv3"></big></div><div style="width:85px;left:340px;top:30px"><big title="中雨" class="png40 n08 lv0"></big></div><div style="width:85px;left:425px;top:30px"><big title="小雨" class="png40 n07 lv0"></big></div><div style="width:85px;left:510px;top:30px"><big title="小雨" class="png40 n07 lv0"></big></div><div style="width:85px;left:595px;top:30px"><big title="小雨" class="png40 n07 lv0"></big></div></div>
+<div id="biggt" class="biggt"><svg height="70" version="1.1" width="680" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.5px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.2</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><path fill="none" stroke="#f68227" d="M42.5,9L127.5,9L212.5,9L297.5,9L382.5,59L467.5,59L552.5,59L637.5,59" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="42.5" cy="9" r="4" fill="#f68227" stroke="#f68227" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="127.5" cy="9" r="4" fill="#f68227" stroke="#f68227" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="212.5" cy="9" r="4" fill="#f68227" stroke="#f68227" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="297.5" cy="9" r="4" fill="#f68227" stroke="#f68227" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="382.5" cy="59" r="4" fill="#f68227" stroke="#f68227" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="467.5" cy="59" r="4" fill="#f68227" stroke="#f68227" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="552.5" cy="59" r="4" fill="#f68227" stroke="#f68227" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="637.5" cy="59" r="4" fill="#f68227" stroke="#f68227" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle></svg>
+</div>
+<div class="tem">
+<em style="width:85px;left:0px;top:79px">6℃</em><em style="width:85px;left:85px;top:79px">6℃</em><em style="width:85px;left:170px;top:79px">6℃</em><em style="width:85px;left:255px;top:79px">6℃</em><em style="width:85px;left:340px;top:129px">3℃</em><em style="width:85px;left:425px;top:129px">3℃</em><em style="width:85px;left:510px;top:129px">3℃</em><em style="width:85px;left:595px;top:129px">3℃</em></div>
+<div class="winf">
+<em style="width:85px;left:0px">东北风</em><em style="width:85px;left:85px">东北风</em><em style="width:85px;left:170px">东北风</em><em style="width:85px;left:255px">东北风</em><em style="width:85px;left:340px">东北风</em><em style="width:85px;left:425px">西北风</em><em style="width:85px;left:510px">西北风</em><em style="width:85px;left:595px">西北风</em></div>
+<div class="winl">
+<em style="width:85px;left:0px">4-5级</em><em style="width:85px;left:85px">4-5级</em><em style="width:85px;left:170px">4-5级</em><em style="width:85px;left:255px">4-5级</em><em style="width:85px;left:340px">3-4级</em><em style="width:85px;left:425px">3-4级</em><em style="width:85px;left:510px">&lt;3级</em><em style="width:85px;left:595px">&lt;3级</em></div>
+</div>
+<script>
+var hour3data={"1d":["10日08时,d02,阴,6℃,东北风,4-5级,3","10日11时,d02,阴,6℃,东北风,4-5级,3","10日14时,d07,小雨,6℃,东北风,4-5级,3","10日17时,d08,中雨,6℃,东北风,4-5级,3","10日20时,n08,中雨,3℃,东北风,3-4级,0","10日23时,n07,小雨,3℃,西北风,3-4级,0","11日02时,n07,小雨,3℃,西北风,<3级,0","11日05时,n07,小雨,3℃,西北风,<3级,0","11日08时,d01,多云,3℃,西北风,<3级,2"],"23d":[["11日08时,d01,多云,3℃,西北风,<3级,2","11日11时,d00,晴,13℃,北风,<3级,1","11日14时,d00,晴,15℃,北风,<3级,1","11日17时,d00,晴,14℃,北风,<3级,1","11日20时,n00,晴,9℃,北风,<3级,0","11日23时,n00,晴,9℃,西风,<3级,0","12日02时,n00,晴,7℃,西风,3-4级,0","12日05时,n00,晴,7℃,西风,4-5级,0"],["12日08时,d00,晴,13℃,西风,4-5级,1","12日11时,d00,晴,17℃,西北风,4-5级,1","12日14时,d00,晴,21℃,西北风,3-4级,1","12日17时,d00,晴,17℃,西北风,3-4级,1","12日20时,n00,晴,13℃,西北风,<3级,0","12日23时,n00,晴,10℃,西南风,<3级,0","13日02时,n00,晴,8℃,西南风,<3级,0","13日05时,n00,晴,6℃,西南风,<3级,0"]],"7d":[["10日08时,d02,阴,6℃,东北风,4-5级,3","10日11时,d02,阴,6℃,东北风,4-5级,3","10日14时,d07,小雨,6℃,东北风,4-5级,3","10日17时,d08,中雨,6℃,东北风,4-5级,3","10日20时,n08,中雨,3℃,东北风,3-4级,0","10日23时,n07,小雨,3℃,西北风,3-4级,0","11日02时,n07,小雨,3℃,西北风,<3级,0","11日05时,n07,小雨,3℃,西北风,<3级,0"],["11日08时,d01,多云,3℃,西北风,<3级,2","11日11时,d00,晴,13℃,北风,<3级,1","11日14时,d00,晴,15℃,北风,<3级,1","11日17时,d00,晴,14℃,北风,<3级,1","11日20时,n00,晴,9℃,北风,<3级,0","11日23时,n00,晴,9℃,西风,<3级,0","12日02时,n00,晴,7℃,西风,3-4级,0","12日05时,n00,晴,7℃,西风,4-5级,0"],["12日08时,d00,晴,13℃,西风,4-5级,1","12日11时,d00,晴,17℃,西北风,4-5级,1","12日14时,d00,晴,21℃,西北风,3-4级,1","12日17时,d00,晴,17℃,西北风,3-4级,1","12日20时,n00,晴,13℃,西北风,<3级,0","12日23时,n00,晴,10℃,西南风,<3级,0","13日02时,n00,晴,8℃,西南风,<3级,0","13日05时,n00,晴,6℃,西南风,<3级,0"],["13日08时,d00,晴,12℃,西南风,<3级,1","13日14时,d00,晴,23℃,西风,3-4级,1","13日20时,n00,晴,16℃,西风,3-4级,0","14日02时,n00,晴,11℃,西南风,<3级,0"],["14日08时,d00,晴,12℃,西南风,3-4级,1","14日14时,d00,晴,23℃,南风,3-4级,1","14日20时,n00,晴,17℃,南风,3-4级,0","15日02时,n01,多云,15℃,南风,3-4级,0"],["15日08时,d01,多云,16℃,南风,<3级,2","15日14时,d00,晴,25℃,南风,3-4级,1","15日20时,n01,多云,23℃,南风,3-4级,0","16日02时,n01,多云,14℃,西北风,<3级,0"],["16日08时,d01,多云,15℃,西北风,<3级,2","16日14时,d00,晴,23℃,东南风,3-4级,1","16日20时,n00,晴,16℃,东南风,3-4级,0","17日02时,n01,多云,15℃,南风,3-4级,0"]]}
+</script>
+		
+		</div>
+	</div>
+				<div class="left-div">
+			<script>
+var observe24h_data = {"od":{"od0":"20200410170000","od1":"郑州","od2":[{"od21":"17","od22":"2","od23":"55","od24":"东北风","od25":"2","od26":"5.0","od27":"99","od28":""},{"od21":"16","od22":"2","od23":"14","od24":"北风","od25":"2","od26":"3.6","od27":"99","od28":"17"},{"od21":"15","od22":"3","od23":"41","od24":"东北风","od25":"2","od26":"1.1","od27":"99","od28":"16"},{"od21":"14","od22":"4","od23":"15","od24":"北风","od25":"2","od26":"1.6","od27":"99","od28":"17"},{"od21":"13","od22":"4","od23":"48","od24":"东北风","od25":"2","od26":"1.1","od27":"99","od28":"18"},{"od21":"12","od22":"5","od23":"56","od24":"东北风","od25":"2","od26":"0.3","od27":"99","od28":"28"},{"od21":"11","od22":"5","od23":"49","od24":"东北风","od25":"2","od26":"0.2","od27":"96","od28":"35"},{"od21":"10","od22":"5","od23":"46","od24":"东北风","od25":"2","od26":"0.5","od27":"99","od28":"36"},{"od21":"09","od22":"5","od23":"55","od24":"东北风","od25":"2","od26":"0.0","od27":"98","od28":"36"},{"od21":"08","od22":"5","od23":"57","od24":"东北风","od25":"2","od26":"0.1","od27":"99","od28":"42"},{"od21":"07","od22":"5","od23":"49","od24":"东北风","od25":"2","od26":"0.0","od27":"99","od28":"43"},{"od21":"06","od22":"6","od23":"55","od24":"东北风","od25":"2","od26":"0.0","od27":"95","od28":"43"},{"od21":"05","od22":"6","od23":"57","od24":"东北风","od25":"2","od26":"0.0","od27":"95","od28":"53"},{"od21":"04","od22":"6","od23":"66","od24":"东北风","od25":"2","od26":"0.0","od27":"97","od28":"68"},{"od21":"03","od22":"6","od23":"69","od24":"东风","od25":"2","od26":"0.0","od27":"92","od28":"67"},{"od21":"02","od22":"6","od23":"56","od24":"东北风","od25":"2","od26":"0.0","od27":"79","od28":"62"},{"od21":"01","od22":"6","od23":"47","od24":"东北风","od25":"2","od26":"0.0","od27":"78","od28":"70"},{"od21":"00","od22":"7","od23":"75","od24":"东风","od25":"2","od26":"0.0","od27":"79","od28":"69"},{"od21":"23","od22":"7","od23":"73","od24":"东风","od25":"2","od26":"0.0","od27":"79","od28":"67"},{"od21":"22","od22":"7","od23":"72","od24":"东风","od25":"2","od26":"0.0","od27":"81","od28":"67"},{"od21":"21","od22":"7","od23":"63","od24":"东北风","od25":"2","od26":"0.0","od27":"86","od28":"63"},{"od21":"20","od22":"7","od23":"57","od24":"东北风","od25":"2","od26":"0.0","od27":"77","od28":"55"},{"od21":"19","od22":"7","od23":"49","od24":"东北风","od25":"2","od26":"0.0","od27":"71","od28":""},{"od21":"18","od22":"8","od23":"61","od24":"东北风","od25":"2","od26":"0.0","od27":"67","od28":"72"},{"od21":"17","od22":"null","od23":"55","od24":"东北风","od25":"2","od26":"0.0","od27":"null","od28":"87"}]}};
+</script>
+<div id="weatherChart"><div class="tabs"><h2>整点天气实况</h2><p id="currHour"></p><p class="second"><b id="detailHour"></b></p><ul><li class="aqi_on on" data-role="air">空气质量</li><li class="p2" data-role="tem">温度</li><li class="sd" data-role="humidity">相对湿度</li><li class="js" data-role="rain">降水量</li><li class="fl" data-role="wind">风力风向</li></ul></div><div class="split"><p class="air on">过去24小时AQI最高值: 87</p><p class="tem">最高气温: 8℃ , 最低气温: 2℃</p><p class="humidity">过去24小时最大相对湿度: 99%</p><p class="wind">过去24小时最大风力: 2级</p><p class="rain">过去24小时总降水量：13.4mm</p></div><div class="chart"><div id="hourHolder"><svg height="270" version="1.1" width="630" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.5px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.2</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><path fill="#ffffff" stroke="#eeeeee" d="M42.5,10.5L620.5,10.5M42.5,47.5H620.5M42.5,83.5H620.5M42.5,120.5H620.5M42.5,157.5H620.5M42.5,193.5H620.5M42.5,230.5H620.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><rect x="42" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="65.12" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="88.24000000000001" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="111.36" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="134.48000000000002" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="157.60000000000002" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="180.72" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="203.84" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="226.96" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="250.08" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="273.20000000000005" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="296.32000000000005" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="319.44" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="342.56" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="365.68" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="388.8" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="411.92" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="435.04" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="458.16" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="481.28000000000003" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="504.40000000000003" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="527.52" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="550.6400000000001" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="573.76" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="596.88" y="10" width="23.12" height="220" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></rect><rect x="46.94" y="230" width="13" height="213" r="0" rx="0" ry="0" fill="#f7da64" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-213)"></rect><rect x="69.94" y="230" width="13" height="176" r="0" rx="0" ry="0" fill="#f7da64" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-176)"></rect><rect x="92.94" y="230" width="13" height="0" r="0" rx="0" ry="0" fill="#9dca80" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,0)"></rect><rect x="115.94" y="230" width="13" height="134" r="0" rx="0" ry="0" fill="#f7da64" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-134)"></rect><rect x="138.94" y="230" width="13" height="154" r="0" rx="0" ry="0" fill="#f7da64" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-154)"></rect><rect x="161.94" y="230" width="13" height="164" r="0" rx="0" ry="0" fill="#f7da64" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-164)"></rect><rect x="184.94" y="230" width="13" height="164" r="0" rx="0" ry="0" fill="#f7da64" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-164)"></rect><rect x="207.94" y="230" width="13" height="169" r="0" rx="0" ry="0" fill="#f7da64" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-169)"></rect><rect x="231.94" y="230" width="13" height="171" r="0" rx="0" ry="0" fill="#f7da64" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-171)"></rect><rect x="254.94" y="230" width="13" height="152" r="0" rx="0" ry="0" fill="#f7da64" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-152)"></rect><rect x="277.94" y="230" width="13" height="164" r="0" rx="0" ry="0" fill="#f7da64" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-164)"></rect><rect x="300.94" y="230" width="13" height="166" r="0" rx="0" ry="0" fill="#f7da64" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-166)"></rect><rect x="323.94" y="230" width="13" height="130" r="0" rx="0" ry="0" fill="#f7da64" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-130)"></rect><rect x="346.94" y="230" width="13" height="105" r="0" rx="0" ry="0" fill="#9dca80" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-105)"></rect><rect x="369.94" y="230" width="13" height="105" r="0" rx="0" ry="0" fill="#9dca80" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-105)"></rect><rect x="392.94" y="230" width="13" height="103" r="0" rx="0" ry="0" fill="#9dca80" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-103)"></rect><rect x="415.94" y="230" width="13" height="88" r="0" rx="0" ry="0" fill="#9dca80" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-88)"></rect><rect x="439.94" y="230" width="13" height="88" r="0" rx="0" ry="0" fill="#9dca80" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-88)"></rect><rect x="462.94" y="230" width="13" height="86" r="0" rx="0" ry="0" fill="#9dca80" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-86)"></rect><rect x="485.94" y="230" width="13" height="68" r="0" rx="0" ry="0" fill="#9dca80" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-68)"></rect><rect x="508.94" y="230" width="13" height="44" r="0" rx="0" ry="0" fill="#9dca80" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-44)"></rect><rect x="531.94" y="230" width="13" height="42" r="0" rx="0" ry="0" fill="#9dca80" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-42)"></rect><rect x="554.94" y="230" width="13" height="39" r="0" rx="0" ry="0" fill="#9dca80" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-39)"></rect><rect x="577.94" y="230" width="13" height="42" r="0" rx="0" ry="0" fill="#9dca80" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-42)"></rect><rect x="600.94" y="230" width="13" height="0" r="0" rx="0" ry="0" fill="#9dca80" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,0)"></rect></svg><div class="xLabel"><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>00</span><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span></div><div class="yLabel"><span>90</span><span>75</span><span>60</span><span>45</span><span>30</span><span>15</span><span>0</span></div><div class="result"></div><div class="showData" style="top: 186px; left: 524.5px; display: none;">18</div></div><em>(h)</em><b id="wd"></b> <b id="tem">℃</b> <b id="pm10">(μg/m³)</b> <b id="sd">(%)</b> <b id="js">(mm)</b> <b id="fl">(级)</b><p class="air detail">空气质量指数：简称AQI，是定量描述空气质量状况的无量纲指数。（数据由生态环境部提供）</p><p class="humidity">相对湿度：空气中实际水汽压与当时气温下的饱和水汽压之比，以百分比（%）表示。</p><p class="pm10 tem">温度：表示大气冷热程度的物理量，气象上给出的温度是指离地面1.5米高度上百叶箱中的空气温度。</p><p class="rain">降水量：某一时段内的未经蒸发、渗透、流失的降水，在水平面上积累的深度，以毫米（mm）为单位。 </p><p class="wind">风力风向：空气的水平运动，风力是风吹到物体上所表示出力量的大小，风向指风的来向。</p><div class="aqiColorExp clearfix"><span class="span1">优</span> <span class="span2">良</span> <span class="span3">轻度</span> <span class="span4">中度</span> <span class="span5">重度</span> <span class="span6">严重</span></div></div></div>
+		</div>
+		
+		
+				<div class="left-div">
+		<div id="woen" style="display: none;"><qihoobannerslider class="qihoobannerslider QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9" id="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9" style="width: 680px; height: 85px; font-size: 12px; display: block; margin: 0px; padding: 0px; overflow: hidden; position: relative; text-align: left;">    <info-div id="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9-info" style="overflow:hidden;position:relative;height:85px;">        <info-div id="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9-loading" style="padding-top: 0px; height: 85px; text-align: center; font-size: 14px; color: rgb(102, 102, 102); position: relative; display: none;">            <info-div style="background-image: url(https://p1.ssl.qhimg.com/t019436f9a61e4203fe.gif);background-repeat: no-repeat;width:173px;height:32px;position:absolute;top: 50%;left:50%;margin-top: -16px;margin-left:-86px;text-align: right; line-height: 32px;">正在为您努力加载...</info-div>        </info-div>        <info-div style="width:100%;height:85px;margin:0 auto;overflow: hidden;" id="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9-info-content"><info-div id="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9-wrapper" style="width: 1360px;height:{height}px;margin-left: 0;"><info-div class="gouwu-bottom"><info-div class="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 blockItem clk" data-href="http://redirect.simba.taobao.com/rd?c=un&amp;w=unionsem&amp;k=74175f13c74157df&amp;p=mm_26632360_8858797_131896099&amp;b=qihoo_{keywordid}&amp;f=https://uland.taobao.com/sem/tbsearch?keyword=%E8%A5%BF%E6%9C%8D+MUONSHENN%2F%E7%9D%A6%E7%BB%85&amp;">
+    <info-div class="img" style="background-image:url(https://p1.ssl.qhimgs3.com/dr/300_300_/t01b95c3d1597b3b020.jpg);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;https://p1.ssl.qhimgs3.com/dr/300_300_/t01b95c3d1597b3b020.jpg&#39;, sizingMethod=&#39;scale&#39;);"></info-div>
+    <info-div class="blockItem-text">
+        <info-div class="blockItem-title">MUONSHENN/睦绅西服</info-div>
+    </info-div>
+</info-div>
+<info-div class="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 blockItem clk" data-href="http://redirect.simba.taobao.com/rd?c=un&amp;w=unionsem&amp;k=74175f13c74157df&amp;p=mm_26632360_8858797_131896099&amp;b=qihoo_{keywordid}&amp;f=https://uland.taobao.com/sem/tbsearch?keyword=2018%E7%A7%8B%E5%AD%A3%E6%96%B0%E6%AC%BE%E9%9F%A9%E7%89%88%E9%BB%91%E8%89%B2%E8%BF%90%E5%8A%A8%E9%9E%8B%E5%A5%B3%E5%A3%AB%E9%80%8F%E6%B0%94%E8%A2%9C%E5%AD%90%E9%9E%8B%E7%99%BE%E6%90%AD%E4%BC%91%E9%97%B2%E9%9E%8B%E7%88%86%E6%AC%BE%E6%97%85%E6%B8%B8%E9%9E%8B&amp;">
+    <info-div class="img" style="background-image:url(https://p1.ssl.qhimgs3.com/dr/300_300_/t01aa87234568545d4e.jpg);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;https://p1.ssl.qhimgs3.com/dr/300_300_/t01aa87234568545d4e.jpg&#39;, sizingMethod=&#39;scale&#39;);"></info-div>
+    <info-div class="blockItem-text">
+        <info-div class="blockItem-title">2018秋季新款韩版黑色运动鞋女士透气袜子鞋百搭休闲鞋爆款旅游鞋</info-div>
+    </info-div>
+</info-div>
+<info-div class="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 blockItem clk" data-href="http://redirect.simba.taobao.com/rd?c=un&amp;w=unionsem&amp;k=74175f13c74157df&amp;p=mm_26632360_8858797_131896099&amp;b=qihoo_{keywordid}&amp;f=https://uland.taobao.com/sem/tbsearch?keyword=%E5%AE%B6%E5%B1%85%E6%9C%8D%E7%9D%A1%E8%A2%8D%E7%9D%A1%E8%A1%A3%E5%A5%B3%E7%A7%8B%E5%86%AC%E5%AD%A3%E5%8A%A0%E5%8E%9A%E6%B3%95%E5%85%B0%E7%BB%92%E9%95%BF%E8%A2%96%E5%8F%AF%E7%88%B1%E6%B5%B4%E8%A2%8D%E5%A5%B3%E7%8F%8A%E7%91%9A%E7%BB%92%E8%85%B0%E5%B8%A6%E6%B5%B4%E8%A1%A3&amp;">
+    <info-div class="img" style="background-image:url(https://p1.ssl.qhimgs3.com/dr/300_300_/t013ce9b92befdd365d.jpg);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;https://p1.ssl.qhimgs3.com/dr/300_300_/t013ce9b92befdd365d.jpg&#39;, sizingMethod=&#39;scale&#39;);"></info-div>
+    <info-div class="blockItem-text">
+        <info-div class="blockItem-title">家居服睡袍睡衣女秋冬季加厚法兰绒长袖可爱浴袍女珊瑚绒腰带浴衣</info-div>
+    </info-div>
+</info-div>
+<info-div class="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 blockItem clk" data-href="http://redirect.simba.taobao.com/rd?c=un&amp;w=unionsem&amp;k=74175f13c74157df&amp;p=mm_26632360_8858797_131896099&amp;b=qihoo_{keywordid}&amp;f=https://uland.taobao.com/sem/tbsearch?keyword=%E5%A5%B3%E8%B6%85%E9%95%BF%E5%A4%A7%E6%91%86%E9%A3%8E%E8%A1%A3%E8%BF%9E%E8%A1%A3%E8%A3%99%E7%A7%8B%E5%AD%A3%E6%96%B0%E6%AC%BE%E6%AC%A7%E7%BE%8E%E9%95%BF%E8%A2%96%E7%AB%8B%E9%A2%86%E5%A4%96%E8%A1%A3%E6%94%B6%E8%85%B0%E9%95%BF%E6%AC%BE%E5%A4%A7%E8%A1%A3%E5%A4%96%E5%A5%97&amp;">
+    <info-div class="img" style="background-image:url(https://p1.ssl.qhimgs3.com/dr/300_300_/t01a278bc5b79148189.jpg);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;https://p1.ssl.qhimgs3.com/dr/300_300_/t01a278bc5b79148189.jpg&#39;, sizingMethod=&#39;scale&#39;);"></info-div>
+    <info-div class="blockItem-text">
+        <info-div class="blockItem-title">女超长大摆风衣连衣裙秋季新款欧美长袖立领外衣收腰长款大衣外套</info-div>
+    </info-div>
+</info-div>
+<info-div class="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 blockItem clk" data-href="http://redirect.simba.taobao.com/rd?c=un&amp;w=unionsem&amp;k=74175f13c74157df&amp;p=mm_26632360_8858797_131896099&amp;b=qihoo_{keywordid}&amp;f=https://uland.taobao.com/sem/tbsearch?keyword=%E9%AB%98%E6%BD%AE%E6%9B%BF%E4%BB%A3%E8%89%B2%21%E6%82%A6%E8%AF%97%E9%A3%8E%E5%90%9F%E8%85%AE%E7%BA%A222%E7%9F%BF%E7%89%A9%E8%B4%A8%E8%A3%B8%E5%A6%86%E8%87%AA%E7%84%B6%E6%AD%A3%E5%93%81%E6%8A%96%E9%9F%B3%E5%90%8C%E6%AC%BE%E9%AB%98%E5%85%89%E6%99%92%E7%BA%A2&amp;">
+    <info-div class="img" style="background-image:url(https://p1.ssl.qhimgs3.com/dr/300_300_/t01c2c9656a16a922ee.jpg);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;https://p1.ssl.qhimgs3.com/dr/300_300_/t01c2c9656a16a922ee.jpg&#39;, sizingMethod=&#39;scale&#39;);"></info-div>
+    <info-div class="blockItem-text">
+        <info-div class="blockItem-title">高潮替代色!悦诗风吟腮红22矿物质裸妆自然正品抖音同款高光晒红</info-div>
+    </info-div>
+</info-div>
+<info-div class="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 blockItem clk" data-href="http://redirect.simba.taobao.com/rd?c=un&amp;w=unionsem&amp;k=74175f13c74157df&amp;p=mm_26632360_8858797_131896099&amp;b=qihoo_{keywordid}&amp;f=https://uland.taobao.com/sem/tbsearch?keyword=%E4%B8%93%E6%9F%9C%E6%AD%A3%E5%93%81Clio%E7%8F%82%E8%8E%B1%E6%AC%A7%E6%97%A0%E6%9A%87%E8%BD%BB%E8%96%84%E8%A3%B8%E5%A6%86%E7%B2%89%E5%BA%95%E6%B6%B2%E4%BF%9D%E6%B9%BF%E9%81%AE%E7%91%95%E5%BC%BA%E9%9A%90%E5%BD%A2%E6%AF%9B%E5%AD%94bb%E9%9C%9C&amp;">
+    <info-div class="img" style="background-image:url(https://p1.ssl.qhimgs3.com/dr/300_300_/t0184f0dd1fa767668b.jpg);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;https://p1.ssl.qhimgs3.com/dr/300_300_/t0184f0dd1fa767668b.jpg&#39;, sizingMethod=&#39;scale&#39;);"></info-div>
+    <info-div class="blockItem-text">
+        <info-div class="blockItem-title">专柜正品Clio珂莱欧无暇轻薄裸妆粉底液保湿遮瑕强隐形毛孔bb霜</info-div>
+    </info-div>
+</info-div>
+<info-div class="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 blockItem clk" data-href="http://redirect.simba.taobao.com/rd?c=un&amp;w=unionsem&amp;k=74175f13c74157df&amp;p=mm_26632360_8858797_131896099&amp;b=qihoo_{keywordid}&amp;f=https://uland.taobao.com/sem/tbsearch?keyword=%E9%95%BF%E8%A2%96%E7%A7%8B%E5%86%AC%E8%A3%85%E5%90%8E%E5%8E%A8%E6%88%BF%E7%94%B7%E5%A5%B3%E5%A3%AB%E4%B8%AD%E9%A4%90%E5%8E%85%E9%A5%AD%E9%A6%86%E5%8E%A8%E5%B8%88%E5%90%8E%E5%8E%A8%E9%85%92%E5%BA%97%E5%B7%A5%E4%BD%9C%E6%9C%8D%E5%8A%A0%E5%8E%9A%E7%BB%A3%E9%BE%99%E7%BA%B9&amp;">
+    <info-div class="img" style="background-image:url(https://p1.ssl.qhimgs3.com/dr/300_300_/t01f46ed31c9238fe84.jpg);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;https://p1.ssl.qhimgs3.com/dr/300_300_/t01f46ed31c9238fe84.jpg&#39;, sizingMethod=&#39;scale&#39;);"></info-div>
+    <info-div class="blockItem-text">
+        <info-div class="blockItem-title">长袖秋冬装后厨房男女士中餐厅饭馆厨师后厨酒店工作服加厚绣龙纹</info-div>
+    </info-div>
+</info-div>
+<info-div class="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9 blockItem clk" data-href="http://redirect.simba.taobao.com/rd?c=un&amp;w=unionsem&amp;k=74175f13c74157df&amp;p=mm_26632360_8858797_131896099&amp;b=qihoo_{keywordid}&amp;f=https://uland.taobao.com/sem/tbsearch?keyword=%E7%BE%BD%E7%BB%92%E6%9C%8D+Youngor%2F%E9%9B%85%E6%88%88%E5%B0%94&amp;">
+    <info-div class="img" style="background-image:url(https://p1.ssl.qhimgs3.com/dr/300_300_/t01091cd889ab11213f.jpg);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;https://p1.ssl.qhimgs3.com/dr/300_300_/t01091cd889ab11213f.jpg&#39;, sizingMethod=&#39;scale&#39;);"></info-div>
+    <info-div class="blockItem-text">
+        <info-div class="blockItem-title">Youngor/雅戈尔羽绒服</info-div>
+    </info-div>
+</info-div>
+</info-div></info-div> <info-div id="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9sliderLeft" class="slide-column-pageup"><info-div class="arrowLeft"></info-div><info-div class="bg"></info-div></info-div><info-div id="QIHOO__WEB__SO__BANNER_SLIDER1586511612273C03A9sliderRight" class="slide-column-pagedown"><info-div class="arrowRight"></info-div><info-div class="bg"></info-div></info-div></info-div>    </info-div>    <info-div style="position: absolute;display: block;height: 12px;width: 22px;top:8px;right:10px;background: url(https://p0.ssl.qhimg.com/t01c5fc7f8612d6b610.png) no-repeat top left;"></info-div></qihoobannerslider></div>
+ <script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/ybxq4.js.下载"></script><div style="display:none;"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/z_stat(2).php"></script><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/core(2).php" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1278586243" target="_blank" title="站长统计">站长统计</a></div><div id="_uv1igvfq9yb" style=""><iframe width="680" frameborder="0" height="90" scrolling="no" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/s(2).html"></iframe></div><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/g.js.下载"></script>
+
+		</div>
+		
+		<div class="left-div">
+		<div class="livezs">
+			<div class="t clearfix">
+				<h1>生活指数</h1>
+			</div>
+						
+			<script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/pagefilp.js.下载" type="text/javascript"></script>
+<style>
+.pageflip {right: 0px; float: right; position: relative; top: 0px}
+ .pageflip IMG {z-index: 99; right: -3px; width: 30px; position: absolute; top: -1px; height: 30px; ms-interpolation-mode: bicubic}
+ .pageflip .msg_block {right: 0px; background: url(http://i.tq121.com.cn/i/weather2015/png/subscribe.png) no-repeat right top; overflow: hidden; width: 25px; position: absolute; top: 0px; height: 25px}
+</style>
+<input type="hidden" id="zs_7d_update_time" value="2020-04-10 12:00:00.0">
+<ul class="clearfix">
+<li class="li1 hot">
+<i></i>
+<span>最弱</span>
+<em>紫外线指数</em>
+<p>辐射弱，涂擦SPF8-12防晒护肤品。</p>
+</li>
+<li class="li2 hot">
+<a href="http://www.weather.com.cn/rw/" target="_blank">
+<div class="pageflip">
+<img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/page_flip.png">
+<div class="msg_block">
+</div>
+</div>
+<i></i>
+<span>
+<em class="star"></em><em></em><em></em><em></em><em></em>
+</span>
+<em>减肥指数</em>
+<p>风雨交加特别冷，适当偷懒低强度运动吧。</p>
+</a>
+</li>
+<li class="huali">
+<a href="http://www.weather.com.cn/forecast/hf_index.shtml?id=101180101" target="_blank">
+<div class="pageflip">
+<img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/page_flip.png" style="width: 30px; height: 30px; top: -1px; right: -3px; overflow: hidden;">
+<div class="msg_block" style="width: 25px; height: 25px; overflow: hidden;">
+</div>
+</div>
+<i class="huai" style=""></i>
+<div class="huabox" style="">
+<div class="huabox1" style="">
+<div style="" class="huanum">133</div><div class="huaname" style="">（粒/千平方毫米）</div></div>
+<div class="huaword" style="">偏高</div>
+</div>
+<em>花粉过敏指数</em>
+<p>敏感人群减少外出，外出需防护。</p>
+</a>
+</li>
+<li class="li3 hot" id="chuanyi">
+<a href="http://www.weather.com.cn/forecast/ct.shtml?areaid=101180101" target="_blank">
+<div class="pageflip">
+<img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/page_flip.png">
+<div class="msg_block">
+</div>
+</div>
+<i class="cyIcon5"></i>
+<span>羽绒服</span>
+<em>穿衣指数</em>
+<p>建议着棉衣加羊毛衫等冬季服装。</p>
+</a>
+</li>
+<li class="li4 hot">
+<i></i>
+<span>不宜</span>
+<em>洗车指数</em>
+<p>有雨，雨水和泥水会弄脏爱车。</p>
+</li>
+<li class="li6 hot">
+<i></i>
+<span>良</span>
+<em>空气污染扩散指数</em>
+<p>气象条件有利于空气污染物扩散。</p>
+</li>
+</ul>
+			
+					</div>
+		</div>
+		
+		<div class="left-div">
+		<div id="_r8b77n663eb"><div><div id="vtmfs"><iframe width="680" frameborder="0" height="90" scrolling="no" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/s(3).html"></iframe></div></div></div><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/m_e.js.下载"></script>
+<script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/ybxq5.js.下载"></script><div style="display:none;"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/z_stat(3).php"></script><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/core(3).php" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1278535746" target="_blank" title="站长统计">站长统计</a></div>
+
+		</div>
+		<style>
+           .tq_zx{
+			    border-top: 3px solid #076ea8;
+   			 margin-top: 12px;}
+			.tq_zx h1{
+				font-size: 20px;
+				margin-bottom:10px;
+    height: 34px;
+    line-height: 34px;}
+			.tq_zx h1 a{
+				 font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+	float:right}
+			.tq_zx dl{
+				border:1px solid #d7d7d7;
+				height:66px;
+				
+				padding:10px;
+                float: none;
+                width: auto;
+                border-right: none;
+                border-left: none;
+                border-top: none;
+                            }
+			.tq_zx dl dt{
+				width:120px;
+				height:66px;
+				float:left;
+				}
+			.tq_zx dl dt a img{
+				width:120px;
+				height:66px;
+				}
+			.tq_zx dl dd{
+				width:500px;
+				float:left;
+				position:relative;
+				height:66px;
+				margin-left:15px;}
+			.tq_zx dl dd a{
+				
+				font-size:16px;}
+			.tq_zx dl dd p{
+				color:#999;
+				font-size:12px;
+				}
+			.tq_zx dl dd span{
+				position:absolute;
+				left:0;
+				bottom:0;
+				font-size:12px;
+				color:#999;}
+           </style>
+            
+            
+            
+     <div class="tq_zx" id="tq_zx">
+    	<div class="title"><h1><a href="http://news.weather.com.cn/" target="_blank">天气资讯</a></h1>
+            <a href="http://news.weather.com.cn/" class="go-more"></a>
+    </div>
+ 
+<dl>
+        	<dt>
+            	<a href="http://news.weather.com.cn/2020/04/3310870.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410172114E915062A01B0899707F70EED9ED5E0DD_s.jpg"></a>
+            </dt>
+            <dd>
+            	<a href="http://news.weather.com.cn/2020/04/3310870.shtml" target="_blank">  沙尘暴蓝色预警 新疆甘肃有扬沙浮尘 南疆局地沙尘暴  </a>               
+                <span>中国天气网   2020-04-10 17:15</span>
+            </dd>
+        </dl><dl class="mv-ads-0" data-data-imptk="[&quot;http://max-l.mediav.com/rtb?type=2&amp;v=CGQSEDE0NDUzZTIxY2E5MTYxMDUYiaKEASCdtwwoAWIXMTI0MTI0MTQzMjQ1MzE2MTYxMDAwMTlwAYgBAJoBEDE0NDUzZTIxY2E5MTcxMDU&amp;k=HmXFNgAAAAA=&amp;ver=1&amp;exp=EABDEgBDJwBDBQBECQBECQFEAQJEBAJEMQJENwJEQQJERQJE&amp;w=AAAAAF6QPwcAAAAAAAZlZTJAdDa4-Za4KdYq0A&amp;i=J_7sXt-lAAtK&quot;,&quot;http://s3.nzbdw.com/s?type=1&amp;r=20&amp;tid=MTI0MTI0MTQzMjQ1MzE2MTYxMDAwMTk&amp;finfo=DAABCAABAAAAxwgAAgAAABYEAAM/dGXc7PxqRAAIAAIAAAADCgADMc0nRvK86hAIAAQAAAAoBgAGLbcGAAoAAAYADD9cCAAOAAAAGwoADwAAAAAAHl1wAA&amp;mv_ref=www.weather.com.cn&amp;enup=CAABKu6bhQgAAoWb7ioA&amp;mvid=MTI0MTI0MTQzMjQ1MzE2MTYxMDAwMTk&amp;bid=14453e21ca916105&amp;ugi=FbruGBX4sEpMFQIVtAEVzAEVAAAVuJbBmgcWBBXIARaAv8TbkLvRBRwWguex9Ofyq+YTFQAAJfb8utsNAA&amp;uai=FZLEiAIlAhUEFviT1vzJi4/NYxXyCCXAgKaYDCUAFRoUABwWk6zRk9q2pbuYARUAAAA&amp;ubi=FZruZxWC4I4DFcKvqxoVuNb1XRUEFRwW2qGY3RcW+JPr49PRk81jNAIWoKCQgAglBhWEtc7FCBXcAxUAJAYWncWyreuc4NrfARUARQwA&amp;ds=1&amp;price=AAAAAF6QPwcAAAAAAAZlPsjw9872fDRKdSDWcg==&quot;]"><dt><a href="http://s3.nzbdw.com/s?type=2&amp;r=20&amp;mv_ref=www.weather.com.cn&amp;enup=CAABKu6bhQgAAoWb7ioA&amp;mvid=MTI0MTI0MTQzMjQ1MzE2MTYxMDAwMTk&amp;bid=14453e21ca916105&amp;price=AAAAAF6QPwcAAAAAAAZlPsjw9872fDRKdSDWcg==&amp;finfo=DAABCAABAAAAxwgAAgAAABYEAAM/dGXc7PxqRAAIAAIAAAADCgADMc0nRvK86hAIAAQAAAAoBgAGLbcGAAoAAAYADD9cCAAOAAAAGwoADwAAAAAAHl1wAA&amp;ugi=FbruGBX4sEpMFQIVtAEVzAEVAAAVuJbBmgcWBBXIARaAv8TbkLvRBRwWguex9Ofyq+YTFQAAJfb8utsNAA&amp;uai=FZLEiAIlAhUEFviT1vzJi4/NYxXyCCXAgKaYDCUAFRoUABwWk6zRk9q2pbuYARUAAAA&amp;ubi=FZruZxWC4I4DFcKvqxoVuNb1XRUEFRwW2qGY3RcW+JPr49PRk81jNAIWoKCQgAglBhWEtc7FCBXcAxUAJAYWncWyreuc4NrfARUARQwA&amp;clickid=0&amp;cpx=__OFFSET_X__&amp;cpy=__OFFSET_Y__&amp;cs=__EVENT_TIME_START__&amp;ce=__EVENT_TIME_END__&amp;adsw=__ADSPACE_W__&amp;adsh=__ADSPACE_H__&amp;csign2=g4eKZdrVIny=&amp;url=http%3A%2F%2Fjhg.hjdomain.cn%2Fpp3" target="_blank" data-src=""><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/850829-ddd2c3933a213f21121519cb13316089.gif"></a></dt><dd><a href="http://s3.nzbdw.com/s?type=2&amp;r=20&amp;mv_ref=www.weather.com.cn&amp;enup=CAABKu6bhQgAAoWb7ioA&amp;mvid=MTI0MTI0MTQzMjQ1MzE2MTYxMDAwMTk&amp;bid=14453e21ca916105&amp;price=AAAAAF6QPwcAAAAAAAZlPsjw9872fDRKdSDWcg==&amp;finfo=DAABCAABAAAAxwgAAgAAABYEAAM/dGXc7PxqRAAIAAIAAAADCgADMc0nRvK86hAIAAQAAAAoBgAGLbcGAAoAAAYADD9cCAAOAAAAGwoADwAAAAAAHl1wAA&amp;ugi=FbruGBX4sEpMFQIVtAEVzAEVAAAVuJbBmgcWBBXIARaAv8TbkLvRBRwWguex9Ofyq+YTFQAAJfb8utsNAA&amp;uai=FZLEiAIlAhUEFviT1vzJi4/NYxXyCCXAgKaYDCUAFRoUABwWk6zRk9q2pbuYARUAAAA&amp;ubi=FZruZxWC4I4DFcKvqxoVuNb1XRUEFRwW2qGY3RcW+JPr49PRk81jNAIWoKCQgAglBhWEtc7FCBXcAxUAJAYWncWyreuc4NrfARUARQwA&amp;clickid=0&amp;cpx=__OFFSET_X__&amp;cpy=__OFFSET_Y__&amp;cs=__EVENT_TIME_START__&amp;ce=__EVENT_TIME_END__&amp;adsw=__ADSPACE_W__&amp;adsh=__ADSPACE_H__&amp;csign2=g4eKZdrVIny=&amp;url=http%3A%2F%2Fjhg.hjdomain.cn%2Fpp3" target="_blank">这个减肥方法在本区火了！早餐后吃1粒，排油+减脂！</a><span>可美科丝 · 猎媒　广告</span> </dd></dl>
+
+ 
+<dl>
+        	<dt>
+            	<a href="http://p.weather.com.cn/2020/04/3310655.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410114546BD26592F772D43B929001CCB8838D89B_s.jpg"></a>
+            </dt>
+            <dd>
+            	<a href="http://p.weather.com.cn/2020/04/3310655.shtml" target="_blank">  青海班玛降暴雪 有效缓解森林防火压力  </a>               
+                <span>中国天气网青海站   2020-04-10 10:27</span>
+            </dd>
+        </dl>
+
+ 
+<dl>
+        	<dt>
+            	<a href="http://p.weather.com.cn/2020/04/3310777.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/2020041014243244FED7BE3F6935A819F9128808DB5A15_s.jpg"></a>
+            </dt>
+            <dd>
+            	<a href="http://p.weather.com.cn/2020/04/3310777.shtml" target="_blank">  山东多地四月飘雪 植被披“银装”  </a>               
+                <span>中国天气网山东站   2020-04-10 14:08</span>
+            </dd>
+        </dl>
+
+ 
+<dl>
+        	<dt>
+            	<a href="http://p.weather.com.cn/2020/04/3310701.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410140423FBB6D9213F05976DBCEC54CBF1920A0E_s.jpg"></a>
+            </dt>
+            <dd>
+            	<a href="http://p.weather.com.cn/2020/04/3310701.shtml" target="_blank">  重庆：雾漫乡村 意境如画  </a>               
+                <span>中国天气网重庆站   2020-04-09 16:39</span>
+            </dd>
+        </dl><dl class="mv-ads-1" data-data-imptk="[&quot;http://max-l.mediav.com/rtb?type=2&amp;v=CGQSEDE0NDUzZTIxY2E5MTYxMDUYiaKEASCdtwwoAmIXMTI0MTI0MTQzMjQ1MzE2MTYxMDAwMTlwAYgBAJoBEDE0NDUzZTIxY2E5MTcxMDU&amp;k=tNf6LQAAAAA=&amp;ver=1&amp;exp=EABDEgBDJwBDBQBECQBECQFEAQJEBAJEMQJENwJEQQJERQJE&amp;w=AAAAAF6QPwcAAAAAAAZlhjZBQ8YeZJ1Ga7c6VQ&amp;i=J_EsXt-lAAWb&quot;,&quot;http://ssxd.mediav.com/s?type=1&amp;r=20&amp;tid=MTI0MTI0MTQzMjQ1MzE2MTYxMDAwMTk&amp;finfo=DAABCAABAAAAUAgAAgAAABYEAAM/ZodE7CL3vAAIAAIAAAADCgADMc0wXiSICokIAAQAAAAdBgAGLbcGAAoAAAgADgAAABsKAA8AAAAAAAw1AAA&amp;mv_ref=www.weather.com.cn&amp;enup=CAABKu6bhQgAAoWb7ioA&amp;mvid=MTI0MTI0MTQzMjQ1MzE2MTYxMDAwMTk&amp;bid=14453e21ca916105&amp;ugi=FbruGBX4sEpMFQIVtAEVzAEVAAAVuJbBmgcWBBXIARaAv8TbkLvRBRwWguex9Ofyq+YTFQAAJfb8utsNAA&amp;uai=FZLEiAIlAhUEFviT1vzJi4/NYxXyCCXAgKaYDCUAFRoUABwWk6zRk9q2pbuYARUAAAA&amp;ubi=FaTnaxXYw5MDFf6UwRoVprqVXhUEFRwWpPuK7hcW+JOAy92XmM1jNAQWoKAQJQYV9Om5gAYVigIVADbh1rOQ+eaN/hEVAEUMAA&amp;ds=2&amp;price=AAAAAF6QPwcAAAAAAAZld3xTaMkFVrM+b0i52g==&quot;]"><dt><a href="http://ssxd.mediav.com/s?type=2&amp;r=20&amp;mv_ref=www.weather.com.cn&amp;enup=CAABKu6bhQgAAoWb7ioA&amp;mvid=MTI0MTI0MTQzMjQ1MzE2MTYxMDAwMTk&amp;bid=14453e21ca916105&amp;price=AAAAAF6QPwcAAAAAAAZld3xTaMkFVrM+b0i52g==&amp;finfo=DAABCAABAAAAUAgAAgAAABYEAAM/ZodE7CL3vAAIAAIAAAADCgADMc0wXiSICokIAAQAAAAdBgAGLbcGAAoAAAgADgAAABsKAA8AAAAAAAw1AAA&amp;ugi=FbruGBX4sEpMFQIVtAEVzAEVAAAVuJbBmgcWBBXIARaAv8TbkLvRBRwWguex9Ofyq+YTFQAAJfb8utsNAA&amp;uai=FZLEiAIlAhUEFviT1vzJi4/NYxXyCCXAgKaYDCUAFRoUABwWk6zRk9q2pbuYARUAAAA&amp;ubi=FaTnaxXYw5MDFf6UwRoVprqVXhUEFRwWpPuK7hcW+JOAy92XmM1jNAQWoKAQJQYV9Om5gAYVigIVADbh1rOQ+eaN/hEVAEUMAA&amp;clickid=0&amp;cpx=__OFFSET_X__&amp;cpy=__OFFSET_Y__&amp;cs=__EVENT_TIME_START__&amp;ce=__EVENT_TIME_END__&amp;adsw=__ADSPACE_W__&amp;adsh=__ADSPACE_H__&amp;csign2=QzWflBYie8G=&amp;url=http%3A%2F%2Fys5.cnsige.top" target="_blank" data-src=""><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/883154-d1874c4693dcba87daa543915c8955f5.jpg"></a></dt><dd><a href="http://ssxd.mediav.com/s?type=2&amp;r=20&amp;mv_ref=www.weather.com.cn&amp;enup=CAABKu6bhQgAAoWb7ioA&amp;mvid=MTI0MTI0MTQzMjQ1MzE2MTYxMDAwMTk&amp;bid=14453e21ca916105&amp;price=AAAAAF6QPwcAAAAAAAZld3xTaMkFVrM+b0i52g==&amp;finfo=DAABCAABAAAAUAgAAgAAABYEAAM/ZodE7CL3vAAIAAIAAAADCgADMc0wXiSICokIAAQAAAAdBgAGLbcGAAoAAAgADgAAABsKAA8AAAAAAAw1AAA&amp;ugi=FbruGBX4sEpMFQIVtAEVzAEVAAAVuJbBmgcWBBXIARaAv8TbkLvRBRwWguex9Ofyq+YTFQAAJfb8utsNAA&amp;uai=FZLEiAIlAhUEFviT1vzJi4/NYxXyCCXAgKaYDCUAFRoUABwWk6zRk9q2pbuYARUAAAA&amp;ubi=FaTnaxXYw5MDFf6UwRoVprqVXhUEFRwWpPuK7hcW+JOAy92XmM1jNAQWoKAQJQYV9Om5gAYVigIVADbh1rOQ+eaN/hEVAEUMAA&amp;clickid=0&amp;cpx=__OFFSET_X__&amp;cpy=__OFFSET_Y__&amp;cs=__EVENT_TIME_START__&amp;ce=__EVENT_TIME_END__&amp;adsw=__ADSPACE_W__&amp;adsh=__ADSPACE_H__&amp;csign2=QzWflBYie8G=&amp;url=http%3A%2F%2Fys5.cnsige.top" target="_blank">【活久见】60000入手的翡翠原石，专家评估价值连城，差点被吓晕！</a><span>四格 · 顶新　广告</span> </dd></dl>
+
+ 
+<dl>
+        	<dt>
+            	<a href="http://p.weather.com.cn/2020/04/3310781.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410143217191D69A5BB47538DF8F9199D76539AC3_s.jpg"></a>
+            </dt>
+            <dd>
+            	<a href="http://p.weather.com.cn/2020/04/3310781.shtml" target="_blank">  重庆南川乡间梯田美如春日画卷  </a>               
+                <span>中国天气网重庆站   2020-04-10 12:15</span>
+            </dd>
+        </dl>
+
+ 
+    </div>
+
+		<div class="left-div">
+		
+		</div>
+		<div id="around" class="around">
+								<div class="aro_city" style="display:block;">
+					<input type="hidden" id="around_city_china_update_time" value="2020041008">
+<h1 class="clearfix city">
+<span class="move">周边地区</span>
+<em>|</em>
+<span>周边景点</span>
+<i>2020-04-10 11:30更新</i>
+</h1>
+<ul class="clearfix city">
+<li>
+<a href="http://www.weather.com.cn/weather1d/101181301.shtml#around2" target="_blank">
+<span>濮阳</span>
+<p class="img clearfix">
+<big class="jpg30 d08"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>6/3°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101180201.shtml#around2" target="_blank">
+<span>安阳</span>
+<p class="img clearfix">
+<big class="jpg30 d08"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>7/2°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101181401.shtml#around2" target="_blank">
+<span>周口</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>10/6°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101181501.shtml#around2" target="_blank">
+<span>漯河</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>9/4°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101100601.shtml#around2" target="_blank">
+<span>晋城</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>8/3°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101180303.shtml#around2" target="_blank">
+<span>原阳</span>
+<p class="img clearfix">
+<big class="jpg30 d08"></big>
+<em>/</em>
+<big class="jpg30 n01"></big>
+</p>
+<i>7/3°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101181001.shtml#around2" target="_blank">
+<span>商丘</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>11/5°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101181101.shtml#around2" target="_blank">
+<span>焦作</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n01"></big>
+</p>
+<i>7/4°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101181201.shtml#around2" target="_blank">
+<span>鹤壁</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>6/2°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101181801.shtml#around2" target="_blank">
+<span>济源</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>7/3°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101180801.shtml#around2" target="_blank">
+<span>开封</span>
+<p class="img clearfix">
+<big class="jpg30 d08"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>7/5°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101180901.shtml#around2" target="_blank">
+<span>洛阳</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>6/4°C</i>
+</a>
+</li>
+</ul>
+				</div>
+				<div class="aro_view">
+					<input type="hidden" id="around_city_travel_update_time" value="2020041008">
+<h1 class="clearfix view">
+<span>周边地区</span>
+<em>|</em>
+<span class="move">周边景点</span>
+<i>2020-04-10 11:30更新</i>
+</h1>
+<ul class="clearfix view">
+<li>
+<a href="http://www.weather.com.cn/weather1d/10118010107A.shtml#around2" target="_blank">
+<span>郑州黄河风景名胜区</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>5/4°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/10118010501A.shtml#around2" target="_blank">
+<span>神仙洞景区</span>
+<p class="img clearfix">
+<big class="jpg30 d06"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>4/1°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/10118010601A.shtml#around2" target="_blank">
+<span>始祖山(具茨山景区</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>6/4°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/10118010301A.shtml#around2" target="_blank">
+<span>环翠峪风景名胜区</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>5/2°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/10118010202A.shtml#around2" target="_blank">
+<span>康百万庄园</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>6/2°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/10118010201A.shtml#around2" target="_blank">
+<span>浮戏山雪花洞风景名胜区</span>
+<p class="img clearfix">
+<big class="jpg30 d06"></big>
+<em>/</em>
+<big class="jpg30 n06"></big>
+</p>
+<i>5/1°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/10118010102A.shtml#around2" target="_blank">
+<span>黄河富景生态世界</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>6/4°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/10118010103A.shtml#around2" target="_blank">
+<span>金鹭鸵鸟游乐园</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>6/4°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/10118010602A.shtml#around2" target="_blank">
+<span>黄帝故里</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>6/4°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/10118010104A.shtml#around2" target="_blank">
+<span>郑州城隍庙</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>6/4°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/10118010105A.shtml#around2" target="_blank">
+<span>郑州文庙</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>6/4°C</i>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/10118010106A.shtml#around2" target="_blank">
+<span>世纪欢乐园</span>
+<p class="img clearfix">
+<big class="jpg30 d07"></big>
+<em>/</em>
+<big class="jpg30 n07"></big>
+</p>
+<i>6/4°C</i>
+</a>
+</li>
+</ul>
+				</div>
+						</div>
+					 <div class="left-div hd-img">
+			  <div class="title">
+                    <h1><a href="http://p.weather.com.cn/" target="_blank">高清图集</a></h1>
+                    <a class="go-more" href="http://p.weather.com.cn/" target="_blank"></a>
+                </div>
+				<div class="hi-body">
+				
+				<a id="img1" href="http://p.weather.com.cn/2020/04/3310655.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410114546BD26592F772D43B929001CCB8838D89B.jpg" target="_blank" width="167" height="126"><b>青海班玛降暴雪 有效缓解森林防火压力</b><i></i></a>
+
+				<a id="img2" href="http://p.weather.com.cn/2020/04/3310781.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410143217191D69A5BB47538DF8F9199D76539AC3.jpg" target="_blank" width="167" height="126"><b>重庆南川乡间梯田美如春日画卷</b><i></i></a>
+
+				<a id="img3" href="http://p.weather.com.cn/2020/04/3310777.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/2020041014243244FED7BE3F6935A819F9128808DB5A15.jpg" target="_blank" width="338" height="255"><b>山东多地四月飘雪 植被披“银装”</b><i></i></a>
+
+				<a id="img4" href="http://p.weather.com.cn/2020/04/3310149.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200409101913CC2AD5F3911BB61C599D575F6C75F637.jpg" target="_blank" width="167" height="126"><b>四川雅安：超级月亮现身天宇</b><i></i></a>
+
+				<a id="img5" href="http://p.weather.com.cn/2020/04/3309753.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200408161610E2D41F34962F298BC7D8E77E266FED3D.jpg" target="_blank" width="167" height="126"><b>76天后的解封 一组图见证武汉开城</b><i></i></a>
+
+			</div>
+			</div>
+									<div class="greatEvent">
+  <div class="title"> <h1><a href="http://www.weather.com.cn/index/jqzdtqsj/index.shtml">重大天气事件</a>
+    
+    </h1>
+   <a href="http://www.weather.com.cn/index/jqzdtqsj/index.shtml" class="go-more"></a></div>
+
+   <ul>
+   
+
+      <li class="on">
+<a href="http://www.weather.com.cn/index/2020/04/3310480.shtml" target="_blank">
+	<p class="time">4月10日</p><div class="article-box"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/2020040913520890A1C93E0A3E2EB2D782FF89A90BAB26.jpg" width="112" height="84" alt="“暴躁”春雨再袭南方 江南等地气温猛跌">
+	<div><h2>  “暴躁”春雨再袭南方 江南等地气温猛跌  </h2><p>今明天南方雨水再度“上线”，冷空气东移南下，黄淮、江南、华南等地陆续降温4~8℃。</p>	</div></div>
+</a>     
+ </li>
+      
+
+      <li class="">
+<a href="http://www.weather.com.cn/index/2020/04/3310074.shtml" target="_blank">
+	<p class="time">4月9日</p><div class="article-box"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/2020040907411651F360313DE08A5FD2C4932638167B13.jpg" width="112" height="84" alt="北方降温又下“油” 南方强降雨明日登场​​​​">
+	<div><h2>  北方降温又下“油” 南方强降雨明日登场​​​​  </h2><p>今明两天华北、黄淮一带会有降雨以及大幅度降温；南方明天起新一轮强降雨过程再度登场。</p>	</div></div>
+</a>     
+ </li>
+      
+
+      <li class="">
+<a href="http://www.weather.com.cn/index/2020/04/3309408.shtml" target="_blank">
+	<p class="time">4月8日</p><div class="article-box"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200408074457E782271A2C35BBF29EDADF4ED824F88A.jpg" width="112" height="84" alt="华北黄淮降雨降温齐登场 南方晴暖气温升">
+	<div><h2>  华北黄淮降雨降温齐登场 南方晴暖气温升  </h2><p>今明两天（8-9日），北方在冷空气的影响下，气温直线下跌，并将有降雨和大风天气。而南方正处在雨水间歇期，气温回升，迎来久违的晴暖。</p>	</div></div>
+</a>     
+ </li>
+      
+
+      <li class="">
+<a href="http://www.weather.com.cn/index/2020/04/3308810.shtml" target="_blank">
+	<p class="time">4月7日</p><div class="article-box"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/2020040707501177AB9A54C3F570028C0E5977DBFE9434.jpg" width="112" height="84" alt="南方喜迎雨水间歇期 东北华北降温又降雨">
+	<div><h2>  南方喜迎雨水间歇期 东北华北降温又降雨  </h2><p>今天（7日）起南方将迎来3天左右的降雨间歇期。明后两天华北还将迎来一次降水过程，对于降低火险等级比较有利。</p>	</div></div>
+</a>     
+ </li>
+      
+
+      <li class="">
+<a href="http://www.weather.com.cn/index/2020/04/3308628.shtml" target="_blank">
+	<p class="time">4月6日</p><div class="article-box"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/2020040516014517A9D5B93584E4EF1709A96FD6B20175.jpg" width="112" height="84" alt="南方雨水渐停江南重回20℃ 北方冷暖转换频繁">
+	<div><h2>  南方雨水渐停江南重回20℃ 北方冷暖转换频繁  </h2><p>预计，今天（6日），华南还将有强降雨出现。明天，南方强降水停歇，后天江南、江淮等地天气转晴，最高气温将重回20℃以上。</p>	</div></div>
+</a>     
+ </li>
+      
+
+      <li class="">
+<a href="http://www.weather.com.cn/index/2020/04/3308449.shtml" target="_blank">
+	<p class="time">4月5日</p><div class="article-box"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/2020040416032937330E1BCA382A23498F8508D649E035.jpg" width="112" height="84" alt="华南今明暴雨连连 北方近期气温频繁波动">
+	<div><h2>  华南今明暴雨连连 北方近期气温频繁波动  </h2><p>预计，今明天（5日至6日），华南等地仍有较强降雨，局部暴雨，广东、广西等地部分地区发生山洪、地质灾害的气象风险较高，需注意防范。</p>	</div></div>
+</a>     
+ </li>
+      
+
+      <li>
+<a href="http://www.weather.com.cn/index/2020/04/3308265.shtml" target="_blank">
+	<p class="time">4月4日</p><div class="article-box"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200403143100B2AC9D217801F010EF315BFACA16EDC0.jpg" width="112" height="84" alt="清明假期南方雨水不停歇 华北东北气温起伏剧烈">
+	<div><h2>  清明假期南方雨水不停歇 华北东北气温起伏剧烈  </h2><p>清明假期期间（4日-6日），南方仍将雨水下不停，江南、华南一带气温将持续保持低迷的状态，而北方气温则呈现气温“震荡性”起伏。</p>	</div></div>
+</a>     
+ </li>
+      
+
+      <li>
+<a href="http://www.weather.com.cn/index/2020/04/3307536.shtml" target="_blank">
+	<p class="time">4月3日</p><div class="article-box"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/2020040214331259578A179B3C19F6ABF4191534EBCE83.jpg" width="112" height="84" alt="强降雨“盯上”华南 南北气温再现“倒挂”">
+	<div><h2>  强降雨“盯上”华南 南北气温再现“倒挂”  </h2><p>今天（3日），江南南部、华南一带仍是强降雨的重心，预计一直到清明假期期间，南方大部地区都将是一个多雨的状态。</p>	</div></div>
+</a>     
+ </li>
+      
+
+      <li>
+<a href="http://www.weather.com.cn/index/2020/04/3306926.shtml" target="_blank">
+	<p class="time">4月2日</p><div class="article-box"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/2020040113344725C8383F5C5DAEC2E665F3D2C5A69E5D.jpg" width="112" height="84" alt="江南华南再成强降雨“主阵地” 北方气温起伏似“过山车”">
+	<div><h2>  江南华南再成强降雨“主阵地” 北方气温起伏似“过山车”  </h2><p>今（4月2日）起，南方新一轮强降雨启程，江南、华南叠加雨量较大。在阴雨的影响下，南方大部地区体感湿冷；北方冷空气不时来扰，气温起伏如坐过山车。</p>	</div></div>
+</a>     
+ </li>
+      
+
+      <li>
+<a href="http://www.weather.com.cn/index/2020/04/3306232.shtml" target="_blank">
+	<p class="time">4月1日</p><div class="article-box"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200401075621B0DECEFD3AA26AAF0BA830EA0C92D134.jpg" width="112" height="84" alt="南方雨水倾盆一直下 北方连迎三轮冷空气">
+	<div><h2>  南方雨水倾盆一直下 北方连迎三轮冷空气  </h2><p>今后三天（4月1日-3日），我国南方地区仍将有大范围降雨，并一直持续到清明节。而今后一周左右，有三股冷空气接连影响北方地区，气温波动起伏。</p>	</div></div>
+</a>     
+ </li>
+      
+
+      <li>
+<a href="http://www.weather.com.cn/index/2020/03/3305629.shtml" target="_blank">
+	<p class="time">3月31日</p><div class="article-box"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/202003310753578C5541F0D42D700A5A75541692E41A8D.jpg" width="112" height="84" alt="南方雨水下到清明 北方冷空气来袭气温降">
+	<div><h2>  南方雨水下到清明 北方冷空气来袭气温降  </h2><p>今明两天，我国南方大部地区仍有持续降水天气，而4月2日起，南方新一轮降雨又将来袭。对于北方来说，今天起新一股冷空气影响逐步展开。</p>	</div></div>
+</a>     
+ </li>
+      
+
+      <li>
+<a href="http://www.weather.com.cn/index/2020/03/3305088.shtml" target="_blank">
+	<p class="time">3月30日</p><div class="article-box"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200330075134E572D9F3CB1D8C85B87431970428C3CE.jpg" width="112" height="84" alt="清明节前南方雨不停 北方气温坐“过山车”">
+	<div><h2>  清明节前南方雨不停 北方气温坐“过山车”  </h2><p>今明两天（30-31日），南方继续雨下不停，未来降雨直至清明。北方雨雪稀少气温攀升，随着新一轮冷空气抵达，各地气温又将“跳水”。</p>	</div></div>
+</a>     
+ </li>
+      
+
+      <li>
+<a href="http://www.weather.com.cn/index/2020/03/3304814.shtml" target="_blank">
+	<p class="time">3月29日</p><div class="article-box"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200328152519C95EEE48A88C161E1C24911BFCC4DA82.gif" width="112" height="84" alt="南方切换为连阴雨模式 北方下周气温将再乘“过山车”">
+	<div><h2>  南方切换为连阴雨模式 北方下周气温将再乘“过山车”  </h2><p>昨天（28日）夜间开始，南方降雨格局出现转变，由强对流频繁转为连阴雨模式；北方大部地区下周气温则会大起大落。</p>	</div></div>
+</a>     
+ </li>
+      
+   </ul>
+      <a class="look-more" href="http://www.weather.com.cn/index/jqzdtqsj/index.shtml">查看更多&gt;&gt;</a>
+</div>
+
+			</div>
+	<div class="right fr">
+										 <link rel="stylesheet" href="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/pcvideo.css">
+<div style="margin-bottom: 10px;">
+         <a href="https://e.weather.com.cn/mtqzt/3285916.shtml" target="_blank"> <img style="width: 300px;" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/1580973057426066351.png"></a>
+    </div>
+<div class="tqsp right-div">
+                <div class="title">
+                    <h1><a href="javascript:;" target="_blank">联播天气预报</a></h1>
+                    <a class="go-more" href="http://video.weather.com.cn/search/search.shtml?hotspot=0&amp;forecast=1&amp;solarTerm=0&amp;life=0&amp;popularScience=0" target="_blank"></a>
+                </div>
+                <div class="videomodel">
+                  <div class="videobox">
+                    <img class="videofengm" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/wf_spring_h.jpg" alt="">
+                    <img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/bo.png" alt="">
+                  </div>
+                  <div class="pc_guanggao">
+                    <div class="pc_guanggao_top">
+                      <span class="ggtime">10</span><span class="closegg">关闭广告&nbsp;&nbsp;<span style="color:#999999">X</span></span>
+                    </div>
+                            <div class="pc_guanggao_box">
+
+                    </div>
+                    <div class="pc_guanggao_body" id="videoAdModel">
+                      <script type="text/javascript">
+                            (function() {
+                                var s = "_" + Math.random().toString(36).slice(2);
+                                document.write('<div style="" id="' + s + '"></div>');
+                                (window.slotbydup = window.slotbydup || []).push({
+                                    id: "u4178566",
+                                    container:  s
+                                });
+                            })();
+                        </script><div style="" id="_y6jvtxc33to"><iframe id="iframeu4178566_0" name="iframeu4178566_0" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/qcqm.html" width="300" height="250" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0;vertical-align:bottom;margin:0;width:300px;height:250px" allowtransparency="true"></iframe></div>
+                    </div>
+                  </div>
+                  <div class="v_d" style="width: 100%;height:100%;">
+                  </div>
+                  <div class="pausegg_close">
+                    x
+                  </div>
+                  <div class="pausegg">
+                    <script type="text/javascript">
+                        (function() {
+                            var s = "_" + Math.random().toString(36).slice(2);
+                            document.write('<div style="" id="' + s + '"></div>');
+                            (window.slotbydup = window.slotbydup || []).push({
+                                id: "u4178710",
+                                container:  s
+                            });
+                        })();
+                    </script><div style="" id="_gcbbbx07qfb"><iframe id="iframeu4178710_0" name="iframeu4178710_0" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/qcqm(1).html" width="180" height="150" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0;vertical-align:bottom;margin:0;width:180px;height:150px" allowtransparency="true"></iframe></div>
+                  </div>
+                </div>
+
+            </div>
+
+<div class="xiaochengxu" style="margin-bottom: 10px; display: block;">
+        
+       <a href="http://news.weather.com.cn/2019/05/3195643.shtml" target="_blank">  <img alt="" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/leidian.jpg" style="width: 300px;"></a>
+    </div>
+      <div class="right-div">
+			<!-- 广告位：中国天气网 右边 1 --> 
+<div id="_7zvhy0p681q" style=""><iframe width="300" frameborder="0" height="250" scrolling="no" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/s(4).html"></iframe><span class="mioalurwuu" style="display:none;text-align:left;"></span></div><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/re-iy.js.下载"></script>
+<script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/ybxq2.js.下载"></script><div style="display:none;"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/z_stat(4).php"></script><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/core(4).php" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1278586247" target="_blank" title="站长统计">站长统计</a></div>
+<!-- 广告位：中国天气网 右边 1 -->
+			</div>
+       <div class="right-div">
+<div class="pic">
+   <h1><span><a target="_blank" href="http://p.weather.com.cn/" _hover-ignore="1" style="font-size:14px;color:#f00;">更多&gt;&gt;</a></span><a href="http://p.weather.com.cn/" target="_blank">精彩图集</a></h1>
+     <a class="go-more" href="http://p.weather.com.cn/" target="_blank"></a>
+   <div id="scrollPic" class="m">
+      <ul class="bigImg clearfix" style="width: 3600px; left: -3000px;">  
+             
+         <li><a href="http://p.weather.com.cn/2020/04/3310407.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410102911E1488F7B6FECCAC0E48AF20B8262E390.jpg" alt="夕阳下北京玉渊潭晚樱染金 体验别样美" width="300" height="227"></a></li>
+           
+         <li><a href="http://p.weather.com.cn/2020/04/3310655.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410114546BD26592F772D43B929001CCB8838D89B.jpg" alt="青海班玛降暴雪 有效缓解森林防火压力" width="300" height="227"></a></li>
+           
+         <li><a href="http://p.weather.com.cn/2020/04/3310589.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410105236BCE3F88AC3E946F242DFB4E830902C5C.jpg" alt="新疆喀什叶城县遭遇强沙尘暴" width="300" height="227"></a></li>
+           
+         <li><a href="http://p.weather.com.cn/2020/04/3309753.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200408161610E2D41F34962F298BC7D8E77E266FED3D.jpg" alt="76天后的解封 一组图见证武汉开城" width="300" height="227"></a></li>
+           
+         <li><a href="http://p.weather.com.cn/2020/04/3310781.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410143217191D69A5BB47538DF8F9199D76539AC3.jpg" alt="重庆南川乡间梯田美如春日画卷" width="300" height="227"></a></li>
+           
+         <li><a href="http://p.weather.com.cn/2020/04/3309589.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200408114629A4C5A44ADAAD86746FC1260F18DD4133.jpg" alt="四川雅安：春季红枫萌新芽" width="300" height="227"></a></li>
+         
+
+        
+             
+         <li><a href="http://p.weather.com.cn/2020/04/3310407.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410102911E1488F7B6FECCAC0E48AF20B8262E390.jpg" alt="夕阳下北京玉渊潭晚樱染金 体验别样美" width="300" height="227"></a></li>
+           
+         <li><a href="http://p.weather.com.cn/2020/04/3310655.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410114546BD26592F772D43B929001CCB8838D89B.jpg" alt="青海班玛降暴雪 有效缓解森林防火压力" width="300" height="227"></a></li>
+           
+         <li><a href="http://p.weather.com.cn/2020/04/3310589.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410105236BCE3F88AC3E946F242DFB4E830902C5C.jpg" alt="新疆喀什叶城县遭遇强沙尘暴" width="300" height="227"></a></li>
+           
+         <li><a href="http://p.weather.com.cn/2020/04/3309753.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200408161610E2D41F34962F298BC7D8E77E266FED3D.jpg" alt="76天后的解封 一组图见证武汉开城" width="300" height="227"></a></li>
+           
+         <li><a href="http://p.weather.com.cn/2020/04/3310781.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200410143217191D69A5BB47538DF8F9199D76539AC3.jpg" alt="重庆南川乡间梯田美如春日画卷" width="300" height="227"></a></li>
+           
+         <li><a href="http://p.weather.com.cn/2020/04/3309589.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20200408114629A4C5A44ADAAD86746FC1260F18DD4133.jpg" alt="四川雅安：春季红枫萌新芽" width="300" height="227"></a></li>
+         
+
+      </ul>
+					
+      <ul class="botIcon clearfix" style="margin-left: 72px;"><li class=""></li><li class=""></li><li class=""></li><li class=""></li><li class="on"></li><li class=""></li></ul>
+      <p>重庆南川乡间梯田美如春日画卷</p>
+      <div class="bottomBg"></div>
+      <div class="rollLeft"></div>
+      <div class="rollRight"></div>
+   </div>
+</div>
+<!--焦点图end-->
+<ul class="list">
+   <li><a href="http://p.weather.com.cn/2020/04/3308677.shtml" target="_blank" style="color:"> 北京居庸关桃杏绽放 列车穿越花海 </a></li>  
+
+   <li><a href="http://p.weather.com.cn/2020/04/3310777.shtml" target="_blank" style="color:"> 山东多地四月飘雪 植被披“银装” </a></li>  
+
+   
+<li><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/kaijia_1.js.下载"></script><a class="txtad" href="http://news.baizhan.net/08/1393663.html?tq01" target="_blank">今年要不要买房，央行副行长透露一大趋势</a></li>
+<li><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/kuaiya_1.js.下载"></script><a class="txtad" href="http://www.hoteastday.com/a/1684480848489933746?qid=kuaiyaxxrl" target="_blank">新闻联播出现百亿影帝吴京雪山拾荒？</a></li>
+</ul> 
+</div> 
+<a href="https://detail.tmall.com/item.htm?id=611699327004&amp;skuId=4305996765993" target="_blank">
+                <img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/tianqixiaomi.png" style="width:100%;">
+              </a>
+
+			
+   
+
+						<div class="right-div">
+			
+			</div>
+			<div class="tqsp right-div">
+                <div class="title">
+                    <h1><a href="http://www.weather.com.cn/video/" target="_blank">天气视频</a></h1>
+                    <a class="go-more" href="http://www.weather.com.cn/video/" target="_blank"></a>
+                </div>
+                               
+            <a title="山东北部降春雪 警惕低温霜冻影响" class="l" href="http://www.weather.com.cn/video/2020/04/3310873.shtml" target="_blank">
+              <img width="300" alt="山东北部降春雪 警惕低温霜冻影响" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/202004101719490D0054E00245E8CE689FD72DC49EFE34.jpg"><i></i>
+                </a>  
+           
+               <p><a title="新疆多地遭遇沙尘暴 局地能见度不足500米" href="http://www.weather.com.cn/video/2020/04/3310771.shtml" target="_blank">新疆多地遭遇沙尘暴 局地能见度不足500米</a></p>        
+               <p><a title="冷空气过后 华北气温将迅速回升" href="http://www.weather.com.cn/video/2020/04/3310399.shtml" target="_blank">冷空气过后 华北气温将迅速回升</a></p>        
+            </div>
+
+						 <div class="right-div">
+			<div class="chartPH">
+				<h1 class="clearfix">
+					<span>热点</span>
+					<i>视频</i>
+					<i>图片</i>
+					<i class="on">文章</i>
+				</h1>
+				<ul id="hot">
+										<li class="hover"><span class="ord"><i>1</i></span><span class="city"><a target="_blank" href="http://news.weather.com.cn/2020/04/3310033.shtml">春雨润京城！今天北京有降水山区飘雪...</a></span></li><li class="hover"><span class="ord"><i>2</i></span><span class="city"><a target="_blank" href="http://news.weather.com.cn/2020/04/3309710.shtml">华北黄淮冷雨中气温骤降 南方新一轮...</a></span></li><li class="hover"><span class="ord"><i>3</i></span><span class="city"><a target="_blank" href="http://news.weather.com.cn/2020/04/3310378.shtml">今年首个沙尘暴蓝色预警！甘肃新疆等...</a></span></li>
+<li class=""><span class="ord"><i>4</i></span><span class="city"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/kaijia_2.js.下载"></script><a class="txtad" href="http://news.baizhan.net/08/1393662.html?tq02" target="_blank">2020社保补贴新政策，最高可领3万元！</a></span></li>
+<li class=""><span class="ord"><i>5</i></span><span class="city"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/kuaiya_2.js.下载"></script><a class="txtad" href="http://www.hoteastday.com/a/1684481431537633548?qid=kuaiyaxxrl" target="_blank">宁泽涛26岁生日这天退役了</a></span></li>
+
+									</ul>
+				
+				<ul id="pic" style="display:none;">
+										<li class="hover"><span class="ord"><i>1</i></span><span class="city"><a target="_blank" href="http://p.weather.com.cn/2020/04/3310149.shtml">四川雅安：超级月亮现身天宇</a></span></li><li class="hover"><span class="ord"><i>2</i></span><span class="city"><a target="_blank" href="http://p.weather.com.cn/2020/04/3309753.shtml">76天后的解封 一组图见证武汉开城</a></span></li><li class="hover"><span class="ord"><i>3</i></span><span class="city"><a target="_blank" href="http://p.weather.com.cn/2020/04/3310171.shtml">春寒料峭 河北石家庄降雨又降温</a></span></li>
+<li class=""><span class="ord"><i>4</i></span><span class="city"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/kaijia_2.js.下载"></script><a class="txtad" href="http://news.baizhan.net/08/1393662.html?tq02" target="_blank">2020社保补贴新政策，最高可领3万元！</a></span></li>
+<li class=""><span class="ord"><i>5</i></span><span class="city"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/kuaiya_2.js.下载"></script><a class="txtad" href="http://www.hoteastday.com/a/1684481431537633548?qid=kuaiyaxxrl" target="_blank">宁泽涛26岁生日这天退役了</a></span></li>
+
+									</ul>
+				<ul id="video">
+										<li class="hover"><span class="ord"><i>1</i></span><span class="city"><a target="_blank" href="http://www.weather.com.cn/video/tqyb/05/508815.shtml">新闻联播天气预报</a></span></li><li class="hover"><span class="ord"><i>2</i></span><span class="city"><a target="_blank" href="http://video.weather.com.cn/v/video/a/m/content_14234.shtml">4月8日联播天气 北方多地迎雨水 ...</a></span></li><li class="hover"><span class="ord"><i>3</i></span><span class="city"><a target="_blank" href="http://video.weather.com.cn/v/video/a/m/content_14274.shtml">4月9日联播天气 北方多地降温剧烈...</a></span></li>
+<li class=""><span class="ord"><i>4</i></span><span class="city"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/kaijia_2.js.下载"></script><a class="txtad" href="http://news.baizhan.net/08/1393662.html?tq02" target="_blank">2020社保补贴新政策，最高可领3万元！</a></span></li>
+<li class=""><span class="ord"><i>5</i></span><span class="city"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/kuaiya_2.js.下载"></script><a class="txtad" href="http://www.hoteastday.com/a/1684481431537633548?qid=kuaiyaxxrl" target="_blank">宁泽涛26岁生日这天退役了</a></span></li>
+
+									</ul>
+			</div>
+			</div>
+						<div class="right-div">
+				<div style="margin-top:5px;margin-bottom:5px;">
+<!-- 广告位：中国天气网画中画02 -->
+<div id="_dmwsa654ii7" style=""><em style="width:0px;height:0px;margin:0px;"></em><iframe width="300" frameborder="0" height="250" scrolling="no" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/s(5).html"></iframe></div><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/fja.js.下载"></script>
+<script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/ybxq3.js.下载"></script><div style="display:none;"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/z_stat(5).php"></script><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/core(5).php" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1278586248" target="_blank" title="站长统计">站长统计</a></div>
+</div>
+
+</div>
+
+
+						<div class="right-div">
+			<div class="pic travel">
+				<h1> <span><a href="http://www.weather.com.cn/life/" target="_blank">&gt;&gt;</a></span> <a target="_blank" href="http://www.weather.com.cn/life/">生活旅游</a></h1>
+				<a class="go-more" href="http://www.weather.com.cn/life/" target="_blank"></a>
+				<div class="scrollPic">
+					<ul class="bigImg clearfix" style="width: 3600px; left: -2700px;">
+						
+   <li><a href="http://www.weather.com.cn/life/2020/04/3309486.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/2020040809361459B0D474F558AC2F3EC16E8014078DF4.jpg" alt="健身你做对了吗？六种错误锻炼加速衰老" width="300" height="227"></a></li>
+   
+   <li><a href="http://www.weather.com.cn/life/2020/04/3308871.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/202004071011559C4893D5E7A72800EC2357AB9A887962.jpg" alt="春季沙尘天气多发 如何防护？" width="300" height="227"></a></li>
+   
+   <li><a href="http://www.weather.com.cn/life/2020/04/3307967.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/2020040315551255C4E30CE94FCB9F18AB08E31E5CBC35.jpg" alt="又到杨柳絮飞扬季 需防过敏来扰" width="300" height="227"></a></li>
+   
+
+						
+   <li><a href="http://www.weather.com.cn/life/2019/10/3253319.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20191028144048D58023A73C43EC6EEB61610B0AB0AD74.jpg" alt="秋意浓 蓝天映衬下的哈尔滨伏尔加庄园" width="300" height="227"></a></li>
+   
+   <li><a href="http://www.weather.com.cn/life/2019/10/3253318.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/201910281008514BABD1DE0A34725E596E45D93BD838D0.jpg" alt="大美新疆—帕米尔高原好风光" width="300" height="227"></a></li>
+   
+   <li><a href="http://www.weather.com.cn/life/2019/10/3253317.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/201910300940535DF48AE55A03C1BC19DE4AAD8E61A338.jpg" alt="湖北神农架晨雾缭绕 秋色迷人" width="300" height="227"></a></li>
+   
+
+					
+						
+   <li><a href="http://www.weather.com.cn/life/2020/04/3309486.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/2020040809361459B0D474F558AC2F3EC16E8014078DF4.jpg" alt="健身你做对了吗？六种错误锻炼加速衰老" width="300" height="227"></a></li>
+   
+   <li><a href="http://www.weather.com.cn/life/2020/04/3308871.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/202004071011559C4893D5E7A72800EC2357AB9A887962.jpg" alt="春季沙尘天气多发 如何防护？" width="300" height="227"></a></li>
+   
+   <li><a href="http://www.weather.com.cn/life/2020/04/3307967.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/2020040315551255C4E30CE94FCB9F18AB08E31E5CBC35.jpg" alt="又到杨柳絮飞扬季 需防过敏来扰" width="300" height="227"></a></li>
+   
+
+						
+   <li><a href="http://www.weather.com.cn/life/2019/10/3253319.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/20191028144048D58023A73C43EC6EEB61610B0AB0AD74.jpg" alt="秋意浓 蓝天映衬下的哈尔滨伏尔加庄园" width="300" height="227"></a></li>
+   
+   <li><a href="http://www.weather.com.cn/life/2019/10/3253318.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/201910281008514BABD1DE0A34725E596E45D93BD838D0.jpg" alt="大美新疆—帕米尔高原好风光" width="300" height="227"></a></li>
+   
+   <li><a href="http://www.weather.com.cn/life/2019/10/3253317.shtml" target="_blank"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/201910300940535DF48AE55A03C1BC19DE4AAD8E61A338.jpg" alt="湖北神农架晨雾缭绕 秋色迷人" width="300" height="227"></a></li>
+   
+
+					</ul>
+					
+					<ul class="botIcon clearfix" style="margin-left: 72px;"><li class=""></li><li class=""></li><li class=""></li><li class="on"></li><li class=""></li><li class=""></li></ul>
+					<p>秋意浓 蓝天映衬下的哈尔滨伏尔加庄园</p>
+					<div class="bottomBg"></div>
+					<div class="rollLeft"></div>
+					<div class="rollRight"></div>
+				</div>
+			</div>
+			<ul class="list">
+				
+   <li><a href="http://www.weather.com.cn/life/2018/11/2957048.shtml" target="_blank">换个视角看秋景 竟然这么美！</a></li>
+   
+   <li><a href="http://www.weather.com.cn/life/2018/11/2957047.shtml" target="_blank">金秋美景大觉寺</a></li>
+   
+
+				<li><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/kaijia_3.js.下载"></script><a class="txtad" href="http://news.baizhan.net/08/1393661.html?tq03" target="_blank">中国“最牛”首富家族：祖孙三代皆是首富</a></li>
+<li><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/kuaiya_3.js.下载"></script><a class="txtad" href="http://www.hoteastday.com/a/1884481502263486228?qid=kuaiyaxxrl" target="_blank">薛之谦伦敦演唱会捆绑周杰伦卖票</a></li>
+
+			</ul>
+			</div>
+						
+		
+						<div class="right-div">
+				<div class="hotSpot">
+<h3>景点推荐</h3>
+<h4 class="title"><span class="name">景区</span><span class="weather">天气</span><span class="wd">气温</span>
+<span class="zs">旅游指数</span></h4>
+<ul class="on">
+<li>
+<a href="http://www.weather.com.cn/weather1d/101310201.shtml" target="_blank">
+<span class="name">三亚</span>
+<span class="weather">多云</span>
+<span class="wd">31/23℃</span>
+<span class="zs">适宜</span>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101271906.shtml" target="_blank">
+<span class="name">九寨沟</span>
+<span class="weather">小雨</span>
+<span class="wd">18/6℃</span>
+<span class="zs">适宜</span>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101290201.shtml" target="_blank">
+<span class="name">大理</span>
+<span class="weather">晴</span>
+<span class="wd">22/7℃</span>
+<span class="zs">适宜</span>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101251101.shtml" target="_blank">
+<span class="name">张家界</span>
+<span class="weather">中雨转小雨</span>
+<span class="wd">14/9℃</span>
+<span class="zs">一般</span>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101300501.shtml" target="_blank">
+<span class="name">桂林</span>
+<span class="weather">小雨转暴雨</span>
+<span class="wd">23/18℃</span>
+<span class="zs">适宜</span>
+</a>
+</li>
+<li>
+<a href="http://www.weather.com.cn/weather1d/101120201.shtml" target="_blank">
+<span class="name">青岛</span>
+<span class="weather">小雨</span>
+<span class="wd">13/7℃</span>
+<span class="zs">适宜</span>
+</a>
+</li>
+</ul>
+</div>
+				</div>
+						
+			<div class="right-div">
+
+<!-- 广告位：中国天气网 右边 3 -->
+<script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/ybxh03.js.下载" name="40d8f13c86e83f264b6602106b768089"></script><div id="_yk8hyadyl3" style=""><div style="width:0px;height:0px;margin-left:0px;"></div><iframe width="300" frameborder="0" height="250" scrolling="no" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/s(6).html"></iframe></div><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/kd.js.下载"></script><div style="display: none;"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/z_stat(6).php"></script><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/core(6).php" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1278535754" target="_blank" title="站长统计">站长统计</a></div>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?24b77a56c77ce27d009359b331cde12e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</div>
+			
+			<div class="right-div qxcp">
+			<div class="title">
+			<h1><a href="http://products.weather.com.cn/" target="_blank">气象产品</a></h1>
+			<a class="go-more" href="http://products.weather.com.cn/" target="_blank"></a>
+			
+			</div>
+			
+			<div class="qxcp-body">
+					<a style="height:225px;display:none;" href="http://www.weather.com.cn/index/zxqxgg1/new_wlstyb.shtml" target="_blank">
+                    <img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/img-chanpin.png" width="275" alt="">
+					</a>
+                    <a href="http://www.weather.com.cn/index/zxqxgg1/new_wlstyb.shtml" target="_blank">未来三天全国天气预报</a>
+                    <a href="http://products.weather.com.cn/product/Index/index/procode/YB_WD_ZG24" target="_blank">全国最高气温分布</a>
+                    <a href="http://products.weather.com.cn/product/Index/index/procode/JC_JSL_02405" target="_blank">全国降水实况</a>
+                </div>
+			
+			</div>
+		
+			
+				 <div class="right-div qxfw">
+                <div class="title">
+                    <h1>气象服务</h1>
+                </div>
+                <div class="qxfw-body">
+                    <h1><a href="http://www.weather.com.cn/wzfw/kfzx/index.shtml" target="_blank">气象服务热线</a></h1>
+                    <p>拨打400-6000-121进行气象服务咨询、建议、合作与投诉</p>
+                    <h1>天气预报电话查询</h1>
+                    <p>拨打12121或96121进行天气预报查询</p>
+                    <h1><a href="http://e.weather.com.cn/" target="_blank">手机查询</a></h1>
+                    <p>随时随地通过手机登录中国天气WAP版查看各地天气资讯</p>
+                    <img width="300" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/img-qrcode-2.png" alt="">
+                    <!-- <span>查看手机版中国天气</span> -->
+                </div>
+            </div>
+
+			<div class="right-div">
+			<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '6828831',
+        container: s,
+        size: '300,250',
+        display: 'inlay-fix'
+    });
+})();
+</script><div id="_zvrywvzsgii"></div><script charset="utf-8" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/scsm"></script><script type="text/javascript">
+        var cpro_id = "u5803815";
+        
+</script>
+<script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/c.js.下载"></script><div id="BAIDU_SSP__wrapper_u5803815_0"></div>
+<script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/os.js.下载"></script>
+<!-- 广告位：天气网pc站预报页左对联 -->
+  <div id="zdl" style="width: 122px; position: fixed; left: 10px; top: 160px;">
+    <div>
+<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '6012517',
+        container: s,
+        size: '120,240',
+        display: 'inlay-fix'
+    });
+})();
+</script><div id="_5ou0wvegazm"></div><script charset="utf-8" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/lctm"></script><script>
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup=window.slotbydup || []).push({
+            id: '6850439',
+            container: s,
+            size: '120,240',
+            display: 'inlay-fix'
+        });
+    })();
+</script><div id="_erq9qp0q0ct"></div><script charset="utf-8" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/lctm(1)"></script><div id="_xddj443s7xk" style=""><iframe width="120" frameborder="0" height="240" scrolling="no" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/s(7).html"></iframe></div><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/e_r_yier.js.下载"></script>
+<div style="display:none;"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/z_stat(7).php"></script><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/core(7).php" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1278566949" target="_blank" title="站长统计">站长统计</a></div>
+<script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/os.js.下载"></script>
+
+</div>
+</div>
+
+<!-- 广告位：天气网pc站预报页右弹窗 -->
+<div id="ytc" style="width: 300px; position: fixed; right: 0px; bottom: 0px;">
+ <script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '6012520',
+        container: s,
+        size: '300,250',
+        display: 'inlay-fix'
+    });
+})();
+</script><div id="_bbuy1ey7qjh"></div><script charset="utf-8" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/tcwm"></script><script>
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup=window.slotbydup || []).push({
+            id: '6850437',
+            container: s,
+            size: '300,250',
+            display: 'inlay-fix'
+        });
+    })();
+</script><div id="_9dtnkb6759m"></div><script charset="utf-8" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/tcwm(1)"></script><div style=""><iframe width="300" frameborder="0" height="250" scrolling="no" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/s(8).html"></iframe></div><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/g.js(1).下载"></script>
+
+<div style="display:none;"><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/z_stat(8).php"></script><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/core(8).php" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1278548395" target="_blank" title="站长统计">站长统计</a></div>
+<script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/ybxqqzs.js.下载"></script>
+<script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/os.js.下载"></script>
+
+
+
+</div>
+
+			</div>	
+		
+		</div>
+</div><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/getaddress"></script><script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/getaddress(1)"></script>
+
+<div id="ab_zan" style="visibility: visible;">
+<!-- 点赞功能开始 -->
+<!-- 代码1：放在页面需要展示的位置  -->
+<!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
+<div id="cyEmoji" role="cylabs" data-use="emoji"><div class="cy-wrapper">
+    <div class="emoji-tip"> 
+        </div>
+    <ul class="emoji-list">
+                    <li class="emoji-item" data-eid="2044" data-ubb="" data-desc="" data-num="1176" style="width: 29px;">
+                <div><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/nozan.png" title="赞"></div>
+                <p class="emoji-name">赞</p>
+                <p class="emoji-num">1176人</p>
+            </li>
+            </ul>
+</div></div>
+<!-- 代码2：用来读取评论框配置，此代码需放置在代码1之后。 -->
+<!-- 如果当前页面有评论框，代码2请勿放置在评论框代码之前。 -->
+<!-- 如果页面同时使用多个实验室项目，以下代码只需要引入一次，只配置上面的div标签即可 -->
+<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/lib/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/changyan.labs.https.js.下载"></script>
+<div id="zan-num"></div>
+
+<style type="text/css">
+ /*更新css*/
+            div#ab_zan {
+                left: 50%;
+                margin-left: -553px;
+                position: fixed;
+                top: 420px;
+                height: 48px;
+                width: 48px;
+                visibility: hidden;
+                z-index: 10;
+            }
+
+            /*新加css*/
+            #cyEmoji .emoji-item {
+                height: 51px;
+            }
+
+            .emoji-tip {
+                display: none;
+            }
+
+            #cyEmoji .emoji-name {
+                display: none;
+            }
+
+            #cyEmoji .emoji-num {
+                display: block;
+            }
+
+            #cyEmoji {
+                background: url("http://i.tq121.com.cn/i/weather2015/city/zan3.png") no-repeat;
+            }
+
+            #cyEmoji .emoji-list {
+                padding: 0;
+                margin: 0;
+            }
+
+            #cyEmoji .emoji-item {
+                ;
+                margin: 0;
+                padding: 5px 0 0;
+                height: 45px;
+                width: 50px;
+            }
+
+            #zan-num {
+                position: absolute;
+                top: 25px;
+                width: 50px;
+                text-align: center;
+                color: #c2c2c2;
+                font-size: 14px;
+            }
+</style>
+<!-- 点赞功能结束 -->
+
+</div>
+
+<!-- 悬浮 -->
+<style>
+      .r-x-box {
+            width: 50px;
+            border-left: 0;
+            border-right: 0;
+            border-bottom: 0;
+            left: 0;
+            position: fixed;
+            left: 50%;
+            margin-left: -553px;
+            position: fixed;
+            top: 370px;
+        }
+
+        .r-x1 {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .r-x-5 {
+            background: url(http://i.tq121.com.cn/i/news/right-d9.png) no-repeat;
+            margin-top: 50px;
+        }
+
+        .r-x-5:hover {
+            background: url(http://i.tq121.com.cn/i/news/right-d10.png) no-repeat;
+        }
+
+        .r-x-7 {
+            background: url(http://i.tq121.com.cn/i/news/right-d13.png) no-repeat;
+        }
+
+        .r-x-7:hover {
+            background: url(http://i.tq121.com.cn/i/news/right-d14.png) no-repeat;
+        }
+
+        .r-x-8 {
+            background: url(http://i.tq121.com.cn/i/weather2017/left_d1.png) no-repeat;
+        }
+
+        .r-x-8:hover {
+            background: url(http://i.tq121.com.cn/i/weather2017/left_d2.png) no-repeat;
+        }
+</style>
+<div class="r-x-box">
+<a href="http://www.weather.com.cn/weather1dn/101180101.shtml"><div class="r-x1 r-x-8"></div></a>
+         <a href="http://www.weather.com.cn/index/feedback_201409.shtml#forecast#old" target="_blank"><div class="r-x1 r-x-5"></div></a>
+    
+         <!-- 城市对比上线  -->
+    <div class="cmpCityBtn">
+      <img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/cmpCityBtn.png">
+      <p>城市对比</p>
+    </div>
+	<a title="回到顶部" class="gotop" href="javascript:void(0)"><div class="r-x1 r-x-7"></div></a>
+</div>
+<div class="cmpBottomModel dis">
+  <div class="errorMsg dis">对比栏已有所选内容，请重新选择</div>
+  <div class="cmpBottomInner">
+    <div class="cmpBottomHeader">
+      <ul>
+        <li class="cur" id="cmpFirst">对比栏</li>
+        <li>最近浏览</li>
+      </ul>
+      <span>隐藏</span>
+    </div>
+    <ul class="cmpBottomCityList" id="cmpModel"><li class="cmpBottomCityListNull"><b>您还可以继续添加</b><strong>add icon</strong></li><li class="cmpBottomCityListNull"><b>您还可以继续添加</b><strong>add icon</strong></li><li class="cmpBottomCityListNull"><b>您还可以继续添加</b><strong>add icon</strong></li><li class="cmpBottomCityListNull"><b>您还可以继续添加</b><strong>add icon</strong></li><li><div class="cmpAllList cmpAllListUnClick" id="fcsCmpAll">对比</div><div class="clearAllList">清空对比</div></li></ul>
+    <ul class="cmpBottomCityList dis" id="historyCity"><li data-id="101180101"><p class="date">2020年04月10日</p><p class="city">郑州</p><div class="cityWeatherIcon"><i class="new_icons icon-d08" title="中雨"></i><i class="new_icons icon-n07" title="小雨"></i></div><p class="weather">中雨转小雨</p><p class="temp">5~4℃</p><div class="btnList"><span class="cmpBtn ">对比</span></div></li><li data-id="101181001"><p class="date">2020年04月10日</p><p class="city">商丘</p><div class="cityWeatherIcon"><i class="new_icons icon-d02" title="阴"></i><i class="new_icons icon-n07" title="小雨"></i></div><p class="weather">阴转小雨</p><p class="temp">8~5℃</p><div class="btnList"><span class="cmpBtn ">对比</span></div></li><li data-id="101090201"><p class="date">2020年04月10日</p><p class="city">保定</p><div class="cityWeatherIcon"><i class="new_icons icon-d02" title="阴"></i><i class="new_icons icon-n01" title="多云"></i></div><p class="weather">阴转多云</p><p class="temp">14~3℃</p><div class="btnList"><span class="cmpBtn ">对比</span></div></li><li data-id="101100401"><p class="date">2020年04月10日</p><p class="city">晋中</p><div class="cityWeatherIcon"><i class="new_icons icon-d06" title="雨夹雪"></i><i class="new_icons icon-n00" title="晴"></i></div><p class="weather">雨夹雪转晴</p><p class="temp">3~-2℃</p><div class="btnList"><span class="cmpBtn ">对比</span></div></li><li data-id="101090301"><p class="date">2020年04月10日</p><p class="city">张家口</p><div class="cityWeatherIcon"><i class="new_icons icon-d02" title="阴"></i><i class="new_icons icon-n01" title="多云"></i></div><p class="weather">阴转多云</p><p class="temp">11~-1℃</p><div class="btnList"><span class="cmpBtn ">对比</span></div></li></ul>
+  </div>
+  <div class="addCityCmp dis">
+    <div class="addCityCmpInner">
+      <div class="close"></div>
+      <div class="cityUl">
+        <div class="cityLi">
+          <span>选择日期</span>
+          <input type="text" class="dateInput" placeholder="请选择日期" readonly="">
+          <span>选择城市</span>
+          <input type="text" class="cityInput" placeholder="请输入城市" data-id="">
+          <i class="dis">清空</i>
+          <div class="showDate dis">
+            <ul><li data-time="2020-04-10"><p>今天</p><p>04-10</p></li><li data-time="2020-04-11"><p>明天</p><p>04-11</p></li><li data-time="2020-04-12"><p>周日</p><p>04-12</p></li><li data-time="2020-04-13"><p>周一</p><p>04-13</p></li><li data-time="2020-04-14"><p>周二</p><p>04-14</p></li><li data-time="2020-04-15"><p>周三</p><p>04-15</p></li><li data-time="2020-04-16"><p>周四</p><p>04-16</p></li></ul>
+          </div>              
+          <div class="showCity dis">
+            <ul></ul>
+          </div>
+        </div>
+        <div class="cityLi">
+          <span>选择日期</span>
+          <input type="text" class="dateInput" placeholder="请选择日期" readonly="">
+          <span>选择城市</span>
+          <input type="text" class="cityInput" placeholder="请输入城市" data-id="">
+          <i class="dis">清空</i>    
+          <div class="showDate dis">
+            <ul><li data-time="2020-04-10"><p>今天</p><p>04-10</p></li><li data-time="2020-04-11"><p>明天</p><p>04-11</p></li><li data-time="2020-04-12"><p>周日</p><p>04-12</p></li><li data-time="2020-04-13"><p>周一</p><p>04-13</p></li><li data-time="2020-04-14"><p>周二</p><p>04-14</p></li><li data-time="2020-04-15"><p>周三</p><p>04-15</p></li><li data-time="2020-04-16"><p>周四</p><p>04-16</p></li></ul>
+          </div>              
+          <div class="showCity dis">
+            <ul></ul>
+          </div>
+        </div>
+        <div class="cityLi">
+          <span>选择日期</span>
+          <input type="text" class="dateInput" placeholder="请选择日期" readonly="">
+          <span>选择城市</span>
+          <input type="text" class="cityInput" placeholder="请输入城市" data-id="">
+          <i class="dis">清空</i>    
+          <div class="showDate dis">
+            <ul><li data-time="2020-04-10"><p>今天</p><p>04-10</p></li><li data-time="2020-04-11"><p>明天</p><p>04-11</p></li><li data-time="2020-04-12"><p>周日</p><p>04-12</p></li><li data-time="2020-04-13"><p>周一</p><p>04-13</p></li><li data-time="2020-04-14"><p>周二</p><p>04-14</p></li><li data-time="2020-04-15"><p>周三</p><p>04-15</p></li><li data-time="2020-04-16"><p>周四</p><p>04-16</p></li></ul>
+          </div>               
+          <div class="showCity dis">
+            <ul></ul>
+          </div>
+        </div>
+        <div class="cityLi">
+          <span>选择日期</span>
+          <input type="text" class="dateInput" placeholder="请选择日期" readonly="">
+          <span>选择城市</span>
+          <input type="text" class="cityInput" placeholder="请输入城市" data-id="">
+          <i class="dis">清空</i>  
+          <div class="showDate dis">
+            <ul><li data-time="2020-04-10"><p>今天</p><p>04-10</p></li><li data-time="2020-04-11"><p>明天</p><p>04-11</p></li><li data-time="2020-04-12"><p>周日</p><p>04-12</p></li><li data-time="2020-04-13"><p>周一</p><p>04-13</p></li><li data-time="2020-04-14"><p>周二</p><p>04-14</p></li><li data-time="2020-04-15"><p>周三</p><p>04-15</p></li><li data-time="2020-04-16"><p>周四</p><p>04-16</p></li></ul>
+          </div>             
+          <div class="showCity dis">
+            <ul></ul>
+          </div>
+        </div>
+      </div>
+      <div class="addCityLi dis"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/addCityLi.png"><span>添加城市</span></div>
+      <div class="saveCloseBtn">
+        <div class="saveBtn">保存</div>
+        <div class="closeBtn">取消</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 悬浮end -->
+
+<script>W.use(['j/weather2015/c_common.js']);</script>
+<script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/jquery-1.8.2.js.下载"></script>
+<script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/tools.js.下载"></script>
+<script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/ads.js.下载"></script>
+<script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/main.js.下载"></script>
+<!-- 城市对比上线  -->
+<script type="text/javascript" src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/cityListCmp.js.下载"></script>
+
+<script>W.use(['j/weather2015/c_gg.js']);</script>
+<style>
+#abs { z-index:10 ;display:block;}
+#adposter_6287{display:block;}
+</style>
+
+<script>W.use('j/weather2015/publicHead.js?2019');</script>
+<div class="footer">
+  <div class="block">
+    <div class="Lcontent" style="width:558px;">
+      <dl style="width:280px; margin-right:22px;">
+        <dt>
+          <h3>网站服务</h3>
+        </dt>
+        <dd>
+          <p><a href="http://www.weather.com.cn/wzfw/gywm/" target="_blank">关于我们</a><a href="http://www.weather.com.cn/wzfw/lxwm/" target="_blank">联系我们</a><a href="http://www.weather.com.cn/wzfw/sybz/" target="_blank">帮助</a><a href="http://www.weather.com.cn/wzfw/ryzp/" target="_blank">人员招聘</a></p>
+          <p><a href="http://www.weather.com.cn/wzfw/kfzx/" target="_blank">客服中心</a><a href="http://www.weather.com.cn/wzfw/bqsm/" target="_blank">版权声明</a><a href="http://www.weather.com.cn/wzfw/wzls/" target="_blank">律师</a><a href="http://www.weather.com.cn/wzfw/wzdt/" target="_blank">网站地图</a></p>
+        </dd>
+      </dl>
+      <dl style="width:150px;">
+        <dt>
+          <h3>营销中心</h3>
+        </dt>
+        <dd>
+          <p><a href="http://marketing.weather.com.cn/wzhz/index.shtml" target="_blank">商务合作</a><a href="http://ad.weather.com.cn/index.shtml" target="_blank">广告服务</a></p>
+        </dd>
+      </dl>
+      <div class="clear"></div>
+    </div>
+    <div class="friendLink" style="width:418px;margin-right:15px;">
+      <h3>相关链接</h3>
+      <p><a href="http://www.cma.gov.cn/" target="_blank">中国气象局</a><a href="http://www.chinamsa.org/" target="_blank">中国气象服务协会</a> <a href="http://www.weathertv.cn/" target="_blank">中国天气频道</a><a href="http://www.xn121.com/" target="_blank">中国兴农网</a></p>
+      
+    </div>
+    <div class="serviceinfo" style="position:relative;">
+<p><span>客服邮箱：<a href="mailto:service@weather.com.cn">service@weather.com.cn</a></span><span style="width:220px;">广告服务：<b>010-58991910</b></span><span><a href="http://beian.miit.gov.cn/" target="_blank">京ICP证010385号</a>　京公网安备11041400134号</span></p>
+      <p><span>客服热线：<b><a href="http://www.weather.com.cn/wzfw/kfzx/index.shtml" target="_blank">400-6000-121</a></b></span><span style="width:220px;">  商务合作：<b>010-58991806</b><b style="display:  block;margin-left: 60px;">010-58991938</b></span><span>增值电信业务经营许可证B2-20050053</span></p>
+<a id="___szfw_logo___" target="_blank" href="http://www.bcpcn.com/product/pjia/da/BCP65914858F778322.html"><img src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/cx_new.png" style="position:absolute;right:10px;top:25px;"></a>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="aboutUs"> 中国天气网版权所有，未经书面授权禁止使用&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright©<a href="http://www.pmsc.cn/" target="_blank">中国气象局公共气象服务中心</a> All Rights Reserved (2008-2020)</div>
+</div>
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F080dabacb001ad3dc8b9b9049b36d43b' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/h.js.下载" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+window._wat = window._wat || [];
+(function() {
+    var wm = document.createElement("script");
+    wm.src = "http://analyse.weather.com.cn/js/v1/wa.js?site_id=1";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(wm, s);
+})();
+</script>
+	<script src="./郑州天气预报,郑州7天天气预报,郑州15天天气预报,郑州天气查询 - 中国天气网_files/pcvideo.js.下载"></script>
+<!--[if IE]>
+    <script src="http://api.html5media.info/1.2.2/html5media.min.js"></script>
+    <![endif]-->
+
+
+</body></html>

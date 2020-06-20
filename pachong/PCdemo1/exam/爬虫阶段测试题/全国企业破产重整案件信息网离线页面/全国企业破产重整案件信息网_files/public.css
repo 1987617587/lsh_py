@@ -1,0 +1,295 @@
+/*公共样式--开始*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form,
+input, textarea, th, td, select {
+    margin: 0;
+    padding: 0;
+}
+*{box-sizing: border-box;}
+html, body {
+    min-height: 100%;
+}
+
+body {
+    font-family: "Microsoft YaHei";
+    font-size:14px;
+    color:#000;
+    overflow-x:hidden;
+}
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+ul,ol {
+    list-style: none;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: #232323;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+input, textarea {
+    outline: none;
+    border: none;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.tl {
+    text-align: left;
+}
+
+.tc {
+    text-align: center
+}
+
+.tr {
+    text-align: right;
+}
+
+.ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.inline{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+a {
+    color: inherit;
+    font-size:16px;
+}
+a:hover {
+    color: #a90f10;
+}
+select::-ms-expand{
+    display: none!important;
+}
+select{
+    -webkit-appearance: none!important;
+    -moz-appearance: none!important;
+    appearance:none!important;
+}
+.location {
+    font-size: 12px;
+    color: #000000;
+    padding: 10px 0;
+}
+
+.location a {
+    color: #000000;
+}
+/*查询*/
+#search{
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #cccccc;
+}
+.btn{
+    border-radius: inherit!important;
+}
+.form_datetime{
+    background: url("../../image/common/date_bg.png") no-repeat 130px center;
+}
+.form-control{
+    width: 150px!important;
+    border-radius: inherit;
+}
+.juzhong{
+    text-align: center!important;
+}
+.control-label{
+    padding:0 10px;
+    text-align: right;
+}
+.searchBtn{
+    float: right;
+    background-color:#a80f10;
+    color:#fff;
+}
+.pl0{
+    padding-left: 0;
+}
+.centerLabel{
+    position: relative;
+}
+.centerLabel::after{
+    content: '';
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    right: -150px;
+    top: 5px;
+    background: url(../../image/common/down_arrow.png) no-repeat 0px center;
+}
+
+/*锚点*/
+.fixedBtn{
+    width: 75px;
+    height: auto;
+    border: 1px solid #cccccc;
+    padding: 20px 10px;
+    border-radius: 100px;
+    text-align: left;
+    font-size: 12px;
+    position: fixed;
+    left: 10%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    background: #fafafa;
+    color: #000;
+}
+.fixedBtn a:hover,.fixedBtn a:focus{
+    text-decoration: none;
+}
+@media screen and (max-width: 1500px){
+    .fixedBtn{
+        left:7%;
+    }
+}
+@media screen and (min-width: 1700px){
+    .fixedBtn{
+       	left:16%;
+    }
+}
+.ajmd{
+	text-align: center;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #dadada;
+}
+.ajmd:last-child{
+	border-bottom:none;
+}
+.common-wrapper{
+	padding-bottom:60px;
+}
+.search .btn.focus,.search .btn:focus,.search .btn:hover {
+    color: #fff;
+    text-decoration: none;
+}
+/*gg.css*/
+.gg select::-ms-expand{
+    display: none;
+}
+
+.gg  #search{
+    margin-bottom: 20px;
+}
+.gg  .btn{
+    border-radius: inherit!important;
+}
+.gg  .form_datetime{
+    background: url("../../image/common/date_bg.png") no-repeat 130px center;
+    cursor:pointer;
+}
+
+.gg .form-control{
+    width: 149px!important;
+    border-radius: inherit;
+
+}
+.gg  .juzhong{
+    text-align: center!important;
+}
+.gg .control-label{
+    padding:0 10px;
+    text-align: right;
+}
+.gg .searchBtn{
+    width: 70px;
+    float: right;
+    background-color:#a80f10;
+    color:#fff;
+}
+.gg .searchBtn:hover{
+    background-color:#a80f10;
+    color:#fff;
+}
+.gg .centerLabel::after{
+	display:none\9;
+}
+.gg .pl0{
+    padding-left: 0;
+}
+
+.gg .in_all{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    color:#a80f10;
+}
+.gg .in_all span{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.gg .caseList{
+    width: 100%;
+
+}
+.gg .caseList ul li{
+    width: 100%;
+    border-bottom: 1px dashed #cccccc;
+    padding: 20px 0;
+}
+.gg .caseList ul li .left,.center{
+    float: left;
+}
+.gg .caseList ul li .right{
+    float: right;
+    line-height: 94px;
+}
+.gg .caseList ul li .left{
+    float: left;
+    margin: 0 10px 10px;
+    padding: 3px 10px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #a80f10;
+    border-radius:3px;
+}
+.gg .caseList ul li .center{
+    margin-left: 10px;
+    clear:both;
+    padding:5px 0px;
+}
+.gg .center div{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.gg .center p{
+    color: #5b5b5b;
+    line-height: 26px;
+}
+.gg .center p span{
+    color: #a80f10;
+}
+.search .searchBtn1:hover{
+    background-color: #fff;
+    color: #a80f10;
+    border: 1px solid #a80f10;
+}

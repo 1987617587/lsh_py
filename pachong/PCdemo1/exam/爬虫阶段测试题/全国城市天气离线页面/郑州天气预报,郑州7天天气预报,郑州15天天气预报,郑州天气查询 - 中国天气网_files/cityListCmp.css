@@ -1,0 +1,1010 @@
+.hide{
+    visibility: hidden;
+}
+.dis{
+    display: none;
+}
+.cityListCmp{
+    width: 300px;
+    background: #fff;
+    float: left;
+    font-size: 14px;
+}
+.cityListCmpTop{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #dfdfdf;
+}
+.cityListCmpTop h2{
+    font-size: 18px;
+    color: #252525;
+    float: left;
+    margin-left: 12px;
+    font-weight: normal;
+}
+.cityListCmpTop span{
+    font-size: 18px;
+    color: #376eb7;
+    float: right;
+    margin-right: 12px;
+    cursor: pointer;
+}
+.cityListCmp ul{
+    width: 100%;
+    margin: 10px 0;
+}
+.cityListCmp ul li{
+    width: 100%;
+    height: 68px;
+    float: left;
+    background: url(https://i.i8tq.com/cityListCmp/cityListCmpLine.png) no-repeat 110px top;
+    cursor: pointer;
+}
+.cityListCmp ul li:hover{
+    background:#ecf4fc url(https://i.i8tq.com/cityListCmp/cityListCmpLine.png) no-repeat 110px top;
+}
+.cityListCmp ul li:last-child{
+    background: url(https://i.i8tq.com/cityListCmp/cityListCmpLineLast.png) no-repeat 110px top;
+}
+.cityListCmp ul li:hover{
+    background-color:#ecf4fc;
+}
+.cityListCmp ul li p{
+    width: 265px;
+    margin-left: 15px;
+    float: left;
+    margin-top: 12px;
+    font-size: 12px;
+    color: #999;
+}
+.cityListCmp ul li .cityWeather{
+    width: 280px;
+    margin-left: 15px;
+    float: left;
+    font-size: 14px;
+    color: #000000;
+    line-height: 35px;
+    position: relative;
+    top: -10px;
+}
+.cityListCmp ul li .cityWeather .cityName{
+    float: left;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    margin-right: 30px;
+    text-align: right;
+    position: relative;
+    top: 10px;
+}
+.cityListCmp ul li .cityWeather i{
+    float: left;
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+.cityListCmp ul li .cityWeather span{
+    float: left;
+    margin-left: 10px;
+}
+.cityListCmp .cityListNull{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 18px;
+    color: #999999;
+    float: left;
+}
+.cityListCmp .addCity{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background: #386eb7;
+    position: relative;
+    float: left;
+    left: 50%;
+    margin: 10px 0 10px -50px;
+    border-radius: 20px;
+    cursor: pointer;
+    clear: both;
+}
+.cityListCmp .lessCity{
+    float: left;
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    color: #f45600;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.cityListCmp .cmpAllList{
+    width: 94%;
+    float: left;
+    text-align: right;
+    color: #376eb7;
+    font-size: 14px;
+    margin: 20px 0;
+    cursor: pointer;
+}
+.cityListCmp .cmpAllListUnClick{
+    color: #999;
+}
+/*定制弹窗*/
+.addCityCmp{
+    width:944px;
+    height: 635px;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    margin-left: -472px;
+    background: url(https://i.i8tq.com/cityListCmp/addCityCmp.png) no-repeat center center;
+    z-index: 99999999;
+}
+.addCityCmpInner{
+    width: 820px;
+    height: 510px;
+    /*border:1px solid red;*/
+    margin: 51px 61px;
+    position: relative;
+}
+.addCityCmpInner .close{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: url(https://i.i8tq.com/cityListCmp/close.png)  no-repeat center center;
+    cursor: pointer;
+}
+.addCityCmpInner .cityUl{
+    width: 710px;
+    margin-top: 110px;
+    float: left;
+    margin-left: 50px;
+}
+.addCityCmpInner .cityUl .cityLi{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+    float: left;
+    font-size: 18px;
+    color: #666666;
+}
+.addCityCmpInner .cityUl .cityLi .showCity {
+    background: #fff none repeat scroll 0 0;
+    font-size: 16px;
+    left: 425px;
+    max-height: 150px;
+    overflow-y: hidden;
+    position: relative;
+    top: 0;
+    width: 210px;
+    z-index: 9;
+    border:1px solid #dfdfdf;
+}
+.addCityCmpInner .cityUl .cityLi .showCity ul{
+    width: 100%;
+    float: left;
+}
+.addCityCmpInner .cityUl .cityLi .showCity ul li{
+    width: 96%;
+    padding-left: 4%;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.select {
+    background-color: #f2f2f8;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.unselect {
+    margin: 0;
+    padding: 0;
+}
+.addCityCmpInner .cityUl .cityLi .showDate{
+    background: #fff none repeat scroll 0 0;
+    font-size: 16px;
+    left: 0;
+    max-height: 100px;
+    overflow-y: auto;
+    position: relative;
+    top: 0;
+    width: 490px;
+    border: 1px solid #dfdfdf;
+    z-index: 9;
+}
+.addCityCmpInner .cityUl .cityLi .showDate ul{
+    width: 100%;
+    float: left;
+    padding: 10px 0;
+}
+.addCityCmpInner .cityUl .cityLi .showDate ul li{
+    width: 70px;
+    float: left;
+    color: #000;
+}
+.addCityCmpInner .cityUl .cityLi .showDate ul li.unClick{
+    background: #dfdfdf;
+}
+.addCityCmpInner .cityUl .cityLi .showDate ul li:hover{
+    background: #41aaf2;
+    color: #fff;
+    cursor: pointer;
+}
+.addCityCmpInner .cityUl .cityLi .showDate ul li.unClick:hover{
+    background: #dfdfdf;
+    color: #000;
+    cursor: auto;
+}
+.addCityCmpInner .cityUl .cityLi .showDate ul li p{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #000;
+}
+.addCityCmpInner .cityUl .cityLi .showDate ul li:hover p{
+    color: #fff;
+    cursor: pointer;
+}
+.addCityCmpInner .cityUl .cityLi span{
+    float: left;
+    width: 95px;
+    text-align: left;
+}
+.addCityCmpInner .cityUl .cityLi input{
+    float: left;
+    width: 168px;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 30px 0 10px;
+    border: 1px solid #c4c4c4;
+    margin-right: 25px;
+    color: #333;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 18px;
+}
+.addCityCmpInner .cityUl .cityLi i{
+    float: left;
+    color: #41aaf2;
+    font-size: 16px;
+    font-style: normal;
+    cursor: pointer;
+}
+.addCityCmpInner .addCityLi{
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: #41aaf2;
+    float: left;
+    margin-left: 350px;
+}
+
+.addCityCmpInner .addCityLi img {
+    margin-right: 10px;
+    position: relative;
+    top: -1px;
+}
+.saveCloseBtn{
+    width: 300px;
+    height: 40px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -150px;
+}
+.saveCloseBtn .saveBtn,
+.saveCloseBtn .newSaveBtn{
+    width: 110px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background: #41aaf2;
+    float: left;
+    border-radius: 30px;
+    margin:0 20px;
+    cursor: pointer;
+}
+
+.saveCloseBtn .closeBtn,
+.saveCloseBtn .closeCityBtn{
+    width: 110px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background: #d7d7d7;
+    float: left;
+    border-radius: 30px;
+    margin:0 20px;
+    cursor: pointer;
+}
+
+/*预报详情页面*/
+.cmpCityBtn{
+    width:45px;
+    height: 75px;
+    background: #fff;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #d7d7d7;
+    margin-bottom: 5px;
+}
+.cmpCityBtn img{
+    margin-top: 10px;
+}
+.cmpCityBtn p{
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    line-height: 18px;
+    font-size: 14px;
+    color: #6c6c6c;
+}
+.cmpCityBtn:hover p{
+    color: #367BEB;
+}
+.cmpCityBtn p:hover{
+    color: #367BEB;
+}
+.cmpCityBtnSk {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    height: auto;
+    left: 120px;
+    position: absolute;
+    width: auto;
+    top: 5px;
+    cursor: pointer;
+    z-index: 999;
+}
+.cmpCityBtnSk img{
+    position: relative;
+    top:2px;
+    margin-right: 5px;
+}
+.cmpCityBtnSk span{
+    color: #252525;
+}
+.cmpCityBtnSk span:hover{
+    color: #367BEB;
+}
+.cmpBottomModel{
+    width: 1065px;
+    height: 305px;
+    position: fixed;
+    left: 50%;
+    margin-left: -532.5px;
+    bottom: 0;
+    z-index: 9999999;
+    background: url(https://i.i8tq.com/cityListCmp/cmpBottomBg.png) no-repeat center center;
+}
+.errorMsg{
+    width: 1000px;
+    height: 40px;
+    line-height: 40px;
+    background: #FFE8E8;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -500px;
+    text-align: center;
+    font-size: 14px;
+    color: red;
+    border: 1px solid red;
+}
+.cmpBottomInner{
+    width: 1000px;
+    height: 260px;
+    margin-left: 32.5px;
+    margin-top: 50px;
+}
+.cmpBottomInner .cmpBottomHeader{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+}
+.cmpBottomInner .cmpBottomHeader ul{
+    width: 224px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 15px;
+    float: left;
+    border-radius: 4px;
+    overflow: hidden;
+    border:1px solid #41aaf2;
+    background: #fff;
+    font-size: 16px;
+    color: #41aaf2;
+}
+.cmpBottomInner .cmpBottomHeader ul li{
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+.cmpBottomInner .cmpBottomHeader ul li.cur{
+    background: #41aaf2;
+    color: #fff;
+}
+.cmpBottomInner .cmpBottomHeader span{
+    float: right;
+    margin-right: 15px;
+    color: #41aaf2;
+    font-size: 16px;
+    cursor: pointer;
+}
+.cmpBottomCityList{
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+}
+.cmpBottomCityList li{
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+.cmpBottomCityList li p{
+    width: 100%;
+    text-align: center;
+}
+.cmpBottomCityList li p.date{
+    font-size: 14px;
+    color: #999999;
+    height: 20px;
+    line-height: 20px;
+}
+.cmpBottomCityList li p.city{
+    font-size: 18px;
+    color: #333333;
+    height: 40px;
+    line-height: 40px;
+}
+.cmpBottomCityList li p.weather{
+    font-size: 14px;
+    color: #999999;
+    height: 20px;
+    line-height: 20px;
+}
+.cmpBottomCityList li p.temp{
+    font-size: 16px;
+    color: #333333;
+    height: 30px;
+    line-height: 30px;
+}
+.cmpBottomCityList li .cityWeatherIcon{
+    width: 100px;
+    height: 36px;
+    margin-left: 65px;
+}
+.cmpBottomCityList li .cityWeatherIcon i{
+    display: block;
+    width: 32px;
+    height: 32px;
+    float: left;
+    margin-right: 6px;
+}
+.cmpBottomCityList li .btnList{
+    width: 110px;
+    margin-left: 45px;
+}
+.cmpBottomCityList li .btnList span{
+    display: block;
+    width: 50px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 2px;
+    color: #fff;
+    text-align: center;
+    float: left;
+    background: #41aaf2;
+    cursor: pointer;
+}
+.cmpBottomCityList li .btnList span.delBtn{
+    margin-right: 10px;
+    background: #e17934;
+}
+.cmpBottomCityList li .btnList span.cmpBtn{
+    margin-left: 30px;
+}
+.cmpBottomCityList li .btnList span.cmpBtnUnClick{
+    background: #ccc;
+}
+.cmpBottomCityList li .cmpBottomCityListNull{
+    margin-top: 50px;
+}
+.cmpBottomCityList li.cmpBottomCityListNull{
+    margin-top: 50px;
+}
+
+.cmpBottomCityList li.cmpBottomCityListNull b{
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    color: #999999;
+}
+.cmpBottomCityList li.cmpBottomCityListNull strong{
+    display: block;
+    margin: 10% auto 0;
+    width: 32px;
+    height: 32px;
+    background: url(https://i.i8tq.com/cityListCmp/icon_plus.png)  no-repeat center center;
+    text-indent: -9999px;
+    border-radius: 100px;
+    background-size: cover;
+}
+.cmpBottomCityList li .cmpAllList{
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 14px;
+    margin-left: 65px;
+    margin-top: 50px;
+    background: #41aaf2;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.cmpBottomCityList li .cmpAllListUnClick{
+    background: #ccc;
+}
+.cmpBottomCityList li .clearAllList{
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #41aaf2;
+    font-size: 14px;
+    margin-left: 65px;
+    margin-top:20px;
+    cursor: pointer;
+}
+
+/*多城市天气*/
+.moreCityWeather{
+    width: 1200px;
+    position: relative;
+    left: 50%;
+    margin-left: -600px;
+    float: left;
+    background: #fff;
+    margin-bottom: 50px;
+}
+.moreCityWeather ul{
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.moreCityWeather ul li{
+    width: 120px;
+    float: left;
+    cursor: pointer;
+}
+.moreCityWeather ul li h1{
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    color: #3180ed;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.moreCityWeather ul li p{
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(49,128,237,0.5);
+}
+.moreCityWeather ul.moreCityTop{
+    width: 1200px;
+    height: 110px;
+    background: #fff;
+    z-index: 999;
+    border-bottom: 1px solid #dfdfdf;
+}
+.moreCityWeather ul.moreCityTopFixed{
+    position: fixed;
+    top: 0;
+    z-index: 9999999;
+}
+.moreCityWeather ul.moreCityTop li{
+    height: 110px;
+}
+.moreCityWeather ul.moreCityLess{
+    height: 345px;
+}
+.moreCityWeather ul.moreCityLess li{
+    height: 365px;
+}
+.moreCityWeather ul.moreCityLess .hourChartShowBtn{
+    background: url(https://i.i8tq.com/cityListCmp/hourChartShowBtn.png) no-repeat center center;
+    width: 840px;
+    height: 50px;
+    position: absolute;
+    bottom: 20px;
+    right:0;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+.moreCityWeather ul.moreCityTop li.leftNav {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -140px;
+    width: 130px;
+    text-align: center;
+    background: #fff;
+    overflow: hidden;
+    height: 320px;    
+    border-radius: 10px;
+    -moz-box-shadow:2px 2px 5px #999; 
+    -webkit-box-shadow:2px 2px 5px #999; 
+    box-shadow:2px 2px 5px #999;
+}
+.moreCityWeather ul.moreCityTop li.leftNav a{
+    display: block;
+    font-size: 20px;
+    height: 80px;
+    line-height: 80px;
+    cursor: pointer;
+}
+
+.moreCityWeather ul.moreCityTop li.leftNav a.active{
+    background: #3180ed;
+    color: #fff;
+}
+.cityScroll{
+    width: 100%;
+    float: left;
+}
+
+.cityScroll .cityEach{
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #dfdfdf;
+}
+.cityScroll .cityEach .hourChart{
+    width: 100%;
+    height: 325px;
+    float: left;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.cityScroll .cityEach .hourChart .cityNameNull{
+    width: 139px;
+    border-right: 1px solid #dfdfdf;
+    height: 345px;
+    float: left;
+}
+.cityScroll .cityEach .hourChart .skModelNull{
+    width: 219px;
+    border-right: 1px solid #dfdfdf;
+    height: 345px;
+    float: left;
+}
+.cityScroll .cityEach .hourChart .hourLineScroll{
+    width: 760px;
+    height: 325px;
+    float: left;
+    margin-left: 40px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.cityScroll .cityEach .hourChart .hourLineScroll:hover{
+    overflow-x: scroll;
+}
+.cityScroll .cityEach .hourChart .hourLine{
+    width: 1140px;
+    height: 325px;
+    float: left;
+}
+.cityScroll .cityEach .hourChart .hourLine ul.weather{
+    width: 100%;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.cityScroll .cityEach .hourChart .hourLine ul.weather li:nth-child(odd){
+    float: left;
+    background: #ecf6fe;
+    color: #333333;
+    font-size: 14px;
+    border-radius: 2px;
+}
+.cityScroll .cityEach .hourChart .hourLine ul.weather li:nth-child(even){
+    float: left;
+    background: #c6e5fb;
+    color: #333333;
+    font-size: 14px;
+    border-radius: 2px;
+}
+.cityScroll .cityEach .hourChart .hourLine ul.wind{
+    width: 100%;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.cityScroll .cityEach .hourChart .hourLine ul.wind li:nth-child(even){
+    float: left;
+    background: #ecf6fe;
+    color: #333333;
+    font-size: 14px;
+    border-radius: 2px;
+}
+.cityScroll .cityEach .hourChart .hourLine ul.wind li:nth-child(odd){
+    float: left;
+    background: #c6e5fb;
+    color: #333333;
+    font-size: 14px;
+    border-radius: 2px;
+}
+.cityScroll .cityEach .hourChart .hourLine ul.time{
+    width: 100%;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+    overflow: hidden;
+    color: #999;
+}
+/* .cityScroll .cityEach .hourChart .hourLine ul.time li:nth-child(even){
+    background: #efefef;
+} */
+/*曲线*/
+.cityScroll .cityEach .hourChart .hourLine .lineChart{
+    width: 100%;
+    height: 140px;
+    border: 1px solid #efefef;
+    float: left;
+    position: relative;
+}
+#weatherChart{
+    width: 100%;
+    height: auto;
+}
+#weatherChart .hourHolder{
+    width: 760px;
+    height: 140px;
+    position: relative;
+}
+.hourHolder .showData { 
+    background-color: #206cbd; 
+    color: #ffffff; 
+    display: block; 
+    left: 0; 
+    padding: 0 5px; 
+    position: absolute; 
+    top: 0;
+    border-radius: 5px;
+}
+.moreCityWeather ul li.cityTableBar{
+    width: 139px;
+    border-right: 1px solid #dfdfdf;
+}
+.moreCityWeather ul li.cityTableBar .cityName{
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    color: #555555;
+    margin-top: 70px;
+}
+.moreCityWeather ul li.cityTableBar .updateTime{
+    color: #999;
+    margin-top: 10px;
+    display: none;
+}
+.moreCityWeather ul li.skTableBar{
+    width: 219px;
+    border-right: 1px solid #dfdfdf;
+}
+.moreCityWeather ul li.skTableBar .skModel{
+    width: 180px;
+    margin-left: 19px;
+    text-align: center;
+}
+.moreCityWeather ul li.skTableBar .skModel i{
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-top: 30px;
+    margin-left: 55px;
+}
+.moreCityWeather ul li.skTableBar .skModel p{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    color: #999;
+}
+.moreCityWeather ul li.skTableBar .skModel p.weather{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+}
+.moreCityWeather ul li.skTableBar .skModel p.temp{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 32px;
+    color: #555555;
+    margin: 10px 0;
+}
+.moreCityWeather ul li.skTableBar .skModel p.minMaxTemp{
+    display: none;
+}
+.moreCityWeather ul li .eachDayFcs{
+    width: 100%;
+    height: 275px;
+}
+.moreCityWeather ul li .eachDayFcs:hover{
+    background: url(https://i.i8tq.com/cityListCmp/eachCur.png) no-repeat center center;
+}
+.moreCityWeather ul li .eachDayCur{
+    background: url(https://i.i8tq.com/cityListCmp/eachCur.png) no-repeat center center;
+}
+.moreCityWeather ul li .eachDayUser{
+    background: url(https://i.i8tq.com/cityListCmp/eachUser.png) no-repeat center center;
+}
+.moreCityWeather ul li .eachDayFcs .travelNow{
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 0 0 4px 4px;
+    color: #ffff;
+    background: #ffbf00;
+    text-align: center;
+    margin-left:20px;
+    margin-bottom: 10px;
+}
+.moreCityWeather ul li .eachDayFcs p{
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+}
+.moreCityWeather ul li .eachDayFcs p.maxTemp{
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+.moreCityWeather ul li .eachDayFcs p.minTemp{
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+.moreCityWeather ul li .eachDayFcs p.weather{
+    color: #333333;
+    margin-bottom: 10px;
+}
+.moreCityWeather ul li .eachDayFcs p.wind{
+    color: #999;
+    margin-bottom: 10px;
+}
+.moreCityWeather ul li .eachDayFcs p.aqi{
+    color: #333333;
+}
+.moreCityWeather ul li .eachDayFcs p.aqi i{
+    padding:0px 5px;
+    border-radius: 10px;
+    background: #bff05c;
+    margin-right: 8px;
+}
+
+.moreCityWeather ul li .eachDayFcs p.aqi i.lv-1 {
+background : #44cf12;
+}
+.moreCityWeather ul li .eachDayFcs p.aqi i.lv-2 {
+background : #eec50b;
+}
+.moreCityWeather ul li .eachDayFcs p.aqi i.lv-3 {
+background : #f90;
+}
+.moreCityWeather ul li .eachDayFcs p.aqi i.lv-4 {
+background : #fa5535;
+}
+.moreCityWeather ul li .eachDayFcs p.aqi i.lv-5 {
+background : #e31b40;
+}
+.moreCityWeather ul li .eachDayFcs p.aqi i.lv-6 {
+background : #8e0636;
+}
+.addCityBtn{
+    width: 100%;
+    float: left;
+    padding: 40px 0;
+    border-top: 1px solid #dfdfdf;
+    text-align: center;
+    cursor: pointer;
+}
+.jiange{
+    width: 100%;
+    height: 30px;
+    float: left;
+    background: #f0f3f5;
+}
+.hotSpots{
+    width: 1200px;
+    position: relative;
+    left: 50%;
+    margin-left: -600px;
+    float: left;
+    background: #fff;
+}
+.hotSpots .title{
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    border-bottom: 1px solid #dfdfdf;
+}
+.hotSpots .title img{
+    margin: 20px 0;
+}
+.hotSpots ul{
+    padding: 12px 0;
+}
+.hotSpots ul li{
+    width: 50%;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+}
+.hotSpots ul li div.inner_wrap{
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.hotSpots ul li:hover{
+    background: rgba(239,239,239,0.6);
+}
+.hotSpots ul a:nth-child(2n) li{
+    border-left: 1px solid #dfdfdf;
+    box-sizing: border-box;
+}
+
+.hotSpots ul li span{
+    font-size: 20px;
+    float: left;
+    color: #333333;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.hotSpots ul li span.name{
+    display: block;
+    width: 37%;
+    margin-left: 20px;
+}
+.hotSpots ul li span.minMaxTemp{
+    display: block;
+    margin-left: 50px;
+}
+.hotSpots ul li i{
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 16px 10px;
+    float: left;
+}

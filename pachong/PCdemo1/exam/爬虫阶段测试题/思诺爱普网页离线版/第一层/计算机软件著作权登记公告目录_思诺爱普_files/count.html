@@ -1,0 +1,60 @@
+var counts = new Array();
+var lasts = new Array();
+counts[18] = "12,345,678";
+lasts[18] = "20720774";
+counts[17] = "12,760,562";
+lasts[17] = "20721693";
+counts[16] = "13,175,446";
+lasts[16] = "20722510";
+counts[15] = "13,590,330";
+lasts[15] = "20723231";
+counts[14] = "14,005,214";
+lasts[14] = "20723862";
+counts[13] = "14,420,098";
+lasts[13] = "20724409";
+counts[12] = "14,834,982";
+lasts[12] = "20724878";
+counts[11] = "15,249,866";
+lasts[11] = "20725275";
+counts[10] = "15,664,750";
+lasts[10] = "20725606";
+counts[9] = "16,079,634";
+lasts[9] = "20725877";
+counts[8] = "16,494,518";
+lasts[8] = "20726094";
+counts[7] = "16,909,402";
+lasts[7] = "20726263";
+counts[6] = "17,324,286";
+lasts[6] = "20726390";
+counts[5] = "17,739,170";
+lasts[5] = "20726481";
+counts[4] = "18,154,054";
+lasts[4] = "20726542";
+counts[3] = "18,568,938";
+lasts[3] = "20726579";
+counts[2] = "18,983,822";
+lasts[2] = "20726598";
+counts[1] = "19,398,706";
+lasts[1] = "20726605";
+counts[0] = "19,813,592";
+lasts[0] = "20726606";
+var time = 18;
+var id;
+$(document).ready(function() {
+	$("#last_update").html("2017/04/17");
+	$("#last_update_regno").html("20716153");
+	id = window.setInterval(startcount, 25);
+});
+function startcount()
+{
+	if (time >= 0)
+	{
+		$("#all_count").html(counts[time]);
+		$("#max_regno").html(lasts[time]);
+		time--;
+	}
+	else
+	{
+		window.clearInterval(id);
+	}
+}

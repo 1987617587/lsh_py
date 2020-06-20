@@ -1,0 +1,207 @@
+/*content*/
+/* #content {
+    margin: 0 auto;
+    padding: 45px 0;
+} */
+
+.content_left {
+    float: left;
+    /*border-right: #dddddd solid 1px;*/
+}
+
+.left_con {
+    clear: both;
+    padding-bottom: 20px;
+}
+
+.left_con.last {
+    border-bottom: none;
+}
+
+.left_con h2 {
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: left;
+    padding: 10px 0;
+    padding-left: 28px;
+}
+
+.left_nav_list li {
+    height: 68px;
+
+}
+
+.left_nav_list li a {
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 34px;
+    text-align: left;
+    padding-left: 42px;
+    background-image: url(../../image/common/dian.png);
+    background-position: 28px center;
+    background-repeat: no-repeat;
+    height: 34px;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    margin-top: 17px;
+}
+
+.left_nav_list li a:hover {
+    background-color: #f5f5f5;
+}
+
+.left_nav_list li span {
+    display: block;
+    float: right;
+    line-height: 34px;
+    /*margin-right: 20px;*/
+}
+
+.content_right {
+    float: left;
+    /*width: 950px;*/
+    border-top: #dddddd solid 1px;
+    padding-top: 15px;
+}
+
+
+/*查询*/
+#search{
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #cccccc;
+}
+.btn{
+    border-radius: inherit!important;
+}
+.form_datetime{
+    background: url("../../image/common/date_bg.png") no-repeat 130px center;
+}
+.form-control{
+    width: 150px!important;
+    border-radius: inherit;
+}
+.juzhong{
+    text-align: center!important;
+}
+.control-label{
+    padding:0 10px;
+    text-align: right;
+}
+.searchBtn{
+    float: right;
+    background-color:#a80f10;
+    color:#fff;
+}
+.btn.focus, .btn:focus, .btn:hover{
+	color:#fff;
+    outline:none;
+    background-color: #a80f10;
+}
+.pl0{
+    padding-left: 0;
+}
+.centerLabel{
+    position: relative;
+}
+.centerLabel::after{
+    content: '';
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    right: -150px;
+    top: 5px;
+    background: url(../../image/common/down_arrow.png) no-repeat 0px center;
+}
+:root .centerLabel {
+    position: static\9;
+}
+
+
+
+/*ws_detail*/
+#detail_content {
+    /*width: 1218px;*/
+    margin: 0 auto;
+}
+
+.location {
+    font-size: 12px;
+    color: #000000;
+    padding: 10px 0;
+}
+
+.location a {
+    color: #000000;
+}
+
+.location a:hover {
+    text-decoration: underline;
+}
+
+.in_all{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    color:#a80f10;
+}
+.in_all span{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.caseList{
+    width: 100%;
+
+}
+.caseList ul li{
+    width: 100%;
+    border-bottom: 1px dashed #cccccc;
+    padding: 20px 0;
+}
+.caseList ul li:nth-child(2) .left,.caseList ul li:nth-child(5) .left,.caseList ul li:nth-child(6) .left{
+    background-color: darkgoldenrod;
+}
+.caseList ul li:nth-child(4) .left{
+    background-color: green;
+}
+
+.caseList ul li .left,.center{
+    float: left;
+}
+.caseList ul li .right{
+    float: right;
+    line-height: 94px;
+}
+.caseList ul li .left{
+    float: left;
+    margin: 0 10px 10px;
+    padding: 3px 10px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #a80f10;
+    border-radius:3px;
+}
+.caseList ul li .center{
+    margin-left: 10px;
+    clear:both;
+    padding:5px 0px;
+}
+.center div{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.center p{
+    color: #5b5b5b;
+    line-height: 26px;
+}
+.center p span{
+    color: #a80f10;
+}

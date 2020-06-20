@@ -1,0 +1,106 @@
+#header {
+    height: 105px;
+    margin-bottom:30px;
+}
+
+#header .header_box {
+    height: 70px;
+    position: relative;
+}
+
+#header .zi_logo {
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+
+#header .top_right {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+}
+
+#header .top_right ul li {
+    float: left;
+    height: 18px;
+    padding-left: 25px;
+    line-height: 13px;
+    margin-left: 10px;
+}
+
+#header .top_right ul li.person {
+    background: url(../../image/common/person.png) left center no-repeat;
+}
+
+#header .top_right ul li.zhuce {
+    background: url(../../image/common/sign.png) left center no-repeat;
+}
+
+#header .top_right ul li.denglu {
+    background: url(../../image/common/login.png) left center no-repeat;
+}
+
+#header .top_right ul li.glrpt {
+    background: url(../../image/common/gunali.png) left center no-repeat;
+}
+
+#header .top_right ul li.swsy {
+    background: url(../../image/common/home.png) left center no-repeat;
+}
+
+#header .top_right ul li.shoucang {
+    background: url(../../image/common/shoucang.png) left center no-repeat;
+}
+
+#header .top_right ul li.tuichu {
+    background: url(../../image/common/exit.png) left center no-repeat;
+}
+
+#header .top_right ul li:last-child a {
+    border-right: none;
+}
+
+#header .top_right ul li a {
+    border-right: #e2e2d0 solid 1px;
+    padding-right: 10px;
+    height: 15px;
+    color: #333333;
+    font-size: 14px;
+    vertical-align: middle;
+    text-decoration: underline;
+}
+
+#header .nav_box {
+    height: 35px;
+    width: 100%;
+    background: #a80f10;
+}
+
+#header .nav_box .nav ul li {
+    float: left;
+    line-height: 35px;
+    width: 14.28%;
+}
+
+#header .nav_box .nav ul li a {
+    color: #ffffff;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+}
+
+#header .nav_box .nav ul li a:hover {
+    color: #340a04;
+    /* background: #fff; */
+}
+
+#header .nav_box .nav ul li.cur a {
+    color: #340a04;
+    background: #fff;
+}
+#header .nav_box .fd-nav .fd-active{
+	background-color: white;
+}
+#header .nav_box .fd-nav .fd-active a{
+	color: #232323!important;
+}

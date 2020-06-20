@@ -1,0 +1,785 @@
+
+<!-- saved from url=(0049)http://pccz.court.gov.cn/pcajxxw/gkaj/gkaj?lx=999 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="为提升破产案件审理的透明度和公信力，最高人民法院设立全国企业破产重整案件信息网（以下简称破产重整案件信息网），破产案件审判流程信息以及公告、法律文书、债务人信息等与破产程序有关的信息统一在破产重整案件信息网公布。">
+<meta name="Keywords" content="全国企业破产重整案件信息网,破产案件信息网,破产信息网,破产案件公开，破产">
+<meta name="author" content="全国企业破产重整案件信息网">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<!--<base href="http://pccz.court.gov.cn:80/pcajxxw/">--><base href=".">
+<!-- <title>全国企业破产重整案件信息网</title> -->
+
+<!-- 公共JS资源文件 -->
+<script type="text/javascript" src="./全国企业破产重整案件信息网_files/jquery.1.9.1.min.js.下载"></script>
+<script type="text/javascript" src="./全国企业破产重整案件信息网_files/jquery.SuperSlide.2.1.1.js.下载"></script>
+<script type="text/javascript" src="./全国企业破产重整案件信息网_files/common.js.下载"></script>
+<script type="text/javascript" src="./全国企业破产重整案件信息网_files/bootstrap.min.js.下载"></script>
+<script type="text/javascript" src="./全国企业破产重整案件信息网_files/bootstrap-datetimepicker.min.js.下载"></script>
+<script type="text/javascript" src="./全国企业破产重整案件信息网_files/bootstrap-datetimepicker.zh-CN.js.下载"></script>
+<script type="text/javascript" src="./全国企业破产重整案件信息网_files/head.js.下载"></script>
+
+<!-- 公共CSS样式文件 -->
+<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/theme-introduce.css" type="text/css">
+<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/common.css" type="text/css">
+<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/theme-mess.css" type="text/css">
+<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/theme-pcgg.css" type="text/css">
+<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/public.css" type="text/css">
+<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/head.css" type="text/css">
+<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/bootstrap-datetimepicker.min.css" type="text/css">
+
+<link href="./全国企业破产重整案件信息网_files/WdatePicker.css" rel="stylesheet" type="text/css"></head>
+<body onload="inloadFunction(2)"><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px; display: none;"><iframe src="./全国企业破产重整案件信息网_files/My97DatePicker.html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div>
+	
+	
+	<div id="header">
+	    <div class="header_box container">
+	        <div class="zi_logo"><img src="./全国企业破产重整案件信息网_files/logo.png"></div>
+	        <div class="top_right">
+	        	
+	            <ul>
+	            	
+	            	
+	                	<li class="zhuce"><a target="_blank" href="http://pccz.court.gov.cn/pcajxxw/register/registerInit.html">注册</a></li>
+	                	<li class="denglu"><a target="_blank" href="http://pccz.court.gov.cn/pcajxxw/login">登录</a></li>
+	                
+	                <!-- <li class="glrpt"><a href="#">管理人平台</a></li> -->
+	                <li class="swsy">
+	                	<a href="javascript:void(0)" onclick="SetHome(this,window.location)">设为首页</a>
+	                </li>
+	                <li class="shoucang">
+	                	<a href="javascript:void(0)" onclick="shoucang(document.title,window.location)">收藏</a>
+	                </li>
+	                
+	            </ul>
+	        </div>
+	    </div>
+	    <div class="nav_box">
+	        <div class="nav container">
+	            <ul class="fd-nav">
+	                <li><a href="http://pccz.court.gov.cn/pcajxxw/index/xxwsy">首页</a></li>
+	                
+	                <li><a href="http://pccz.court.gov.cn/pcajxxw/pctzr/tzrdh?lx=1&amp;xz=1">债务人信息</a></li>
+	                <li class="fd-active"><a href="http://pccz.court.gov.cn/pcajxxw/gkaj/gkaj">公开案件</a></li>
+	                <li><a href="http://pccz.court.gov.cn/pcajxxw/pcgg/ggdh?lx=0">公开公告</a></li>
+	                <li><a href="http://pccz.court.gov.cn/pcajxxw/pcws/ws">裁判文书</a></li>
+	                <li><a href="http://pccz.court.gov.cn/pcajxxw/pcnews/news">新闻动态</a></li>
+	                <li><a href="http://pccz.court.gov.cn/pcajxxw/pcdxal/dxal">典型案例</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+	<script type="text/javascript">
+		// 设置为主页 
+		function SetHome(obj, vrl) {
+			try {
+				obj.style.behavior = 'url(#default#homepage)';
+				obj.setHomePage(vrl);
+			} catch (e) {
+				if (window.netscape) {
+					try {
+						netscape.security.PrivilegeManager
+								.enablePrivilege("UniversalXPConnect");
+					} catch (e) {
+						alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+					}
+					var prefs = Components.classes['@mozilla.org/preferences-service;1']
+							.getService(Components.interfaces.nsIPrefBranch);
+					prefs.setCharPref('browser.startup.homepage', vrl);
+				} else {
+					alert("您的浏览器不支持，请按照下面步骤操作：1.打开浏览器设置。2.点击设置网页。3.输入：" + vrl
+							+ "点击确定。");
+				}
+			}
+		}
+		// 加入收藏 兼容360和IE6 
+		function shoucang(sTitle, sURL) {
+			try {
+				window.external.addFavorite(sURL, sTitle);
+			} catch (e) {
+				try {
+					window.sidebar.addPanel(sTitle, sURL, "");
+				} catch (e) {
+					alert("加入收藏失败，请使用Ctrl+D进行添加");
+				}
+			}
+		}
+	</script>
+
+
+
+
+
+
+
+
+
+<title>全国企业破产重整案件信息网</title>
+	<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/theme-pcgg.css" type="text/css">
+	<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/common.css" type="text/css">
+	<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/ws.css" type="text/css">
+	<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/theme-mess.css" type="text/css">
+	<link rel="stylesheet" type="text/css" charset="utf-8" href="./全国企业破产重整案件信息网_files/WdatePicker.css">
+	<script type="text/javascript" charset="utf-8" src="./全国企业破产重整案件信息网_files/WdatePicker.js.下载">
+	    </script>
+	<script type="text/javascript" charset="utf-8" src="./全国企业破产重整案件信息网_files/jquery.min.js.下载"></script>
+	<script type="text/javascript" charset="utf-8" src="./全国企业破产重整案件信息网_files/kkpager.js.下载"></script>
+	<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/kkpager_orange.css" type="text/css">
+    <script type="text/javascript">
+		$(document).ready(function(){
+			 pageinit(7418,1)
+		})
+		function pageinit(tpage, pageno) {
+					var totalPage = tpage;
+					if (kkpager._config != undefined) {
+						kkpager._config.total = tpage;
+					}
+					kkpager.total = tpage;
+					// 生成分页
+					// 有些参数是可选的，比如lang，若不传有默认值
+					kkpager.generPageHtml({
+						pno : pageno,
+						total : totalPage,// 总页码
+						isShowCurrPage : false,// 是否显示当前页
+						isShowTotalRecords : false, // 是否显示总记录数
+						isGoPage : true, // 页码输入框
+						mode : 'click',// 默认值是link，可选link或者click
+						click : function(n) {
+							getListByPage(n);
+						}
+		
+					});
+					kkpager.selectPage(pageno);
+		}
+		/**
+		 * 根据页码获取信息
+		 * 
+		 * @param {}
+		 *            n
+		 */
+		function getListByPage(n) {
+			var param = getSearchParams();
+			param.pageNum = n;
+			$.ajax({
+				url : "gkaj/gkajlb",
+				// 锁住浏览器，一步步执行
+				data : param,
+				async : false,
+				type : "POST",
+				dataType : 'html',
+				success : function(re) {
+					$('#gkajlb').html("");
+					$('#gkajlb').html(re);
+					pageinit($("#pagetotal").html(), n);// 初始化翻页插件
+					return false;
+				},
+				error : function(request) {
+					handleAjaxError(request);
+				}
+			});
+		}
+		/**
+		 * 获取分页查询相关的参数
+		 * 
+		 * @return {}
+		 */
+		function getSearchParams() {
+			var start = $("#rel").val();// 编号
+			var end = $("#zhi").val();// 姓名
+			var cbt = $("#content").val();// 单位
+			var lx = $("#select6").val();// 案件类型
+			var param = {
+				'start' : start,
+				'end' : end,
+				'cbt' : cbt,
+				'lx':lx
+			};
+			return param;
+		}
+		
+		/**
+         * 查询点击事件
+         */
+		function findDate() {
+            getListByPage(1);
+        }
+        document.onkeydown=function(){
+          if (event.keyCode==13){ 
+            findDate();
+          }
+        } 
+</script>
+
+
+    <div class="container clearfix">
+        <!-- <div class="location container">
+                            当前位置:<a href="#">首页</a> >案件公开
+        </div> -->
+        <div class="content_right container">
+	         <div id="search" class="search">
+	                <form class="form-inline" action="http://pccz.court.gov.cn/pcajxxw/gkaj/gkajdate" method="post">
+	                    <div class="form-group">
+	                        <label for="rel" class="control-label pl0">公开日期</label>
+	                        <input class="form-control form_datetime" type="text" id="rel" name="from" onclick="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;})">
+	                        <label for="zhi" class="control-label juzhong">至</label>
+	                        <input class="form-control form_datetime" id="zhi" type="text" name="to" onclick="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;})">
+	                        <label for="select6" class="control-label centerLabel">案件类型</label>
+	                        <select class="form-control" id="select6">
+	                            <option value="999">全部</option>
+	                            
+	                                <option value="1">破产审查案件</option>
+	                            
+	                                <option value="2">破产案件</option>
+	                            
+	                                <option value="3">强制清算申请审查案件</option>
+	                            
+	                                <option value="4">强制清算案件</option>
+	                            
+	                                <option value="5">强制清算上诉案件</option>
+	                            
+	                                <option value="6">破产上诉案件</option>
+	                            
+	                                <option value="8">破产监督案件</option>
+	                            
+	                                <option value="9">强制清算监督案件</option>
+	                            
+	                        </select>
+	                        <label for="text" class="control-label"></label>
+	                        <input type="text" class="form-control" id="content" name="ajmc" placeholder="请输入标题名称">
+	                    </div>
+	                    <input type="button" class="btn searchBtn" value="   查询   " onclick="findDate()">
+	                </form>
+	         </div>
+			 <div class="caseList" id="gkajlb">
+			    
+			       	
+				        <ul>
+			                <li class="clearfix">
+			                    
+			                    <div>
+			                    <h4 class="cbt">
+			                    
+                                        
+                                            <a href="http://pccz.court.gov.cn/pcajxxw/gkaj/gkajxq?id=37D4700FE2666F59AF77E306E9790990&amp;lx=999" target="_blank" title="（2020）粤0304破8号">
+                                                （2020）粤0304破8号
+                                            </a>
+                                        
+                                        
+                                        
+			                    </h4>
+			                    
+			                    <span class="ajlx">破产案件</span>
+			                    <span class="date">17小时前</span>
+			                    </div>
+			                    <div class="center">
+			                        <p>经办法院: 深圳市福田区人民法院</p>
+			                        
+				                        
+				                        
+					                        
+	                                        <p target="_blank" title="被申请人:中交信达谦和新能源（深圳）有限责任公司">
+	                                            被申请人: 
+	                                            
+	                                                
+	                                                    中交信达谦和新能源（深圳）有限责任公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+	                                        <p target="_blank" title="申请人:陈绍兵">
+	                                            申请人: 
+	                                            
+	                                                
+	                                                    陈绍兵
+	                                                
+	                                            
+	                                        </p>
+	                                    
+				                        
+			                        
+			                    </div>
+			                </li>
+				        </ul>
+			        
+				        <ul>
+			                <li class="clearfix">
+			                    
+			                    <div>
+			                    <h4 class="cbt">
+			                    
+                                        
+                                            <a href="http://pccz.court.gov.cn/pcajxxw/gkaj/gkajxq?id=DD4695CACCECE2D0234FA70F5997C63B&amp;lx=999" target="_blank" title="（2020）粤19破申27号">
+                                                （2020）粤19破申27号
+                                            </a>
+                                        
+                                        
+                                        
+			                    </h4>
+			                    
+			                    <span class="ajlx">破产审查案件</span>
+			                    <span class="date">17小时前</span>
+			                    </div>
+			                    <div class="center">
+			                        <p>经办法院: 广东省东莞市中级人民法院</p>
+			                        
+				                        
+				                        
+					                        
+	                                        <p target="_blank" title="被申请人:东莞市东海大厦房地产投资开发有限公司">
+	                                            被申请人: 
+	                                            
+	                                                
+	                                                    东莞市东海大厦房地产投资开发有限公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+	                                        <p target="_blank" title="申请人:深圳市永利实业发展有限公司东莞分公司">
+	                                            申请人: 
+	                                            
+	                                                
+	                                                    深圳市永利实业发展有限公司东莞分公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+				                        
+			                        
+			                    </div>
+			                </li>
+				        </ul>
+			        
+				        <ul>
+			                <li class="clearfix">
+			                    
+			                    <div>
+			                    <h4 class="cbt">
+			                    
+                                        
+                                            <a href="http://pccz.court.gov.cn/pcajxxw/gkaj/gkajxq?id=51F6CF24847633721888385AB623A0FA&amp;lx=999" target="_blank" title="（2020）粤03破申138号">
+                                                （2020）粤03破申138号
+                                            </a>
+                                        
+                                        
+                                        
+			                    </h4>
+			                    
+			                    <span class="ajlx">破产审查案件</span>
+			                    <span class="date">17小时前</span>
+			                    </div>
+			                    <div class="center">
+			                        <p>经办法院: 广东省深圳市中级人民法院</p>
+			                        
+				                        
+				                            
+				                            
+				                            
+				                            
+				                               <p target="_blank" title="">被申请人：- </p>
+                                               <p target="_blank" title="">申请人：- </p>
+				                            
+				                            
+				                        
+				                        
+			                        
+			                    </div>
+			                </li>
+				        </ul>
+			        
+				        <ul>
+			                <li class="clearfix">
+			                    
+			                    <div>
+			                    <h4 class="cbt">
+			                    
+                                        
+                                            <a href="http://pccz.court.gov.cn/pcajxxw/gkaj/gkajxq?id=9E2038D8A0CFFFD4615FD288AC295F0E&amp;lx=999" target="_blank" title="（2020）川0191破申2号">
+                                                （2020）川0191破申2号
+                                            </a>
+                                        
+                                        
+                                        
+			                    </h4>
+			                    
+			                    <span class="ajlx">破产审查案件</span>
+			                    <span class="date">17小时前</span>
+			                    </div>
+			                    <div class="center">
+			                        <p>经办法院: 成都高新技术产业开发区人民法院</p>
+			                        
+				                        
+				                        
+					                        
+	                                        <p target="_blank" title="被申请人:成都茂赫商务咨询有限公司">
+	                                            被申请人: 
+	                                            
+	                                                
+	                                                    成都茂赫商务咨询有限公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+	                                        <p target="_blank" title="申请人:成都茂赫商务咨询有限公司">
+	                                            申请人: 
+	                                            
+	                                                
+	                                                    成都茂赫商务咨询有限公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+				                        
+			                        
+			                    </div>
+			                </li>
+				        </ul>
+			        
+				        <ul>
+			                <li class="clearfix">
+			                    
+			                    <div>
+			                    <h4 class="cbt">
+			                    
+                                        
+                                            <a href="http://pccz.court.gov.cn/pcajxxw/gkaj/gkajxq?id=F5E41652CC913F90CFEBEF1AC6C337C1&amp;lx=999" target="_blank" title="（2020）鲁1392破申3号">
+                                                （2020）鲁1392破申3号
+                                            </a>
+                                        
+                                        
+                                        
+			                    </h4>
+			                    
+			                    <span class="ajlx">破产审查案件</span>
+			                    <span class="date">17小时前</span>
+			                    </div>
+			                    <div class="center">
+			                        <p>经办法院: 临沂经济技术开发区人民法院</p>
+			                        
+				                        
+				                        
+					                        
+	                                        <p target="_blank" title="被申请人:临沂鲁佳房地产开发有限公司">
+	                                            被申请人: 
+	                                            
+	                                                
+	                                                    临沂鲁佳房地产开发有限公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+	                                        <p target="_blank" title="申请人:临沂鲁佳房地产开发有限公司">
+	                                            申请人: 
+	                                            
+	                                                
+	                                                    临沂鲁佳房地产开发有限公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+				                        
+			                        
+			                    </div>
+			                </li>
+				        </ul>
+			        
+				        <ul>
+			                <li class="clearfix">
+			                    
+			                    <div>
+			                    <h4 class="cbt">
+			                    
+                                        
+                                            <a href="http://pccz.court.gov.cn/pcajxxw/gkaj/gkajxq?id=DFAA6AB6E412E3B59FF9147B0C51B4B1&amp;lx=999" target="_blank" title="（2020）粤01破申69号">
+                                                （2020）粤01破申69号
+                                            </a>
+                                        
+                                        
+                                        
+			                    </h4>
+			                    
+			                    <span class="ajlx">破产审查案件</span>
+			                    <span class="date">17小时前</span>
+			                    </div>
+			                    <div class="center">
+			                        <p>经办法院: 广东省广州市中级人民法院</p>
+			                        
+				                        
+				                        
+					                        
+	                                        <p target="_blank" title="被申请人:优能（广州）儿童体育活动有限公司">
+	                                            被申请人: 
+	                                            
+	                                                
+	                                                    优能（广州）儿童体育活动有限公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+	                                        <p target="_blank" title="申请人:李应杰">
+	                                            申请人: 
+	                                            
+	                                                
+	                                                    李应杰
+	                                                
+	                                            
+	                                        </p>
+	                                    
+				                        
+			                        
+			                    </div>
+			                </li>
+				        </ul>
+			        
+				        <ul>
+			                <li class="clearfix">
+			                    
+			                    <div>
+			                    <h4 class="cbt">
+			                    
+                                        
+                                            <a href="http://pccz.court.gov.cn/pcajxxw/gkaj/gkajxq?id=30EF002E3BB54364417F7FB282E39539&amp;lx=999" target="_blank" title="（2020）浙0226破6号">
+                                                （2020）浙0226破6号
+                                            </a>
+                                        
+                                        
+                                        
+			                    </h4>
+			                    
+			                    <span class="ajlx">破产案件</span>
+			                    <span class="date">17小时前</span>
+			                    </div>
+			                    <div class="center">
+			                        <p>经办法院: 宁海县人民法院</p>
+			                        
+				                        
+				                        
+					                        
+	                                        <p target="_blank" title="被申请人:宁海县杰华印刷材料有限公司">
+	                                            被申请人: 
+	                                            
+	                                                
+	                                                    宁海县杰华印刷材料有限公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+	                                        <p target="_blank" title="申请人:侯先根">
+	                                            申请人: 
+	                                            
+	                                                
+	                                                    侯先根
+	                                                
+	                                            
+	                                        </p>
+	                                    
+				                        
+			                        
+			                    </div>
+			                </li>
+				        </ul>
+			        
+				        <ul>
+			                <li class="clearfix">
+			                    
+			                    <div>
+			                    <h4 class="cbt">
+			                    
+                                        
+                                            <a href="http://pccz.court.gov.cn/pcajxxw/gkaj/gkajxq?id=2295ACB1FE3A920868AAE45399382BF8&amp;lx=999" target="_blank" title="（2020）鄂1381破3号">
+                                                （2020）鄂1381破3号
+                                            </a>
+                                        
+                                        
+                                        
+			                    </h4>
+			                    
+			                    <span class="ajlx">破产案件</span>
+			                    <span class="date">17小时前</span>
+			                    </div>
+			                    <div class="center">
+			                        <p>经办法院: 广水市人民法院</p>
+			                        
+				                        
+				                        
+					                        
+	                                        <p target="_blank" title="被申请人:广水百特大酒店有限公司">
+	                                            被申请人: 
+	                                            
+	                                                
+	                                                    广水百特大酒店有限公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+	                                        <p target="_blank" title="申请人:广水百特大酒店有限公司">
+	                                            申请人: 
+	                                            
+	                                                
+	                                                    广水百特大酒店有限公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+				                        
+			                        
+			                    </div>
+			                </li>
+				        </ul>
+			        
+				        <ul>
+			                <li class="clearfix">
+			                    
+			                    <div>
+			                    <h4 class="cbt">
+			                    
+                                        
+                                            <a href="http://pccz.court.gov.cn/pcajxxw/gkaj/gkajxq?id=DE3173481F6DCD6EAC211FF83B3B9DB7&amp;lx=999" target="_blank" title="（2020）鲁05破1号">
+                                                （2020）鲁05破1号
+                                            </a>
+                                        
+                                        
+                                        
+			                    </h4>
+			                    
+			                    <span class="ajlx">破产案件</span>
+			                    <span class="date">17小时前</span>
+			                    </div>
+			                    <div class="center">
+			                        <p>经办法院: 山东省东营市中级人民法院</p>
+			                        
+				                        
+				                        
+					                        
+	                                        <p target="_blank" title="被申请人:东营华宇石油化工股份有限公司">
+	                                            被申请人: 
+	                                            
+	                                                
+	                                                    东营华宇石油化工股份有限公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+	                                        <p target="_blank" title="申请人:上海匡颐国际贸易有限公司">
+	                                            申请人: 
+	                                            
+	                                                
+	                                                    上海匡颐国际贸易有限公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+				                        
+			                        
+			                    </div>
+			                </li>
+				        </ul>
+			        
+				        <ul>
+			                <li class="clearfix">
+			                    
+			                    <div>
+			                    <h4 class="cbt">
+			                    
+                                        
+                                            <a href="http://pccz.court.gov.cn/pcajxxw/gkaj/gkajxq?id=F785EBECB4B109477942B79AB65CF96A&amp;lx=999" target="_blank" title="（2020）琼01清申3号">
+                                                （2020）琼01清申3号
+                                            </a>
+                                        
+                                        
+                                        
+			                    </h4>
+			                    
+			                    <span class="ajlx">强制清算申请审查案件</span>
+			                    <span class="date">17小时前</span>
+			                    </div>
+			                    <div class="center">
+			                        <p>经办法院: 海南省海口市中级人民法院</p>
+			                        
+				                        
+				                        
+					                        
+	                                        <p target="_blank" title="被申请人:海南华美国际经济技术有限公司">
+	                                            被申请人: 
+	                                            
+	                                                
+	                                                    海南华美国际经济技术有限公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+	                                        <p target="_blank" title="申请人:武汉大学海南海珞科学技术发展公司">
+	                                            申请人: 
+	                                            
+	                                                
+	                                                    武汉大学海南海珞科学技术发展公司
+	                                                
+	                                            
+	                                        </p>
+	                                    
+				                        
+			                        
+			                    </div>
+			                </li>
+				        </ul>
+			        
+			    
+		     </div>
+	         <div id="kkpager" style="float: right;margin-right: 100px;"><div><span class="pageBtnWrap"><span class="disabled">|&lt;&lt;</span><span class="disabled">&lt;&lt;</span><span class="curr">1</span><a href="http://pccz.court.gov.cn/pcajxxw/#" onclick="return kkpager._clickHandler(2)" title="第2页">2</a><a href="http://pccz.court.gov.cn/pcajxxw/#" onclick="return kkpager._clickHandler(3)" title="第3页">3</a><a href="http://pccz.court.gov.cn/pcajxxw/#" onclick="return kkpager._clickHandler(4)" title="第4页">4</a><a href="http://pccz.court.gov.cn/pcajxxw/#" onclick="return kkpager._clickHandler(5)" title="第5页">5</a><a href="http://pccz.court.gov.cn/pcajxxw/#" onclick="return kkpager._clickHandler(6)" title="第6页">6</a><a href="http://pccz.court.gov.cn/pcajxxw/#" onclick="return kkpager._clickHandler(7)" title="第7页">7</a><span class="spanDot">...</span><a href="http://pccz.court.gov.cn/pcajxxw/#" onclick="return kkpager._clickHandler(2)" title="下一页">&gt;&gt;</a><a href="http://pccz.court.gov.cn/pcajxxw/#" onclick="return kkpager._clickHandler(7418)" title="尾页">&gt;&gt;|</a></span><span class="infoTextAndGoPageBtnWrap"><span class="totalText">共<span id="pagetotal" class="totalPageNum">7418</span>页</span><span class="goPageBox">&nbsp;转到<span id="kkpager_gopage_wrap"><input type="button" id="kkpager_btn_go" onclick="kkpager.gopage()" value="确定"><input type="text" id="kkpager_btn_go_input" onfocus="kkpager.focus_gopage()" onkeypress="return kkpager.keypress_gopage(event);" onblur="kkpager.blur_gopage()" value="2"></span>页</span></span></div><div style="clear:both;"></div></div>
+       </div>
+   </div>
+
+
+
+<!--二维码-->
+
+<link rel="stylesheet" href="./全国企业破产重整案件信息网_files/foot.css">
+<script type="text/javascript" charset="utf-8" src="./全国企业破产重整案件信息网_files/foot.js.下载"></script>
+<script type="text/javascript" charset="utf-8" src="./全国企业破产重整案件信息网_files/jquery.min.js.下载"></script>
+<script type="text/javascript" charset="utf-8" src="./全国企业破产重整案件信息网_files/qrcode.min.js.下载"></script>
+<script type="text/javascript" charset="utf-8" src="./全国企业破产重整案件信息网_files/jquery.PrintArea.js.下载"></script>
+
+<!--页尾-->
+<!-- <div class="fd-footer-box">
+	<div class="fd-footer fd-common-width clear">
+		<div class="fd-subnav-contain clear">
+			
+		</div>
+		<ul class="fd-subnav clear">
+			<li></li>
+		</ul>
+		<p class="fd-copyright">
+				地址：北京市东城区东交民巷27号    邮编：100745   联系邮箱：zuigaopochan2016@163.com 
+		</p>
+ 		<p class="fd-copyright">
+			 <span>Copyright©1998-2016 All Rights Reserved</span><br>中华人民共和国最高人民法院 版权所有
+		</p>
+		<p class="fd-copyright">
+				京ICP备05023036号 
+		</p>
+	</div>
+	<a id="fd-footer-a" class="fd-footer-a" href="http://pccz.court.gov.cn/pcajxxw/content/contents?id=28f1ce2b269f430ebd4ea75100f915de"  style="visibility:hidden">跳转</a>
+</div> -->
+    <!-- 分享功能 -->
+    <div class="share-list">
+        <ul class="share-container">
+            <li>
+                <a href="javascript:void(0)" class="share_xlwb" onclick="shareToSinaWB(event)">
+                    <img src="./全国企业破产重整案件信息网_files/o_img_xlwb1.png">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="bds_weixin" id="weixin">
+                    <img src="./全国企业破产重整案件信息网_files/o_img_wechat1.png">
+                </a>
+                <div class="wechat-share" id="wechat-code"><canvas width="128" height="128"></canvas><img style="display: none;"></div>
+            </li>
+        </ul>
+    </div>
+	<div id="footer">
+		中华人民共和国最高人民法院 版权所有
+	</div>
+<script type="text/javascript" src="./全国企业破产重整案件信息网_files/gs.js.下载"></script>
+
+
+
+</body></html>

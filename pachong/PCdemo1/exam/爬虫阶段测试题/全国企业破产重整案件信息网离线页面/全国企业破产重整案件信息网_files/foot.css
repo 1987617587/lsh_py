@@ -1,0 +1,44 @@
+#footer {
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    background: #a90f10;
+    border: 1px solid #979797;
+    width: 100%;
+    height: 42px;
+    position: fixed;
+    bottom: 0px;
+    line-height: 42px;
+}
+.share-container li{
+	position:relative;
+	width:23px;
+	height:23px;
+	text-align:center;
+}
+.share-container li a{
+	display:inline-block;
+	width:100%;
+	heigjt:100%;
+}
+#wechat-code{
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 128px;
+　　 height: 128px;
+　　 overflow: hidden;
+　　 z-index: 9;
+}
+
+.share-list{
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    left: 30%;
+    top: 195px;
+    z-index: 45;
+    padding: 5px 5px;
+    border: 1px solid #ccc;
+}

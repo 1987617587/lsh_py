@@ -1,0 +1,56 @@
+$(document).ready(function(){
+	//导航
+//	$(".fd-nav li:first").addClass("fd-currentLi");
+//	$(".fd-nav li").click(function(event){
+//		$(this).addClass("fd-currentLi")
+//		.siblings().removeClass("fd-currentLi");
+//	});
+	//搜索
+	var prf=$(".fd-printf");
+	//输入框获得焦点
+	prf.focus(function(){
+		if(prf.val()!="输入关键词搜索"){
+			prf.css({"color":"#333"});
+		}
+	});
+	//输入框失去焦点
+	prf.blur(function(){
+		prf.css({"color":"#999"});
+	});
+	//页尾导航最后一个去掉竖线
+	$(".fd-subnav li:last").css({"background":"none"});
+	//去掉开庭公告最后一个的背景图
+	$(".fd-notice-menu li:last").css("backgroundImage","none");
+	//开庭公告点击
+	$(".fd-notice-menu li").click(function(){
+		$(this).addClass("fd-current")
+		.siblings().removeClass("fd-current");
+	})
+	//页码跳转
+	$(".fd-jump-numl:first").addClass("fd-jp");
+	$(".fd-jump-numl").click(function(){
+		$(this).addClass("fd-jp")
+		.siblings().removeClass("fd-jp");
+	})
+
+	//详情页筛选按钮
+	$(".fd-asset-menu li").click(function(){
+		$(this).addClass("selected").siblings().removeClass("selected");
+	});
+})
+/*handleError: function( s, xhr, status, e )      {  
+    // If a local callback was specified, fire it  
+            if ( s.error ) {  
+                s.error.call( s.context || s, xhr, status, e );  
+            }  
+
+            // Fire the global callback  
+            if ( s.global ) {  
+                (s.context ? jQuery(s.context) : jQuery.event).trigger( "ajaxError", [xhr, s, e] );  
+            }  
+}  
+*/
+function inloadFunction(num){
+	$(".fd-nav li").eq(num).addClass("fd-active").siblings().removeClass("fd-active");
+}
+

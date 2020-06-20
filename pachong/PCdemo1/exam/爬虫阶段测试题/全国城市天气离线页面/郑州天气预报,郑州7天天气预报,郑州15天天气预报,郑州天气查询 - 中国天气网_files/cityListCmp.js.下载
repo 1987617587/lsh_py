@@ -1,0 +1,1086 @@
+// 测试和线上接口地址切换
+// var prefixUrl = 'http://127.0.0.1:7070/weather/v1/';
+var prefixUrl = 'https://node.weather.com.cn/weather/v1/';
+
+
+if (!Object.keys) {
+  Object.keys = (function () {
+    var hasOwnProperty = Object.prototype.hasOwnProperty,
+        hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+        dontEnums = [
+          'toString',
+          'toLocaleString',
+          'valueOf',
+          'hasOwnProperty',
+          'isPrototypeOf',
+          'propertyIsEnumerable',
+          'constructor'
+        ],
+        dontEnumsLength = dontEnums.length;
+ 
+    return function (obj) {
+      if (typeof obj !== 'object' && typeof obj !== 'function' || obj === null) throw new TypeError('Object.keys called on non-object');
+ 
+      var result = [];
+ 
+      for (var prop in obj) {
+        if (hasOwnProperty.call(obj, prop)) result.push(prop);
+      }
+ 
+      if (hasDontEnumBug) {
+        for (var i=0; i < dontEnumsLength; i++) {
+          if (hasOwnProperty.call(obj, dontEnums[i])) result.push(dontEnums[i]);
+        }
+      }
+      return result;
+    }
+  })()
+};
+if ( !Array.prototype.forEach ) {
+    Array.prototype.forEach = function forEach( callback, thisArg ) {
+        var T, k;
+        if ( this == null ) {
+            throw new TypeError( "this is null or not defined" );
+        }
+        var O = Object(this);
+        var len = O.length >>> 0;
+        if ( typeof callback !== "function" ) {
+            throw new TypeError( callback + " is not a function" );
+        }
+        if ( arguments.length > 1 ) {
+            T = thisArg;
+        }
+        k = 0;
+        while( k < len ) {
+ 
+            var kValue;
+            if ( k in O ) {
+                kValue = O[ k ];
+                callback.call( T, kValue, k, O );
+            }
+            k++;
+        }
+    };
+}
+if(!Array.prototype.indexOf){
+  Array.prototype.indexOf=function(obj,start){
+    for(var index=(start || 0), j=this.length;index<j;index++){
+      if(this[index]===obj){ 
+        return index; 
+      }
+    }
+    return -1;
+  }
+}
+$(".cityInput").bind("input propertychange", function() {
+    var taptext = $(this).val(); //搜索框input提示语
+    if (taptext == "") {
+        $(this).parent().find('.showCity').eq(0).hide();
+    } else {
+        readDataCity(taptext, $(this));
+    }
+});
+$(".cityInput").on('click', function(event) {
+    $(".showDate").addClass('dis');
+});
+function readDataCity(a, objThis) {
+    $.ajax({
+        type: "GET",
+        url: "http://toy1.weather.com.cn/search?cityname=" + encodeURIComponent(a) + "",
+        dataType: "jsonp",
+        requestCount: ++requestCount,
+        jsonp: "callback",
+        jsonpCallback: "success_jsonpCallback",
+        timeout: 3e3,
+        async: !1,
+        success: function(e) {
+            displayDataCity(a, e, objThis);
+            areaid = objThis.parent().find('.showCity li.select').eq(0).attr("num");
+        },
+        error: function() {
+        }
+    });
+}
+
+function displayDataCity(a, c, objThis) {
+    var e = [];
+    $.each(c, function(a, b) {
+        e[a] = b.ref.split("~");
+    });
+
+    var h = e,
+        g = "",
+        f = "";
+
+    $.each(h, function(c, b) {
+        if (b[0].length == 9 && b[0].substring(0, 3) == "101") {
+            var d = "";
+            b[2] != b[4] ? d = b[2] + "-" + b[4] : d = b[2];
+            if (b[4] != b[9]) {
+                d = d + "-" + b[9]
+            }
+            var e = RegExp(a, "ig");
+            var e = RegExp(a, "ig");
+            d = d.replace(e, "<b>" + a + "</b>");
+            0 == c && (f += '<li class="select" num=' + b[0] + ">" + d + "</li>");
+            12 > c && 0 < c && (f += '<li class="unselect" num=' + b[0] + ">" + d + "</li>");
+            if (11 == c) return !1;
+        }
+    });
+
+    objThis.parent().find('.showCity ul').eq(0).html(f);
+    objThis.parent().find('.showCity').eq(0).show();
+    objThis.parent().find('.showCity li').mouseover(function() {
+        objThis.parent().find('.showCity li.select').eq(0).removeClass("select").addClass("unselct");
+        $(this).removeClass("unselect").addClass("select");
+    }).mouseout(function() {
+        $(this).removeClass("select").addClass("unselect");
+    }).click(function() {
+        var a = objThis.parent().find('.showCity li.select').eq(0).text(),
+            a = a.split("-");
+        g = objThis.parent().find('.showCity li.select').eq(0).attr("num");
+
+        objThis.val(a[0]);
+        objThis.attr('data-id', g);
+        $(".showCity").hide();
+        objThis.parent().find('i').removeClass('dis');
+    });
+    objThis.parent().find('.showCity li').on('click', function(event) {
+        setTimeout(function(){
+        $(".showCity").hide();
+        },100)
+    });
+}
+
+var qxbm={"0":"晴","1":"多云","2":"阴","3":"阵雨","4":"雷阵雨","5":"雷阵雨伴有冰雹","6":"雨夹雪","7":"小雨","8":"中雨","9":"大雨","00":"晴","01":"多云","02":"阴","03":"阵雨","04":"雷阵雨","05":"雷阵雨伴有冰雹","06":"雨夹雪","07":"小雨","08":"中雨","09":"大雨","10":"暴雨","11":"大暴雨","12":"特大暴雨","13":"阵雪","14":"小雪","15":"中雪","16":"大雪","17":"暴雪","18":"雾","19":"冻雨","20":"沙尘暴","21":"小到中雨","22":"中到大雨","23":"大到暴雨","24":"暴雨到大暴雨","25":"大暴雨到特大暴雨","26":"小到中雪","27":"中到大雪","28":"大到暴雪","29":"浮尘","30":"扬沙","31":"强沙尘暴","53":"霾","99":"无","32":"浓雾","49":"强浓雾","54":"中度霾","55":"重度霾","56":"严重霾","57":"大雾","58":"特强浓雾","301":"雨","302":"雪","97":"雨","98":"雪"};
+
+// 首页定制弹窗日期选择初始化
+function setCustomDate(){
+    $(".showDate ul").html("");
+    var today = new Date();
+    var myddy=today.getDay();//获取存储当前日期
+    var weekday = new Array();
+    if(myddy==0){
+        weekday = ["今天","明天","周二","周三","周四","周五","周六"];
+    }else if(myddy==1){
+        weekday = ["今天","明天","周三","周四","周五","周六","周日",];
+    }else if(myddy==2){
+        weekday = ["今天","明天","周四","周五","周六","周日","周一",];
+    }else if(myddy==3){
+        weekday = ["今天","明天","周五","周六","周日","周一","周二",];
+    }else if(myddy==4){
+        weekday = ["今天","明天","周六","周日","周一","周二","周三",];
+    }else if(myddy==5){
+        weekday = ["今天","明天","周日","周一","周二","周三","周四",];
+    }else if(myddy==6){
+        weekday = ["今天","明天","周一","周二","周三","周四","周五",];
+    }
+    for(var i=0;i<7;i++){
+        var dateStr = getToday(new Date(today.getTime() + i*24*60*60*1000));
+        var yearStr = dateStr.substring(0,4)+"-"+dateStr.substring(4,6)+"-"+dateStr.substring(6,8);
+        var monthStr = dateStr.substring(4,6)+"-"+dateStr.substring(6,8);
+        $(".showDate ul").append('<li data-time="'+yearStr+'">'+
+        '<p>'+weekday[i]+'</p><p>'+monthStr+'</p></li>')
+    }
+}
+setCustomDate();
+// 日期选择
+$(".dateInput").on('click', function(event) {
+    $(".showDate").addClass('dis');
+    $(this).parent().find('.showDate').removeClass('dis');
+    $(".showCity").hide();
+});
+//清空行内元素
+$(".cityUl .cityLi i").on('click', function(event) {
+    $(this).parent().find('.dateInput').val("");
+    $(this).parent().find('.cityInput').val("");
+    $(this).parent().find('.cityInput').attr('data-id', '');
+    $(this).addClass('dis');
+});
+$(".showDate ul li").on('click', function(event) {
+    $(this).parent().parent().parent().find('.dateInput').val($(this).attr('data-time'));
+    $(".showDate").addClass('dis');
+    $(this).parent().parent().parent().find('i').removeClass("dis");
+});
+$(".closeBtn,.addCityCmp .close").on('click', function(event) {
+    $(".addCityCmp").addClass('dis');
+});
+//用户定制按日期排序
+function sortUserCity(cityListstr){
+    if(cityListstr){
+        var arr = cityListstr.split('|');
+        var len = arr.length;
+        var tmp = null;
+        for(var j=0; j<len-1; j++){
+            for(var i=0; i<len-1-j; i++){
+                if(arr[i].split('-')[2]>arr[i+1].split('-')[2]){
+                    tmp = arr[i+1];
+                    arr[i+1] = arr[i];
+                    arr[i] = tmp;
+                }
+            }
+        }
+
+        var cityListString = "";
+        for(var k=0;k<arr.length;k++){
+            var cityList = arr[k].split('-');
+            cityListString = cityListString+cityList[0]+"-"+cityList[1]+"-"+cityList[2]+"|";
+        }
+        cityListString = cityListString.substring(0,cityListString.length-1);
+    }else{
+        cityListString = "";
+    }
+
+    return cityListString;
+
+}
+//保存用户定制
+$(".saveBtn").on('click', function(event) {
+    function isRepeat(arr) {
+      var hash = {};
+      for(var i in arr) {
+        if(hash[arr[i]]) {
+          return true;
+        }
+        // 不存在该元素，则赋值为true，可以赋任意值，相应的修改if判断条件即可
+        hash[arr[i]] = true;
+      }
+      return false;
+    }
+    var cityListstr = "";
+    var cityIdArray = [];
+    for(var i=0;i<4;i++){
+        var cityDate = $(".cityUl").find('.cityLi').eq(i).find('.dateInput').val().replace(/-/g,"");
+        var cityName = $(".cityUl").find('.cityLi').eq(i).find('.cityInput').val();
+        var cityId  = $(".cityUl").find('.cityLi').eq(i).find('.cityInput').attr('data-id'); 
+        if(cityDate!=""&&cityName!=""&&cityId!=""){
+            // .log(i);
+            cityListstr = cityListstr+cityName+"-"+cityId+"-"+cityDate+"|";
+            cityIdArray.push(cityId);
+        }
+    }
+    if(isRepeat(cityIdArray)){
+        alert("您输入的城市有重复，请重新选择");
+    }else{        
+        $(".addCityCmp").addClass('dis');
+        cityListstr = cityListstr.substring(0,cityListstr.length-1);
+        var cityListString = sortUserCity(cityListstr);
+        setUserCityListCmpCookie(cityListString);
+        setIndexDom();  
+        setFcsDom();
+    }
+});
+// 首页点开定制弹窗
+$(".addCity,.cityListCmpTop span").on('click', function(event) {
+    $(".addCityCmp").removeClass('dis');
+    setIndexDom();  
+});
+
+
+function cookieMaker(name, value, options) {
+    if (typeof value != 'undefined') { // name and value given, set cookie
+        options = options || {};
+        if (value === null) {
+            value = '';
+            options.expires = -1;
+        }
+        var expires = '';
+        if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
+            var date;
+            if (typeof options.expires == 'number') {
+                date = new Date();
+                date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
+            } else {
+                date = options.expires;
+            }
+            expires = '; expires=' + date.toUTCString(); // use expires attribute, max-age is not supported by IE
+        }
+        var path = options.path ? '; path=' + options.path : '';
+        var domain = options.domain ? '; domain=' + options.domain : '';
+        var secure = options.secure ? '; secure' : '';
+        document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
+    } else { // only name given, get cookie
+        var cookieValue = null;
+        if (document.cookie && document.cookie != '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+};
+//获取今天日期格式20190917
+function getToday(date){
+    var myyear = date.getFullYear(); 
+    var mymonth = date.getMonth()+1; 
+    var myweekday = date.getDate(); 
+    if(mymonth < 10){ 
+    mymonth = "0" + mymonth; 
+    } 
+    if(myweekday < 10){ 
+    myweekday = "0" + myweekday; 
+    } 
+    return (myyear+""+mymonth + "" + myweekday);
+}
+function getTimeDiff(nowDate){
+    var today = new Date();
+    var now = new Date();
+    now.setFullYear(nowDate.substring(0,4), Number(nowDate.substring(4,6))-1, nowDate.substring(6,8));
+
+    var timesDiff = Math.abs(now.getTime() - today.getTime());
+    var diffDays = Math.ceil(timesDiff / (1000 * 60 * 60 * 24));//向上取整
+    return diffDays;
+}
+// getTimeDiff("20190918");
+//默认设置今天默认四个城市cityListCmp's cookie 
+function setDefaultCityListCmpCookie(){     
+    var today = new Date();
+
+    var strCookie = "北京-101010100-"+getToday(today)+"|上海-101020100-"+getToday(new Date(today.getTime() + 24*60*60*1000))+"|广州-101280101-"+getToday(new Date(today.getTime() + 2*24*60*60*1000))+"|深圳-101280601-"+getToday(new Date(today.getTime() + 3*24*60*60*1000))+",default,"+getToday(today);
+    cookieMaker("cityListCmp", strCookie, {
+        expires: 999,
+        path: '/',
+        domain: 'weather.com.cn'
+    });
+}
+// 用户设置cookie
+function setUserCityListCmpCookie(cityListstr){     
+    var today = new Date();
+    
+    var strCookie = cityListstr+",user,"+getToday(today);
+    cookieMaker("cityListCmp", strCookie, {
+        expires: 999,
+        path: '/',
+        domain: 'weather.com.cn'
+    });
+}
+// var cityListstr = "北京-101010100-20190918|上海-101020100-20190918|广州-101280101-20190920|深圳-101280601-20190920";
+// setUserCityListCmpCookie(cityListstr);
+// setDefaultCityListCmpCookie();
+
+//用户第一次使用定制功能
+if (cookieMaker('cityListCmp') == "" || cookieMaker('cityListCmp') == null) {
+    setDefaultCityListCmpCookie();
+}else{
+    var cookieCityListStr = cookieMaker("cityListCmp"); 
+    // cookieCityListStr = "北京-101010100-20191024|上海-101020100-20191026|广州-101280101-20191027|海淀-101010200-20191028,user,20191024";
+    var cookieCityList = cookieCityListStr.split(',');
+    //用户没做修改，但是日期过期
+    if(cookieCityList[1]=="default"&&cookieCityList[2]!=getToday(new Date())){
+        setDefaultCityListCmpCookie();
+    }
+    //判断用户定制的城市日期过期cookie处理
+    if(cookieCityList[1]=="user"&&cookieCityList[2]!=getToday(new Date())){
+        var cityListArr = cookieCityList[0].split('|');
+        var cityListString = "";
+        for (var i = 0; i < cityListArr.length; i++) {
+            var listArr = cityListArr[i].split('-');
+            if (listArr[2]>=getToday(new Date())) {//判断用户定制是否过期"20190918"  getToday(new Date())
+                cityListString = cityListString + listArr[0] + "-" + listArr[1] + "-" + listArr[2] + "|";
+            }else{
+                cityListString = cityListString + listArr[0] + "-" + listArr[1] + "-" + getToday(new Date()) + "|";
+            }
+        }
+        cityListString = cityListString.substring(0, cityListString.length - 1);
+        if(cityListString==""){
+            setDefaultCityListCmpCookie();
+        }else{
+            setUserCityListCmpCookie(cityListString);
+        }
+    }
+}
+function setDefaultCityListHtyCookie(){     
+    var strCookie = "101010100|101020100|101280101|101280601|101010300";
+    var wl=window.location.href;
+    var hrefId= wl.substring(wl.lastIndexOf("/")+1, wl.lastIndexOf(".shtml"));
+    /*if(cookieMaker('defaultCty') != "" && cookieMaker('defaultCty') != null){
+        if(strCookie.indexOf(cookieMaker('defaultCty'))<0){
+            strCookie = cookieMaker('defaultCty')+"|"+strCookie;
+        }
+    }*/
+    if(/\d{7}/.test(hrefId)&&hrefId.substr(0, 3)=="101"&&strCookie.indexOf(hrefId)<0){
+        strCookie = hrefId+"|"+strCookie;
+    }
+    cookieMaker("cityListHty", strCookie, {
+        expires: 999,
+        path: '/',
+        domain: 'weather.com.cn'
+    });
+}
+//记录用户浏览城市
+if(cookieMaker('cityListHty') == "" || cookieMaker('cityListHty') == null){
+    setDefaultCityListHtyCookie();
+}else{    
+    var strCookie = cookieMaker('cityListHty');
+    var wl=window.location.href;
+    var hrefId= wl.substring(wl.lastIndexOf("/")+1, wl.lastIndexOf(".shtml"));
+    /*if(cookieMaker('defaultCty') != "" && cookieMaker('defaultCty') != null){
+        if(strCookie.indexOf(cookieMaker('defaultCty'))<0){
+            strCookie = cookieMaker('defaultCty')+"|"+strCookie;
+        }
+    }*/
+    if(/\d{7}/.test(hrefId)&&hrefId.substr(0, 3)=="101"&&strCookie.indexOf(hrefId)<0){
+        strCookie = hrefId+"|"+strCookie;
+    }
+    cookieMaker("cityListHty", strCookie, {
+        expires: 999,
+        path: '/',
+        domain: 'weather.com.cn'
+    });
+}
+var qxbm={"0":"晴","1":"多云","2":"阴","3":"阵雨","4":"雷阵雨","5":"雷阵雨伴有冰雹","6":"雨夹雪","7":"小雨","8":"中雨","9":"大雨","00":"晴","01":"多云","02":"阴","03":"阵雨","04":"雷阵雨","05":"雷阵雨伴有冰雹","06":"雨夹雪","07":"小雨","08":"中雨","09":"大雨","10":"暴雨","11":"大暴雨","12":"特大暴雨","13":"阵雪","14":"小雪","15":"中雪","16":"大雪","17":"暴雪","18":"雾","19":"冻雨","20":"沙尘暴","21":"小到中雨","22":"中到大雨","23":"大到暴雨","24":"暴雨到大暴雨","25":"大暴雨到特大暴雨","26":"小到中雪","27":"中到大雪","28":"大到暴雪","29":"浮尘","30":"扬沙","31":"强沙尘暴","53":"霾","99":"无","32":"浓雾","49":"强浓雾","54":"中度霾","55":"重度霾","56":"严重霾","57":"大雾","58":"特强浓雾","301":"雨","302":"雪","97":"雨","98":"雪"};
+
+//首页根据cookie重置天气管家模块,default和是否是今天时间
+function setIndexDom(){
+    var cookieCityListStr = cookieMaker("cityListCmp"); 
+    var cookieCityList = cookieCityListStr.split(',');
+    var cookieCityArr = cookieCityList[0].split('|');
+    $(".indexDomList").html("");
+    var cityName = new Array();
+    var cityId = new Array();
+    var cityTime = new Array();
+    var cityIdStr = "";
+    if (cookieCityArr.length == 0||cookieCityArr[0]=="") {
+        $(".cityListNull").removeClass('dis');
+        $("#cityListLoading").addClass('dis');
+    } else {
+        $(".cityListNull").addClass('dis');
+        // 定制弹窗初始化
+        $(".cityUl").find('.cityLi').find('.dateInput').val("");
+        $(".cityUl").find('.cityLi').find('.cityInput').val("");
+        $(".cityUl").find('.cityLi').find('.cityInput').attr('data-id','');
+        $(".cityUl").find('.cityLi').find('i').addClass('dis');
+
+
+        for (var i = 0; i < cookieCityArr.length; i++) {
+            var cookieCityObj = cookieCityArr[i].split('-');
+            cityName.push(cookieCityObj[0]);
+            cityId.push(cookieCityObj[1]);
+            cityTime.push(cookieCityObj[2]);
+            if (i == cookieCityArr.length - 1) {
+                cityIdStr = cityIdStr + cookieCityObj[1];
+            } else {
+                cityIdStr = cityIdStr + cookieCityObj[1] + ",";
+            }
+            //定制弹窗打入城市和日期
+            var yearStr = cookieCityObj[2].substring(0,4)+"-"+cookieCityObj[2].substring(4,6)+"-"+cookieCityObj[2].substring(6,8);
+            $(".cityUl").find('.cityLi').eq(i).find('.dateInput').val(yearStr);
+            $(".cityUl").find('.cityLi').eq(i).find('.cityInput').val(cookieCityObj[0]);
+            $(".cityUl").find('.cityLi').eq(i).find('.cityInput').attr('data-id', cookieCityObj[1]);
+            $(".cityUl").find('.cityLi').eq(i).find('i').removeClass('dis');
+        };
+        if(!cityIdStr){
+            cityIdStr = "101010100";
+            cityId = ["101010100"];
+            cityName = ["北京"]
+            var nowCityTime = new Date();
+            var nowCityTimeStr = getToday(nowCityTime)
+            cityTime = [nowCityTimeStr];
+            var yearStr = nowCityTimeStr.substring(0,4)+"-"+nowCityTimeStr.substring(4,6)+"-"+nowCityTimeStr.substring(6,8);
+            $(".cityUl").find('.cityLi').eq(0).find('.dateInput').val(yearStr);
+            $(".cityUl").find('.cityLi').eq(0).find('.cityInput').val(cityName[0]);
+            $(".cityUl").find('.cityLi').eq(0).find('.cityInput').attr('data-id', cityId[0]);
+            $(".cityUl").find('.cityLi').eq(0).find('i').removeClass('dis');
+        }
+        $.ajax({
+            type: 'GET',
+            url: prefixUrl + "trip?city=" + cityIdStr,
+            timeout: 20000,
+            dataType: "jsonp", //数据类型为jsonp  
+            jsonpCallback: "getDataCity",
+            success: function(data) {
+                $("#cityListLoading").addClass('dis');
+                var arr = Object.keys(data.data);
+                if (arr.length < 2) {
+                    $(".lessCity").removeClass('dis');
+                    $(".cmpAllList").addClass('cmpAllListUnClick');
+                } else {
+                    $(".lessCity").addClass('dis');
+                    $(".cmpAllList").removeClass('cmpAllListUnClick');
+                }
+                if (arr.length < 4) {
+                    $(".addCity").removeClass('dis');
+                } else {
+                    $(".addCity").addClass('dis');
+                }
+                for (var i = 0; i < arr.length; i++) {
+                    var index = getTimeDiff(cityTime[i]);
+                    var time = data.data[cityId[i]].forecast24h[index]["000"] + "";
+                    var timeFinal = time.substring(0, 4) + "年" + time.substring(4, 6) + "月" + time.substring(6, 8) + "日";
+                    var weatherCodeD = data.data[cityId[i]].forecast24h[index]["001"];
+                    if (weatherCodeD < 10) {
+                        weatherCodeD = "0" + weatherCodeD;
+                    }
+                    var weatherCodeN = data.data[cityId[i]].forecast24h[index]["002"];
+                    if (weatherCodeN < 10) {
+                        weatherCodeN = "0" + weatherCodeN;
+                    }
+                    var tempD = data.data[cityId[i]].forecast24h[index]["003"];
+                    var tempN = data.data[cityId[i]].forecast24h[index]["004"];
+                    $(".indexDomList").append('<li data-id="' + cityId[i] + '"><p>' + timeFinal + '</p>' +
+                        '<div class="cityWeather">' +
+                        '<div class="cityName">' + cityName[i] + '</div>' +
+                        '<i class="new_icons icon-d' + weatherCodeD + '" title="'+qxbm[weatherCodeD]+'"></i>' +
+                        '<i class="new_icons icon-n' + weatherCodeN + '" title="'+qxbm[weatherCodeN]+'"></i>' +
+                        '<span>' + tempD + '℃/' + tempN + '℃</span></div></li>');
+                }
+            }
+        });
+    }
+}
+
+$(".indexDomList").on('click', 'li', function(event) {
+    window.open('http://www.weather.com.cn/weather/' + $(this).attr('data-id') + '.shtml?from=cityListCmp', '_blank')
+});
+if(location.href.indexOf('index')>-1||location.href=="http://www.weather.com.cn/"){
+    setIndexDom();
+}else{
+    setFcsDom();
+}
+$("#indexCmpAll").on('click', function(event) {
+    if ($(this).hasClass('cmpAllListUnClick')) {
+        return;
+    }
+    var cityStr = "";
+    for(var i=0;i<$(".indexDomList").find('li').length;i++){
+        cityStr = cityStr + $(".indexDomList").find('li').eq(i).attr('data-id')+",";
+    }
+    cityStr = cityStr.substring(0,cityStr.length-1);
+    window.open('http://www.weather.com.cn/cityListCmp/index.shtml?city='+cityStr,'_blank')
+});
+
+
+// 预报页面
+$(".cmpBottomHeader ul li").on('click', function(event) {
+    $(".cmpBottomHeader ul li").removeClass('cur');
+    $(this).addClass('cur');
+    if ($(this).text() == "对比栏") {
+        $("#cmpModel").removeClass('dis');
+        $("#historyCity").addClass('dis');
+    } else {
+        $("#cmpModel").addClass('dis');
+        $("#historyCity").removeClass('dis');
+    }
+});
+$(".cmpBottomHeader span").on('click', function(event) {
+    $(".cmpBottomModel").addClass('dis');
+});
+//预报详情页面初始化DOM
+function setFcsDom(){
+    //历史记录栏
+    var cityListHtyStr = cookieMaker("cityListHty"); 
+    var cityListHtyArr = cityListHtyStr.split('|');
+    $("#historyCity").html("");    
+    var cityHtyId = new Array();
+    var cityIdHty = "";
+    var historyFlag = new Array();
+    for(var i=0;i<5;i++){
+        cityHtyId.push(cityListHtyArr[i]);
+        if (i == 4) {
+            cityIdHty = cityIdHty + cityListHtyArr[i];
+        } else {
+            cityIdHty = cityIdHty + cityListHtyArr[i] + ",";
+        }
+        if(cookieMaker("cityListCmp").indexOf(cityListHtyArr[i])>0){
+            historyFlag.push(true);
+        }else{
+            historyFlag.push(false);
+        }
+    }
+        $.ajax({
+            type: 'GET',
+            url: prefixUrl + "trip?city=" + cityIdHty,
+            timeout: 20000,
+            dataType: "jsonp", //数据类型为jsonp  
+            jsonpCallback: "getDataHty",
+            success: function(data) {
+            var arr = Object.keys(data.data);
+            if ( arr.length != 0 ) {
+               for (var i = 0; i < 5; i++) {
+                   var index = 0;
+                   var time = data.data[cityHtyId[i]].forecast24h[index]["000"] + "";
+                   var timeFinal = time.substring(0, 4) + "年" + time.substring(4, 6) + "月" + time.substring(6, 8) + "日";
+                   var weatherCodeD = data.data[cityHtyId[i]].forecast24h[index]["001"];
+                   if (weatherCodeD < 10) {
+                       weatherCodeD = "0" + weatherCodeD;
+                   }
+                   var weatherCodeN = data.data[cityHtyId[i]].forecast24h[index]["002"];
+                   if (weatherCodeN < 10) {
+                       weatherCodeN = "0" + weatherCodeN;
+                   }
+                   var tempD = data.data[cityHtyId[i]].forecast24h[index]["003"];
+                   var tempN = data.data[cityHtyId[i]].forecast24h[index]["004"];
+                   var weatherWord = qxbm[weatherCodeD];
+                   if (weatherCodeD != weatherCodeN) {
+                       weatherWord = qxbm[weatherCodeD] + "转" + qxbm[weatherCodeN];
+                   }
+                   var historyBtnClick = "";
+                   if(historyFlag[i]&&cookieMaker("cityListCmp").split(',')[1]!="default"){
+                       historyBtnClick = "cmpBtnUnClick"
+                   }
+                   $("#historyCity").append('<li data-id="' + cityHtyId[i] + '">' +
+                       '<p class="date">' + timeFinal + '</p>' +
+                       '<p class="city">' + data.cityName[cityHtyId[i]] + '</p>' +
+                       '<div class="cityWeatherIcon">' +
+                       '<i class="new_icons icon-d' + weatherCodeD + '" title="'+qxbm[weatherCodeD]+'"></i>' +
+                       '<i class="new_icons icon-n' + weatherCodeN + '" title="'+qxbm[weatherCodeN]+'"></i>' +
+                       '</div><p class="weather">' + weatherWord + '</p>' +
+                       '<p class="temp">' + tempD + '~' + tempN + '℃</p>' +
+                       '<div class="btnList">'+
+                       '<span class="cmpBtn '+historyBtnClick+'">对比</span></div></li>')
+               }
+               /*$("#historyCity li").on('mouseover', function(event) {
+                   $(this).find('.btnList').removeClass('dis');
+               });
+               $("#historyCity li").on('mouseout', function(event) {
+                   $(this).find('.btnList').addClass('dis');
+               });*/
+               // 点击对比按钮
+               $(".cmpBtn").on('click', function(event) {
+                   if($(this).hasClass('cmpBtnUnClick')){
+                       return ;
+                   }
+                   var id = $(this).parent().parent().attr('data-id');  
+                   var today = new Date();
+                   var time = getToday(today);
+                   var name = $(this).parent().parent().find('.city').eq(0).text();
+                   // alert();
+                   var addCityStr = name+"-"+id+"-"+time;
+                   if(cookieMaker("cityListCmp").split(',')[0].split('|').length<4){
+                       if(cookieMaker("cityListCmp").split(',')[0].indexOf(id)<0){
+                           if(cookieMaker("cityListCmp").split(',')[0]){
+                               addCityStr = addCityStr+"|"+cookieMaker("cityListCmp").split(',')[0];
+                           }
+                           setUserCityListCmpCookie(addCityStr);
+                           setFcsDomCmp(id,"add");
+                           $("#cmpFirst").click();
+                       }else{
+                           $(".errorMsg").removeClass('dis');
+                           $(".errorMsg").html("对比栏已有所选内容，请您重新选择需要添加的城市");
+                           setTimeout(function(){
+                               $(".errorMsg").addClass('dis');
+                           },2000)
+                       }                    
+                   }else{
+                       if(cookieMaker("cityListCmp").split(',')[1]=="default"){//判断用户是否是默认城市
+                           setUserCityListCmpCookie(addCityStr);
+                           setFcsDom();
+                           $("#cmpFirst").click();
+                       }else{
+                           $(".errorMsg").removeClass('dis');
+                           $(".errorMsg").html("对比栏已满，您可以删除不需要的城市后继续添加");
+                           setTimeout(function(){
+                               $(".errorMsg").addClass('dis');
+                           },2000)
+                       }
+                   }
+               }); 
+            }
+        }
+    });
+    //对比栏
+    var cookieCityListStr = cookieMaker("cityListCmp"); 
+    var cookieCityList = cookieCityListStr.split(',');
+    var cookieCityArr = cookieCityList[0].split('|');
+    $("#cmpModel").html("");
+    var cityName = new Array();
+    var cityId = new Array();
+    var cityTime = new Array();
+    var cityIdStr = "";
+    if (cookieCityArr.length == 0||cookieCityArr[0]==""||cookieCityList[1]=="default") {
+        // 定制弹窗初始化
+        $(".cityUl").find('.cityLi').find('.dateInput').val("");
+        $(".cityUl").find('.cityLi').find('.cityInput').val("");
+        $(".cityUl").find('.cityLi').find('.cityInput').attr('data-id','');
+        $(".cityUl").find('.cityLi').find('i').addClass('dis');
+
+        for (var i = 0; i < 5; i++) {
+            if (i == 4) {
+                $("#cmpModel").append('<li><div class="cmpAllList" id="fcsCmpAll">对比</div>' +
+                    '<div class="clearAllList">清空对比</div></li>');
+            } else {
+                $("#cmpModel").append('<li class="cmpBottomCityListNull"><b>您还可以继续添加</b><strong>add icon</strong></li>');
+            }
+        }
+
+        // 预报详情页面点开定制弹窗
+        $(".cmpBottomCityListNull,.btnList .edtBtn").on('click', function(event) {
+            $(".addCityCmp").removeClass('dis');
+        });
+        $(".clearAllList").on('click', function(event) {
+            var cityListString = "";
+            setUserCityListCmpCookie(cityListString);
+            setFcsDom();
+        });
+        $(".cmpAllList").addClass('cmpAllListUnClick');
+    } else {
+        // 定制弹窗初始化
+        $(".cityUl").find('.cityLi').find('.dateInput').val("");
+        $(".cityUl").find('.cityLi').find('.cityInput').val("");
+        $(".cityUl").find('.cityLi').find('.cityInput').attr('data-id','');
+        $(".cityUl").find('.cityLi').find('i').addClass('dis');
+
+
+        for (var i = 0; i < cookieCityArr.length; i++) {
+            var cookieCityObj = cookieCityArr[i].split('-');
+            cityName.push(cookieCityObj[0]);
+            cityId.push(cookieCityObj[1]);
+            cityTime.push(cookieCityObj[2]);
+            if (i == cookieCityArr.length - 1) {
+                cityIdStr = cityIdStr + cookieCityObj[1];
+            } else {
+                cityIdStr = cityIdStr + cookieCityObj[1] + ",";
+            }
+            //定制弹窗打入城市和日期
+            var yearStr = cookieCityObj[2].substring(0,4)+"-"+cookieCityObj[2].substring(4,6)+"-"+cookieCityObj[2].substring(6,8);
+            $(".cityUl").find('.cityLi').eq(i).find('.dateInput').val(yearStr);
+            $(".cityUl").find('.cityLi').eq(i).find('.cityInput').val(cookieCityObj[0]);
+            $(".cityUl").find('.cityLi').eq(i).find('.cityInput').attr('data-id', cookieCityObj[1]);
+            $(".cityUl").find('.cityLi').eq(i).find('i').removeClass('dis');
+        };
+        if(!cityIdStr){
+            cityIdStr = "101010100";
+            cityId = ["101010100"];
+            cityName = ["北京"]
+            var nowCityTime = new Date();
+            var nowCityTimeStr = getToday(nowCityTime)
+            cityTime = [nowCityTimeStr];
+            var yearStr = nowCityTimeStr.substring(0,4)+"-"+nowCityTimeStr.substring(4,6)+"-"+nowCityTimeStr.substring(6,8);
+            $(".cityUl").find('.cityLi').eq(0).find('.dateInput').val(yearStr);
+            $(".cityUl").find('.cityLi').eq(0).find('.cityInput').val(cityName[0]);
+            $(".cityUl").find('.cityLi').eq(0).find('.cityInput').attr('data-id', cityId[0]);
+            $(".cityUl").find('.cityLi').eq(0).find('i').removeClass('dis');
+        }
+        $.ajax({
+            type: 'GET',
+            url: prefixUrl + "trip?city=" + cityIdStr,
+            timeout: 20000,
+            dataType: "jsonp", //数据类型为jsonp  
+            jsonpCallback: "getDataCityStr",
+            success: function(data) {
+
+                var arr = Object.keys(data.data);
+                for (var i = 0; i < 5; i++) {
+                    if(i<arr.length){
+                        var index = getTimeDiff(cityTime[i]);
+                        var time = data.data[cityId[i]].forecast24h[index]["000"] + "";
+                        var timeFinal = time.substring(0, 4) + "年" + time.substring(4, 6) + "月" + time.substring(6, 8) + "日";
+                        var weatherCodeD = data.data[cityId[i]].forecast24h[index]["001"];
+                        if (weatherCodeD < 10) {
+                            weatherCodeD = "0" + weatherCodeD;
+                        }
+                        var weatherCodeN = data.data[cityId[i]].forecast24h[index]["002"];
+                        if (weatherCodeN < 10) {
+                            weatherCodeN = "0" + weatherCodeN;
+                        }
+                        var tempD = data.data[cityId[i]].forecast24h[index]["003"];
+                        var tempN = data.data[cityId[i]].forecast24h[index]["004"];
+                        var weatherWord = qxbm[weatherCodeD];
+                        if(weatherCodeD!=weatherCodeN){
+                            weatherWord = qxbm[weatherCodeD] +"转" + qxbm[weatherCodeN];
+                        }
+                        $("#cmpModel").append('<li data-id="' + cityId[i] + '">' +
+                        '<p class="date">' + timeFinal + '</p>' +
+                        '<p class="city">' + cityName[i] + '</p>' +
+                        '<div class="cityWeatherIcon">' +
+                          '<i class="new_icons icon-d' + weatherCodeD + '" title="'+qxbm[weatherCodeD]+'"></i>' +
+                          '<i class="new_icons icon-n' + weatherCodeN + '" title="'+qxbm[weatherCodeN]+'"></i>' +
+                        '</div><p class="weather">'+weatherWord+'</p>' +
+                        '<p class="temp">' + tempD + '~' + tempN + '℃</p>' +
+                        '<div class="btnList dis"><span class="delBtn">删除</span>' +
+                          '<span class="edtBtn">编辑</span></div></li>');
+                    }else if(i==4){
+                        $("#cmpModel").append('<li><div class="cmpAllList" id="fcsCmpAll">对比</div>' +
+                            '<div class="clearAllList">清空对比</div></li>');
+                    }else{
+                        $("#cmpModel").append('<li class="cmpBottomCityListNull"><b>您还可以继续添加</b><strong>add icon</strong></li>');
+                    }
+                }
+                if (arr.length < 2) {
+                    $(".cmpAllList").addClass('cmpAllListUnClick');
+                } else {
+                    $(".cmpAllList").removeClass('cmpAllListUnClick');
+                }
+
+                // 预报详情页面点开定制弹窗
+                $(".cmpBottomCityListNull,.btnList .edtBtn").on('click', function(event) {
+                    $(".addCityCmp").removeClass('dis');
+                });
+                $("#cmpModel li").on('mouseover', function(event) {
+                    $(this).find('.btnList').removeClass('dis');
+                });
+                $("#cmpModel li").on('mouseout', function(event) {
+                    $(this).find('.btnList').addClass('dis');
+                });
+                $(".btnList .delBtn").on('click', function(event) {
+                    var cookieCityListStr = cookieMaker("cityListCmp"); 
+                    var cookieCityList = cookieCityListStr.split(',');
+                    var cityListArr = cookieCityList[0].split('|');
+                    var cityListString ="";
+                    for(var i=0;i<cityListArr.length;i++){
+                        var listArr = cityListArr[i].split('-');
+                        if($(this).parent().parent().attr('data-id')!=listArr[1]){
+                            cityListString = cityListString + listArr[0]+"-"+listArr[1]+"-"+listArr[2]+"|";
+                        }
+                    }
+                    cityListString = cityListString.substring(0,cityListString.length-1);
+                    setUserCityListCmpCookie(cityListString);
+                    setFcsDom();
+                });
+                $(".clearAllList").on('click', function(event) {
+                    var cityListString = "";
+                    setUserCityListCmpCookie(cityListString);
+                    setFcsDom();
+                });
+                $("#fcsCmpAll").on('click', function(event) {
+                    if($(this).hasClass('cmpAllListUnClick')){
+                        return;
+                    }
+                    var cityStr = "";
+                    for(var i=0;i<$("#cmpModel").find('li').length;i++){
+                        if($("#cmpModel").find('li').eq(i).attr('data-id')){
+                            cityStr=cityStr+$("#cmpModel").find('li').eq(i).attr('data-id')+",";
+                        }
+                    }
+                    cityStr = cityStr.substring(0,cityStr.length-1);
+                    window.open('http://www.weather.com.cn/cityListCmp/index.shtml?city='+cityStr,'_blank')
+                });
+            }
+        });
+    }
+}
+
+function setFcsDomCmp(nowId,btnType){
+    //对比按钮样式
+    for(nowIndex=0;nowIndex<$("#historyCity").find('li').length;nowIndex++){
+        if($("#historyCity").find('li').eq(nowIndex).attr('data-id')==nowId){
+            if(btnType=="add"){
+                $("#historyCity").find('li').eq(nowIndex).find('.cmpBtn').addClass('cmpBtnUnClick');
+            }else{
+                $("#historyCity").find('li').eq(nowIndex).find('.cmpBtn').removeClass('cmpBtnUnClick');
+            }
+        }
+    }
+    
+    //对比栏
+    var cookieCityListStr = cookieMaker("cityListCmp"); 
+    var cookieCityList = cookieCityListStr.split(',');
+    var cookieCityArr = cookieCityList[0].split('|');
+    $("#cmpModel").html("");
+    var cityName = new Array();
+    var cityId = new Array();
+    var cityTime = new Array();
+    var cityIdStr = "";
+    if (cookieCityArr.length == 0||cookieCityArr[0]==""||cookieCityList[1]=="default") {
+        // 定制弹窗初始化
+        $(".cityUl").find('.cityLi').find('.dateInput').val("");
+        $(".cityUl").find('.cityLi').find('.cityInput').val("");
+        $(".cityUl").find('.cityLi').find('.cityInput').attr('data-id','');
+        $(".cityUl").find('.cityLi').find('i').addClass('dis');
+
+        for (var i = 0; i < 5; i++) {
+            if (i == 4) {
+                $("#cmpModel").append('<li><div class="cmpAllList" id="fcsCmpAll">对比</div>' +
+                    '<div class="clearAllList">清空对比</div></li>');
+            } else {
+                $("#cmpModel").append('<li class="cmpBottomCityListNull"><b>您还可以继续添加</b><strong>add icon</strong></li>');
+            }
+        }
+
+        // 预报详情页面点开定制弹窗
+        $(".cmpBottomCityListNull,.btnList .edtBtn").on('click', function(event) {
+            $(".addCityCmp").removeClass('dis');
+        });
+        $(".clearAllList").on('click', function(event) {
+            var cityListString = "";
+            setUserCityListCmpCookie(cityListString);
+            setFcsDom();
+        });
+        $(".cmpAllList").addClass('cmpAllListUnClick');
+    } else {
+        // 定制弹窗初始化
+        $(".cityUl").find('.cityLi').find('.dateInput').val("");
+        $(".cityUl").find('.cityLi').find('.cityInput').val("");
+        $(".cityUl").find('.cityLi').find('.cityInput').attr('data-id','');
+        $(".cityUl").find('.cityLi').find('i').addClass('dis');
+
+        for (var i = 0; i < cookieCityArr.length; i++) {
+            var cookieCityObj = cookieCityArr[i].split('-');
+            cityName.push(cookieCityObj[0]);
+            cityId.push(cookieCityObj[1]);
+            cityTime.push(cookieCityObj[2]);
+            if (i == cookieCityArr.length - 1) {
+                cityIdStr = cityIdStr + cookieCityObj[1];
+            } else {
+                cityIdStr = cityIdStr + cookieCityObj[1] + ",";
+            }
+            //定制弹窗打入城市和日期
+            var yearStr = cookieCityObj[2].substring(0,4)+"-"+cookieCityObj[2].substring(4,6)+"-"+cookieCityObj[2].substring(6,8);
+            $(".cityUl").find('.cityLi').eq(i).find('.dateInput').val(yearStr);
+            $(".cityUl").find('.cityLi').eq(i).find('.cityInput').val(cookieCityObj[0]);
+            $(".cityUl").find('.cityLi').eq(i).find('.cityInput').attr('data-id', cookieCityObj[1]);
+            $(".cityUl").find('.cityLi').eq(i).find('i').removeClass('dis');
+        };
+        if(!cityIdStr){
+            cityIdStr = "101010100";
+            cityId = ["101010100"];
+            cityName = ["北京"]
+            var nowCityTime = new Date();
+            var nowCityTimeStr = getToday(nowCityTime)
+            cityTime = [nowCityTimeStr];
+            var yearStr = nowCityTimeStr.substring(0,4)+"-"+nowCityTimeStr.substring(4,6)+"-"+nowCityTimeStr.substring(6,8);
+            $(".cityUl").find('.cityLi').eq(0).find('.dateInput').val(yearStr);
+            $(".cityUl").find('.cityLi').eq(0).find('.cityInput').val(cityName[0]);
+            $(".cityUl").find('.cityLi').eq(0).find('.cityInput').attr('data-id', cityId[0]);
+            $(".cityUl").find('.cityLi').eq(0).find('i').removeClass('dis');
+        }
+        $.ajax({
+            type: 'GET',
+            url: prefixUrl + "trip?city=" + cityIdStr,
+            timeout: 20000,
+            dataType: "jsonp", //数据类型为jsonp  
+            jsonpCallback: "getDataCityId",
+            success: function(data) {
+
+                var arr = Object.keys(data.data);
+                for (var i = 0; i < 5; i++) {
+                    if(i<arr.length){
+                        var index = getTimeDiff(cityTime[i]);
+                        var time = data.data[cityId[i]].forecast24h[index]["000"] + "";
+                        var timeFinal = time.substring(0, 4) + "年" + time.substring(4, 6) + "月" + time.substring(6, 8) + "日";
+                        var weatherCodeD = data.data[cityId[i]].forecast24h[index]["001"];
+                        if (weatherCodeD < 10) {
+                            weatherCodeD = "0" + weatherCodeD;
+                        }
+                        var weatherCodeN = data.data[cityId[i]].forecast24h[index]["002"];
+                        if (weatherCodeN < 10) {
+                            weatherCodeN = "0" + weatherCodeN;
+                        }
+                        var tempD = data.data[cityId[i]].forecast24h[index]["003"];
+                        var tempN = data.data[cityId[i]].forecast24h[index]["004"];
+                        var weatherWord = qxbm[weatherCodeD];
+                        if(weatherCodeD!=weatherCodeN){
+                            weatherWord = qxbm[weatherCodeD] +"转" + qxbm[weatherCodeN];
+                        }
+                        $("#cmpModel").append('<li data-id="' + cityId[i] + '">' +
+                        '<p class="date">' + timeFinal + '</p>' +
+                        '<p class="city">' + cityName[i] + '</p>' +
+                        '<div class="cityWeatherIcon">' +
+                          '<i class="new_icons icon-d' + weatherCodeD + '" title="'+qxbm[weatherCodeD]+'"></i>' +
+                          '<i class="new_icons icon-n' + weatherCodeN + '" title="'+qxbm[weatherCodeN]+'"></i>' +
+                        '</div><p class="weather">'+weatherWord+'</p>' +
+                        '<p class="temp">' + tempD + '~' + tempN + '℃</p>' +
+                        '<div class="btnList dis"><span class="delBtn">删除</span>' +
+                          '<span class="edtBtn">编辑</span></div></li>');
+                    }else if(i==4){
+                        $("#cmpModel").append('<li><div class="cmpAllList" id="fcsCmpAll">对比</div>' +
+                            '<div class="clearAllList">清空对比</div></li>');
+                    }else{
+                        $("#cmpModel").append('<li class="cmpBottomCityListNull"><b>您还可以继续添加</b><strong>add icon</strong></li>');
+                    }
+                }
+                if (arr.length < 2) {
+                    $(".cmpAllList").addClass('cmpAllListUnClick');
+                } else {
+                    $(".cmpAllList").removeClass('cmpAllListUnClick');
+                }
+
+                // 预报详情页面点开定制弹窗
+                $(".cmpBottomCityListNull,.btnList .edtBtn").on('click', function(event) {
+                    $(".addCityCmp").removeClass('dis');
+                });
+                $("#cmpModel li").on('mouseover', function(event) {
+                    $(this).find('.btnList').removeClass('dis');
+                });
+                $("#cmpModel li").on('mouseout', function(event) {
+                    $(this).find('.btnList').addClass('dis');
+                });
+                $(".btnList .delBtn").on('click', function(event) {
+                    var cookieCityListStr = cookieMaker("cityListCmp"); 
+                    var cookieCityList = cookieCityListStr.split(',');
+                    var cityListArr = cookieCityList[0].split('|');
+                    var cityListString ="";
+                    for(var i=0;i<cityListArr.length;i++){
+                        var listArr = cityListArr[i].split('-');
+                        if($(this).parent().parent().attr('data-id')!=listArr[1]){
+                            cityListString = cityListString + listArr[0]+"-"+listArr[1]+"-"+listArr[2]+"|";
+                        }
+                    }
+                    cityListString = cityListString.substring(0,cityListString.length-1);
+                    setUserCityListCmpCookie(cityListString);
+                    setFcsDomCmp($(this).parent().parent().attr('data-id'),"del");
+                });
+                $(".clearAllList").on('click', function(event) {
+                    var cityListString = "";
+                    setUserCityListCmpCookie(cityListString);
+                    setFcsDom();
+                });
+                $("#fcsCmpAll").on('click', function(event) {
+                    if($(this).hasClass('cmpAllListUnClick')){
+                        return;
+                    }
+                    var cityStr = "";
+                    for(var i=0;i<$("#cmpModel").find('li').length;i++){
+                        if($("#cmpModel").find('li').eq(i).attr('data-id')){
+                            cityStr=cityStr+$("#cmpModel").find('li').eq(i).attr('data-id')+",";
+                        }
+                    }
+                    cityStr = cityStr.substring(0,cityStr.length-1);
+                    window.open('http://www.weather.com.cn/cityListCmp/index.shtml?city='+cityStr,'_blank')
+                });
+            }
+        });
+    }
+}
+//城市页面实况出点击事件
+$(".cmpCityBtn").on('click', function(event) {
+    $(".cmpBottomModel").removeClass('dis');
+    var id = cookieMaker('defaultCty');
+    var today = new Date();
+    var time = getToday(today);
+    var wl=window.location.href;
+    var hrefId= wl.substring(wl.lastIndexOf("/")+1, wl.lastIndexOf(".shtml"));
+    if(/\d{7}/.test(hrefId)&&hrefId.substr(0, 3)=="101"){
+        id = hrefId;
+    }else{
+        id = id;
+    }
+    $.getScript('https://d1.weather.com.cn/sk_2d/' + id + '.html', function() {
+        var name = dataSK.cityname;
+        var addCityStr = name + "-" + id + "-" + time;
+        if (cookieMaker("cityListCmp").split(',')[0].split('|').length < 4) {
+            if (cookieMaker("cityListCmp").split(',')[0].indexOf(id) < 0) {
+                if (cookieMaker("cityListCmp").split(',')[0]) {
+                    addCityStr = addCityStr + "|" + cookieMaker("cityListCmp").split(',')[0];
+                }
+                setUserCityListCmpCookie(addCityStr);
+                setFcsDomCmp(id,"add");
+                $("#cmpFirst").click();
+            } else {
+                $(".errorMsg").removeClass('dis');
+                $(".errorMsg").html("对比栏已有所选内容，请您重新选择需要添加的城市");
+                setTimeout(function() {
+                    $(".errorMsg").addClass('dis');
+                }, 2000)
+            }
+        } else {
+            if (cookieMaker("cityListCmp").split(',')[1] == "default") { //判断用户是否是默认城市
+                setUserCityListCmpCookie(addCityStr);
+                setFcsDom();
+                $("#cmpFirst").click();
+            } else {
+                $(".errorMsg").removeClass('dis');
+                $(".errorMsg").html("对比栏已满，您可以删除不需要的城市后继续添加");
+                setTimeout(function() {
+                    $(".errorMsg").addClass('dis');
+                }, 2000)
+            }
+        }
+    })
+});

@@ -1,0 +1,392 @@
+.housr_icons{
+  background: url("https://i.i8tq.com/cityListCmp/weather_icon_old_b.png") no-repeat;
+}
+.housr_iconsBig{
+  background: url("https://i.i8tq.com/cityListCmp/weather_icon_old_bb.png") no-repeat;
+}
+
+.new_icons{ background-image: url(https://i.tq121.com.cn/i/weather2015/index/blue30.png); height: 30px; width: 30px }
+
+.icon-d0 { background-position: 0 0 }
+.icon-d1 { background-position: -80px 0 }
+.icon-d2 { background-position: -160px 0 }
+.icon-d3 { background-position: -240px 0 }
+.icon-d4 { background-position: -320px 0 }
+.icon-d5 { background-position: -400px 0 }
+.icon-d6 { background-position: -480px 0 }
+.icon-d7 { background-position: -560px 0 }
+.icon-d8 { background-position: -640px 0 }
+.icon-d9 { background-position: 0 -80px }
+.icon-d00 { background-position: 0 0 }
+.icon-d01 { background-position: -80px 0 }
+.icon-d02 { background-position: -160px 0 }
+.icon-d03 { background-position: -240px 0 }
+.icon-d04 { background-position: -320px 0 }
+.icon-d05 { background-position: -400px 0 }
+.icon-d06 { background-position: -480px 0 }
+.icon-d07 { background-position: -560px 0 }
+.icon-d08 { background-position: -640px 0 }
+.icon-d09 { background-position: 0 -80px }
+.icon-d10 { background-position: -80px -80px }
+.icon-d11 { background-position: -160px -80px }
+.icon-d12 { background-position: -240px -80px }
+.icon-d13 { background-position: -320px -80px }
+.icon-d14 { background-position: -400px -80px }
+.icon-d15 { background-position: -480px -80px }
+.icon-d16 { background-position: -560px -80px }
+.icon-d17 { background-position: -640px -80px }
+.icon-d18 { background-position: 0 -160px }
+.icon-d19 { background-position: -80px -160px }
+.icon-d20 { background-position: -160px -160px }
+.icon-d21 { background-position: -240px -160px }
+.icon-d22 { background-position: -320px -160px }
+.icon-d23 { background-position: -400px -160px }
+.icon-d24 { background-position: -480px -160px }
+.icon-d25 { background-position: -560px -160px }
+.icon-d26 { background-position: -640px -160px }
+.icon-d27 { background-position: 0 -240px }
+.icon-d28 { background-position: -80px -240px }
+.icon-d29 { background-position: -160px -240px }
+.icon-d30 { background-position: -240px -240px }
+.icon-d31 { background-position: -320px -240px }
+.icon-d32 { background-position: -400px -240px }
+.icon-d33 { background-position: -480px -240px }
+.icon-d53 { background-position: -560px -240px }
+.icon-d57 { background-position: -720px 0 }
+.icon-d32 { background-position: -720px -80px }
+.icon-d49 { background-position: -720px -160px }
+.icon-d58 { background-position: -720px -240px }
+.icon-d54 { background-position: -800px 0 }
+.icon-d55 { background-position: -800px -80px }
+.icon-d56 { background-position: -800px -160px }
+.icon-d301 { background-position: -880px 0 }
+.icon-d302 { background-position: -880px -80px }
+.icon-n0 { background-position: 0 -320px }
+.icon-n1 { background-position: -80px -320px }
+.icon-n2 { background-position: -160px -320px }
+.icon-n3 { background-position: -240px -320px }
+.icon-n4 { background-position: -320px -320px }
+.icon-n5 { background-position: -400px -320px }
+.icon-n6 { background-position: -480px -320px }
+.icon-n7 { background-position: -560px -320px }
+.icon-n8 { background-position: -640px -320px }
+.icon-n9 { background-position: 0 -400px }
+.icon-n00 { background-position: 0 -320px }
+.icon-n01 { background-position: -80px -320px }
+.icon-n02 { background-position: -160px -320px }
+.icon-n03 { background-position: -240px -320px }
+.icon-n04 { background-position: -320px -320px }
+.icon-n05 { background-position: -400px -320px }
+.icon-n06 { background-position: -480px -320px }
+.icon-n07 { background-position: -560px -320px }
+.icon-n08 { background-position: -640px -320px }
+.icon-n09 { background-position: 0 -400px }
+.icon-n10 { background-position: -80px -400px }
+.icon-n11 { background-position: -160px -400px }
+.icon-n12 { background-position: -240px -400px }
+.icon-n13 { background-position: -320px -400px }
+.icon-n14 { background-position: -400px -400px }
+.icon-n15 { background-position: -480px -400px }
+.icon-n16 { background-position: -560px -400px }
+.icon-n17 { background-position: -640px -400px }
+.icon-n18 { background-position: 0 -480px }
+.icon-n19 { background-position: -80px -480px }
+.icon-n20 { background-position: -160px -480px }
+.icon-n21 { background-position: -240px -480px }
+.icon-n22 { background-position: -320px -480px }
+.icon-n23 { background-position: -400px -480px }
+.icon-n24 { background-position: -480px -480px }
+.icon-n25 { background-position: -560px -480px }
+.icon-n26 { background-position: -640px -480px }
+.icon-n27 { background-position: 0 -560px }
+.icon-n28 { background-position: -80px -560px }
+.icon-n29 { background-position: -160px -560px }
+.icon-n30 { background-position: -240px -560px }
+.icon-n31 { background-position: -320px -560px }
+.icon-n32 { background-position: -400px -560px }
+.icon-n33 { background-position: -480px -560px }
+.icon-n53 { background-position: -560px -560px }
+.icon-n57 { background-position: -720px -320px }
+.icon-n32 { background-position: -720px -400px }
+.icon-n49 { background-position: -720px -480px }
+.icon-n58 { background-position: -720px -560px }
+.icon-n54 { background-position: -800px -320px }
+.icon-n55 { background-position: -800px -400px }
+.icon-n56 { background-position: -800px -480px }
+.icon-n301 { background-position: -880px -320px }
+.icon-n302 { background-position: -880px -400px }
+
+.d00 {
+  background-position: 0 0
+}
+.d01 {
+  background-position: -80px 0
+}
+.d02 {
+  background-position: -160px 0
+}
+.d03 {
+  background-position: -240px 0
+}
+.d04 {
+  background-position: -320px 0
+}
+.d05 {
+  background-position: -400px 0
+}
+.d06 {
+  background-position: -480px 0
+}
+.d07 {
+  background-position: -560px 0
+}
+.d08 {
+  background-position: -640px 0
+}
+.d09 {
+  background-position: -720px 0
+}
+.d10 {
+  background-position: -800px 0
+}
+.d11 {
+  background-position: -880px 0
+}
+
+.d12 {
+  background-position: 0 -80px
+}
+.d13 {
+  background-position: -80px -80px
+}
+.d14 {
+  background-position: -160px -80px
+}
+.d15 {
+  background-position: -240px -80px
+}
+.d16 {
+  background-position: -320px -80px
+}
+.d17{
+  background-position: -400px -80px
+}
+.d18 {
+  background-position: -480px -80px
+}
+.d19 {
+  background-position: -560px -80px
+}
+.d20{
+  background-position: -640px -80px
+}
+.d21 {
+  background-position: -720px -80px
+}
+.d22 {
+  background-position: -800px -80px
+}
+.d23 {
+  background-position: -880px -80px
+}
+
+
+
+.d24 {
+  background-position: 0 -160px
+}
+.d25 {
+  background-position:  -80px -160px
+}
+.d26 {
+  background-position: -160px -160px
+}
+.d27 {
+  background-position: -240px -160px
+}
+.d28 {
+  background-position: -320px -160px
+}
+.d29 {
+  background-position: -400px -160px
+}
+.d30 {
+  background-position: -480px -160px
+}
+.d31{
+  background-position: -560px -160px
+}
+
+.d53 {
+  background-position: -640px -160px
+}
+
+.d99 {
+  background-position: -720px -160px
+}
+.d32 {
+  background-position: -800px -160px
+}
+.d49 {
+  background-position: -880px -160px
+}
+
+
+.d54 {
+  background-position: 0 -240px
+}
+.d55 {
+  background-position: -80px -240px
+}
+.d56 {
+  background-position: -160px -240px
+}
+.d57 {
+  background-position: -240px -240px
+}
+.d58 {
+  background-position: -320px -240px
+}
+.d301 {
+  background-position: -400px -240px
+}
+.d302 {
+  background-position: -480px -240px
+}
+
+.n00 {
+  background-position: -560px -240px
+}
+.n01 {
+  background-position: -640px -240px
+}
+
+.n02 {
+  background-position: -160px 0
+}
+.n03 {
+  background-position: -240px 0
+}
+.n04 {
+  background-position: -320px 0
+}
+.n05 {
+  background-position: -400px 0
+}
+.n06 {
+  background-position: -480px 0
+}
+.n07 {
+  background-position: -560px 0
+}
+.n08 {
+  background-position: -640px 0
+}
+.n09 {
+  background-position: -720px 0
+}
+.n10 {
+  background-position: -800px 0
+}
+.n11 {
+  background-position: -880px 0
+}
+
+.n12 {
+  background-position: 0 -80px
+}
+.n13 {
+  background-position: -80px -80px
+}
+.n14 {
+  background-position: -160px -80px
+}
+.n15 {
+  background-position: -240px -80px
+}
+.n16 {
+  background-position: -320px -80px
+}
+.n17{
+  background-position: -400px -80px
+}
+.n18 {
+  background-position: -480px -80px
+}
+.n19 {
+  background-position: -560px -80px
+}
+.n20{
+  background-position: -640px -80px
+}
+.n21 {
+  background-position: -720px -80px
+}
+.n22 {
+  background-position: -800px -80px
+}
+.n23 {
+  background-position: -880px -80px
+}
+.n24 {
+  background-position: 0 -160px
+}
+.n25 {
+  background-position:  -80px -160px
+}
+.n26 {
+  background-position: -160px -160px
+}
+.n27 {
+  background-position: -240px -160px
+}
+.n28 {
+  background-position: -320px -160px
+}
+.n29 {
+  background-position: -400px -160px
+}
+.n30 {
+  background-position: -480px -160px
+}
+.n31{
+  background-position: -560px -160px
+}
+
+.n53 {
+  background-position: -640px -160px
+}
+
+.n99 {
+  background-position: -720px -160px
+}
+.n32 {
+  background-position: -800px -160px
+}
+.n49 {
+  background-position: -880px -160px
+}
+
+
+.n54 {
+  background-position: 0 -240px
+}
+.n55 {
+  background-position: -80px -240px
+}
+.n56 {
+  background-position: -160px -240px
+}
+.n57 {
+  background-position: -240px -80px
+}
+.n58 {
+  background-position: -320px -160px
+}
+
+.n301 {
+  background-position: -720px -240px
+}
+.n302 {
+  background-position: -800px -240px
+}

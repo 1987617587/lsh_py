@@ -1,0 +1,1 @@
+loginCallback({username: '李帆飞', puid: 'o9t2luNSLFlmfMI-T32K3R-1eFy0@weixin.sohu.com', headurl: 'https://img03.sogoucdn.com/v2/thumb?t=2&url=http%3A%2F%2Fthirdwx.qlogo.cn%2Fmmopen%2Fvi_32%2FQ0j4TwGTfTKqW81oHPdwOeXbx6rS3aicNyNfyAicXVDkXias9mZV0cTTU1vN2ULNUxNDZmGtRc6xJJXE8zCZoYp5Q%2F96&appid=200580', status: 0})
