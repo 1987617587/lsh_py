@@ -1,0 +1,8 @@
+level 1:
+爬取有关游戏新闻标题，发表时间，封面链接，新闻内容
+http://www.199it.com/archives/tag/sensor-tower
+
+
+买商标网爬虫
+http://www.mp.ink/tgmp2?k=439642&bd_vid=8250654376519157897
+爬取出售商标的名称，编号，类别，专用期限，注册范围，商标图片

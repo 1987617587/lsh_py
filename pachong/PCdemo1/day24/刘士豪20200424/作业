@@ -1,0 +1,59 @@
+level 1:
+1、pandas的数据类型有哪些？
+    一维数组 Series
+    二维数组 DataFrame
+2、如何创建Series？
+    1、通过list构建Series
+    ser_obj = pd.Series(range(10,30))
+    2、 通过dict构建Series
+    dict = {1000:"hello",2000:"world",3000:"!"}
+    ser_obj = pd.Series(dict)
+3、如何创建DataFrame？
+     1. 通过ndarray构建DataFrame
+     2. 通过dict构建DataFrame
+4、如何访问DataFrame指定的列？
+    df_obj['label']
+5、pandas有哪些高级索引的方式？
+    标签、位置和混合
+6、pandas排序有哪两种？
+    索引排序和值排序
+7、分割figure的方法有哪些？
+    plt.subplots()
+8、绘制饼形图，柱形图，折线图用哪些方法？
+饼状图pie()
+柱形图bar()
+水平柱形图barh()
+折线图plot()
+9、如何设置绘图颜色？
+颜色缩写字母；#00000 - #fffff
+level 2:
+
+案例：全球食品添加剂用量分析
+1、pandas加载数据
+2、按国家分组统计食品添加剂的平均用量
+3、柱形图呈现食品添加剂平均用量最多的前十个国家
+
+案例：
+http://money.cnn.com/data/dow30
+编写爬虫，下载道琼斯指数30股指数据 代码code，名称name，最后交易价格tradePrice
+保存为stock.csv
+1、获取股票代码
+2、获取前五行的股票数据
+3、返回第一只股票的股价
+4、计算平均的股价
+5、计算股价大于180的公司的名称
+6、找出股价前三名的公司，降序排序
+
+案例：京东大药房爬虫
+https://mall.jd.com/index-1000015441.html?cu=true&utm_source=baidu-search&utm_medium=cpc&utm_campaign=t_262767352_baidusearch&utm_term=113098950926_0_f4806f9c0e2e48bab760aa196dddf56c
+爬取标题，价格，品牌，商品名称，类别，适用症状，适用类型
+保存到csv文件
+
+level 3：
+（选）需求：模拟生成一家商店全年营收额，生成日期和销量两列数据，保存到csv文件
+    用pandas读取csv数据，常见DataFrame对象
+    对数据进行处理
+    生成折线图，反映商店全年营收的变化情况，把图片保存 first.png
+    按月份就行统计，用柱形图显示每月的营收情况，把图片保存second.png
+    按月份进行统计，找出营收额最高的月份，把数据保存txt文件
+    按季度进行统计，统计营收情况，饼形图显示，把图片保存为three.png
