@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>九宫格拖拽</title>
+</head>
+<style type="text/css">
+    #content{
+        width: 300px;
+        height:300px;
+        margin: 0 auto;
+        background: #F47564;
+        position: relative;
+    }
+    #content div{
+        width: 100px;
+        height: 100px;
+        float: left;
+        line-height: 100px;
+        text-align: center;
+        font-size:40px;
+        font-weight: 900;
+        color: #fff;
+        cursor: pointer;
+        position: absolute;
+    }
+    #content div:nth-child(1){
+        background-color: #f05b72;
+        top:0;
+        left: 0;
+    }
+    #content div:nth-child(2){
+        background-color: #faa755;
+        top:0;
+        left:100px;
+    }
+    #content div:nth-child(3){
+        background-color: #2585a6;
+        top:0;
+        left: 200px;
+    }
+    #content div:nth-child(4){
+        background:#5ce4fd;
+        top:100px;
+        left: 0;
+    }
+    #content div:nth-child(5){
+        background:#f61acf;
+        top:100px;
+        left: 100px;
+    }
+    #content div:nth-child(6){
+        background:#3ef9bd;
+        top:100px;
+        left: 200px;
+    }
+    #content div:nth-child(7){
+        background:#9af93e;
+        top:200px;
+        left: 0;
+    }
+    #content div:nth-child(8){
+        background:#eef93e;
+        top:200px;
+        left: 100px;
+    }
+    #content div:nth-child(9){
+        background:#f9843e;
+        top:200px;
+        left:200px;
+    }
+    #content .draging{
+        position: absolute;
+    }
+
+</style>
+<body>
+<div id="content">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+</div>
+
+<script type="text/javascript">
+    var content = document.getElementById('content');
+    var items = content.querySelectorAll('div');
+    console.log(items);
+
+    function itemBox(itemName){
+        itemName.onmousedown = function(evt1){
+            var e = evt1 || window.event;
+
+            //在鼠标点下item的时候克隆一个新的一模一样的名为cloneDiv
+            var cloneDiv = document.createElement('div');
+            //把样式文字赋给克隆div
+            cloneDiv.innerHTML = itemName.innerHTML;
+
+            cloneDiv.style.backgroundColor = getComputedStyle(itemName).backgroundColor;
+
+            //使克隆div的class名为draging，使克隆div加绝对定位position：absolute
+            cloneDiv.className = 'draging';
+            //克隆div的定位top left  和原div相同
+            cloneDiv.style.top = itemName.offsetTop +'px';
+            cloneDiv.style.left = itemName.offsetLeft+'px'
+
+            //把kelongdiv加入到concent大盒子当中
+            content.appendChild(cloneDiv);
+            //算出鼠标点击克隆div时，鼠标在克隆div中的相对位置
+            var offsetX = evt1.pageX - cloneDiv.offsetLeft;
+            var offsetY = evt1.pageY - cloneDiv.offsetTop;
+//              cloneDiv.style.zIndex = 10;
+
+            //鼠标开始移动的时候
+            document.onmousemove = function(evt){
+                var e2 = evt || window.event;
+                //克隆div定位的left  top   evt.pageX鼠标点相对于整个文档中的位置， offsetX鼠标相对于克隆div中的位置     二者相减就是克隆div相对于整个文档中的位置
+                cloneDiv.style.left = evt.pageX - offsetX +'px';
+                cloneDiv.style.top = evt.pageY -offsetY+'px'
+            }
+
+            //当鼠标松开的时候
+            document.onmouseup = function(){
+                //先把移动事件停止
+                document.onmousemove = null;
+
+                //需要判断 clonediv 的位置距 那个div 最近
+
+                //先获取到content大盒子下所有的div
+                var divs = content.getElementsByTagName('div');
+                console.log(divs.length)
+                //然后判断移动到位置距离哪一个最近
+
+
+                var min = 800;//考虑到被拖拽的div拖拽到大盒子之外还能进行交换，距离设为大盒子外   方圆800px
+                var minDiv = null;//设一个空的div用来交换位置
+                for(var i=0;i<divs.length-1;i++){//遍历出除了鼠标移动的div外的所有的div  也就是length - 1
+                    var div = divs[i];
+                    //div cloneDiv
+
+                    //distance(cloneDiv,div)返回值为c，c为两div之间的距离
+                    var dis = distance(cloneDiv,div);//调用运用勾股定理进行比较距离的函数
+                    if(dis <= min){//a^2 + b^2 和c^2比较
+                        min = dis;
+                        minDiv = div;
+                    }
+                }
+
+                //把距离小的那个div的样式给拖拽走空出来的div  itemName
+
+
+                //如果这样赋值的话target的innerHTML就会丢失都变成minDiv.innerHTML，所以的设一个中转变量，让两者交换。background同理
+//                  minDiv.innerHTML = target.innerHTML;
+
+                //两者样式交换，引入第三变量tmpInnerHTMl
+                var tmpInnerHTMl = minDiv.innerHTML;
+
+                minDiv.innerHTML = itemName.innerHTML;
+                itemName.innerHTML = tmpInnerHTMl;
+
+                //引入第三变量tmpColor
+                var tmpColor = getComputedStyle(minDiv).backgroundColor;
+                minDiv.style.backgroundColor = getComputedStyle(itemName).backgroundColor;
+
+                itemName.style.backgroundColor = tmpColor;
+
+                //删掉克隆元素
+                content.removeChild(cloneDiv)
+                document.onmouseup = null;//把鼠标松开后的操作清除
+
+            }
+            return false;
+        }
+    }
+
+    //for循环使每一个item都调用itemBox()这个函数
+    for(var i = 0; i < items.length; i++){
+        itemBox(items[i]);
+    }
+
+    function distance(div1,div2) {
+        //勾股定理 记录 两个元素的距离
+        var a = div1.offsetLeft - div2.offsetLeft;
+        var b = div1.offsetTop - div2.offsetTop;
+        var c = Math.sqrt(a*a+b*b);  //利用勾股定理算出两个div的距离     a^2 + b^2 再开平方得出c
+        return c;
+    }
+</script>
+</body>
+</html>

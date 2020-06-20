@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+<head>            
+    <meta charset="UTF-8">
+    <title></title>        
+</head>
+<body>
+
+<div class='btn1' onmouseover="mOver1(this)" onmouseout="mOut2(this)"
+     style="background-color:green;width:160px;height:20px;padding:40px;color:#ffffff;">鼠标移到按钮1上
+</div>
+<div class='btn2' onmouseover="mOver2(this)" onmouseout="mOut2(this)"
+     style="background-color:red;width:160px;height:20px;padding:40px;color:#ffffff;">鼠标移到按钮2上
+</div>
+<script>
+    function mOver1(obj) {
+        obj.innerHTML = "按钮1谢谢"
+    }
+
+    function mOut1(obj) {
+        obj.innerHTML = "鼠标移到按钮1上"
+    }
+
+    function mOver2(obj) {
+        obj.innerHTML = "按钮2谢谢"
+    }
+
+    function mOut2(obj) {
+        obj.innerHTML = "鼠标移到按钮2上"
+    }
+
+</script>
+
+</body>
+</html>

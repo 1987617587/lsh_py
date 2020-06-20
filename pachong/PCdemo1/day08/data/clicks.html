@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <div id='dianji' style="width: 200px;height: 300px;background: #00FF00;">单击一下我就变红色</div>
+        <div class="shuang" style="width: 200px;height: 300px;background: blue;">双击我就变黄色</div>
+    </body>
+    <script>
+        var dianji=document.getElementById('dianji')
+        dianji.onclick=function(){
+            this.style.backgroundColor='red'
+        }
+        var shuang=document.getElementsByClassName('shuang')[0]
+        shuang.ondblclick=function(){
+        this.style.backgroundColor='yellow'    
+        }
+        
+        
+    </script>
+</html>
