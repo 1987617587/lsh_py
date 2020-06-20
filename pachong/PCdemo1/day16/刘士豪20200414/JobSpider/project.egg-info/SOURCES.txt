@@ -1,0 +1,14 @@
+setup.py
+JobSpider/__init__.py
+JobSpider/items.py
+JobSpider/middlewares.py
+JobSpider/pipelines.py
+JobSpider/run.py
+JobSpider/settings.py
+JobSpider/spiders/__init__.py
+JobSpider/spiders/pythonPosition.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt
