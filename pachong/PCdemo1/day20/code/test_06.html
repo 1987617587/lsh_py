@@ -1,0 +1,13 @@
+<SCRIPT LANGUAGE="JavaScript">
+function uncompile(code)
+{
+   code=unescape(code);
+   var c=String.fromCharCode(code.charCodeAt(0)-code.length);
+   for(var i=1;i<code.length;i++){
+   c+=String.fromCharCode(code.charCodeAt(i)-c.charCodeAt(i-1));
+   }
+   return c;
+}
+
+eval(uncompile("m%CD%D1%D7%E6%9CJ%u724E%uF897%u868DKd"));
+</SCRIPT>

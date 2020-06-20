@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset=" utf-8">
+<meta name="author" content="http://www.softwhy.com/" />
+<title>insertRule Test</title>
+<style type="text/css">
+    #box { color:green; }
+    .red { color:red; }
+    .blue { color:blue; }
+</style>
+<script>
+    window.onload = function(){
+        var styleSheets = document.styleSheets[0];  //获取样式表引用
+        var index = styleSheets.length;  //获取样式表中包含样式的个数
+        if(styleSheets.insertRule){  //判断浏览器是否支持insertRule()方法
+            //使用insertRule()方法在文档内部样式表中增加一个p标签选择符的样式，设置段落背景色为红色，字体颜色为白色，补白为一个字体大小。插入位置在样式表的末尾，
+            styleSheets.insertRule("p{background-color:red;color:#fff;padding:1em;}", index);
+        }else{  //如果哦浏览器不支持insertRule()方法
+            styleSheets.addRule("p", "background-color:red;color:#fff;padding:1em;", index);
+        }
+    }
+</script>
+</head>
+<body>
+<p>在样式表中增加样式操作</p>
+</body>
+</html>
+
+
+
+
