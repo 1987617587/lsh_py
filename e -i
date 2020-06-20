@@ -1,0 +1,474 @@
+[33mcommit 26c3edf1d8eafc81c3adeff6099eef8badf97221[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: 1987617587 <1987617587@qq.com>
+Date:   Sat Jun 20 10:54:01 2020 +0800
+
+    爬虫项目集
+
+[33mcommit 80a8c2dc470924dedb277083bd3a459886ba0ce7[m
+Author: 1987617587 <1987617587@qq.com>
+Date:   Mon Jun 8 17:17:02 2020 +0800
+
+    爬虫项目集
+
+[33mcommit 553df761efe451a37664d33bd195f161fdb0b57a[m
+Author: 1987617587 <1987617587@qq.com>
+Date:   Mon Jun 8 15:41:22 2020 +0800
+
+    冒泡、快速、选择、插入排序，二分法查找算法，以及递归实现汉诺塔
+
+[33mcommit 626d8d3462ca6841f581cdc9a2db4f96a8f0859f[m
+Author: 1987617587 <1987617587@qq.com>
+Date:   Sat May 30 18:23:34 2020 +0800
+
+    爬虫大小项目
+
+[33mcommit d67f864784f7db3c0899e2ac7d4daf2129e5c6ba[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: 1987617587 <1987617587@qq.com>
+Date:   Sat May 30 18:02:43 2020 +0800
+
+    python三大神器回顾及练习
+
+[33mcommit 9f16824efbddd0be414c374a43ad25fcfa47139a[m
+Author: 1987617587 <1987617587@qq.com>
+Date:   Sat May 30 17:32:31 2020 +0800
+
+    python基础及高阶练习
+
+[33mcommit f51280803021b19f52961d2a65e0041796b74a5f[m
+Author: 1987617587 <1987617587@qq.com>
+Date:   Sat May 30 17:29:43 2020 +0800
+
+    提交测试
+
+[33mcommit c7c61132c5efa513f72e8ac07a04c5a36c45e1c2[m
+Author: 1987617587 <1987617587@qq.com>
+Date:   Fri May 29 23:12:53 2020 +0800
+
+    淘宝京东618活动
+
+[33mcommit e0264cfe7ed6317400d01dcea20e0c7cf90887f6[m
+Author: 1987617587 <1987617587@qq.com>
+Date:   Fri May 29 23:05:46 2020 +0800
+
+    new
+
+[33mcommit a8fd303b0a1741a718df79e6c1d3d8844fab3f26[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 23 09:18:29 2020 +0800
+
+    最后阶段开启
+
+[33mcommit 7de4550d0c0d8015f167096f02378285083bc4b9[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Mar 19 20:05:35 2020 +0800
+
+    管理员页面，增加删除功能的实现
+
+[33mcommit e807d0fd0371a8c940d18cff0960d528a13d6098[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Mar 19 18:02:48 2020 +0800
+
+    在项目中使用数据库，完成配置，完成分类和书籍的关联展示
+
+[33mcommit a0f4c6dd50521a51b796599b87236a50dd577783[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Mar 19 12:23:31 2020 +0800
+
+    在项目中使用ORM,完成分类表和数据表的关联
+
+[33mcommit 83c0b34d5ffee0aa47254f41e3d7dc32e126016f[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Mar 19 09:59:27 2020 +0800
+
+    使用ORM框架Flask-SQLAlchemy，在hello.py简单实现数据库的增删改查功能
+
+[33mcommit 73ba6c018dbfed1dcc70c72ac6666198e14738d6[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Mar 18 21:48:30 2020 +0800
+
+    注册登录，邮箱验证
+
+[33mcommit 97829abbcfd450dbe07fceec242d2bca611a17fa[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 16 20:22:08 2020 +0800
+
+    flask应用工厂
+
+[33mcommit c3fd6060e338d06ec6f423787fcdbaf705e81675[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 16 11:36:03 2020 +0800
+
+    flask简单初识
+
+[33mcommit 78795c42640a2e726d52e1ffcfd6a142d163f9b9[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Mar 12 21:58:16 2020 +0800
+
+    页面简单优化
+
+[33mcommit cf75fbf4f1006849a8581f4a28895854bd217219[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Mar 12 18:02:58 2020 +0800
+
+    搜索评论（有bug）
+
+[33mcommit 0abc63a81f7a064f9f0f04f14730ded71bc9f536[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Mar 12 12:00:08 2020 +0800
+
+    简单的搜索功能实现
+
+[33mcommit e2d0f46a7de94d37590066706ebbb820d916df98[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Mar 11 21:20:25 2020 +0800
+
+    搜索标签随机颜色，视图类添加过滤和搜索配置，明日接口安排
+
+[33mcommit fd08e12d31b1532d05f856ddc093359b791ad705[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Mar 11 17:56:16 2020 +0800
+
+    订单页面结束，展示用户订单总金额
+
+[33mcommit ca61965b122106d65e4a8fbc032865a8dde258de[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Mar 11 15:47:14 2020 +0800
+
+    订单页面展示完成
+
+[33mcommit abc7368e63972145aab85054d9615774b2b16b17[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Mar 11 11:52:54 2020 +0800
+
+    订单信息获取并展示
+
+[33mcommit 6f751c8a08aa3ab2c74e0816ad72f3d6cdac8b90[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Tue Mar 10 18:38:45 2020 +0800
+
+    获取订单信息，页面简单展示
+
+[33mcommit a450cfd75fbbef28977a12a5b3790dcef006369b[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Tue Mar 10 18:35:38 2020 +0800
+
+    用户注册登录，订单创建
+
+[33mcommit 6526ae8e15938111420745d8e609e434ad54d767[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Tue Mar 10 16:36:13 2020 +0800
+
+    用户信息修改，创建订单
+
+[33mcommit 6bba514df7ffce03f9ce4fb8b92935d3e73bdc44[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Tue Mar 10 12:04:09 2020 +0800
+
+    价格展示，时间传递
+
+[33mcommit 30009cb551794974e0492b8dfc49040a2cc687ae[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 9 21:01:07 2020 +0800
+
+    使用jwt认证，支持登录注册
+
+[33mcommit 04207ce85c545deb46d536dcbe2ab1adafb894f5[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 9 17:49:34 2020 +0800
+
+    项目周周一，前后端简单连接
+
+[33mcommit 5abf15d46e28f15a05d99f9628d9d0f4dbf10372[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 9 16:28:48 2020 +0800
+
+    前后端简单连接测试，解决跨域
+
+[33mcommit 635de07860052d079f6d5c8310829027a6793dd9[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 9 16:00:08 2020 +0800
+
+    自定义认证（手机号邮箱用户名）
+
+[33mcommit 2458d295214f86741c330547e0c09a9b26aba2e6[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 9 15:52:07 2020 +0800
+
+    测试API接口 引入JWT令牌认证
+
+[33mcommit c175c50e178eed3e43779c3a0541e29fcd30e264[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 9 12:09:42 2020 +0800
+
+    模型搭建完毕 简单序列化展示 配置api文档
+
+[33mcommit 40a48215e5f1f2caab622680846d14b680d109a8[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 9 11:13:40 2020 +0800
+
+    创建模型 简单测试
+
+[33mcommit de95b9f157d078887892c1e682a6c48e86e932c5[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Sat Mar 7 17:40:12 2020 +0800
+
+    商品分类展示
+
+[33mcommit f1c10994cde362889170ae8fcc84f44ce195813b[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Fri Mar 6 18:04:56 2020 +0800
+
+    支持用户修改个人信息 完善项目需求
+
+[33mcommit 4edfa436793525a6971d2f1c07145c7514c201d3[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Fri Mar 6 12:35:52 2020 +0800
+
+    提供获取用户个人信息接口,支持注册请求
+
+[33mcommit 4162f1ce8d910cb66c60d2b31bf1490d8116c814[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Fri Mar 6 11:50:23 2020 +0800
+
+    提供获取用户个人信息接口
+
+[33mcommit 3e6560d1241fee3a511309332fe449aceac0e1c9[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Mar 5 20:18:33 2020 +0800
+
+    路由跳转，权限认证
+
+[33mcommit d3fcd05475813e4cf768fe02f42d16c998901eb6[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Mar 5 12:30:33 2020 +0800
+
+    前后端连接，请求拦截
+
+[33mcommit 3856fab87d45b84c1b674bbda16025426048bb66[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Mar 5 12:19:27 2020 +0800
+
+    前后端连接
+
+[33mcommit 2da2f1d7347e22e20ec8cbb0ed861b0c254220ff[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Mar 4 20:42:04 2020 +0800
+
+    前后端简单连接
+
+[33mcommit 7b907126554e5669e789ac50df8510ac9bdbb937[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Mar 4 20:34:36 2020 +0800
+
+    解决跨域
+
+[33mcommit 5e33a14b89c6af7661ad28b90242bf3044e33150[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Mar 4 18:03:09 2020 +0800
+
+    前后端连接 跨域处理
+
+[33mcommit b9e5e652feff30e2af9757e5b274ed85e4709f16[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Mar 4 16:17:28 2020 +0800
+
+    分页 使用过滤完善 分类 搜索 排序 功能
+
+[33mcommit df1c7997f337c88b677064e22b916a16cbb95ad5[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Mar 4 15:08:10 2020 +0800
+
+    分页
+
+[33mcommit 8602ce3fea22f31fd2ea274b55c38198ce1c82b6[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Tue Mar 3 18:01:20 2020 +0800
+
+    三种登陆配置
+
+[33mcommit f626c8737c7816fd61ca6c7508edf9d8dee9ce67[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Tue Mar 3 15:00:56 2020 +0800
+
+    订单的权限设定
+
+[33mcommit 603e20d25a6d92172a38450731c2df9c886301bc[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Tue Mar 3 11:45:45 2020 +0800
+
+    用户的增删改查 用户的权限限定
+
+[33mcommit 87253a4e3bc08d103c5bcee2441d0af680d69495[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 2 20:45:41 2020 +0800
+
+    添加用户类 自定义注册路由
+
+[33mcommit cf6ee6426a51f3df87783ecb3c9c9b233974e489[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 2 17:53:36 2020 +0800
+
+    添加用户类
+
+[33mcommit 3af3862b119bfefa7ae1ba9647774aa5b9a0abaa[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 2 11:06:54 2020 +0800
+
+    简单测试
+
+[33mcommit f9c7f131d7281deeb69b42bec016abfff2556a2f[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Mon Mar 2 09:52:36 2020 +0800
+
+    新建模型类
+
+[33mcommit 083a3992a0833f19e571937a2095b68c373a9420[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Feb 27 18:15:38 2020 +0800
+
+    添加图片模型类，并序列化及展示
+
+[33mcommit 8e446cb3be52774d602bd82934fd2e0ff9fa5d20[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Feb 27 16:35:05 2020 +0800
+
+    自定义序列化类支持动词操作
+
+[33mcommit fccccf02c923060af5b0ecc8addfc2ef9e6d7495[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Feb 27 11:56:48 2020 +0800
+
+    自定义序列化类
+
+[33mcommit d0a10c3b6cb8e90c8665fcf0c9ddc9a4cfb49748[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Feb 26 17:37:33 2020 +0800
+
+    使用RestFramework模型关联查询
+
+[33mcommit f493e31f0e89f1d4adb630249be2db1dd0bb78b6[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Feb 26 16:35:50 2020 +0800
+
+    使用RestFramework
+
+[33mcommit c21338000eb50983d1cc3975b93c6986f9ff7145[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Feb 26 15:22:59 2020 +0800
+
+    新建项目drfend 应用shop
+
+[33mcommit 02bb113490f845fc46e53863ee3528ead617380e[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Sun Feb 23 12:11:41 2020 +0800
+
+    学习使用三种方式构造表单，登录认证检测
+
+[33mcommit 6b386ccd488edd7d162a6b0248334a3ee437b6d1[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Fri Feb 21 21:32:21 2020 +0800
+
+    标签展示 评论
+
+[33mcommit cc8d13df9d8a00b20a271ac2e914de45fcf649d6[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Thu Feb 20 21:02:44 2020 +0800
+
+    获取数据 展示轮播图 实现分页效果
+
+[33mcommit 1b6b321c012f86bb55dd2494eefe94873fc4afc6[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Feb 19 20:02:07 2020 +0800
+
+    博客应用，构建模型类，正文支持添图片
+
+[33mcommit 3937f5c8abfd28bebdda62d679dceac74e729a4b[m
+Author: lsh123 <1987617587@qq.com>
+Date:   Wed Feb 19 12:07:40 2020 +0800
+
+    学习使用三种方式构造表单
+
+[33mcommit 1591fa48b24cebb57611fb1e6f20db7b1444b062[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Tue Feb 18 19:47:29 2020 +0800
+
+    用户登录才能投票，一人一票
+
+[33mcommit dd1df06d0fb824ae49170b7526cce04e23272d13[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Tue Feb 18 15:58:07 2020 +0800
+
+    注册普通用户
+
+[33mcommit 8ebb36910eeedccde6a8e424458aac9db75f2520[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Tue Feb 18 15:40:09 2020 +0800
+
+    用户登录和退出
+
+[33mcommit 3f643e0fa6063e838440e38c4ea7be4624a6bc14[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Tue Feb 18 11:47:22 2020 +0800
+
+    使用html模板继承 创建用户类
+
+[33mcommit bd253fe95a26615db9564a0a26ba002955928b20[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Tue Feb 18 08:56:59 2020 +0800
+
+    投票应用
+
+[33mcommit c79d41f5229f8b0f97aeb808cef72d66e877fcbb[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Mon Feb 17 19:23:26 2020 +0800
+
+    投票应用
+    下载文件
+
+[33mcommit 87dd5c9d4ba0cdcd9c61a3887fcf865d98b1b613[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Mon Feb 17 16:28:27 2020 +0800
+
+    视图函数转视图类
+
+[33mcommit 9d4967562e825a24bd53659872d82adf1f14524e[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Mon Feb 17 11:36:54 2020 +0800
+
+    添加新应用
+
+[33mcommit 8ad479d63367c72dd951b8b14ea37a82cfe30232[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Fri Feb 14 23:29:09 2020 +0800
+
+    2.14晚自习（页面操作）
+
+[33mcommit 73146d32b0e07c963757dff6beef13d38db78e40[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Mon Feb 10 20:07:27 2020 +0800
+
+    创建测试文本hello word!
+
+[33mcommit ce3a7957281e2080c8f493b5f13838a2638608a1[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Mon Feb 10 20:04:00 2020 +0800
+
+    dayo1
+
+[33mcommit 6be78866b81f2d3841225aeb1d2365c63b7739c1[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Mon Feb 10 19:53:00 2020 +0800
+
+    md
+
+[33mcommit 8255b20c85b31c376c09b36d60265644a5eab091[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Mon Feb 10 19:42:46 2020 +0800
+
+    adddit
+
+[33mcommit 13ef4641042fde6b7e2c1ef5b47206f4a3c2924e[m
+Author: lsh1001 <1987617587@qq.com>
+Date:   Mon Feb 10 19:41:24 2020 +0800
+
+    adddir
