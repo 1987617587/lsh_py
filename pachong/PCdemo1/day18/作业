@@ -1,0 +1,12 @@
+level 1:
+网易新闻app爬虫
+GET /recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=0&size=10&fn=1&LastStdTime=0&spestr=reader_expert_0&prog=&passport=&devId=03c9vBIFZVo5KrKhYbaQbw%3D%3D&lat=&lon=&version=54.6&net=wifi&ts=1587027112&sign=U4aXlgw0FYZ3HAATOIjUHehMZAfACz8L6i0jeG0heah48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=netease_gw&mac=Vq4RRC2MBTNLrBWuOmx5AWA6W63jXMiLLBRm8sTXwOw%3D&open=&openpath= HTTP/1.1
+GET /recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=20&size=10&fn=1&LastStdTime=0&spestr=reader_expert_2&prog=&passport=&devId=03c9vBIFZVo5KrKhYbaQbw%3D%3D&lat=IiOkkNUqtAXXwTJomLrjgg%3D%3D&lon=nZc7dcCulYzaQLlRQGyxrQ%3D%3D&version=54.6&net=wifi&ts=1587027414&sign=%2BFybtYCNJgS2kpoSMfcTx96RNZvQXWbeBeblf6bHh1948ErR02zJ6%2FKXOnxX046I&encryption=1&canal=netease_gw&mac=Vq4RRC2MBTNLrBWuOmx5AWA6W63jXMiLLBRm8sTXwOw%3D&open=&openpath= HTTP/1.1
+爬取新闻标题，出处，发表时间，内容，id
+
+环球题库建造师app历年真题爬虫(一张试卷)
+爬取试题名称，答题时间，题型，题型描述，题型分数，题目，选项，答案
+level 2:
+
+案例：环球题库建造师练习题爬虫
+爬取试题，类型，分值，选项。。
